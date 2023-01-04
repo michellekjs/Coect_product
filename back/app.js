@@ -1,17 +1,35 @@
-const express = require('express')
-const app = express()
-const port = 9000
-const cors = require('cors')
-app.use(cors())
+const mysql = require('mysql');  // mysql 모듈 로드
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const conn = {  // mysql 접속 설정
+    host: '127.0.0.1',
+    port: '3306',
+    user: 'root',
+    password: '0000',
+    database: 'beta'
+};
 
-const testRouter = require("./routes/nodedb")
+let connection = mysql.createConnection(conn); // DB 커넥션 생성
+connection.connect();   // DB 접속
 
-app.use("/test" , testRouter);
+sql = "INSERT INTO CREATOR VALUES('mingyu', 1, 'hi')";
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+connection.query(sql, function (err, results, fields) { 
+    if (err) {
+        console.log(err);
+    }
+    console.log(results);
+});
+
+
+
+sql = "SELECT * FROM CONTENT";
+ 
+connection.query(sql, function (err, results, fields) { 
+    if (err) {
+        console.log(err);
+    }
+    console.log(results);
+});
+ 
+ 
+connection.end(); // DB 접속 종료
