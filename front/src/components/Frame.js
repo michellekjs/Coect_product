@@ -4,14 +4,13 @@ const Main = props => {
 
     const styles= {
         ccontainer: {
-            width: "100%",
             display: 'flex', justifyContent: 'center', alignItems: 'center',
         },
         container: {
             maxWidth: 1200,
         },
         header: {
-            widht: "100%", height: 75,
+            height: 75,
             display: 'flex', justifyContent: 'space-between', alignItems: 'center',
         },
         headerLeft: {
@@ -36,19 +35,19 @@ const Main = props => {
             display: 'flex', justifyContent: 'space-between', alignItems: 'center',
         },
         main: {
-            width: "100%",
             display: 'flex'
         },
         categories: {
-            width: "15%"
+            width: 100
         },
         category: {
             height: 75,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
         },
         content: {
+            // width: "85%",
             flex: 1,
-            paddingLeft: 30, paddingRight: 30,
+            paddingLeft: 20, paddingRight: 20,
             // display: 'flex', flexDirection: 'column'
         }
     };

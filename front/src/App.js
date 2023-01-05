@@ -13,8 +13,8 @@ function App() {
   return (
     
     <Frame>
-      <Main></Main>
-      {/* <Article></Article> */}
+      {/* <Main></Main> */}
+      <Article></Article>
     </Frame>
 
     // <Test></Test>
