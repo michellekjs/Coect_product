@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 
-import ArticleTop from './ArticleTop';
-import ArticlePlain from './ArticlePlain';
+import ArticleSummary from './ArticleSummary';
 
 const Main = props => {
 
     return (
         <>
-            <ArticleTop />
-            <ArticlePlain />
-            <ArticlePlain />
-            <ArticlePlain />
+            <ArticleSummary top/>
+            <ArticleSummary />
+            <ArticleSummary />
+            <ArticleSummary />
         </>
     )
 };
