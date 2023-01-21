@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import ArticleSummary from '../comps/ArticleSummary';
 
-import ArticleSummary from './ArticleSummary';
-
-const Main = props => {
+export default function MainPage() {
 
     return (
         <>
@@ -13,5 +11,3 @@ const Main = props => {
         </>
     )
 };
-
-export default Main;
