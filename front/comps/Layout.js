@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 
-import { categories } from '../shared';
+import { categories, colors } from '../shared';
 
 export default function Layout({ children }) {
 
@@ -15,7 +15,7 @@ export default function Layout({ children }) {
             width: 1200,
         },
         header: {
-            height: 75,
+            height: 110,
             display: 'flex', justifyContent: 'space-between', alignItems: 'center',
         },
         headerLeft: {
@@ -23,20 +23,20 @@ export default function Layout({ children }) {
             display: 'flex', justifyContent: 'center', alignItems: 'center',
             fontSize: 24, fontWeight: 'bold', textDecoration: 'none', color: 'black'
         },
-        headerRight: {
-            // flex: 1
-        },
+        // headerRight: {
+        //     // flex: 1
+        // },
         searchBox: {
-            width: 250, height: 30,
+            width: 250, height: 46,
             display: 'flex', justifyContent: 'space-between', alignItems: 'center',
             border: '1px solid #e0e0e0', borderRadius: 5,
         },
         searchBoxText: {
-            flex: 1, paddingLeft: 10,
+            flex: 1, paddingLeft: 15,
             border: 'none', outline: 'none', fontSize: 15,
         },
         searchIcon: {
-            height: 40, paddingLeft: 10, paddingRight: 10,
+            height: 40, paddingLeft: 15, paddingRight: 15,
             display: 'flex', justifyContent: 'space-between', alignItems: 'center',
             textDecoration: 'none'
         },
@@ -44,10 +44,13 @@ export default function Layout({ children }) {
             display: 'flex'
         },
         categories: {
-            width: '15%',
+            height: '100%',
+            // width: '15%',
+            display: 'flex', justifyContent: 'center', alignItems: 'center',
         },
         category: {
-            height: 75,
+            height: '100%', 
+            width: 100,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             textDecoration: 'none', color: 'black',
         },
@@ -67,19 +70,13 @@ export default function Layout({ children }) {
 
     return (
         <html>
-            <head></head>
+            <head>
+                <title>COECT</title>
+            </head>
             <body style={styles.ccontainer}>
                 <div style={styles.container}>
                     <div style={styles.header}>
                         <Link href='/' style={styles.headerLeft}>COECT</Link>
-                        <div style={styles.headerRight}>
-                            <div style={styles.searchBox}>
-                                <input style={styles.searchBoxText} type="text" placeholder="컨텐츠 검색" onKeyPress={search}/>
-                                <Link href='/search' style={styles.searchIcon}>🔍</Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div style={styles.main}>
                         <div style={styles.categories}>
                             {
                                 categories.map((category, index) => {
@@ -89,10 +86,17 @@ export default function Layout({ children }) {
                                 })
                             }
                         </div>
-                        <div style={styles.content}>
-                            {children}
+
+                        <div style={styles.searchBox}>
+                            <input style={styles.searchBoxText} type="text" placeholder="콘텐츠 검색" onKeyPress={search}/>
+                            <Link href='/search' style={styles.searchIcon}>🔍</Link>
                         </div>
                     </div>
+                    {children}
+                    
+                    <br/><br/>
+                    <div style={{ textAlign: 'center', color: '#aaa' }}>© 2023 Coect</div>
+                    <br/>
                 </div>
             </body>
         </html>

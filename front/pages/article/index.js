@@ -4,7 +4,7 @@ export default function ArticlePage(props) {
 
     return (
         <Layout>
-          asdf
+          article ID가 주어지지 않았습니다.
         </Layout>
     )
   };
