@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import Author from './Author';
+import Subtitle from './Subtitle';
 
 export default function ArticleSummary(props) {
 
@@ -21,37 +21,53 @@ export default function ArticleSummary(props) {
         title: {
             fontSize: props.top ? 32 : 20, fontWeight: 'bold',
         },
-        authorContainer: {
-            marginTop: 5,
-        },
         description: {
             marginTop: 5, flex: 1,
-            textOverflow: 'ellipsis', overflow: 'hidden'
+            // display: '-webkit-box',
+            // WebkitBoxOrient: 'vertical',
+            // WebkitLineClamp: 3,
+            // overflow: 'hidden',
+            // textOverflow: 'ellipsis',
+        },
+        descriptionLine: {
+            display: '-webkit-box',
+            WebkitBoxOrient: 'vertical',
+            WebkitLineClamp: 1,
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            marginTop: 5,
+            marginBottom: 0
         },
         right: {
-            width: props.top ? 360 : 240,
+            // width: props.top ? 360 : 240,
+            width: 360, height: 202, // 16:9?
             display: 'flex', justifyContent: 'center', alignItems: 'center',
+            overflow: 'hidden', borderRadius: 5,
         },
         thumbnail: {
-            borderRadius: 5,
-            width: '100%'
+            
+            width: '100%',
+            // height: '100%',
+            objectFit: 'cover',
         }
     };
 
     return (
-        <Link href="/article" style={{ textDecoration: 'none' }}>
+        <Link href={`/article/${props.article.id}`} style={{ textDecoration: 'none' }}>
             <div style={styles.container}>
                 <div style={styles.left}>
-                    <div style={styles.title}>MZ 세대 절반, 플랫폼으로 재테크</div>
-                    <div style={styles.authorContainer}>
-                        <Author />
-                    </div>
+                    <div style={styles.title}>{props.article.title}</div>
+                    <Subtitle article={props.article}/>
                     <div style={styles.description}>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. software like Aldus PageMaker including versions of Lorem Ipsum. software like Aldus PageMaker including versions of Lorem Ipsum. 
+                        { props.article.summaries.filter(s => s.subject || s.text).slice(0,4).map(_ => <p style={styles.descriptionLine}>
+                            {_.subject && <span style={{ fontWeight: 'bold' }}>#{_.subject}</span>}
+                            {_.subject && _.text && <span> </span>}
+                            {_.text}
+                        </p>) }
                     </div>
                 </div>
                 <div style={styles.right}>
-                    <img style={styles.thumbnail} src="https://via.placeholder.com/360x218"/>
+                    <img style={styles.thumbnail} src={ `https://i.ytimg.com/vi/${props.article.videoId}/hqdefault.jpg` || "https://via.placeholder.com/360x218" }/>
                 </div>
             </div>
         </Link>

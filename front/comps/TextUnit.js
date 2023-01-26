@@ -14,14 +14,16 @@ export default function TextUnit(props) {
     const styles = {
         timestamp : {
             color: '#18436B',
+            textDecoration: 'none',
         }
     }
     return (
-        <p>
+        <p style={{ textIndent: '.5em', lineHeight: 1.5 }}>
+            {props.subject && <b>#{props.subject} </b>}
             {props.children} (
-                <span style={styles.timestamp}>{seconds2timetamp(props.start)}</span>
+                <a href="#" style={styles.timestamp}>{seconds2timetamp(props.start)}</a>
                 &nbsp;~&nbsp;
-                <span style={styles.timestamp}>{seconds2timetamp(props.end)}</span>
+                <a href="#" style={styles.timestamp}>{seconds2timetamp(props.end)}</a>
             )
         </p>
     );

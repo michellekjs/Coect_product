@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 
-import { categories } from './shared';
+import { categories } from '../shared';
 
-export default function RootLayout({ children }) {
+export default function Layout({ children }) {
 
     const styles= {
         ccontainer: {

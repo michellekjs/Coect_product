@@ -9,13 +9,18 @@ export default function Author(props) {
         },
         authorName: {
             fontWeight: props.small ? 'normal' : 'bold',
+            display: '-webkit-box',
+            WebkitBoxOrient: 'vertical',
+            WebkitLineClamp: 1,
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
         },
     }
 
     return (
         <div style={styles.author}>
-            <img style={styles.authorImage} src="https://via.placeholder.com/30x30"/>
-            <div style={styles.authorName}>{props.name || '유튜버 MZ Tech'}</div>
+            <img style={styles.authorImage} src={props.image || "https://via.placeholder.com/30x30"}/>
+            <div style={styles.authorName}>{props.name || 'UNDEFINED'}</div>
         </div>
     )
 };

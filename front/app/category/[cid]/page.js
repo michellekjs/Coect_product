@@ -1,17 +1,22 @@
 import ArticleSummary from "../../../comps/ArticleSummary"
 
-import categories from "../../shared"
+import { categories, articles } from "../../shared"
 
-export default function Category({ params }) {
+export function generateStaticParams() {
+  return categories.map((_, i) => ({ cid: String(i+1) }));
+}
+
+export default function CategoryIdPage({ params }) {
+
+  const articlesInCategory = articles.filter(article => article.category == params.cid)
 
   return (
       <div>
-        <h1 style={{ marginTop: 0 }}>{categories[params.cid]}</h1>
+        <h1 style={{ marginTop: 0 }}>{categories[params.cid-1]}</h1>
         <div>
-          <ArticleSummary />
-          <ArticleSummary />
-          <ArticleSummary />
-          <ArticleSummary /> 
+          {
+            articlesInCategory.map(article => <ArticleSummary article={article} />)
+          }
         </div>
       </div>
   )
