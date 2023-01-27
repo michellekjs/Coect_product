@@ -22,8 +22,8 @@ export default function ArticleSummaryTop(props) {
             alignItems:'flex-start',
 		},
 		title: {
-			fontSize: props.top ? 36 : 20,
-			fontWeight: "bold",
+			fontSize: props.top ? 30 : 20,
+			fontWeight: "600",
 		},
 		description: {
 			marginTop: 25,
