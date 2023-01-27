@@ -93,11 +93,11 @@ export default function CategoryIdPage(props) {
 							margin: "10px",
 							backgroundColor: "white",
 							borderStyle: "none",
+							
 						}}
 						onClick={() => buttonClick(word)}
 					>
-						{" "}
-						{word}{" "}
+						{word}
 					</button>
 				))}
 			</div>

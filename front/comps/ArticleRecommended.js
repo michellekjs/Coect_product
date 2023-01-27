@@ -8,13 +8,17 @@ export default function ArticleRecommended(props) {
 			// border: '1px solid #e9e9e9',
 			borderRadius: 8,
 			paddingTop: 5,
-            paddingRight: 15,
-            paddingLeft: 15,
+			paddingBottom: 20,
+			paddingRight: 15,
+			paddingLeft: 15,
 			marginTop: 5,
-			marginBottom: 5,
+			marginBottom: 20,
 			textDecoration: "none",
 			color: "black",
 			backgroundColor: "#FAFAFA",
+			boxShadow: '2px 2px 5px 5px #F2F2F2',
+			// height:"280px"
+			
 		},
 		top: {
 			paddingTop: "56.25%", // 16:9
@@ -25,6 +29,7 @@ export default function ArticleRecommended(props) {
 			alignItems: "center",
 			overflow: "hidden",
 			borderRadius: 5,
+			
 		},
 		thumbnail: {
 			width: "100%",
@@ -42,7 +47,7 @@ export default function ArticleRecommended(props) {
 		},
 		title: {
 			fontSize: 18,
-			fontWeight: "bold",
+			fontWeight: "500",
 			display: "-webkit-box",
 			WebkitBoxOrient: "vertical",
 			WebkitLineClamp: 2,
@@ -62,7 +67,7 @@ export default function ArticleRecommended(props) {
 	return (
 		<Link
 			href={`/article/${props.article.id}`}
-			style={{ textDecoration: "none" }}
+			style={{ textDecoration: "none", }}
 		>
 			<div style={styles.container}>
 				<div style={styles.bottom}>

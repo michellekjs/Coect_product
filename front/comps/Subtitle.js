@@ -16,6 +16,7 @@ export default function Subtitle({ article }) {
             gap: 10,
             marginTop: 5,
             fontSize:'13pt',
+            textDecoration: 'none',
         },
         date: {
             color: '#a0a0a0',

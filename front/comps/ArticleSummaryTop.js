@@ -22,7 +22,7 @@ export default function ArticleSummaryTop(props) {
             alignItems:'flex-start',
 		},
 		title: {
-			fontSize: props.top ? 32 : 20,
+			fontSize: props.top ? 36 : 20,
 			fontWeight: "bold",
 		},
 		description: {

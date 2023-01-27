@@ -7,9 +7,8 @@ export default function ArticleSummary(props) {
 		container: {
 			display: "flex",
 			width: "90%",
-			// height: 200,
+			height: 200,
 			marginTop: 20,
-           
 			marginBottom: props.top ? 40 : 30,
 			textDecoration: "none",
 			color: "black",
@@ -88,7 +87,7 @@ export default function ArticleSummary(props) {
                         <div style={styles.description}>
                             {props.article.summaries
                                 .filter((s) => s.subject || s.text)
-                                .slice(0, 4)
+                                .slice(0, 3)
                                 .map((_) => (
                                     <p style={styles.descriptionLine}>
                                         {/* {_.subject && (

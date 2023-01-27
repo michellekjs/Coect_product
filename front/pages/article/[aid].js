@@ -29,12 +29,12 @@ export function getStaticProps({ params }) {
 
 export default function ArticleIdPage(props) {
 	const styles = {
-        horizontal: {
-            display: 'flex',
-            flexDirection : 'row',
-            marginBottom: '10px',
-            justifyContent: 'space-between',
-        },
+		horizontal: {
+			display: "flex",
+			flexDirection: "row",
+			marginBottom: "10px",
+			justifyContent: "space-between",
+		},
 		container: {
 			display: "flex",
 			gap: 20,
@@ -58,7 +58,7 @@ export default function ArticleIdPage(props) {
 		},
 		title: {
 			fontSize: 36,
-			fontWeight: "bold",
+			fontWeight: "500",
 			marginTop: 10,
 		},
 		yt: {
@@ -70,11 +70,11 @@ export default function ArticleIdPage(props) {
 		},
 		h3: {
 			marginBottom: 0,
-            marginTop: "350px",
+			marginTop: "100px",
 		},
-        rc: {
-            marginTop: "100px",
-        },
+		rc: {
+			marginTop: "100px",
+		},
 		h4: {
 			marginTop: 18,
 			marginBottom: 8,
@@ -84,10 +84,20 @@ export default function ArticleIdPage(props) {
 			display: "flex",
 			alignItems: "center",
 			gap: 10,
-            marginBottom : "100px",
+			marginBottom: "100px",
 		},
 		related: {
 			flex: 1,
+		},
+		subtitle: {
+			textDecoration: "none",
+		},
+		link: {
+			textDecoration: "none",
+			color: "black",
+			display: "flex",
+			justifyContent: "flex-end",
+			alignItems: "center",
 		},
 	};
 
@@ -127,8 +137,6 @@ export default function ArticleIdPage(props) {
 							{categories[article.category - 1]}
 						</div>
 						<div style={styles.title}>{article.title}</div>
-
-						<p>키워드: {article.keywords.join(", ")}</p>
 						<div>
 							<div style={styles.yt}>
 								<iframe
@@ -201,30 +209,33 @@ export default function ArticleIdPage(props) {
 
 				<div style={styles.recommended}>
 					<h3 style={styles}>콘텐츠 정보</h3>
-                    <div style={styles.horizontal}> 
-                        <div> From. </div>
-                        <a
-                            href={`https://www.youtube.com/${article.channelId}`}
-                            target="_blank"
-                            style={styles.link}
-                        >
-                            <div style={styles.subtitle}>
-                                <Author
-                                    name={article.channelName}
-                                    image={article.channelImageUrl}
-                                />
-                                
-                            </div>
-                        </a>
-                    </div>
-                    <div style={styles.horizontal}> 
-                        <div> Updated on. </div>
-                        <div style={styles.date}>2022.12.12</div>
-                    </div>
-                    <div style={styles.horizontal}> 
-                        <div> Edited by </div> 
-                        <div> Chaeyoung Lee </div>
-                    </div>
+					<div style={styles.horizontal}>
+						<div> From. </div>
+						<a
+							href={`https://www.youtube.com/${article.channelId}`}
+							target="_blank"
+							style={styles.link}
+						>
+							<div style={styles.subtitle}>
+								<Author
+									name={article.channelName}
+									image={article.channelImageUrl}
+								/>
+							</div>
+						</a>
+					</div>
+					<div style={styles.horizontal}>
+						<div> Updated on. </div>
+						<div style={styles.date}>2022.12.12</div>
+					</div>
+					<div style={styles.horizontal}>
+						<div> Edited by </div>
+						<div> Chaeyoung Lee </div>
+					</div>
+
+
+					<h3 style={{marginTop:'50px', lineHeight:'2'}}>키워드</h3>
+					<div style={{width:"100%"}}>키워드: {article.keywords.join(", ")}</div>
 
 					<h3 style={styles.h3}>관련 콘텐츠</h3>
 					{relatedArticlesByKeywords.map(({ keyword, articles }) =>

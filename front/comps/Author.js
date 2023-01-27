@@ -14,7 +14,7 @@ export default function Author(props) {
             WebkitLineClamp: 1,
             overflow: 'hidden',
             textOverflow: 'ellipsis',
-            fontSize : '12pt'
+            fontSize : '13pt',
         },
     }
 
