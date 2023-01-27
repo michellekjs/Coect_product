@@ -27,7 +27,7 @@ export default function ArticleSummary(props) {
 		},
 		title: {
 			fontSize: props.top ? 32 : 18,
-			fontWeight: "bold",
+			fontWeight: "regular",
 		},
 		description: {
 			marginTop: 5,
@@ -47,6 +47,7 @@ export default function ArticleSummary(props) {
 			textOverflow: "ellipsis",
 			marginTop: 5,
 			marginBottom: 0,
+            fontWeight: 'lighter',
 		},
 		left: {
 			// width: props.top ? 360 : 240,

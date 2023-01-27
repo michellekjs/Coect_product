@@ -177,7 +177,7 @@ export default function ArticleIdPage(props) {
 									>
 										<img
 											src={`/imgs/figures/${summary.image}`}
-											style={{ width: 600 }}
+											style={{ width: 400 }}
 											alt="영상 캡쳐 이미지"
 										></img>
 									</div>
