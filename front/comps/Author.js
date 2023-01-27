@@ -1,7 +1,7 @@
 export default function Author(props) {
     const styles = {
         author: {
-            display: 'flex', alignItems: 'center', gap: props.small ? 6 : 8
+            display: 'flex', alignItems: 'center', gap: props.small ? 6 : 8,
         },
         authorImage: {
             borderRadius: '50%',

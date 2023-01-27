@@ -58,7 +58,6 @@ export default function ArticleSummaryTop(props) {
                 <div style={styles.left}>
                     <div style={styles.title}>{props.article.title}</div>
                     <div style={{ marginTop: 20 }}>
-
                     </div>
                     <Subtitle article={props.article}/>
                     <div style={styles.description}>
