@@ -53,6 +53,7 @@ export default function MainPage() {
             </div>
             <ArticleSummaryTop article={randomArticles[0]} top/>
 
+            <br/>
             <h3>채널 pick</h3>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             {
@@ -67,7 +68,7 @@ export default function MainPage() {
             }
             </div>
 
-            
+            <br/>
             <h3>오늘의 콘텐츠</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 30 }}>
             {
