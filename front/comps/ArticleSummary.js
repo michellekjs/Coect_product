@@ -6,9 +6,10 @@ export default function ArticleSummary(props) {
 	const styles = {
 		container: {
 			display: "flex",
-			width: "85%",
+			width: "90%",
 			// height: 200,
 			marginTop: 20,
+           
 			marginBottom: props.top ? 40 : 30,
 			textDecoration: "none",
 			color: "black",
@@ -25,7 +26,7 @@ export default function ArticleSummary(props) {
 			// height: 200,
 		},
 		title: {
-			fontSize: props.top ? 32 : 20,
+			fontSize: props.top ? 32 : 18,
 			fontWeight: "bold",
 		},
 		description: {
@@ -89,9 +90,9 @@ export default function ArticleSummary(props) {
                                 .slice(0, 4)
                                 .map((_) => (
                                     <p style={styles.descriptionLine}>
-                                        {_.subject && (
-                                            <span style={{ fontWeight: "bold" }}>#{_.subject}</span>
-                                        )}
+                                        {/* {_.subject && (
+                                            <span>#{_.subject}</span>
+                                        )} */}
                                         {_.subject && _.text && <span> </span>}
                                         {_.text}
                                     </p>
