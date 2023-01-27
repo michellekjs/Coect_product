@@ -12,7 +12,7 @@ export default function Layout({ children }) {
             fontFamily: 'sans-serif',
         },
         container: {
-            width: 1200,
+            width: '80%',
         },
         header: {
             height: 75,
@@ -43,9 +43,9 @@ export default function Layout({ children }) {
         main: {
             display: 'flex'
         },
-        categories: {
-            width: '15%',
-        },
+        // categories: {
+        //     width: '15%',
+        // },
         category: {
             height: 75,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -80,7 +80,7 @@ export default function Layout({ children }) {
                         </div>
                     </div>
                     <div style={styles.main}>
-                        <div style={styles.categories}>
+                        {/* <div style={styles.categories}>
                             {
                                 categories.map((category, index) => {
                                     return (
@@ -88,7 +88,7 @@ export default function Layout({ children }) {
                                     )
                                 })
                             }
-                        </div>
+                        </div> */}
                         <div style={styles.content}>
                             {children}
                         </div>

@@ -13,10 +13,19 @@ export default function CategoryIdPage({ params }) {
   return (
       <div>
         <h1 style={{ marginTop: 0 }}>{categories[params.cid-1]}</h1>
-        <div>
-          {
-            articlesInCategory.map(article => <ArticleSummary article={article} />)
-          }
+
+        {/* <div style={{display:'flex'}}>
+          <div style={{display:'flex',flexDirection:'column'}}>
+            {articlesInCategory.filter( e => e%2 !== 0 ).map( e => <span>{e}</span>)}
+          </div>
+          <div style={{display:'flex',flexDirection:'column'}}>
+            {articlesInCategory.filter( e => e%2 === 0 ).map( e => <span>{e}</span>)}
+          </div>
+      </div> */}
+
+
+        {/* <div>
+          { articlesInCategory.map(article => <ArticleSummary article={article} />) }
         </div>
       </div>
   )
