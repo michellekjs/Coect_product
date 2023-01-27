@@ -13,7 +13,6 @@ export default function Subtitle({ article }) {
         },
         subtitle: {
             display: 'flex', 
-            
             gap: 10,
             marginTop: 5,
             fontSize:'13pt',
@@ -22,6 +21,7 @@ export default function Subtitle({ article }) {
             color: '#a0a0a0',
             textDecoration: 'none',
             fontSize:'13pt',
+            marginTop:'5px'
         },
     }
 

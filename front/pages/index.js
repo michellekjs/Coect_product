@@ -54,7 +54,7 @@ export default function MainPage() {
             <ArticleSummaryTop article={randomArticles[0]} top/>
 
             <br/>
-            <h3>채널 pick</h3>
+            <div style={{marginTop:"40px", marginBottom:"20px",fontWeight:"600", fontSize:"20pt"}}>채널 pick</div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             {
                 channelPicks.map(article => (
@@ -62,14 +62,14 @@ export default function MainPage() {
                         <div>{categories[article.category-1]}</div>
                         <img src={article.channelImageUrl} alt={`${article.channelName} 채널 프로필 이미지`} style={{ width: 110, height: 110, borderRadius: '50%', marginTop: 10 }}/>
                         <div style={{ marginTop: 10 }}><b>{article.channelName}</b></div>
-                        <div style={{ marginTop: 5, wordBreak: 'keep-all', fontSize:"12pt", marginTop:'20px' }}>{article.channelDescription}</div>
+                        <div style={{ marginTop: 5, wordBreak: 'keep-all', fontSize:"12pt", marginTop:'20px', textAlign:'center' }}>{article.channelDescription}</div>
                     </a>
                 ))
             }
             </div>
 
             <br/>
-            <h3>오늘의 콘텐츠</h3>
+            <div style={{marginTop:"40px",marginBottom:"20px", fontWeight:"600", fontSize:"20pt"}}>오늘의 콘텐츠</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 30 }}>
             {
                 [1,4].map(i => (
