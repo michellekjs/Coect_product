@@ -2,7 +2,7 @@ import Layout from "../../comps/Layout";
 import ArticleSummary from "../../comps/ArticleSummary";
 
 import { categories, articles } from "../../shared";
-import beauty from '../../public/imgs/figures/beauty.png';
+import beauty from "../../public/imgs/figures/beauty.png";
 
 export function getStaticPaths() {
 	return {
@@ -21,15 +21,19 @@ export default function CategoryIdPage(props) {
 	);
 	const keywordlist = articlesInCategory.map((article) => article.keywords[0]);
 
+	const uniquekeyword = [...new Set(keywordlist)];
+  // const [articlechosen,choose] = useState("");
+  // const [filteredarticle, changearticle] = useState(articles)
+  // const buttonclick = (word) => {
+  //   if (articlechosen=="") {
+
+  //   }
+  // }
+
 	return (
 		<Layout>
 			<h1 style={{ marginTop: 0 }}>{categories[props.cid - 1]}</h1>
-      <div style={{width: '100px'}}>
-        <img src={beauty}/>
-      </div>
-      <div> 
-      최신 뷰티 틀렌드 알아보러 가기
-      </div>
+			 <img src={`/imgs/figures/beauty.png`} style={{ width: '100%', height: '200px',objectFit: 'cover', }}></img>
 			<div
 				style={{
 					display: "flex",
@@ -37,11 +41,11 @@ export default function CategoryIdPage(props) {
 					alignItems: "center",
 				}}
 			>
-				{keywordlist.map((word) => (
-					<div style={{ margin: "10px" }}> {word} </div>
+				{uniquekeyword.map((word) => (
+					<button style={{ margin: "10px", backgroundColor:'white',  borderStyle:'none', }} onClick={() => buttonClick(word)}> {word} </button>
 				))}
 			</div>
-			<div style={{ display: "flex" }}>
+      <div style={{ display: "flex" }}>
 				<div style={{ display: "flex", flexDirection: "column" }}>
 					{articlesInCategory
 						.filter((e) => articlesInCategory.indexOf(e) % 2 !== 0)

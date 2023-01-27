@@ -12,7 +12,7 @@ export default function Layout({ children }) {
             fontFamily: 'sans-serif',
         },
         container: {
-            width: '80%',
+            width: '70%',
         },
         header: {
             height: 75,

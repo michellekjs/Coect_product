@@ -6,7 +6,7 @@ export default function ArticleSummary(props) {
 	const styles = {
 		container: {
 			display: "flex",
-			width: "90%",
+			width: "85%",
 			// height: 200,
 			marginTop: 20,
 			marginBottom: props.top ? 40 : 30,
