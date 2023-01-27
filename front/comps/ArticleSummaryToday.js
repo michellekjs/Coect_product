@@ -2,25 +2,24 @@ import Link from "next/link";
 
 import Author from "./Author";
 
-export default function ArticleRecommended(props) {
+export default function ArticleSummaryToday(props) {
 	const styles = {
 		container: {
 			// border: '1px solid #e9e9e9',
+			background: "#fafafa",
+            boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
 			borderRadius: 8,
-			paddingTop: 5,
-			paddingBottom: 20,
-			paddingRight: 15,
-			paddingLeft: 15,
+			paddingLeft: 24,
+			paddingRight: 24,
+			paddingTop: 24,
+			paddingBottom: 33,
 			marginTop: 5,
-			marginBottom: 20,
+			marginBottom: 5,
 			textDecoration: "none",
 			color: "black",
-			backgroundColor: "#FAFAFA",
-			boxShadow: '2px 2px 5px 5px #F2F2F2',
-			// height:"280px"
-			
 		},
-		top: {
+		bottom: {
+			// marginTop: 10,
 			paddingTop: "56.25%", // 16:9
 			// background: 'red',
 			position: "relative",
@@ -29,7 +28,6 @@ export default function ArticleRecommended(props) {
 			alignItems: "center",
 			overflow: "hidden",
 			borderRadius: 5,
-			
 		},
 		thumbnail: {
 			width: "100%",
@@ -39,15 +37,14 @@ export default function ArticleRecommended(props) {
 			transform: "translate(-50%, -50%)",
 			// objectFit: 'cover',
 		},
-		bottom: {
-			marginTop: 10,
+		top: {
 			height: 80,
 			paddingLeft: 5,
 			paddingRight: 5,
 		},
 		title: {
-			fontSize: 18,
-			fontWeight: "500",
+			fontSize: 16,
+			fontWeight: "bold",
 			display: "-webkit-box",
 			WebkitBoxOrient: "vertical",
 			WebkitLineClamp: 2,
@@ -55,9 +52,10 @@ export default function ArticleRecommended(props) {
 			textOverflow: "ellipsis",
 		},
 		authorContainer: {
-			marginTop: 4,
-            display: 'flex',
-            justifyContent: 'flex-end'
+			marginBottom: 4,
+            marginTop:4,
+			display: "flex",
+			justifyContent: "end",
 		},
 		description: {
 			marginTop: 4,
@@ -67,10 +65,10 @@ export default function ArticleRecommended(props) {
 	return (
 		<Link
 			href={`/article/${props.article.id}`}
-			style={{ textDecoration: "none", }}
+			style={{ textDecoration: "none" }}
 		>
 			<div style={styles.container}>
-				<div style={styles.bottom}>
+				<div style={styles.top}>
 					<div style={styles.title}>{props.article.title}</div>
 					<div style={styles.authorContainer}>
 						<Author
@@ -79,11 +77,8 @@ export default function ArticleRecommended(props) {
 							image={props.article.channelImageUrl}
 						/>
 					</div>
-					{/* <div style={styles.description}>
-                        { props.article.summaries.filter(s => s.subject || s.text)[0].text }
-                    </div> */}
 				</div>
-				<div style={styles.top}>
+				<div style={styles.bottom}>
 					<img
 						style={styles.thumbnail}
 						src={
