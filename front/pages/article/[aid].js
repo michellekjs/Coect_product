@@ -226,16 +226,16 @@ export default function ArticleIdPage(props) {
 					</div>
 					<div style={styles.horizontal}>
 						<div> Updated on. </div>
-						<div style={styles.date}>2022.12.12</div>
+						<div style={styles.date}>{article.date}</div>
 					</div>
-					<div style={styles.horizontal}>
+					{/* <div style={styles.horizontal}>
 						<div> Edited by </div>
 						<div> Chaeyoung Lee </div>
-					</div>
+					</div> */}
 
 
 					<h3 style={{marginTop:'50px', lineHeight:'2'}}>키워드</h3>
-					<div style={{width:"100%"}}>키워드: {article.keywords.join(", ")}</div>
+					<div style={{width:"100%"}}>{article.keywords.join(", ")}</div>
 
 					<h3 style={styles.h3}>관련 콘텐츠</h3>
 					{relatedArticlesByKeywords.map(({ keyword, articles }) =>

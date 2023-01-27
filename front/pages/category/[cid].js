@@ -12,7 +12,7 @@ export function getStaticPaths() {
 }
 
 export function getStaticProps({ params }) {
-	return { props: { cid: params.cid } };
+	return { props: { cid: params.cid, key: params.cid } };
 }
 
 export default function CategoryIdPage(props) {
