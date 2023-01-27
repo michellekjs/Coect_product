@@ -3,15 +3,25 @@ import Author from './Author';
 export default function Subtitle({ article }) {
     const styles = {
         link: {
-            textDecoration: 'none', color: 'black'
+            textDecoration: 'none', 
+            color: 'black',
+            display:'flex',
+            justifyContent:'flex-end',
+            marginTop:'10px',
+            alignItems:'center',
+
         },
         subtitle: {
-            display: 'flex', alignItems: 'center', gap: 10,
-            marginTop: 5
+            display: 'flex', 
+            
+            gap: 10,
+            marginTop: 5,
+            fontSize:'13pt',
         },
         date: {
             color: '#a0a0a0',
-            textDecoration: 'none'
+            textDecoration: 'none',
+            fontSize:'13pt',
         },
     }
 

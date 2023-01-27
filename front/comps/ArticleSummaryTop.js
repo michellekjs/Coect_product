@@ -19,7 +19,7 @@ export default function ArticleSummaryTop(props) {
             marginRight: 30,
         },
         title: {
-            fontSize: props.top ? 32 : 20, fontWeight: 'bold',
+            fontSize: props.top ? 30 : 20, fontWeight: 'bold',
         },
         description: {
             marginTop: 25, flex: 1,

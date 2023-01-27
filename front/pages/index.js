@@ -62,7 +62,7 @@ export default function MainPage() {
                         <div>{categories[article.category-1]}</div>
                         <img src={article.channelImageUrl} alt={`${article.channelName} 채널 프로필 이미지`} style={{ width: 110, height: 110, borderRadius: '50%', marginTop: 10 }}/>
                         <div style={{ marginTop: 10 }}><b>{article.channelName}</b></div>
-                        <div style={{ marginTop: 5, wordBreak: 'keep-all',  }}>{article.channelDescription}</div>
+                        <div style={{ marginTop: 5, wordBreak: 'keep-all', fontSize:"12pt", marginTop:'20px' }}>{article.channelDescription}</div>
                     </a>
                 ))
             }
