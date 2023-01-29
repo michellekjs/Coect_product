@@ -214,6 +214,7 @@ export default function ArticleIdPage(props) {
 						<a
 							href={`https://www.youtube.com/${article.channelId}`}
 							target="_blank"
+							rel="noreferrer"
 							style={styles.link}
 						>
 							<div style={styles.subtitle}>

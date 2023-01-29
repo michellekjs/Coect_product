@@ -57,8 +57,8 @@ export default function MainPage() {
             <div style={{marginTop:"40px", marginBottom:"20px",fontWeight:"600", fontSize:"20pt"}}>채널 pick</div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             {
-                channelPicks.map(article => (
-                    <a href={`https://www.youtube.com/${article.channelId}`} target="_blank" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textDecoration: 'none', color: 'black', paddingLeft: 10, paddingRight: 10, width: '20%' }}>
+                channelPicks.map((article,i) => (
+                    <a key={i} href={`https://www.youtube.com/${article.channelId}`} target="_blank" rel="noreferrer" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textDecoration: 'none', color: 'black', paddingLeft: 10, paddingRight: 10, width: '20%' }}>
                         <div>{categories[article.category-1]}</div>
                         <img src={article.channelImageUrl} alt={`${article.channelName} 채널 프로필 이미지`} style={{ width: 110, height: 110, borderRadius: '50%', marginTop: 10 }}/>
                         <div style={{ marginTop: 10 }}><b>{article.channelName}</b></div>
@@ -73,10 +73,10 @@ export default function MainPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 30 }}>
             {
                 [1,4].map(i => (
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 45 }}>
+                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 45 }}>
                         {
                             randomArticles.slice(i,i+3).map(article => 
-                                <div style={{ flex: 1 }}>
+                                <div key={article.id} style={{ flex: 1 }}>
                                     <ArticleSummaryToday key={article.id} article={article} />
                                 </div>    
                             )

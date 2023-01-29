@@ -89,6 +89,7 @@ export default function CategoryIdPage(props) {
 				</button>
 				{uniquekeyword.map((word) => (
 					<button
+						key={word}
 						style={{
 							margin: "10px",
 							backgroundColor: "white",

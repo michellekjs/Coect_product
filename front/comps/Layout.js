@@ -1,10 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import { categories, colors } from "../shared";
 
 export default function Layout({ children }) {
+
+	const router = useRouter();
+	
 	const styles = {
 		ccontainer: {
 			display: "flex",
@@ -89,12 +93,6 @@ export default function Layout({ children }) {
 		},
 	};
 
-	const search = (e) => {
-		if (e.key === "Enter") {
-			window.location = "/search";
-		}
-	};
-
 	return (
 		<html>
 			<head>
@@ -126,7 +124,11 @@ export default function Layout({ children }) {
 									style={styles.searchBoxText}
 									type="text"
 									placeholder="콘텐츠 검색"
-									onKeyPress={search}
+									onKeyPress={e => {
+										if (e.key === "Enter") {
+											router.push(`/search`)
+										}
+									}}
 								/>
 								<Link href="/search" style={styles.searchIcon}>
 									🔍
