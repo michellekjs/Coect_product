@@ -48,8 +48,8 @@ export default function MainPage() {
 
     return (
         <Layout>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 180, alignItems: 'center' }}>
-                <div style={{ width: '100%', height: 358, backgroundSize: 'cover', backgroundImage: `url('${'https://via.placeholder.com/1440x500'}')`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', textAlign: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 180, alignItems: 'center', width: '100vw', }}>
+                <div style={{  width: '100%', height: 358, backgroundSize: 'contain', backgroundImage: `url('${'https://via.placeholder.com/1440x500'}')`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', textAlign: 'center', marginLeft:0 }}>
                     <div style={{ fontSize: 28, color: 'white' }}>세단 제왕의 귀환, 풀체인지 그랜져 리뷰 영상들 보러 가기</div>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 180, maxWidth: 1032 }}>
