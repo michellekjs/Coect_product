@@ -14,10 +14,51 @@ export default function Layout({ children }) {
 	const router = useRouter();
 
 	const isBigScreen = useMediaQuery({
-    query: '(min-width: 768px)'
+    query: '(min-width: 1045px)'
   })
-  const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
+  const isMobile = useMediaQuery({ query: '(max-width: 1045px)' })
 	
+	const styles = {
+  bmBurgerButton: {
+    position: 'fixed',
+    width: '20px',
+    height: '20px',
+    right: '30px',
+    top: '16px'
+  },
+  bmBurgerBars: {
+    background: '#373a47'
+  },
+  bmBurgerBarsHover: {
+    background: '#a90000'
+  },
+  bmCrossButton: {
+    height: '24px',
+    width: '24px'
+  },
+  bmCross: {
+    background: '#bdc3c7'
+  },
+  bmMenuWrap: {
+    position: 'fixed',
+    height: '100%'
+  },
+  bmMenu: {
+    background: '#FAFAFA',
+    padding: '2.5em 1.5em 0',
+    fontSize: '1.15em'
+  },
+  bmMorphShape: {
+    fill: '#373a47'
+  },
+  bmItemList: {
+    color: '#b8b7ad',
+    padding: '0.8em'
+  },
+  bmOverlay: {
+    background: 'rgba(0, 0, 0, 0.3)'
+  }
+}
 	// const styles = {
 	// 	big: {
 
@@ -51,11 +92,17 @@ export default function Layout({ children }) {
 					</div>}
 					{isMobile && 
 					<div>
-					<div> Hi </div>
-						<Menu>
-							<a id="home" >Home</a>
-							<a id="about" >About</a>
-							<a id="contact">Contact</a>
+						<Menu right styles={styles}>
+							{brands.map((brand, index) => {
+							return (
+								<a
+									key={index + 1}
+									style={{ textDecoration: 'none', color: '#424242', fontSize: 15, marginBottom:'10px' }}
+								>
+									{brand.name}
+								</a>
+							);
+						})}
 						</Menu>
 						</div>
 					}

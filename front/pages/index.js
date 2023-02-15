@@ -1,10 +1,17 @@
 import Layout from '../comps/Layout';
 import ArticleSummaryTop from '../comps/ArticleSummaryTop';
 import ArticleSummaryToday from '../comps/ArticleSummaryToday';
+import { useMediaQuery } from 'react-responsive';
 
 import { articles, categories, brands, colors } from '../shared';
 
 export default function MainPage() {
+
+    const isBigScreen = useMediaQuery({
+    query: '(min-width: 1045px)'
+    })
+    const isMobile = useMediaQuery({ query: '(max-width: 1045px)' })
+	
 
     const channelPicks = [
         {
@@ -55,7 +62,7 @@ export default function MainPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 180, maxWidth: 1032 }}>
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 60 }}>
                         <div style={{ fontSize: 22 }}>어쩌구 저쩌구</div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: 36 }}>
+                        {isBigScreen && <div style={{ display: 'flex', alignItems: 'center', gap: 36 }}>
                             {
                                 randomArticles.slice(1, 4).map(article => 
                                     <div key={article.id} style={{ flex: 1 }}>
@@ -64,6 +71,19 @@ export default function MainPage() {
                                 )
                             }
                         </div>
+}
+                {isMobile && <div style={{ display: 'flex', alignItems: 'center',flexDirection:'column', gap: 20 }}>
+                            {
+                                randomArticles.slice(1, 4).map(article => 
+                                    <div key={article.id} style={{ flex: 1 }}>
+                                        <ArticleSummaryToday key={article.id} article={article} />
+                                    </div>    
+                                )
+                            }
+                        </div>
+}
+          
+                               
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 60 }}>
                         <div style={{ fontSize: 22 }}>차량 리뷰 영상 찾기 🔎</div>
