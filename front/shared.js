@@ -145,8 +145,8 @@ const articles = [
     },
     {
         title: '방콕여행 감잡기 🇹🇭 쉽고 빠르게 정리해드림! 기본정보 + 시내지도 + 추천음식 + 타이마사지',
-        category: 2,
         date: '2022-07-17',
+        category: 2,
         id: 9,
         channelImageUrl: 'https://yt3.ggpht.com/WCUlaeOXychhrCoj1SMez2uYuIPFgJZDStBbRzJYCSqmcpVEWKzgwm1eMpyYwTDIU6fd29X98w=s88-c-k-c0x00ffffff-no-rj',
         channelName: '아일랜드 트래블러',
@@ -171,8 +171,8 @@ const articles = [
     },
     {
         title: '[방콕호텔 예약 시 고려할 팁] 첫번째 \'위치\'편 / 방콕 자유여행 지도를 통해 가볼만한곳, BTS, MRT, 마사지, 클럽, 루프탑, 환전소, 호텔위치 등을 알아봅니다.',
-        category: 2,
         date: '2019-06-26',
+        category: 2,
         id: 10,
         channelImageUrl: 'https://yt3.ggpht.com/U5_OB1Nokz_RMhp5DbfykZRhc4iFrN20ek7QzSD44J1WRYLdu5lxKjVvcXh-QsPDEBsBaboStg=s88-c-k-c0x00ffffff-no-rj',
         channelName: '트래블콕_방콕여행 참고서 Travel Kok',
@@ -237,8 +237,8 @@ const articles = [
     },
     {
         title: '방콕 자유여행 경비 예산 얼마면 될까요? 관광객 입장 방콕 물가 수준을 종합적으로 짚어드립니다.',
-        category: 2,
         date: '2019-07-27',
+        category: 2,
         id: 12,
         channelImageUrl: 'https://yt3.ggpht.com/U5_OB1Nokz_RMhp5DbfykZRhc4iFrN20ek7QzSD44J1WRYLdu5lxKjVvcXh-QsPDEBsBaboStg=s88-c-k-c0x00ffffff-no-rj',
         channelName: '트래블콕_방콕여행 참고서 Travel Kok',
@@ -297,8 +297,8 @@ const articles = [
     },
     {
         title: '[VLOG] 후쿠오카 시내 🇯🇵 먹고 걷고의 반복🚶🏻‍♀️하카타역,야키토리 맛집,나카스강변,캐널시티,오므라이스,일본 여행',
-        category: 2,
         date: '2022-10-17',
+        category: 2,
         id: 15,
         channelImageUrl: 'https://yt3.ggpht.com/uU7tofIJqY7zGpX1AZ_HqT1EVnfhiMmOUsKaRRD6njO6lTogxOxJcHmnHjb8cm66ie9ppQPZ3w=s88-c-k-c0x00ffffff-no-rj',
         channelName: '진짜채빈짱 チンチャチェビンちゃん',
@@ -363,8 +363,8 @@ const articles = [
     },
     {
         title: '노캔 끝판왕은 아닌데?; 소니 헤드폰 WH-1000XM5 리뷰 (Feat.4세대,에어팟맥스 비교, ANC 테스트)',
-        category: 3,
         date: '2022-08-02',
+        category: 3,
         id: 18,
         channelImageUrl: 'https://yt3.ggpht.com/2nImR_23HcnYf4N9qypfC89PG0_tv-b6IyxbcxJdhHy-amiKrZAStqU5sP13JzMfLs3yfird=s88-c-k-c0x00ffffff-no-rj',
         channelName: '잇플  IT People',
@@ -387,8 +387,8 @@ const articles = [
     },
     {
         title: '소니 WH-1000XM5 vs 애플 에어팟 맥스, 제 선택은요!',
-        category: 3,
         date: '2022-06-02',
+        category: 3,
         id: 19,
         channelImageUrl: 'https://yt3.ggpht.com/lC5OkaoW8GO3hLLD-dGPdx6Yn4xUBo9vmQzR5wy5xegl1d8iuTowIhT8I73iEo1Kw55MjFzr5Q=s88-c-k-c0x00ffffff-no-rj',
         channelName: '고나고',
@@ -523,7 +523,7 @@ const articles = [
     },
     {
         title: '아이라인 그리면 답답해 보였던 이유',
-        date: '2021-5-11',
+        date: '2021-05-11',
         category: 4,
         id: 25,
         channelImageUrl: 'https://yt3.googleusercontent.com/PLcb4E4kmku90sZvPUgfYlZC2N_b6O5C5NeMeecC7cY_ZnOi_38tHpuNdEa2MkP8cr9BnuRg2A=s176-c-k-c0x00ffffff-no-rj',
@@ -541,7 +541,7 @@ const articles = [
     },
     {
         title: '옷 잘입는 법 여자 기초편 (ft. 나만의 옷장 만들기)',
-        date: '2021-4-28',
+        date: '2021-04-28',
         category: 4,
         id: 26,
         channelImageUrl: 'https://yt3.ggpht.com/TyNGIwi8-OgYhGpBYID0m8fxr4trBMEO9H6fGU1QaBOMOxtLBlRpFCWvr3wgAYNPAQtjbLRBrII=s88-c-k-c0x00ffffff-no-rj',
@@ -560,6 +560,7 @@ const articles = [
     },
     {
         title: '볼캡 쓰면 얼굴 커보이는 이유 \'이것\'',
+        date: '2020-05-10',
         category: 4,
         id: 27,
         channelImageUrl: 'https://yt3.googleusercontent.com/PLcb4E4kmku90sZvPUgfYlZC2N_b6O5C5NeMeecC7cY_ZnOi_38tHpuNdEa2MkP8cr9BnuRg2A=s176-c-k-c0x00ffffff-no-rj',
@@ -576,7 +577,7 @@ const articles = [
     },
     {
         title: '이미지 변신 치트키, 얼굴별 안경테 고르는법(가격별 안경 브랜드 추천)',
-        date: '2021-2-23',
+        date: '2021-02-23',
         category: 4,
         id: 28,
         channelImageUrl: 'https://yt3.ggpht.com/hIOYBp4fSRZsxxmEbYW0eCwN8b9AgQAyZJF95bRuLU5_xK2JTb5WVIqeANEOZsYqWTAO2FAXnQ=s88-c-k-c0x00ffffff-no-rj',
@@ -595,7 +596,7 @@ const articles = [
     },
     {
         title: '나에게 어울리는 안경을 선택하는 여러가지 방법',
-        date: '2021-2-23',
+        date: '2021-02-23',
         category: 4,
         id: 29,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu_VpSrtE2pv8hRf3CJXGwz0pbBIG2EsyWYxzHcCAQ=s88-c-k-c0x00ffffff-no-rj',
@@ -614,7 +615,7 @@ const articles = [
     },
     {
         title: '에어랩 있으면 꼭 봐야하는 영상❗️✨ 여신 앞머리 | 정수리 볼륨 | 같은 에어랩 다른 느낌 | 내일 아침 당장 하고싶어지는 머리',
-        date: '2022-3-14',
+        date: '2022-03-14',
         category: 4,
         id: 30,
         channelImageUrl: 'https://yt3.ggpht.com/lTQ7TYOZnawlDFQI7FxK3XbbeWWMnqmgQ88STfChzeHkt9pI2FxmebnnabRwnSqmjgtUl5TddQ=s88-c-k-c0x00ffffff-no-rj',
@@ -631,7 +632,7 @@ const articles = [
     },
     {
         title: '얼굴분석전문가가 알려주는 얼굴 작아보이는 마스크 모양? (ft. 아이유가 부리형 마스크만 스는 이유) ',
-        date: '2021-4-20',
+        date: '2021-04-20',
         category: 4,
         id: 31,
         channelImageUrl: 'https://yt3.ggpht.com/iuqbx4JU391EsMUuhmqqMcwgOo7LWUlTxeDEjzXmG2D6w8JTGvg6BcNCcsmBeCytiIMB-3R5IkE=s88-c-k-c0x00ffffff-no-rj',
@@ -647,7 +648,7 @@ const articles = [
     },
     {
         title: '[비율 안좋은 체형▶비율 좋아보이는 법] 당신이 다리가 짧아보이는 이유? (ft.제니,정채연,장원영) ',
-        date: '2022-1-30',
+        date: '2022-01-30',
         category: 4,
         id: 32,
         channelImageUrl: 'https://yt3.ggpht.com/iuqbx4JU391EsMUuhmqqMcwgOo7LWUlTxeDEjzXmG2D6w8JTGvg6BcNCcsmBeCytiIMB-3R5IkE=s88-c-k-c0x00ffffff-no-rj',
@@ -662,7 +663,7 @@ const articles = [
     },
     {
         title: '신형 그랜저 2.5 시승기...최고의 세단! 심각한 불량도?',
-        date: '2022-12-4',
+        date: '2022-12-04',
         category: 5,
         id: 33,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu8ujei-MMLXgtScAR20orQlSFuOAixnH0O02ioBXw=s48-c-k-c0x00ffffff-no-rj',
@@ -708,7 +709,7 @@ const articles = [
     },
     {
         title: '역대급 반전, 신형 그랜저',
-        date: '2022-12-9',
+        date: '2022-12-09',
         category: 5,
         id: 35,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu8BDQ5p2143udr0MXWdPLNWkr6rSOwItkBIHEbgBA=s48-c-k-c0x00ffffff-no-rj',
@@ -733,7 +734,7 @@ const articles = [
     },
     {
         title: '깡통 그랜저 출고한 우파가 추천하는 "그랜저 필수옵션" 제발 이것만은 꼭 넣으세요',
-        date: '2023-1-12',
+        date: '2023-01-12',
         category: 5,
         id: 36,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu_WszZPwVss4PdFN2MPcUTFrCDy01XRcwwB3o-e=s48-c-k-c0x00ffffff-no-rj',
@@ -774,7 +775,7 @@ const articles = [
     },
     {
         title: '[2편] 내 차의 숨은 기능 200% 활용하기! 누구도 가르쳐주지 않아 사용 못한 내 차 숨은기능',
-        date: '2019-11-6',
+        date: '2019-11-06',
         category: 5,
         id: 38,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu_WszZPwVss4PdFN2MPcUTFrCDy01XRcwwB3o-e=s48-c-k-c0x00ffffff-no-rj',
@@ -799,7 +800,7 @@ const articles = [
     },
     {
         title: '국내 준중형 SUV 끝판왕은?! "토레스 vs 투싼 vs 스포티지 경쟁 모델 싹 다 모았습니다.',
-        date: '2022-8-16',
+        date: '2022-08-16',
         category: 5,
         id: 39,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu_WszZPwVss4PdFN2MPcUTFrCDy01XRcwwB3o-e=s48-c-k-c0x00ffffff-no-rj',
@@ -826,7 +827,7 @@ const articles = [
     },
     {
         title: '토레스 사도 되냐고?',
-        date: '2022-8-5',
+        date: '2022-08-05',
         category: 5,
         id: 40,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu_WszZPwVss4PdFN2MPcUTFrCDy01XRcwwB3o-e=s48-c-k-c0x00ffffff-no-rj',
@@ -844,10 +845,37 @@ const articles = [
     }
 ];
 
+const brands = [
+    { logo: 'hyundai.svg', name: '현대' },
+    { logo: 'kia.svg', name: '기아' },
+    { logo: 'genesis.svg', name: '제네시스' },
+    { logo: 'ssangyong.svg', name: '쌍용' },
+    { logo: 'bmw.svg', name: 'BMW' },
+    { logo: 'benz.svg', name: '벤츠' },
+    { logo: 'audi.svg', name: '아우디' },
+    { logo: 'tesla.svg', name: '테슬라' },
+];
+
 const colors = {
-    primary: '#18436B'
+    primary: '#2B6F7D',
+    primaryDark: '#183D44',
+    primaryLight: '#99D0DC',
+    primaryBG: '#E0ECEE',
+    darkPrimary: '#4DAEC2',
+
+    _000: '#000000',
+    _100: '#121212',
+    _200: '#212121',
+    _300: '#424242',
+    _400: '#616161',
+    _500: '#919191',
+    _600: '#BDBDBD',
+    _700: '#DBDBDB',
+    _800: '#E5E5E5',
+    _900: '#F5F5F5',
+    _1000: '#FFFFFF',
 };
 
 export {
-    categories, articles, colors
+    categories, articles, brands, colors
 };

@@ -1,148 +1,51 @@
+// TODO: 헤더 부분 왜 width 100% 안되지? ...
+
 "use client";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import { categories, colors } from "../shared";
+import { categories, colors, brands } from "../shared";
 
 export default function Layout({ children }) {
 
 	const router = useRouter();
 	
 	const styles = {
-		ccontainer: {
-			display: "flex",
-			justifyContent: "center",
-			alignItems: "center",
-			fontFamily: "sans-serif",
-		},
-		container: {
-			width: "70%",
-		},
-		header: {
-			height: 110,
-			// width: '100%',
-			display: "flex",
-			justifyContent: "space-between",
-			alignItems: "center",
-		},
-		headerLeft: {
-			height: "100%",
-			display: "flex",
-			justifyContent: "start",
-			alignItems: "center",
-			fontSize: 24,
-			fontWeight: "bold",
-			textDecoration: "none",
-			color: "black",
-		},
-		// headerRight: {
-		//     // flex: 1
-		// },
-		searchBox: {
-			width: 250,
-			height: 46,
-			display: "flex",
-			// justifyContent: "space-between",
-			alignItems: "center",
-			border: "1px solid #e0e0e0",
-			borderRadius: 5,
-            height: "100%",
-            marginLeft:"80px"
-		},
-		searchBoxText: {
-			flex: 1,
-			paddingLeft: 15,
-			border: "none",
-			outline: "none",
-			fontSize: 15,
-		},
-		searchIcon: {
-			height: 40,
-			paddingLeft: 15,
-			paddingRight: 15,
-			display: "flex",
-			justifyContent: "space-between",
-			alignItems: "center",
-			textDecoration: "none",
-		},
-		main: {
-			display: "flex",
-		},
-		categories: {
-			height: "100%",
-			display: "flex",
-			justifyContent: "center",
-			alignItems: "center",
-            marginTop:"10px"
-		},
-		category: {
-			height: "100%",
-			width: 100,
-			display: "flex",
-			alignItems: "center",
-			justifyContent: "center",
-			textDecoration: "none",
-			color: "black",
-		},
-		content: {
-			// width: "85%",
-			flex: 1,
-			// paddingLeft: 20, paddingRight: 20,
-			// display: 'flex', flexDirection: 'column'
-		},
+		
 	};
 
 	return (
-		<html>
+		<html style={{ width: '100%' }}>
 			<head>
 				<title>COECT</title>
 			</head>
-			<body style={styles.ccontainer}>
-				<div style={styles.container}>
-					<div style={styles.header}>
-						<Link href="/" style={styles.headerLeft}>
-							COECT
-						</Link>
-						<div style={{display:'flex', flexDirection: 'row'}}>
-							<div style={styles.categories}>
-								{categories.map((category, index) => {
-									return (
-										<Link
-											key={index + 1}
-											href={`/category/${index + 1}`}
-											style={styles.category}
-										>
-											{category}
-										</Link>
-									);
-								})}
-							</div>
-
-							<div style={styles.searchBox}>
-								<input
-									style={styles.searchBoxText}
-									type="text"
-									placeholder="콘텐츠 검색"
-									onKeyPress={e => {
-										if (e.key === "Enter") {
-											router.push(`/search`)
-										}
-									}}
-								/>
-								<Link href="/search" style={styles.searchIcon}>
-									🔍
+			<body style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
+				<div style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, width: '100%' }}>
+					<Link href="/" style={{ display: 'flex', gap: 6, alignItems: 'baseline', textDecoration: 'none' }}>
+						<img src={require('../public/imgs/logo.svg').default.src} alt="COECT 로고" style={{ height: 20 }}/>
+						<span style={{ fontSize: 11, color: '#424242' }}>Fusion of Video & Text</span>
+					</Link>
+					<div style={{display:'flex', flexDirection: 'row', gap: 10 }}>
+						{brands.map((brand, index) => {
+							return (
+								<Link
+									key={index + 1}
+									href={`/category/${index + 1}`}
+									style={{ textDecoration: 'none', color: '#424242', fontSize: 15 }}
+								>
+									{brand.name}
 								</Link>
-							</div>
-						</div>
+							);
+						})}
 					</div>
-					{children}
-
-					<br />
-					<br />
-					<div style={{ textAlign: "center", color: "#aaa" }}>© 2023 Coect</div>
-					<br />
 				</div>
+				{children}
+
+				<br />
+				<br />
+				<div style={{ textAlign: "center", color: "#aaa" }}>© 2023 Coect</div>
+				<br />
 			</body>
 		</html>
 	);

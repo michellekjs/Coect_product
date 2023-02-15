@@ -2,7 +2,7 @@ import Layout from '../comps/Layout';
 import ArticleSummaryTop from '../comps/ArticleSummaryTop';
 import ArticleSummaryToday from '../comps/ArticleSummaryToday';
 
-import { articles, categories } from '../shared';
+import { articles, categories, brands, colors } from '../shared';
 
 export default function MainPage() {
 
@@ -48,42 +48,65 @@ export default function MainPage() {
 
     return (
         <Layout>
-            <div style={{ maxWidth: 1000 }}>
-
-            </div>
-            <ArticleSummaryTop article={randomArticles[0]} top/>
-
-            <br/>
-            <div style={{marginTop:"40px", marginBottom:"20px",fontWeight:"600", fontSize:"20pt"}}>채널 pick</div>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            {
-                channelPicks.map((article,i) => (
-                    <a key={i} href={`https://www.youtube.com/${article.channelId}`} target="_blank" rel="noreferrer" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textDecoration: 'none', color: 'black', paddingLeft: 10, paddingRight: 10, width: '20%' }}>
-                        <div>{categories[article.category-1]}</div>
-                        <img src={article.channelImageUrl} alt={`${article.channelName} 채널 프로필 이미지`} style={{ width: 110, height: 110, borderRadius: '50%', marginTop: 10 }}/>
-                        <div style={{ marginTop: 10 }}><b>{article.channelName}</b></div>
-                        <div style={{ marginTop: 5, wordBreak: 'keep-all', fontSize:"12pt", marginTop:'20px', textAlign:'center' }}>{article.channelDescription}</div>
-                    </a>
-                ))
-            }
-            </div>
-
-            <br/>
-            <div style={{marginTop:"40px",marginBottom:"20px", fontWeight:"600", fontSize:"20pt"}}>오늘의 콘텐츠</div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 30 }}>
-            {
-                [1,4].map(i => (
-                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 45 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 180, alignItems: 'center' }}>
+                <div style={{ width: '100%', height: 358, backgroundSize: 'cover', backgroundImage: `url('${'https://via.placeholder.com/1440x500'}')`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', textAlign: 'center' }}>
+                    <div style={{ fontSize: 28, color: 'white' }}>세단 제왕의 귀환, 풀체인지 그랜져 리뷰 영상들 보러 가기</div>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 180, maxWidth: 1032 }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 60 }}>
+                        <div style={{ fontSize: 22 }}>어쩌구 저쩌구</div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 36 }}>
+                            {
+                                randomArticles.slice(1, 4).map(article => 
+                                    <div key={article.id} style={{ flex: 1 }}>
+                                        <ArticleSummaryToday key={article.id} article={article} />
+                                    </div>    
+                                )
+                            }
+                        </div>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 60 }}>
+                        <div style={{ fontSize: 22 }}>차량 리뷰 영상 찾기 🔎</div>
+                        <div style={{ width: 940, display: 'flex', alignItems: 'center', gap: 36, justifyContent: 'space-between' }}>
+                            {
+                                brands.map(brand => 
+                                    <div style={{ display: 'flex', flexDirection: 'column', gap: 4, justifyContent: 'center', alignContent: 'center', textAlign: 'center' }}>
+                                        <img src={require(`../public/imgs/logos/${brand.logo}`).default.src} alt={`${brand.name} 로고`} style={{ width: 60, height: 60 }}/>
+                                        <span style={{ fontSize: 16 }}>{brand.name}</span>
+                                    </div>
+                                )
+                            }
+                        </div>
+                    </div>
+                    <div style={{ width: '100%' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: 22 }}>
+                                <span>🔥 요즘 사람들이 주목하는 차량</span>
+                                <span style={{ color: colors.primary }}>#그랜저</span>
+                            </div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: 14, paddingLeft: 16, paddingRight: 16, paddingTop: 10, paddingBottom: 10, borderRadius: 9999, borderColor: '#BDBDBD', borderWidth: 1, borderStyle: 'solid' }}>
+                                <img src={require('../public/imgs/refresh.svg').default.src} alt="새로고침 아이콘" style={{ width: 20, height: 20 }}/>
+                                <span style={{ fontSize: 14 }}>주목하는 차량 더보기</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 60 }}>
+                        <div style={{ fontSize: 22 }}>차량 리뷰 Pick 👍</div>
                         {
-                            randomArticles.slice(i,i+3).map(article => 
-                                <div key={article.id} style={{ flex: 1 }}>
-                                    <ArticleSummaryToday key={article.id} article={article} />
-                                </div>    
-                            )
+                            [1,4].map(i => (
+                                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 36 }}>
+                                    {
+                                        randomArticles.slice(i,i+3).map(article => 
+                                            <div key={article.id} style={{ flex: 1 }}>
+                                                <ArticleSummaryToday key={article.id} article={article} />
+                                            </div>    
+                                        )
+                                    }
+                                </div>
+                            ))
                         }
                     </div>
-                ))
-            }
+                </div>
             </div>
         </Layout>
     )

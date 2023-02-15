@@ -1,7 +1,7 @@
 export default function Author(props) {
     const styles = {
         author: {
-            display: 'flex', alignItems: 'center', gap: props.small ? 6 : 8,
+            display: 'flex', alignItems: 'center', gap: props.small ? 4 : 6,
         },
         authorImage: {
             borderRadius: '50%',
@@ -14,7 +14,8 @@ export default function Author(props) {
             WebkitLineClamp: 1,
             overflow: 'hidden',
             textOverflow: 'ellipsis',
-            fontSize : '13pt',
+            fontSize : props.small ? 14 : 16,
+            color: '#424242'
         },
     }
 
