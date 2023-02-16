@@ -1,9 +1,12 @@
 // TODO: 윗부분 색상 그라디언트
+import { useMediaQuery } from 'react-responsive';
 
 import Layout from "../../comps/Layout";
 import ArticleSummary from "../../comps/ArticleSummary";
 import React, { useState } from "react";
 import Link from "next/link";
+
+import ArticleSummaryToday from "../../comps/ArticleSummaryToday";
 
 import { categories, articles, colors } from "../../shared";
 export function getStaticPaths() {
@@ -18,6 +21,10 @@ export function getStaticProps({ params }) {
 }
 
 export default function CategoryIdPage(props) {
+	const isDesktop = useMediaQuery({
+    query: '(min-width: 1045px)'
+  })
+  const isMobile = useMediaQuery({ query: '(max-width: 1045px)' })
 	const articlesInCategory = articles.filter(
 		(article) => article.category == props.cid
 	);
@@ -76,9 +83,14 @@ export default function CategoryIdPage(props) {
 						</div>
 						<div>
 							<div style={{ display: 'flex', flexDirection: 'column', gap: 40 }}>
-								{
+								{isDesktop && 
 									articlesInCategory.map((a, i) =>
 										<ArticleSummary article={a}/>
+									)
+								}
+								{isMobile && 
+									articlesInCategory.map((a, i) =>
+										<ArticleSummaryToday article={a}/>
 									)
 								}
 								
