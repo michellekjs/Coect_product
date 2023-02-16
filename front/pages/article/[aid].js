@@ -121,7 +121,7 @@ export default function ArticleIdPage(props) {
 									subject={summary.subject}
 									start={summary.start}
 									end={summary.end}
-									isPlaying={i==1}
+									// isPlaying={i==1}
 								>
 									{summary.text}
 								</TextUnit>

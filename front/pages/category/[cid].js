@@ -1,5 +1,3 @@
-// TODO: 윗부분 색상 그라디언트
-
 import Layout from "../../comps/Layout";
 import ArticleSummary from "../../comps/ArticleSummary";
 import React, { useState } from "react";
@@ -44,15 +42,18 @@ export default function CategoryIdPage(props) {
 
 	return (
 		<Layout>
-			{/* <div style={{
+			<div style={{
 				width: "100%",
 				height: 419,
 				// background with linear gradient
-				background: 'linear-gradient(#e66465, #9198e5);'
-			}}/> */}
+				background: 'linear-gradient(#E9EAF0, rgba(0,0,0,0));',
+				position: 'absolute',
+				top: 0,
+				zIndex: -1
+			}}/>
 			
 			<div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-				<div style={{ width: '100%', paddingLeft: 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16 }}>
+				<div style={{ width: '100%', marginLeft: 30, paddingLeft: 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16 }}>
 					<div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
 						<img src={require('../../public/imgs/logos/hyundai.svg').default.src} alt="현대자동차 로고" style={{ width: 44, height: 44 }}/>
 						<span style={{ fontSize: 22 }}>현대</span>

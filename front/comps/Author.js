@@ -1,11 +1,13 @@
+import { colors } from '../shared'
+
 export default function Author(props) {
     const styles = {
         author: {
-            display: 'flex', alignItems: 'center', gap: props.small ? 4 : 6,
+            display: 'flex', alignItems: 'center', gap: props.verySmall ? 6 : props.small ? 4 : 6,
         },
         authorImage: {
             borderRadius: '50%',
-            width: props.small ? 20 : 30, height: props.small ? 20 : 30,
+            width: props.verySmall ? 17 : props.small ? 20 : 30, height: props.verySmall ? 17 : props.small ? 20 : 30,
         },
         authorName: {
             fontWeight: props.small ? 'normal' : 'bold',
@@ -14,8 +16,8 @@ export default function Author(props) {
             WebkitLineClamp: 1,
             overflow: 'hidden',
             textOverflow: 'ellipsis',
-            fontSize : props.small ? 14 : 16,
-            color: '#424242'
+            fontSize : props.verySmall ? 12 : props.small ? 14 : 16,
+            color: colors._300
         },
     }
 

@@ -1,5 +1,5 @@
 import Layout from '../comps/Layout';
-import ArticleSummaryTop from '../comps/ArticleSummaryTop';
+import ArticleSummaryHot from '../comps/ArticleSummaryHot';
 import ArticleSummaryToday from '../comps/ArticleSummaryToday';
 
 import { articles, categories, brands, colors } from '../shared';
@@ -48,13 +48,15 @@ export default function MainPage() {
 
     return (
         <Layout>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 180, alignItems: 'center' }}>
-                <div style={{ width: '100%', height: 358, backgroundSize: 'cover', backgroundImage: `url('${'https://via.placeholder.com/1440x500'}')`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', textAlign: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 180, alignItems: 'center', width: '100%' }}>
+                <div style={{ width: '100%', height: 358, backgroundSize: 'cover', backgroundImage: `url('${require(`../public/imgs/cover.png`).default.src}')`, backgroundPosition: 'center', display: 'flex', alignItems: 'center', justifyContent: 'space-between', textAlign: 'center' }}>
+                    <img src={require('../public/imgs/arrow_left.svg').default.src} alt={`왼쪽으로 전환`} style={{ height: 16, marginLeft: 60 }}/>
                     <div style={{ fontSize: 28, color: 'white' }}>세단 제왕의 귀환, 풀체인지 그랜져 리뷰 영상들 보러 가기</div>
+                    <img src={require('../public/imgs/arrow_right.svg').default.src} alt={`오른쪽으로 전환`} style={{ height: 16, marginRight: 60 }}/>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 180, maxWidth: 1032 }}>
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 60 }}>
-                        <div style={{ fontSize: 22 }}>어쩌구 저쩌구</div>
+                        <div style={{ fontSize: 22 }}>차량 리뷰 Pick 👍</div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: 36 }}>
                             {
                                 randomArticles.slice(1, 4).map(article => 
@@ -89,9 +91,18 @@ export default function MainPage() {
                                 <span style={{ fontSize: 14 }}>주목하는 차량 더보기</span>
                             </div>
                         </div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 24, marginTop: 60 }}>
+                            {
+                                Array(2).fill(0).map((_, i) => (
+                                    <div key={i} style={{ flex: 1 }}>
+                                        <ArticleSummaryHot key={i} article={randomArticles[i]} />
+                                    </div>
+                                ))
+                            }
+                        </div>
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 60 }}>
-                        <div style={{ fontSize: 22 }}>차량 리뷰 Pick 👍</div>
+                        <div style={{ fontSize: 22 }}>최신 차량 리뷰 보기</div>
                         {
                             [1,4].map(i => (
                                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 36 }}>
