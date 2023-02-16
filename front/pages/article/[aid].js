@@ -108,91 +108,59 @@ export default function ArticleIdPage(props) {
 								gap: 30,
 								justifyContent: "center",
 								alignItems: "center",
+								width: "100%",
 							}}
 						>
-							<iframe
-								style={{ borderRadius: 8, overflow: "hidden" }}
-								width="720"
-								height="405"
-								src={`https://www.youtube.com/embed/${article.videoId}`}
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-							></iframe>
-
-							{isDesktop && (
-								<div
-									style={{
-										flex: 1,
-										borderRadius: 8,
-										borderWidth: 1,
-										borderColor: "#919191",
-										borderStyle: "solid",
-										height: 405,
-										paddingTop: 18,
-										paddingLeft: 20,
-										paddingRight: 20,
-										paddingBottom: 18,
-										boxSizing: "border-box",
-									}}
-								>
-									<div
-										style={{
-											display: "flex",
-											flexDirection: "column",
-											gap: 20,
-										}}
-									>
-										<div style={{ fontSize: 16, color: colors.primaryDark }}>
-											목차
-										</div>
-										<div
-											style={{
-												display: "flex",
-												flexDirection: "column",
-												gap: 16,
-											}}
-										>
-											<span style={{ fontSize: 18, color: colors.primary }}>
-												1. 가격
-											</span>
-											<span style={{ fontSize: 18, color: "#424242" }}>
-												2. 옵션
-											</span>
-											<span style={{ fontSize: 18, color: "#424242" }}>
-												3. 승차감
-											</span>
-											<span style={{ fontSize: 18, color: "#424242" }}>
-												4. 총평
-											</span>
-										</div>
-									</div>
-								</div>
-							)}
-						</div>
-					</div>
-					<div style={{ display: "flex", flexDirection: "row",gap:20, justifyContent: "center",
-								alignItems: "center" }}>
-						{isMobile && (
 							<div
 								style={{
-									flex: 1,
+									position: "relative",
+									overflow: "hidden",
+									width: "95%",
+									paddingTop: "56.25%",
+									display: "flex",
+								}}
+							>
+								<iframe
+									style={{
+										borderRadius: 8,
+										overflow: "hidden",
+										position: "absolute",
+										top: "0",
+										left: "0",
+										bottom: "0",
+										right: "0",
+										margin: "auto",
+									}}
+									width="100%"
+									height="100%"
+									src={`https://www.youtube.com/embed/${article.videoId}`}
+									title="YouTube video player"
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowfullscreen
+								></iframe>
+							</div>
+							<div
+								style={{
+									// flex: 1,
+									height:"100%",
 									borderRadius: 8,
 									borderWidth: 1,
 									borderColor: "#919191",
 									borderStyle: "solid",
-									height: 360,
 									paddingTop: 18,
 									paddingLeft: 20,
 									paddingRight: 20,
 									paddingBottom: 18,
 									boxSizing: "border-box",
-								
 								}}
 							>
 								<div
-									style={{ display: "flex", flexDirection: "column", gap: 20 }}
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										gap: 20,
+									}}
 								>
 									<div style={{ fontSize: 16, color: colors.primaryDark }}>
 										목차
@@ -219,10 +187,21 @@ export default function ArticleIdPage(props) {
 									</div>
 								</div>
 							</div>
-						)}
+						</div>
+					</div>
+					<div
+						style={{
+							display: "flex",
+							flexDirection: "row",
+							gap: 20,
+							justifyContent: "center",
+							alignItems: "center",
+							// width: "80vw",
+						}}
+					>
 						<table
 							style={{
-								width: isDesktop ?"100%" : "70%",
+								width: "100%",
 								borderCollapse: "collapse",
 								borderRadius: 8,
 								borderStyle: "hidden",
@@ -298,12 +277,21 @@ export default function ArticleIdPage(props) {
 					</div>
 				</div>
 				<div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
-					<div style={{ fontSize: 20 }}>
+					<div style={{ fontSize: 20, display: "flex" }}>
 						<span style={{ color: colors.primary }}>현대</span>&nbsp;
 						<span style={{ color: colors.primary }}>코나</span>&nbsp;
 						<span>관련 영상 더보기</span>
 					</div>
-					<div style={{ width: "100%", display: "flex", gap: 36 }}>
+					<div
+						style={{
+							width: "100%",
+							display: "flex",
+							gap: 36,
+							flexDirection: isDesktop ? "row" : "column",
+							justifyContent: "center",
+							alignItems: "center",
+						}}
+					>
 						{recommendedArticles.map((article) => (
 							<div key={article.id} style={{ flex: 1 }}>
 								<ArticleSummaryToday article={article} />

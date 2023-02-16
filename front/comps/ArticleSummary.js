@@ -102,7 +102,7 @@ export default function ArticleSummary(props) {
 						}
 					/>
 				</div>
-			</div>
+			</div>}
 			
             
 		</Link>
