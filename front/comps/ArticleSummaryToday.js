@@ -91,7 +91,7 @@ export default function ArticleSummaryToday(props) {
 								name={props.article.channelName}
 								image={props.article.channelImageUrl}
 							/>
-							<span>|</span>
+							<span style={{ color: colors._500 }}>|</span>
 							<span style={{ fontSize: 14, color: '#919191' }}>{props.article.date.replaceAll('-','.')+'.'}</span>
 						</div>
 						<div style={styles.title}>{props.article.title}</div>

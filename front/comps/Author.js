@@ -10,7 +10,7 @@ export default function Author(props) {
             width: props.verySmall ? 17 : props.small ? 20 : 30, height: props.verySmall ? 17 : props.small ? 20 : 30,
         },
         authorName: {
-            fontWeight: props.small ? 'normal' : 'bold',
+            fontWeight: 'normal',
             display: '-webkit-box',
             WebkitBoxOrient: 'vertical',
             WebkitLineClamp: 1,
