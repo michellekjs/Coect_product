@@ -95,12 +95,13 @@ export default function Layout({ children }) {
 						<Menu right styles={styles}>
 							{brands.map((brand, index) => {
 							return (
-								<a
+								<Link
 									key={index + 1}
-									style={{ textDecoration: 'none', color: '#424242', fontSize: 15, marginBottom:'10px' }}
+									href={`/category/${index + 1}`}
+									style={{ textDecoration: 'none', color: '#424242', fontSize: 15, marginBottom : 10 }}
 								>
 									{brand.name}
-								</a>
+								</Link>
 							);
 						})}
 						</Menu>

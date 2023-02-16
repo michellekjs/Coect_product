@@ -16,6 +16,7 @@ export default function ArticleSummaryToday(props) {
 			textDecoration: "none",
 			color: "black",
 			overflow: "hidden",
+			width: "320px"
 		},
 		top: {
 			// marginTop: 10,
