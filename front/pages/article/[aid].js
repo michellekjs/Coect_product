@@ -182,12 +182,13 @@ export default function ArticleIdPage(props) {
 									borderWidth: 1,
 									borderColor: "#919191",
 									borderStyle: "solid",
-									height: 405,
+									height: 360,
 									paddingTop: 18,
 									paddingLeft: 20,
 									paddingRight: 20,
 									paddingBottom: 18,
 									boxSizing: "border-box",
+								
 								}}
 							>
 								<div
@@ -221,7 +222,7 @@ export default function ArticleIdPage(props) {
 						)}
 						<table
 							style={{
-								width: "100%",
+								width: isDesktop ?"100%" : "70%",
 								borderCollapse: "collapse",
 								borderRadius: 8,
 								borderStyle: "hidden",
