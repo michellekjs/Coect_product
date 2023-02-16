@@ -68,8 +68,8 @@ export default function CategoryIdPage(props) {
 					)
 				}
 				</div>
-				<div style={{ maxWidth: 1032, marginTop: 64 }}>
-				<div style={{ display: 'flex', flexDirection: 'column', gap: 29 }}>
+				<div style={{ maxWidth: 745, marginTop: 64 }}>
+					<div style={{ display: 'flex', flexDirection: 'column', gap: 60 }}>
 						<div style={{ display: 'flex', gap: 12, fontSize: 25 }}>
 							<span>리뷰 영상</span>
 							<span style={{ color: colors.primary }}>23</span>

@@ -8,7 +8,7 @@ export default function ArticleSummary(props) {
 	const styles = {
 		container: {
 			display: "flex",
-			width: "90%",
+			width: "100%",
 			// height: 200,
 			// marginTop: 20,
 			// marginBottom: props.top ? 40 : 30,
@@ -18,6 +18,7 @@ export default function ArticleSummary(props) {
 			// backgroundColor: "#FAFAFA",
 			// padding: "30px",
             // boxShadow: '5px 5px 5px 5px #F9F9F9',
+			height: 124
 		},
 		left: {
 			flex: 1,
@@ -25,12 +26,17 @@ export default function ArticleSummary(props) {
 			flexDirection: "column",
             justifyContent: 'space-between',
 			// height: 200,
-			paddingTop: 8, paddingBottom: 8
+			// paddingTop: 8, paddingBottom: 8
 			// gap: 26
 		},
 		title: {
 			fontSize: props.top ? 32 : 20,
 			fontWeight: "bold",
+			display: "-webkit-box",
+			WebkitBoxOrient: "vertical",
+			WebkitLineClamp: 2,
+			overflow: "hidden",
+			textOverflow: "ellipsis",
 		},
 		description: {
 			marginTop: 5,
@@ -54,8 +60,8 @@ export default function ArticleSummary(props) {
 		},
 		right: {
 			// width: props.top ? 360 : 240,
-			width: 200,
-			height: 112, // 16:9?
+			width: 220,
+			height: 124, // 16:9?
 			display: "flex",
 			justifyContent: "center",
 			alignItems: "center",
@@ -77,7 +83,7 @@ export default function ArticleSummary(props) {
 		>
 			<div style={styles.container}>
 				<div style={styles.left}>
-					<div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+					<div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
 						<div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 14, color: colors.primary }}>
 							<span>현대</span>
 							<span style={{ color: '#BDBDBD' }}>&gt;</span>

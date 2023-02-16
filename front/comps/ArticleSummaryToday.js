@@ -11,8 +11,9 @@ export default function ArticleSummaryToday(props) {
 			// background: "#fafafa",
             // boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
 			borderRadius: 8,
-			marginTop: 5,
-			marginBottom: 5,
+			// marginTop: 5,
+			// marginBottom: 5,
+			paddingBottom: 8,
 			textDecoration: "none",
 			color: "black",
 			overflow: "hidden",
@@ -40,16 +41,19 @@ export default function ArticleSummaryToday(props) {
 			padding: 12,
 			display: 'flex',
 			flexDirection: 'column',
-			gap: 24
+			// gap: 24
+			justifyContent: 'space-between',
+			height: 167
 		},
 		title: {
 			fontSize: 18,
-			fontWeight: "bold",
+			// fontWeight: "bold",
 			display: "-webkit-box",
 			WebkitBoxOrient: "vertical",
 			WebkitLineClamp: 2,
 			overflow: "hidden",
 			textOverflow: "ellipsis",
+			lineHeight: 1.4
 		},
 		authorContainer: {
 			// marginBottom: 4,

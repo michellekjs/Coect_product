@@ -50,7 +50,7 @@ export default function TextUnit(props) {
 				</div>
 				<span style={{ fontSize: 20, color: '#212121' }}>{props.subject}</span>
 			</div>
-			<span style={{ fontSize: 18 }}>
+			<span style={{ fontSize: 16 }}>
 				{props.children}
 			</span>
 		</div>
