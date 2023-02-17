@@ -124,7 +124,7 @@ export default function Layout({ children }) {
 					}
 					
 				</div>
-			<div style={{ position: 'relative', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+			<div style={{ position: 'relative', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop:50 }}>
 				{children}
 			</div>
 			<br />
