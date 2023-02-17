@@ -109,7 +109,7 @@ export default function MainPage() {
 							gap: 60,
 						}}
 					>
-						<div style={{ fontSize: 22 }}>차량 리뷰 Pick 👍</div>
+						<div style={{ fontSize: 22, fontWeight: "bold" }}>차량 리뷰 Pick 👍</div>
 							<div style={{ display: "flex", alignItems: "center", flexDirection: isMobile? "column":"row", gap: isMobile? 20: 36, width: isMobile? "80%": "100%" }}>
 								{randomArticles.slice(1, 4).map((article) => (
 									<div key={article.id} style={{ flex: 1 }}>
