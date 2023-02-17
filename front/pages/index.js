@@ -300,7 +300,7 @@ export default function MainPage() {
                         </div>
 					</div>
 					<div style={{ display: "flex", flexDirection: "column", gap: 60 }}>
-						<div style={{ fontSize: 22, fontWeight: 500 }}>최신 차량 리뷰 보기</div>
+						<div style={{ fontSize: 22, fontWeight: 500 }}>최신 차량 리뷰 콘텐츠</div>
 						{[1, 4].map((i) => (
 							<div
 								key={i}

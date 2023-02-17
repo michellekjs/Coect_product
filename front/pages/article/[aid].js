@@ -87,7 +87,7 @@ export default function ArticleIdPage(props) {
 								<span>그랜저</span>
 							</div>
 							<div style={{ dipslay: "flex", gap: 6 }}>
-								<div style={{ fontSize: isMobile? 24 : 32 }}>
+								<div style={{ fontWeight: "500",fontSize: isMobile? 24 : 32 }}>
 									코엑트 전직원에게 그랜저 하이브리드 제공 선언?
 								</div>
 								<div style={{ display: "flex", gap: 6, alignItems: "center" }}>
@@ -95,7 +95,7 @@ export default function ArticleIdPage(props) {
 										name={article.channelName}
 										image={article.channelImageUrl}
 									/>
-									<span>|</span>
+									<span style={{color: "#919191"}}>|</span>
 									<span style={{ fontSize: 16, color: "#919191" }}>
 										{article.date.replaceAll("-", ".") + "."}
 									</span>
