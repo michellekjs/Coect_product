@@ -71,7 +71,7 @@ export default function MainPage() {
 				<div
 					style={{
 						width: "100%",
-						height: 358,
+						height: isMobile? 180 : 358,
 						backgroundSize: "contain",
 						backgroundImage: `url('${"https://via.placeholder.com/1440x500"}')`,
 						display: "flex",
@@ -82,7 +82,7 @@ export default function MainPage() {
 						marginLeft: 0,
 					}}
 				>
-					<div style={{ fontSize: 28, color: "white" }}>
+					<div style={{ fontSize: isMobile? 16 : 28, color: "white" }}>
 						세단 제왕의 귀환, 풀체인지 그랜져 리뷰 영상들 보러 가기
 					</div>
 				</div>

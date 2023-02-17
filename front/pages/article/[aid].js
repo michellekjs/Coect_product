@@ -87,7 +87,7 @@ export default function ArticleIdPage(props) {
 								<span>그랜저</span>
 							</div>
 							<div style={{ dipslay: "flex", gap: 6 }}>
-								<div style={{ fontSize: 32 }}>
+								<div style={{ fontSize: isMobile? 24 : 32 }}>
 									코엑트 전직원에게 그랜저 하이브리드 제공 선언?
 								</div>
 								<div style={{ display: "flex", gap: 6, alignItems: "center" }}>
@@ -172,16 +172,16 @@ export default function ArticleIdPage(props) {
 											gap: 16,
 										}}
 									>
-										<span style={{ fontSize: 18, color: colors.primary }}>
+										<span style={{ fontSize: isMobile? 14: 18, color: colors.primary }}>
 											1. 가격
 										</span>
-										<span style={{ fontSize: 18, color: "#424242" }}>
+										<span style={{ fontSize: isMobile? 14: 18, color: "#424242" }}>
 											2. 옵션
 										</span>
-										<span style={{ fontSize: 18, color: "#424242" }}>
+										<span style={{ fontSize: isMobile? 14: 18, color: "#424242" }}>
 											3. 승차감
 										</span>
-										<span style={{ fontSize: 18, color: "#424242" }}>
+										<span style={{ fontSize: isMobile? 14: 18, color: "#424242" }}>
 											4. 총평
 										</span>
 									</div>
@@ -210,7 +210,7 @@ export default function ArticleIdPage(props) {
 								overflow: "hidden",
 							}}
 						>
-							<tr style={{ textAlign: "center" }}>
+							<tr style={{ textAlign: "center", fontSize: isMobile?14:16 }}>
 								<th colspan="2">SORENTO / 4세대</th>
 							</tr>
 							{[

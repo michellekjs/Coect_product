@@ -1,10 +1,15 @@
 import Link from "next/link";
+import { useMediaQuery } from "react-responsive";
 
 import Author from "./Author";
 import { colors } from "../shared";
 
 
 export default function ArticleSummaryToday(props) {
+		const isDesktop = useMediaQuery({
+		query: "(min-width: 1045px)",
+	});
+	const isMobile = useMediaQuery({ query: "(max-width: 1045px)" });
 	const styles = {
 		container: {
 			border: '1px solid #dbdbdb',
@@ -44,7 +49,7 @@ export default function ArticleSummaryToday(props) {
 			gap: 24
 		},
 		title: {
-			fontSize: 18,
+			fontSize: isMobile? 14: 18,
 			fontWeight: "bold",
 			display: "-webkit-box",
 			WebkitBoxOrient: "vertical",
@@ -89,11 +94,11 @@ export default function ArticleSummaryToday(props) {
 								image={props.article.channelImageUrl}
 							/>
 							<span>|</span>
-							<span style={{ fontSize: 14, color: '#919191' }}>{props.article.date.replaceAll('-','.')+'.'}</span>
+							<span style={{ fontSize: isMobile? 12: 14, color: '#919191' }}>{props.article.date.replaceAll('-','.')+'.'}</span>
 						</div>
 						<div style={styles.title}>{props.article.title}</div>
 					</div>
-					<div style={{ display: 'flex', gap: 6, fontSize: 14, color: colors.primary }}>
+					<div style={{ display: 'flex', gap: 6, fontSize: isMobile? 12: 14, color: colors.primary }}>
 						<span>현대</span>
 						<span>코나</span>
 					</div>

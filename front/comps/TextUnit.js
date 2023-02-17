@@ -1,4 +1,5 @@
 import { colors } from "../shared";
+import {useMediaQuery} from "react-responsive"
 
 function seconds2timetamp(seconds) {
 	var hours = Math.floor(seconds / 3600);
@@ -21,6 +22,10 @@ function seconds2timetamp(seconds) {
 }
 
 export default function TextUnit(props) {
+		const isDesktop = useMediaQuery({
+		query: "(min-width: 1045px)",
+	});
+	const isMobile = useMediaQuery({ query: "(max-width: 1045px)" });
 	const styles = {
 		timestamp: {
 			color: "#18436B",
@@ -50,7 +55,7 @@ export default function TextUnit(props) {
 				</div>
 				<span style={{ fontSize: 20, color: '#212121' }}>{props.subject}</span>
 			</div>
-			<span style={{ fontSize: 18 }}>
+			<span style={{ fontSize: isMobile? 12: 18, paddingRight:"10px" }}>
 				{props.children}
 			</span>
 		</div>
