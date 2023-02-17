@@ -1,10 +1,17 @@
 import Link from "next/link";
+import { useMediaQuery } from "react-responsive";
 
 import Author from "./Author";
 import { colors } from "../shared";
 
+import style from './hover.module.css';
+
 
 export default function ArticleSummaryToday(props) {
+		const isDesktop = useMediaQuery({
+		query: "(min-width: 1045px)",
+	});
+	const isMobile = useMediaQuery({ query: "(max-width: 1045px)" });
 	const styles = {
 		container: {
 			border: '1px solid #dbdbdb',
@@ -17,6 +24,7 @@ export default function ArticleSummaryToday(props) {
 			textDecoration: "none",
 			color: "black",
 			overflow: "hidden",
+			width: "320px"
 		},
 		top: {
 			// marginTop: 10,
@@ -46,8 +54,8 @@ export default function ArticleSummaryToday(props) {
 			height: 167
 		},
 		title: {
-			fontSize: 18,
-			// fontWeight: "bold",
+			fontSize: isMobile? 16: 18,
+			fontWeight: "bold",
 			display: "-webkit-box",
 			WebkitBoxOrient: "vertical",
 			WebkitLineClamp: 2,
@@ -73,7 +81,7 @@ export default function ArticleSummaryToday(props) {
 			href={`/article/${props.article.id}`}
 			style={{ textDecoration: "none" }}
 		>
-			<div style={styles.container}>
+			<div style={styles.container} className={style.article}>
 				<div style={styles.top}>
 					<img
 						style={styles.thumbnail}
@@ -91,12 +99,12 @@ export default function ArticleSummaryToday(props) {
 								name={props.article.channelName}
 								image={props.article.channelImageUrl}
 							/>
-							<span style={{ color: colors._500 }}>|</span>
-							<span style={{ fontSize: 14, color: '#919191' }}>{props.article.date.replaceAll('-','.')+'.'}</span>
+							<span style={{color:"#BDBDBD"}}>|</span>
+							<span style={{ fontSize: isMobile? 14: 14, color: '#919191' }}>{props.article.date.replaceAll('-','.')+'.'}</span>
 						</div>
 						<div style={styles.title}>{props.article.title}</div>
 					</div>
-					<div style={{ display: 'flex', gap: 6, fontSize: 14, color: colors.primary }}>
+					<div style={{ display: 'flex', gap: 6, fontSize: isMobile? 12: 14, color: colors.primary }}>
 						<span>현대</span>
 						<span>코나</span>
 					</div>

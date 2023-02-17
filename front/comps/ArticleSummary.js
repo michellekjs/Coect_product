@@ -2,9 +2,12 @@ import Link from "next/link";
 
 import Subtitle from "./Subtitle";
 
+
 import { colors } from "../shared";
 
 export default function ArticleSummary(props) {
+		
+	
 	const styles = {
 		container: {
 			display: "flex",
@@ -81,7 +84,7 @@ export default function ArticleSummary(props) {
 			href={`/article/${props.article.id}`}
 			style={{ textDecoration: "none" }}
 		>
-			<div style={styles.container}>
+		 <div style={styles.container}>
 				<div style={styles.left}>
 					<div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
 						<div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 14, color: colors.primary }}>
@@ -106,6 +109,7 @@ export default function ArticleSummary(props) {
 					/>
 				</div>
 			</div>
+			
             
 		</Link>
 	);
