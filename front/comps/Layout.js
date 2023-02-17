@@ -4,6 +4,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useMediaQuery } from 'react-responsive';
 import { slide as Menu } from 'react-burger-menu';
+import ReactDOM from 'react-dom';
+import React, { useState, useEffect } from 'react';
+
 
 import { categories, colors, brands } from "../shared";
 
@@ -15,7 +18,8 @@ export default function Layout({ children }) {
     query: '(min-width: 1045px)'
   })
   const isMobile = useMediaQuery({ query: '(max-width: 1045px)' })
-	
+	const [opacity,setOpacity] = useState(100);
+
 	const styles = {
   bmBurgerButton: {
     position: 'fixed',
@@ -64,16 +68,29 @@ export default function Layout({ children }) {
 	// 	small: {}
 	// };
 
+	useEffect(function mount() {
+    function onScroll() {
+      setOpacity(window.scrollY)
+			console.log(opacity)
+    }
+
+    window.addEventListener("scroll", onScroll);
+
+    return function unMount() {
+      window.removeEventListener("scroll", onScroll);
+    };
+  });
+
+
 	return (
 		<html style={{ width: '100vw' }}>
 			<head>
 				<title>COECT</title>
 			</head>
 			<body style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', margin:0 ,overflowX:"hidden" }}>
-				<div style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, width: '95%', alignItems:'center' }}>
+				<div style={{ display: 'flex', justifyContent: 'space-between', paddingLeft:30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, width: '99%', alignItems:'center', position:"fixed", zIndex:1, backgroundColor:"white", opacity: opacity<350 ? 1 : 0.8 }}>
 					<Link href="/" style={{ display: 'flex', gap: 6, alignItems: 'baseline', textDecoration: 'none' }}>
 						<img src={require('../public/imgs/logo.svg').default.src} alt="COECT 로고" style={{ height: 26 }}/>
-						{/* <span style={{ fontSize: 11, color: '#424242',paddingTop:"10px" }}>Fusion of Video & Text</span> */}
 					</Link>
 					{isBigScreen && <div style={{display:'flex', flexDirection: 'row', gap: 10 }}>
 						{brands.map((brand, index) => {
