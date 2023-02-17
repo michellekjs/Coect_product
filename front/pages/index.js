@@ -109,7 +109,7 @@ export default function MainPage() {
 							gap: 60,
 						}}
 					>
-						<div style={{ fontSize: 22, fontWeight: "bold" }}>차량 리뷰 Pick 👍</div>
+						<div style={{ fontSize: 22, fontWeight: 500}}>차량 리뷰 Pick 👍</div>
 							<div style={{ display: "flex", alignItems: "center", flexDirection: isMobile? "column":"row", gap: isMobile? 20: 36, width: isMobile? "80%": "100%" }}>
 								{randomArticles.slice(1, 4).map((article) => (
 									<div key={article.id} style={{ flex: 1 }}>
@@ -126,7 +126,7 @@ export default function MainPage() {
 							gap: 60,
 						}}
 					>
-						<div style={{ fontSize: 22 }}>차량 리뷰 영상 찾기 🔎</div>
+						<div style={{ fontSize: 22, fontWeight: 500 }}>차량 리뷰 찾아보기 🔎</div>
 						{isBigScreen && (
 							<div
 								style={{
@@ -247,6 +247,7 @@ export default function MainPage() {
 									alignItems: "center",
 									gap: 12,
 									fontSize: 22,
+									fontWeight: 500,
 								}}
 							>
 								<span>🔥 요즘 사람들이 주목하는 차량</span>
@@ -286,7 +287,7 @@ export default function MainPage() {
                         </div>
 					</div>
 					<div style={{ display: "flex", flexDirection: "column", gap: 60 }}>
-						<div style={{ fontSize: 22 }}>최신 차량 리뷰 보기</div>
+						<div style={{ fontSize: 22, fontWeight: 500 }}>최신 차량 리뷰 보기</div>
 						{[1, 4].map((i) => (
 							<div
 								key={i}
