@@ -71,7 +71,7 @@ export default function Layout({ children }) {
 			<head>
 				<title>COECT</title>
 			</head>
-			<body style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100vw', margin:0 }}>
+			<body style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100vw', margin:0 ,overflowX:"hidden" }}>
 				<div style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, width: '95%', alignItems:'center' }}>
 					<Link href="/" style={{ display: 'flex', gap: 6, alignItems: 'baseline', textDecoration: 'none' }}>
 						<img src={require('../public/imgs/logo.svg').default.src} alt="COECT 로고" style={{ height: 20 }}/>

@@ -156,7 +156,7 @@ export default function MainPage() {
 							</div>
 						)}
 						{isMobile && (
-							<div style={{width:"60vw"}}>
+							<div >
 								{" "}
 								<div
 									style={{

@@ -70,7 +70,7 @@ export default function ArticleIdPage(props) {
 					gap: 112,
 				}}
 			>
-				<div style={{ display: "flex", flexDirection: "column", gap: 60 }}>
+				<div style={{ display: "flex", flexDirection: "column", gap: 60 , margin: isMobile? "10px": "0px"}}>
 					<div style={{ display: "flex", flexDirection: "column", gap: 36 }}>
 						<div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
 							<div
@@ -105,7 +105,7 @@ export default function ArticleIdPage(props) {
 						<div
 							style={{
 								display: "flex",
-								gap: 30,
+								gap: isMobile? 5: 30,
 								justifyContent: "center",
 								alignItems: "center",
 								width: "100%",
@@ -115,7 +115,7 @@ export default function ArticleIdPage(props) {
 								style={{
 									position: "relative",
 									overflow: "hidden",
-									width: "95%",
+									width: isMobile? "70%" : "95%",
 									paddingTop: "56.25%",
 									display: "flex",
 								}}
@@ -202,6 +202,7 @@ export default function ArticleIdPage(props) {
 						<table
 							style={{
 								width: "100%",
+								margin: isMobile ? "10px" : "0px",
 								borderCollapse: "collapse",
 								borderRadius: 8,
 								borderStyle: "hidden",
@@ -226,7 +227,7 @@ export default function ArticleIdPage(props) {
 								<tr>
 									<td
 										style={{
-											width: 216,
+											width: isMobile? 100: 216,
 											paddingTop: 11,
 											paddingBottom: 11,
 											paddingLeft: 15,
@@ -245,7 +246,7 @@ export default function ArticleIdPage(props) {
 							))}
 						</table>
 					</div>
-					<div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+					<div style={{ margin: "10px", display: "flex", flexDirection: "column", gap: 20 }}>
 						{article.summaries.map((summary, i) =>
 							summary.text ? (
 								<TextUnit
