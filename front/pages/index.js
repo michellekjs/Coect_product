@@ -4,10 +4,10 @@ import ArticleSummaryHot from '../comps/ArticleSummaryHot';
 import ArticleSummaryTop from "../comps/ArticleSummaryTop";
 import ArticleSummaryToday from "../comps/ArticleSummaryToday";
 import { useMediaQuery } from "react-responsive";
+import styles from "../comps/hover.module.css"
 
 
 import { articles, categories, brands, colors } from "../shared";
-
 export default function MainPage() {
 	const isBigScreen = useMediaQuery({
 		query: "(min-width: 1045px)",
@@ -155,6 +155,7 @@ export default function MainPage() {
 											}
 											alt={`${brand.name} 로고`}
 											style={{ width: 60, height: 60 }}
+											className={styles.logohover}
 										/>
 										<span style={{ fontSize: 16 }}>{brand.name}</span>
 									</div>
