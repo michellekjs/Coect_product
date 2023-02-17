@@ -75,14 +75,17 @@ export default function MainPage() {
 						width: "100%",
 						height: isMobile? 180 : 358,
 						backgroundSize: "cover",
-						backgroundImage: `url('${require(`../public/imgs/cover.png`).default.src}')`,
+						background: `linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+						url('${require(`../public/imgs/cover.png`).default.src}')`,
 						display: "flex",
-						backgroundPosition:"center",
+						backgroundPosition:"center center",
 						alignItems: "center",
 						justifyContent: "space-between",
 						flexDirection: "row",
 						textAlign: "center",
 						marginLeft: 0,
+						backgroundRepeat:'no-repeat',
+
 
 					}}
 				>
@@ -145,12 +148,8 @@ export default function MainPage() {
 											gap: 4,
 											justifyContent: "center",
 											alignContent: "center",
-											alignItems:'center',
 											textAlign: "center",
-											width: "100px",
-											height: "100px"
 										}}
-										className={styles.logo}
 									>
 										<img
 											src={
@@ -159,8 +158,7 @@ export default function MainPage() {
 											}
 											alt={`${brand.name} 로고`}
 											style={{ width: 60, height: 60 }}
-											
-											
+											className={styles.logohover}
 										/>
 										<span style={{ fontSize: 16 }}>{brand.name}</span>
 									</div>
@@ -187,12 +185,8 @@ export default function MainPage() {
 												gap: 4,
 												justifyContent: "center",
 												alignContent: "center",
-												alignItems: "center",
 												textAlign: "center",
-												width: "100px",
-												height: "100px"
 											}}
-											className={styles.logo}
 										>
 											<img
 												src={
@@ -201,7 +195,6 @@ export default function MainPage() {
 												}
 												alt={`${brand.name} 로고`}
 												style={{ width: 60, height: 60 }}
-												
 											/>
 											<span style={{ fontSize: 16 }}>{brand.name}</span>
 										</div>
@@ -225,11 +218,7 @@ export default function MainPage() {
 												justifyContent: "center",
 												alignContent: "center",
 												textAlign: "center",
-												alignItems:"center",
-													width: "100px",
-												height: "100px"
 											}}
-											className={styles.logo}
 										>
 											<img
 												src={
