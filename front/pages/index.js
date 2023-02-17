@@ -149,7 +149,11 @@ export default function MainPage() {
 											justifyContent: "center",
 											alignContent: "center",
 											textAlign: "center",
+											alignItems: "center",
+											width:"100px",
+											height:"100px"
 										}}
+										className={styles.logo}
 									>
 										<img
 											src={
@@ -173,7 +177,7 @@ export default function MainPage() {
 										width: "100%",
 										display: "flex",
 										alignItems: "center",
-										gap: 36,
+										gap: 30,
 										justifyContent: "space-between",
 									}}
 								>
@@ -186,7 +190,11 @@ export default function MainPage() {
 												justifyContent: "center",
 												alignContent: "center",
 												textAlign: "center",
-											}}
+												alignItems: "center",
+												width:"100px",
+												height:"100px"
+										}}
+										className={styles.logo}
 										>
 											<img
 												src={
@@ -205,7 +213,7 @@ export default function MainPage() {
 										width: "100%",
 										display: "flex",
 										alignItems: "center",
-										gap: 36,
+										gap: 30,
 										justifyContent: "space-between",
 									}}
 								>
@@ -216,9 +224,11 @@ export default function MainPage() {
 												flexDirection: "column",
 												gap: 4,
 												justifyContent: "center",
-												alignContent: "center",
-												textAlign: "center",
-											}}
+												alignItems: "center",
+												width:"100px",
+												height:"100px"
+										}}
+										className={styles.logo}
 										>
 											<img
 												src={
