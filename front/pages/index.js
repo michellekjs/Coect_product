@@ -74,10 +74,10 @@ export default function MainPage() {
 					style={{
 						width: "100%",
 						height: isMobile? 180 : 358,
-						backgroundSize: "cover",
 						background: `linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
 						url('${require(`../public/imgs/cover.png`).default.src}')`,
 						display: "flex",
+						backgroundSize: "cover",
 						backgroundPosition:"center center",
 						alignItems: "center",
 						justifyContent: "space-between",
