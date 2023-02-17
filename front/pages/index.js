@@ -246,7 +246,7 @@ export default function MainPage() {
 							</div>
 						)}
 					</div>
-					<div style={{ width: "95%" }}>
+					<div style={{ width: "100%" }}>
 						<div
 							style={{
 								display: "flex",
