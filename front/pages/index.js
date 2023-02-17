@@ -145,8 +145,12 @@ export default function MainPage() {
 											gap: 4,
 											justifyContent: "center",
 											alignContent: "center",
+											alignItems:'center',
 											textAlign: "center",
+											width: "100px",
+											height: "100px"
 										}}
+										className={styles.logo}
 									>
 										<img
 											src={
@@ -155,7 +159,8 @@ export default function MainPage() {
 											}
 											alt={`${brand.name} 로고`}
 											style={{ width: 60, height: 60 }}
-											className={styles.logohover}
+											
+											
 										/>
 										<span style={{ fontSize: 16 }}>{brand.name}</span>
 									</div>
@@ -182,8 +187,12 @@ export default function MainPage() {
 												gap: 4,
 												justifyContent: "center",
 												alignContent: "center",
+												alignItems: "center",
 												textAlign: "center",
+												width: "100px",
+												height: "100px"
 											}}
+											className={styles.logo}
 										>
 											<img
 												src={
@@ -192,6 +201,7 @@ export default function MainPage() {
 												}
 												alt={`${brand.name} 로고`}
 												style={{ width: 60, height: 60 }}
+												
 											/>
 											<span style={{ fontSize: 16 }}>{brand.name}</span>
 										</div>
@@ -215,7 +225,11 @@ export default function MainPage() {
 												justifyContent: "center",
 												alignContent: "center",
 												textAlign: "center",
+												alignItems:"center",
+													width: "100px",
+												height: "100px"
 											}}
+											className={styles.logo}
 										>
 											<img
 												src={
