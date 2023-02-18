@@ -52,13 +52,6 @@ export default function ArticleIdPage(props) {
 			a.id != article.id
 	);
 
-	const relatedArticlesByKeywords = article.keywords.map((k) => ({
-		keyword: k,
-		articles: articles.filter(
-			(a) => a.keywords.includes(k) && a.id != article.id
-		),
-	}));
-
 	return (
 		<Layout>
 			<div
