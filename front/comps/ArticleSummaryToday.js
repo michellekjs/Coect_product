@@ -55,6 +55,7 @@ export default function ArticleSummaryToday(props) {
 		},
 		title: {
 			fontSize: isMobile? 16: 18,
+			fontWeight: "bold",
 			display: "-webkit-box",
 			WebkitBoxOrient: "vertical",
 			WebkitLineClamp: 2,
@@ -80,7 +81,7 @@ export default function ArticleSummaryToday(props) {
 			href={`/article/${props.article.id}`}
 			style={{ textDecoration: "none" }}
 		>
-			<div style={styles.container} className={style.article}>
+			<div style={styles.container} className={isMobile? style.normal : style.article}>
 				<div style={styles.top}>
 					<img
 						style={styles.thumbnail}

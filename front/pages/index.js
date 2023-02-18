@@ -9,7 +9,7 @@ import styles from "../comps/hover.module.css"
 
 import { articles, categories, brands, colors } from "../shared";
 export default function MainPage() {
-	const isBigScreen = useMediaQuery({
+	const isDesktop = useMediaQuery({
 		query: "(min-width: 1045px)",
 	});
 	const isMobile = useMediaQuery({ query: "(max-width: 1045px)" });
@@ -89,11 +89,11 @@ export default function MainPage() {
 
 					}}
 				>
-					<img src={require('../public/imgs/arrow_left.svg').default.src} alt={`왼쪽으로 전환`} style={{ height: 16, marginLeft: 60 }}/>
-					<div style={{ fontSize: isMobile? 16 : 28, color: "white" }}>
-						세단 제왕의 귀환, 풀체인지 그랜져 리뷰 영상들 보러 가기
+					{isDesktop && <img src={require('../public/imgs/arrow_left.svg').default.src} alt={`왼쪽으로 전환`} style={{ height: 16, marginLeft: 60 }}/>}
+					<div style={{ fontSize: isMobile? 16 : 28, color: "white" , display: "flex", textAlign: isMobile ? "start": "center", marginLeft: isMobile ? "20px" : "0px" }}>
+						세단 제왕의 귀환, {isMobile && <br/> } 풀체인지 그랜져 리뷰 영상들 보러 가기
 					</div>
-					<img src={require('../public/imgs/arrow_right.svg').default.src} alt={`오른쪽으로 전환`} style={{ height: 16, marginRight: 60 }}/>
+					{isDesktop && <img src={require('../public/imgs/arrow_right.svg').default.src} alt={`오른쪽으로 전환`} style={{ height: 16, marginRight: 60 }}/>}
 				</div>
 				<div
 					style={{
@@ -130,7 +130,7 @@ export default function MainPage() {
 						}}
 					>
 						<div style={{ fontSize: 22, fontWeight: 500 }}>차량 리뷰 찾아보기 🔎</div>
-						{isBigScreen && (
+						{isDesktop && (
 							<div
 								style={{
 									width: 940,
@@ -150,10 +150,10 @@ export default function MainPage() {
 											alignContent: "center",
 											textAlign: "center",
 											alignItems: "center",
-											width:"100px",
-											height:"100px"
+											width:isMobile ? "60px" : "100px",
+											height:isMobile ? "60px" : "100px",
 										}}
-										className={styles.logo}
+										className={ styles.logo}
 									>
 										<img
 											src={
@@ -161,8 +161,8 @@ export default function MainPage() {
 													.src
 											}
 											alt={`${brand.name} 로고`}
-											style={{ width: 60, height: 60 }}
-											className={styles.logohover}
+											style={{ width: isDesktop ? 60 : 40, height: isDesktop? 60 : 40}}
+											className={isDesktop ?  styles.logo : styles.normal}
 										/>
 										<span style={{ fontSize: 16 }}>{brand.name}</span>
 									</div>
@@ -170,18 +170,19 @@ export default function MainPage() {
 							</div>
 						)}
 						{isMobile && (
-							<div >
+							<div>
 								{" "}
 								<div
 									style={{
 										width: "100%",
 										display: "flex",
 										alignItems: "center",
-										gap: 30,
+										gap: 20,
 										justifyContent: "space-between",
+										
 									}}
 								>
-									{brands.slice(1, 5).map((brand) => (
+									{brands.slice(0, 4).map((brand) => (
 										<div
 											style={{
 												display: "flex",
@@ -191,10 +192,11 @@ export default function MainPage() {
 												alignContent: "center",
 												textAlign: "center",
 												alignItems: "center",
-												width:"100px",
-												height:"100px"
+												width:"60px",
+												height:"60px",
+												marginBottom : "40px"
 										}}
-										className={styles.logo}
+										className={isMobile? styles.normal : styles.logo}
 										>
 											<img
 												src={
@@ -202,7 +204,7 @@ export default function MainPage() {
 														.src
 												}
 												alt={`${brand.name} 로고`}
-												style={{ width: 60, height: 60 }}
+												style={{ width: 40, height: 40 }}
 											/>
 											<span style={{ fontSize: 16 }}>{brand.name}</span>
 										</div>
@@ -225,10 +227,10 @@ export default function MainPage() {
 												gap: 4,
 												justifyContent: "center",
 												alignItems: "center",
-												width:"100px",
-												height:"100px"
+												width:"60px",
+												height:"60px"
 										}}
-										className={styles.logo}
+										className={isMobile? styles.normal : styles.logo}
 										>
 											<img
 												src={
@@ -236,7 +238,7 @@ export default function MainPage() {
 														.src
 												}
 												alt={`${brand.name} 로고`}
-												style={{ width: 60, height: 60 }}
+												style={{ width: 40, height: 40 }}
 											/>
 											<span style={{ fontSize: 16 }}>{brand.name}</span>
 										</div>
@@ -286,7 +288,7 @@ export default function MainPage() {
 									alt="새로고침 아이콘"
 									style={{ width: 20, height: 20 }}
 								/>
-								<span style={{ fontSize: 14 }}>주목하는 차량 더보기</span>
+								{isDesktop && <span style={{ fontSize: 14 }}>주목하는 차량 더보기</span> }
 							</div>
 						</div>
 						 <div style={{ display: 'flex', alignItems: 'flex-start', gap: 24, marginTop: 60, flexDirection: isMobile? "column" : "row", }}>

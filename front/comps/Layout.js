@@ -25,8 +25,8 @@ export default function Layout({ children }) {
     position: 'fixed',
     width: '20px',
     height: '20px',
-    right: '30px',
-    top: '16px'
+    right: isMobile ? "16px" : '30px',
+    top: ' 20px'
   },
   bmBurgerBars: {
     background: '#373a47'
@@ -43,6 +43,7 @@ export default function Layout({ children }) {
   },
   bmMenuWrap: {
     position: 'fixed',
+		top: "0px",
     height: '100%'
   },
   bmMenu: {
