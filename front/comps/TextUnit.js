@@ -15,12 +15,16 @@ export default function TextUnit(props) {
 		},
 	};
 	return (
-		<div style={{ 
-			display: 'flex', flexDirection: 'column', gap: 12, paddingTop: 16, paddingBottom: 16, paddingLeft: 24, paddignRight: 24, borderRadius: 8,
-			borderColor: '#DBDBDB', borderWidth: 1, 
-			borderStyle: props.isPlaying ? 'hidden' : 'solid',
-			background: props.isPlaying ? colors.primaryBG : 'white', 
-		}}>
+		<a
+			onClick={() => { props.seekTo() }} href="#/"
+			style={{ 
+				display: 'flex', flexDirection: 'column', gap: 12, paddingTop: 16, paddingBottom: 16, paddingLeft: 24, paddignRight: 24, borderRadius: 8,
+				borderColor: '#DBDBDB', borderWidth: 1, 
+				borderStyle: props.isPlaying ? 'hidden' : 'solid',
+				background: props.isPlaying ? colors.primaryBG : 'white', 
+				textDecoration: "none", color: "black"
+			}}
+		>
 			<div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
 				<div style={{ 
 					display: 'flex', alignItems: 'center', gap: 4, borderRadius: 6, paddingLeft: 12, paddingRight: 12, paddingTop: 8, paddingBottom: 8,
@@ -41,7 +45,7 @@ export default function TextUnit(props) {
 			<span style={{ fontSize: isMobile? 12: 16, paddingRight:"10px" }}>
 				{props.children}
 			</span>
-		</div>
+		</a>
 		// <p style={{ lineHeight: 2 }}>
 		// 	{props.subject && (
 		// 		<b style={{ fontWeight: "bold" }}>{props.subject} </b>

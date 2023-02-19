@@ -1,6 +1,6 @@
-import React from "react";
+import { useState, useRef} from "react";
 import { useMediaQuery } from "react-responsive";
-// import YouTube from 'react-youtube';
+import YouTube from 'react-youtube';
 
 import Layout from "../../comps/Layout";
 import Subtitle from "../../comps/Subtitle";
@@ -29,6 +29,18 @@ export function getStaticProps({ params }) {
 //   }
 
 export default function ArticleIdPage(props) {
+
+	const [player, setPlayer] = useState(null);
+	const [currentTime, setCurrentTime] = useState(0);
+
+	const onPlayerReady = (event) => {
+		setPlayer(event.target);
+		const getCurrentTimeInterval = useRef(setInterval(() => { 
+			setCurrentTime(event.target.getCurrentTime());
+			// console.log(currentTime.current);
+		}, 1000));
+	}
+
 	const isDesktop = useMediaQuery({
 		query: "(min-width: 1045px)",
 	});
@@ -108,7 +120,7 @@ export default function ArticleIdPage(props) {
 							paddingBottom: 30,
 						}}
 					>
-						<div
+						{/* <div
 							style={{
 								position: "relative",
 								overflow: "hidden",
@@ -136,7 +148,19 @@ export default function ArticleIdPage(props) {
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 								allowfullscreen
 							></iframe>
+						</div> */}
+						<div style={{
+							borderRadius: 8,
+							overflow: "hidden",
+						}}>
+							<YouTube videoId={article.videoId} opts={{
+									width: 808,
+									height: 580,
+								}}
+								onReady={onPlayerReady}
+							/>
 						</div>
+						
 						<div
 							style={{
 								// flex: 1,
@@ -173,9 +197,14 @@ export default function ArticleIdPage(props) {
 								>	
 								{
 									article.summaries.map((s, i) => (
-										<span style={{ fontSize: isMobile? 14: 18, color: i == 0 ? colors.primary : colors._300 }}>
+										<a
+											onClick={() => { player.seekTo(s.start) }} href="#/" 
+											style={{ 
+												fontSize: isMobile? 14: 18, textDecoration: 'none',
+												color: (currentTime >= s.start && (i >= article.summaries.length || currentTime < article.summaries[i+1].start)) ? colors.primary : colors._300, 
+											}}>
 											{i+1}. {s.subject}
-										</span>
+										</a>
 									))
 								}
 								</div>
@@ -235,7 +264,6 @@ export default function ArticleIdPage(props) {
 							))}
 						</table>
 					</div>
-					
 					<div style={{ margin: "10px", marginTop: 60, display: "flex", flexDirection: "column", gap: 20 }}>
 						{article.summaries.map((summary, i) =>
 							summary.text ? (
@@ -243,8 +271,8 @@ export default function ArticleIdPage(props) {
 									key={i}
 									subject={summary.subject}
 									start={summary.start}
-									end={summary.end}
-									isPlaying={i == 1}
+									isPlaying={ currentTime >= summary.start && (i >= article.summaries.length || currentTime < article.summaries[i+1].start ) }
+									seekTo={() => player.seekTo(summary.start)}
 								>
 									{summary.text}
 								</TextUnit>
