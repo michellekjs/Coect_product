@@ -1,30 +1,37 @@
 const categories = ['경제', '여행', '전자제품', '패션뷰티', '차량'];
 
 const articles = [
-    {
-        title: '정신나간 사우디 신도시 프로젝트 The Line',
-        date: '2022-10-20',
+    {   
+        title: '신형 그랜저 2.5 시승기...최고의 세단! 심각한 불량도?',
+        date: '2022-12-04',
+        car_brand: '현대',
+        car_model: '그랜저',
+        id:1,
         category: 1,
-        id: 1,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu_KptPhlZ024JCVEU_eptEnciU89Hp_MNcGL2Vl=s88-c-k-c0x00ffffff-no-rj',
-        channelName: '슈카월드',
-        channelId: '@syukaworld',
-        videoId: 'tzIzcr4EM6w',
-        keywords: ['네옴시티','The Line','더 라인'],
+        channelName: '김한용의 MOCAR',
+        channelId: '@mocar_official',
+        videoId: 'YuHRMdTzlE8',
         summaries: [
-            { start: 1224, end: 1247, subject: '네옴시티', text: '2017년에 공개된 네옴시티가 이제 삽을 떴어요. 일단 시작 예산이 700조에요. 이제 시작이고 끝낼려면 1400조원을 예상합니다. 전체 크기는 뉴욕시의 33배이고요, 문명의 혁명을 보여주겠다는 프로젝트라고 할 수 있습니다.' },
-            { start: 1260, end: 1290, subject: '더 라인 프로젝트', text: '네옴시티의 핵심프로젝트가 있습니다. 바로 더 라인프로젝트. 이게 미친 프로젝트인데, 이상한 벽 같은게 하나 있잖아요. 이게 바로 도시에요. 양쪽 폭이 200미터, 길이가 170Km, 최대 높이가 500미터에요.' },
-            { start: 1510, end: 1516, subject: '더 라인의 예상비용', text: '예상 비용은 가볍게 1000조이고요, 끝까지 갈려면 1400조원으로 예상하고 있어요.' },
-            { start: 1525, end: 1555, subject: '네옴시티 가능성', text: '일단 이게 기술이 되겠냐? 위아래로 움직이는 것도 그렇고, 환기문제에다가 하여튼 모든 생활 모습이 바뀌는것인데 이게 되겠냐?라는 의문이 많아요. 하지만 사우디는 이렇게 답했어요. 사람들은 이것을 비용이 많이 드는 미친 프로젝트라고 한다. 하지만 우리는 모듈 by 모듈로 구축해 나갈 것이다. ' },
-            { start: 1700, end: 1720, subject: 'Oxagon 프로젝트', text: '여기는 기업들을 위한 산업생산 도시인데, 역시 친환경을 해야하고 땅을 아껴야하니까 얘네들이 도시를 바다 위에 만들었어요. 네옴시티의 자급자족을 위한 생산기지라고 할 수 있는데, 뭐 울산산업공단을 바다위에 띄운다라고 생각하시면 될거 같습니다. ' },
-            { start: 1830, end: 1850, subject: '인공 레저 장소 Trojena', text: '1년 내내 야외 스키와 어드벤처 스포츠가 가능하다. 인공 담수호가 있고요, 럭셔리, 모험, 엔터를 위한 장소가 될 것이다. 저기 안을 다 동굴로 다 파서 미래 관광을 위한걸 만든다고 합니다. 음 잘 되길 빕니다' },
-            { start: 1980, end: 2040, subject: '중동 건설의 붐', text: '건설하면 대한민국 아니겠냐. 빼앗긴 건설주에도 봄이 오는가, 이제 저 같은 사람들이 2017년에 들어가서 5년 째 안오죠. 안올거 같다, 한경에서 이러한 신문이 있었습니다. 연봉 2배를 줘도 해외로 안나간다. 퇴사까지 불사하는 MZ세대 직원들인거에요.' },
+            { start: 60, subject: '전체 디자인', text: '전반적으로 봤을 때 굉장히 어떻게 아름답습니까? 저는 맨날 전시장에서만 보다가 도로에 나온걸 보니까 또 색다르네요.' },
+            { start: 220, subject: '시승 시작', text: '일단 이 차의 외관이나 실내나 디자인이나 이런 것들 꽤 마음에 들고요, 이 정도로 잘 만든 차는 없지 싶어요. 근데 약간 공회전 RPM이 조금 불안한 거, 요게 지금 꽤 아슬아슬한 느낌이 들고요.' },
+            { start: 304, subject: '가속', text: '저희가 타는 차가 아쉽게도 2.5L 가솔린 모델. 그래서 2.5L 가솔린 모델이라는 자동차 차급이 신형 그랜저에는 조금 부족하게 느껴지기는 합니다. 좀 더 세면 좋겠어요.' },
+            { start: 521, subject: '특징', text: '요번 그랜저에 가장 큰 특징은 부드러움입니다. 놀랄 정도로 부드럽습니다.'},
+            { start: 770, subject: '키 디자인', text: '그리고 이 키에 대해서 많이들 불만을 말씀하시는데 크기가 일단 조금 약간 징그러운 크기죠.' },
+            { start: 833, subject: '어댑티브크루즈', text: '어댑티브크루즈 한번 사용해보도록 할게요. 어댑티브크루즈 원터치로 딱 누릅니다. 누르면 지금은 앞 차와의 간격을 조절해주는 장치가 켜진 거에요.' },
+            { start: 917, subject: '차로 보조 장치', text: 'OK 버튼 누르면 차로 변경 보조 기능이 켜집니다. 아니 OK를 눌러야 켜져? 눌려야 켜지는건 또 뭐야…' },
+            { start: 1033, subject: '스티어링휠', text: '노멀 모드에서 핸들이 진짜 부드럽고, 핸들의 직경이나 형태나 이런 것들이 클래식하면서도 현대적이여서 저는 굉장히 마음에 드는 그런 스티어링휠이라는 생각이 드네요.'},
+            { start: 1091, subject: '내부 인터페이스 문제점', text: '노멀 모드에서 핸들이 진짜 부드럽고, 핸들의 직경이나 형태나 이런 것들이 클래식하면서도 현대적이여서 저는 굉장히 마음에 드는 그런 스티어링휠이라는 생각이 드네요.'},
+            { start: 1184, subject: '오디오', text: '오디오 한번 들어보도록 할게요. 오디오를 한번 들어보면요 사운드 정말 좋습니다.'},
+            { start: 1269, subject: '뒷좌석', text: '일단 헤드레스트 푹신하고 너무 좋고요. 그래, 이런 느낌 들어야지. 벤츠 S클래스에서 있는 헤드레스트하고 굉장히 비슷한 느낌이 들어요.'},
+            { start: 1566, subject: '마무리', text: '훌륭하게 잘 만들어진 자동차에요. 기존 그래저에 대한 로망 그런 것들을 다시 불러오는데 손색이 없는 자동차였고요. 여러가지 면에서 좋았는데 한가지 좀 아쉬운 점, 저희가 받아온 이 차만의 문제겠지만 약간의 품질 문제가 있었던 거 앞으로는 절대 이런 일이 없도록 기대해봅니다.'},
+            
         ]
     },
     {
         title: '네옴시티가 뻥인 이유, 빈살만의 정치적 의도',
         date: '2022-11-18',
-        category: 1,
+        car_Brand: 1,
         id: 2,
         channelImageUrl: 'https://yt3.ggpht.com/54_advuua5i9-rfYZw8u6OYFJUZELYdIrsl6ifgei6x_2k_udbnH-uYBcLi5o-9LirsWpa2oLw=s88-c-k-c0x00ffffff-no-rj',
         channelName: '전인구경제연구소',
@@ -40,7 +47,7 @@ const articles = [
     {
         title: '부동산 하락, 아직 시작도 안했다! f.김기원 대표 [심층인터뷰]',
         date: '2023-01-16',
-        category: 1,
+        car_Brand: 1,
         id: 3,
         channelImageUrl: 'https://yt3.googleusercontent.com/ytc/AMLnZu8YcVXJtaW8xtWR2C2ADlPRTs8-kg705Du5Q_fchw=s176-c-k-c0x00ffffff-no-rj',
         channelName: '삼프로TV_경제의신과함께',
@@ -57,7 +64,7 @@ const articles = [
     {
         title: '부동산 규제 완화, 둔촌 주공에 쏠린 시선',
         date: '2023-01-16',
-        category: 1,
+        car_Brand: 1,
         id: 4,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu_KptPhlZ024JCVEU_eptEnciU89Hp_MNcGL2Vl=s88-c-k-c0x00ffffff-no-rj',
         channelName: '슈카월드',
@@ -74,7 +81,7 @@ const articles = [
     {
         title: '전기차를 못 팔면 내연기관차도 못 판다? f.유진투자증권 이재일 연구위원 [심층 인터뷰]',
         date: '2023-01-05',
-        category: 1,
+        car_Brand: 1,
         id: 5,
         channelImageUrl: 'https://yt3.googleusercontent.com/ytc/AMLnZu8YcVXJtaW8xtWR2C2ADlPRTs8-kg705Du5Q_fchw=s176-c-k-c0x00ffffff-no-rj',
         channelName: '삼프로TV_경제의신과함께',
@@ -91,7 +98,7 @@ const articles = [
     {
         title: '20년만 지나면 한국 100만 가구가 없어진다. 앞으로 부동산 시장은 어떻게 될까? (김경록)',
         date: '2023-01-16',
-        category: 1,
+        car_Brand: 1,
         id: 6,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu9wu_AuVfzHNlRQunRYsgdfgP1OEG0dKLdvCr2k=s88-c-k-c0x00ffffff-no-rj',
         channelName: '월급쟁이부자들TV',
@@ -109,7 +116,7 @@ const articles = [
     {
         title: '네이버, 카카오 주가 여기까지 오를 수 있습니다(염승환 이사)',
         date: '2022-12-02',
-        category: 1,
+        car_Brand: 1,
         id: 7,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu9JOpmypmS6MwI5qkQjnlcBWHTBncox5JaC9PpQow=s88-c-k-c0x00ffffff-no-rj',
         channelName: '김작가TV',
@@ -128,7 +135,7 @@ const articles = [
     {
         title: '미국 주식이 못 오르는 이유',
         date: '2023-01-06',
-        category: 1,
+        car_Brand: 1,
         id: 8,
         channelImageUrl: 'https://yt3.ggpht.com/xfR-xhf1xvnQkqdhJDTnIR1oWeQdIagAoF_bBti3gYB9s48hDzimjFT3ue8jC5QyKZdnFQHh9g=s88-c-k-c0x00ffffff-no-rj',
         channelName: '뉴욕주민',
@@ -146,7 +153,7 @@ const articles = [
     {
         title: '방콕여행 감잡기 🇹🇭 쉽고 빠르게 정리해드림! 기본정보 + 시내지도 + 추천음식 + 타이마사지',
         date: '2022-07-17',
-        category: 2,
+        car_Brand: 2,
         id: 9,
         channelImageUrl: 'https://yt3.ggpht.com/WCUlaeOXychhrCoj1SMez2uYuIPFgJZDStBbRzJYCSqmcpVEWKzgwm1eMpyYwTDIU6fd29X98w=s88-c-k-c0x00ffffff-no-rj',
         channelName: '아일랜드 트래블러',
@@ -172,7 +179,7 @@ const articles = [
     {
         title: '[방콕호텔 예약 시 고려할 팁] 첫번째 \'위치\'편 / 방콕 자유여행 지도를 통해 가볼만한곳, BTS, MRT, 마사지, 클럽, 루프탑, 환전소, 호텔위치 등을 알아봅니다.',
         date: '2019-06-26',
-        category: 2,
+        car_Brand: 2,
         id: 10,
         channelImageUrl: 'https://yt3.ggpht.com/U5_OB1Nokz_RMhp5DbfykZRhc4iFrN20ek7QzSD44J1WRYLdu5lxKjVvcXh-QsPDEBsBaboStg=s88-c-k-c0x00ffffff-no-rj',
         channelName: '트래블콕_방콕여행 참고서 Travel Kok',
@@ -205,7 +212,7 @@ const articles = [
     {
         title: '🇹🇭 방콕이라는 도시에 대해 쉽고 제대로 알려드립니다',
         date: '2023-01-11',
-        category: 2,
+        car_Brand: 2,
         id: 11,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu_3dSyZvfrKt1e7FIe-1wMOa96d6SNhowj8Zk7u=s88-c-k-c0x00ffffff-no-rj',
         channelName: '트립콤파니',
@@ -238,7 +245,7 @@ const articles = [
     {
         title: '방콕 자유여행 경비 예산 얼마면 될까요? 관광객 입장 방콕 물가 수준을 종합적으로 짚어드립니다.',
         date: '2019-07-27',
-        category: 2,
+        car_Brand: 2,
         id: 12,
         channelImageUrl: 'https://yt3.ggpht.com/U5_OB1Nokz_RMhp5DbfykZRhc4iFrN20ek7QzSD44J1WRYLdu5lxKjVvcXh-QsPDEBsBaboStg=s88-c-k-c0x00ffffff-no-rj',
         channelName: '트래블콕_방콕여행 참고서 Travel Kok',
@@ -259,7 +266,7 @@ const articles = [
     {
         title: '후쿠오카여행 출발하기 전에 알고 가야 할 것들 #후쿠오카여행 가이드',
         date: '2019-01-11',
-        category: 2,
+        car_Brand: 2,
         id: 13,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu_3dSyZvfrKt1e7FIe-1wMOa96d6SNhowj8Zk7u=s88-c-k-c0x00ffffff-no-rj',
         channelName: '트립콤파니',
@@ -280,7 +287,7 @@ const articles = [
     {
         title: '후쿠오카 여행준비, 이 영상 하나로 끝내세요. 여행팁 총정리',
         date: '2018-07-24',
-        category: 2,
+        car_Brand: 2,
         id: 14,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu9wpdtyod4dAUV2dGCom155mLc8wvZHMadCKIeN=s88-c-k-c0x00ffffff-no-rj',
         channelName: '해피새아 happysaea',
@@ -298,7 +305,7 @@ const articles = [
     {
         title: '[VLOG] 후쿠오카 시내 🇯🇵 먹고 걷고의 반복🚶🏻‍♀️하카타역,야키토리 맛집,나카스강변,캐널시티,오므라이스,일본 여행',
         date: '2022-10-17',
-        category: 2,
+        car_Brand: 2,
         id: 15,
         channelImageUrl: 'https://yt3.ggpht.com/uU7tofIJqY7zGpX1AZ_HqT1EVnfhiMmOUsKaRRD6njO6lTogxOxJcHmnHjb8cm66ie9ppQPZ3w=s88-c-k-c0x00ffffff-no-rj',
         channelName: '진짜채빈짱 チンチャチェビンちゃん',
@@ -321,7 +328,7 @@ const articles = [
     {
         title: '후쿠오카 여행 교통패스 핵심정리 #후쿠오카여행 가이드',
         date: '2019-01-14',
-        category: 2,
+        car_Brand: 2,
         id: 16,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu_3dSyZvfrKt1e7FIe-1wMOa96d6SNhowj8Zk7u=s88-c-k-c0x00ffffff-no-rj',
         channelName: '트립콤파니',
@@ -339,7 +346,7 @@ const articles = [
     {
         title: '요즘 최대 고민… 에어팟 맥스 VS 소니 1000XM5 비교 종결내드립니다🙌 (음질, 노캔, 장단점 꼼꼼 비교)',
         date: '2022-12-18',
-        category: 3,
+        car_Brand: 3,
         id: 17,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu-Xb7w1psAvYG_cTaSxxuZcNqkI5f2pwUhHRbtg8A=s88-c-k-c0x00ffffff-no-rj',
         channelName: '주연 ZUYONI',
@@ -364,7 +371,7 @@ const articles = [
     {
         title: '노캔 끝판왕은 아닌데?; 소니 헤드폰 WH-1000XM5 리뷰 (Feat.4세대,에어팟맥스 비교, ANC 테스트)',
         date: '2022-08-02',
-        category: 3,
+        car_Brand: 3,
         id: 18,
         channelImageUrl: 'https://yt3.ggpht.com/2nImR_23HcnYf4N9qypfC89PG0_tv-b6IyxbcxJdhHy-amiKrZAStqU5sP13JzMfLs3yfird=s88-c-k-c0x00ffffff-no-rj',
         channelName: '잇플  IT People',
@@ -388,7 +395,7 @@ const articles = [
     {
         title: '소니 WH-1000XM5 vs 애플 에어팟 맥스, 제 선택은요!',
         date: '2022-06-02',
-        category: 3,
+        car_Brand: 3,
         id: 19,
         channelImageUrl: 'https://yt3.ggpht.com/lC5OkaoW8GO3hLLD-dGPdx6Yn4xUBo9vmQzR5wy5xegl1d8iuTowIhT8I73iEo1Kw55MjFzr5Q=s88-c-k-c0x00ffffff-no-rj',
         channelName: '고나고',
@@ -412,7 +419,7 @@ const articles = [
     {
         title: '헤드폰 뭐 사지? 에어팟 맥스 vs. 소니 WH-1000XM5 | 음질, 노이즈캔슬링, 통화음질, 무게, 편의성 꼼꼼비교',
         date: '2022-10-08',
-        category: 3,
+        car_Brand: 3,
         id: 20,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu8Hchf9Mru9zZMVcMOsHrt_C3oPPBYsoj780pq9qw=s88-c-k-c0x00ffffff-no-rj',
         channelName: '가전주부 GJJB',
@@ -437,7 +444,7 @@ const articles = [
     {
         title: '갤럭시탭 필수어플 8가지 추천 | 공부하는 직장인 ver',
         date: '2021-06-30',
-        category: 3,
+        car_Brand: 3,
         id: 21,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu-ezyyF_QCAJBBm-V0BShq4Pg8sUwJ4zzvHzvZXcA=s88-c-k-c0x00ffffff-no-rj',
         channelName: '화공안전연구소',
@@ -459,7 +466,7 @@ const articles = [
     {
         title: '[내돈리뷰] 갤럭시탭S8 울트라 산 진짜 이유 | 앱, 액세서리 추천 | 업자(?)들의 사용기 | 가전주부',
         date: '2022-02-25',
-        category: 3,
+        car_Brand: 3,
         id: 22,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu8Hchf9Mru9zZMVcMOsHrt_C3oPPBYsoj780pq9qw=s88-c-k-c0x00ffffff-no-rj',
         channelName: '가전주부 GJJB',
@@ -480,7 +487,7 @@ const articles = [
     {
         title: '반드시 써야하는 갤럭시탭 S8 / S8+ / S8 울트라 필수어플 & 활용 꿀팁~ ( 모르면 손해다!!! )',
         date: '2022-02-24',
-        category: 3,
+        car_Brand: 3,
         id: 23,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu8ZRWxjkgtJCN7xH_5c3WI2E3uW9JaQQdOVSe5wyA=s88-c-k-c0x00ffffff-no-rj',
         channelName: '파란만장',
@@ -502,7 +509,7 @@ const articles = [
     {
         title: '갤럭시탭 필수어플 8가지 소개합니다! 갤탭으로 갈아탈 건데 제 아이패드 사실 분 구해요^^ Galaxy Tab S7 Plus 8 Best Apps',
         date: '2020-10-06',
-        category: 3,
+        car_Brand: 3,
         id: 24,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu8l7X7TrVL83ALLYBoSZsLfAYvRbdYL8wWd_xYX=s88-c-k-c0x00ffffff-no-rj',
         channelName: 'TongTongTv 통통테크',
@@ -524,7 +531,7 @@ const articles = [
     {
         title: '아이라인 그리면 답답해 보였던 이유',
         date: '2021-05-11',
-        category: 4,
+        car_Brand: 4,
         id: 25,
         channelImageUrl: 'https://yt3.googleusercontent.com/PLcb4E4kmku90sZvPUgfYlZC2N_b6O5C5NeMeecC7cY_ZnOi_38tHpuNdEa2MkP8cr9BnuRg2A=s176-c-k-c0x00ffffff-no-rj',
         channelName: '레어리RareLee',
@@ -542,7 +549,7 @@ const articles = [
     {
         title: '옷 잘입는 법 여자 기초편 (ft. 나만의 옷장 만들기)',
         date: '2021-04-28',
-        category: 4,
+        car_Brand: 4,
         id: 26,
         channelImageUrl: 'https://yt3.ggpht.com/TyNGIwi8-OgYhGpBYID0m8fxr4trBMEO9H6fGU1QaBOMOxtLBlRpFCWvr3wgAYNPAQtjbLRBrII=s88-c-k-c0x00ffffff-no-rj',
         channelName: 'samedifference',
@@ -561,7 +568,7 @@ const articles = [
     {
         title: '볼캡 쓰면 얼굴 커보이는 이유 \'이것\'',
         date: '2020-05-10',
-        category: 4,
+        car_Brand: 4,
         id: 27,
         channelImageUrl: 'https://yt3.googleusercontent.com/PLcb4E4kmku90sZvPUgfYlZC2N_b6O5C5NeMeecC7cY_ZnOi_38tHpuNdEa2MkP8cr9BnuRg2A=s176-c-k-c0x00ffffff-no-rj',
         channelName: '레어리RareLee',
@@ -578,7 +585,7 @@ const articles = [
     {
         title: '이미지 변신 치트키, 얼굴별 안경테 고르는법(가격별 안경 브랜드 추천)',
         date: '2021-02-23',
-        category: 4,
+        car_Brand: 4,
         id: 28,
         channelImageUrl: 'https://yt3.ggpht.com/hIOYBp4fSRZsxxmEbYW0eCwN8b9AgQAyZJF95bRuLU5_xK2JTb5WVIqeANEOZsYqWTAO2FAXnQ=s88-c-k-c0x00ffffff-no-rj',
         channelName: '레어리RareLee',
@@ -597,7 +604,7 @@ const articles = [
     {
         title: '나에게 어울리는 안경을 선택하는 여러가지 방법',
         date: '2021-02-23',
-        category: 4,
+        car_Brand: 4,
         id: 29,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu_VpSrtE2pv8hRf3CJXGwz0pbBIG2EsyWYxzHcCAQ=s88-c-k-c0x00ffffff-no-rj',
         channelName: '스타일가이드 최겨울',
@@ -616,7 +623,7 @@ const articles = [
     {
         title: '에어랩 있으면 꼭 봐야하는 영상❗️✨ 여신 앞머리 | 정수리 볼륨 | 같은 에어랩 다른 느낌 | 내일 아침 당장 하고싶어지는 머리',
         date: '2022-03-14',
-        category: 4,
+        car_Brand: 4,
         id: 30,
         channelImageUrl: 'https://yt3.ggpht.com/lTQ7TYOZnawlDFQI7FxK3XbbeWWMnqmgQ88STfChzeHkt9pI2FxmebnnabRwnSqmjgtUl5TddQ=s88-c-k-c0x00ffffff-no-rj',
         channelName: '보짱',
@@ -633,7 +640,7 @@ const articles = [
     {
         title: '얼굴분석전문가가 알려주는 얼굴 작아보이는 마스크 모양? (ft. 아이유가 부리형 마스크만 스는 이유) ',
         date: '2021-04-20',
-        category: 4,
+        car_Brand: 4,
         id: 31,
         channelImageUrl: 'https://yt3.ggpht.com/iuqbx4JU391EsMUuhmqqMcwgOo7LWUlTxeDEjzXmG2D6w8JTGvg6BcNCcsmBeCytiIMB-3R5IkE=s88-c-k-c0x00ffffff-no-rj',
         channelName: '셜록뷰티 - 아름다움은 과학이다',
@@ -649,7 +656,7 @@ const articles = [
     {
         title: '[비율 안좋은 체형▶비율 좋아보이는 법] 당신이 다리가 짧아보이는 이유? (ft.제니,정채연,장원영) ',
         date: '2022-01-30',
-        category: 4,
+        car_Brand: 4,
         id: 32,
         channelImageUrl: 'https://yt3.ggpht.com/iuqbx4JU391EsMUuhmqqMcwgOo7LWUlTxeDEjzXmG2D6w8JTGvg6BcNCcsmBeCytiIMB-3R5IkE=s88-c-k-c0x00ffffff-no-rj',
         channelName: '셜록뷰티 - 아름다움은 과학이다',
@@ -662,38 +669,9 @@ const articles = [
         ]
     },
     {
-        title: '신형 그랜저 2.5 시승기...최고의 세단! 심각한 불량도?',
-        date: '2022-12-04',
-        category: 5,
-        id: 33,
-        channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu8ujei-MMLXgtScAR20orQlSFuOAixnH0O02ioBXw=s48-c-k-c0x00ffffff-no-rj',
-        channelName: '김한용의 MOCAR',
-        channelId: '@mocar_official',
-        videoId: 'YuHRMdTzlE8',
-        keywords: ['현대차', '그랜저', '시승기' ],
-        summaries: [
-            { image: '33-1.png', },
-            { start: 0, end: 130, subject: '외관', text: '지금 이 차를 보면 플라스틱 느낌이 느껴지지 않는 정말 잘 만든 그릴이라는 생각이 드네요. 손잡이는 이게 조금 더 단단하면 좋겟다는 생각이 들어요.' },
-            { start: 130, end: 217, subject: '디스플레이', text: '매번 뒤에 타는 사람들이 이걸 눌러서 열어줘야 탈 수 있습니다. 디스플레이가 켜지는 데 5초 정도가 넘게 걸려요.' },
-            { start: 222, end: 300, subject: '단점', text: '차의 외관이나 실내 디자인이나 이런 것들이 상당히 마음에 듭니다. 공회전 RPM이 살짝 불안해요. 디스플레이가 갑자기 꺼질 때가 있어요. 초기 모델에만 있는 일이길 간절히 바랍니다 ' },
-            { start: 302, end: 519, subject: '가속', text: '가속 페달을 밟아보겠습니다. 2.5L 가솔린 모델이라는 차급이 신형 그렌져에는 조금 약하게 느껴지긴 합니다. 3.5L 나 1.6하이브리드 터보를 사시는 걸 추천드릷니다. 가속페달 컨트롤이 어려워요. 엔진 소리가 워낙 과격하기 때문에 너무 큰 소리가 납니다. 젠틀한 자동차인데 이질감이 느껴지는 거죠. 2500rpm 까지는 좋은데 넘기면 안될 것 같은 생각이 드네요.' },
-            { start: 730, end: 764, subject: '단점', text: '아쉬운 건 램프가 항상 켜져잇으면 어땠을까.'},
-            { image: '33-3.png', },
-            { start: 769, end: 813, subject: '스마트키', text: '키에 대해서 불만을 가지는데, 키가 조금 더 작으면 좋겠다는 생각이 들어요. 배터리가 방전되면 물리키를 별도로 가지고 다니셔야 합니다. 이전까지는 키를 콘티넨탈같은 회사에서 만들었는데 이제는 모빗스에서 만들엇서 아쉬운 점이 있네요' },
-            { start: 832, end: 930, subject: '어댑티브크루즈', text: '어댑티브크루즈를 사용해볼게요. 앞차와의 간격을 조절해주는 기능을 켰습니다. 차간거리를 맞추는 것과 차선을 유지하는 것을 구분해서 켜야 합니다. 두 가지가 고속도로에서는 한번에 켜지고 일반도로에서는 따로 켜지게 됩니다.' },
-            { start: 935, end: 1030, subject: '승차감', text: '차로 변경이 굉장히 부드럽게 가네요. 핸들이 제가 움직였다고 하는걸로 생각할 정도로 젠틀합니다. 이번 특징은 아주 젠틀하다는 겁니다. 실선에서는 차로 변경 작동이 안된다고 얘기를 해주네요. ' },
-            { image: '33-2.png', },
-            { start: 1033, end: 1089, subject: '스티어링휠', text: '노말 모드에서 핸들이 굉장히 부드럽고 핸들이 클래식하면서도 맘에 드는 스티어링 휠입니다. ' },
-            { start: 1089, end: 1182, subject: '디스플레이', text: '네비 인터페이스하고 다른 버튼들과의 인터페이스가 조금 다릅니다. ' },
-            { start: 1187, end: 1266, subject: '사운드', text: '사운드 정말 좋습니다. 하이파이 오디오 수준입니다. 보스센터포인트라는 옵션을 사용할 수 있습니다. ' },
-            { start: 1269, end: 1445, subject: '뒷좌석', text: '뒷좌석 헤드레스트 푹신하고 너무 좋습니다. K9과 비슷합니다. 뒷좌석을 눕힐 수 있습니다. 한 가지 걱정되는 것은 vip 시트에 있는 옵션입니다. 선쉐이드를 올릴 수 있는 기능이 있습니다. 뒷좌석 공간이 럭셔리하지만 승차감은 제네시스가 한 수 위입니다. ' },
-            { start: 1483, end: 1500, subject: '단점', text: '차가 갑자기 꺼졌어요. 아마 초기 물량 몇 대가 문제가 있는 것 같아요.' },
-        ]
-    },
-    {
         title: '신형 그랜저 잡는 쏘나타 등장? 쏘나타 망했나, 풀체인지급 디자인 변경',
         date: '2022-12-20',
-        category: 5,
+        car_Brand: 5,
         id: 34,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu8ujei-MMLXgtScAR20orQlSFuOAixnH0O02ioBXw=s48-c-k-c0x00ffffff-no-rj',
         channelName: '김한용의 MOCAR',
@@ -710,7 +688,7 @@ const articles = [
     {
         title: '역대급 반전, 신형 그랜저',
         date: '2022-12-09',
-        category: 5,
+        car_Brand: 5,
         id: 35,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu8BDQ5p2143udr0MXWdPLNWkr6rSOwItkBIHEbgBA=s48-c-k-c0x00ffffff-no-rj',
         channelName: '모트라인 MOTline',
@@ -735,7 +713,7 @@ const articles = [
     {
         title: '깡통 그랜저 출고한 우파가 추천하는 "그랜저 필수옵션" 제발 이것만은 꼭 넣으세요',
         date: '2023-01-12',
-        category: 5,
+        car_Brand: 5,
         id: 36,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu_WszZPwVss4PdFN2MPcUTFrCDy01XRcwwB3o-e=s48-c-k-c0x00ffffff-no-rj',
         channelName: '우파푸른하늘Woopa TV',
@@ -754,7 +732,7 @@ const articles = [
     {
         title: '돈 때문에 안넣었다가 나중에 후회하는 자동차 필수 옵션',
         date: '2020-10-26',
-        category: 5,
+        car_Brand: 5,
         id: 37,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu_WszZPwVss4PdFN2MPcUTFrCDy01XRcwwB3o-e=s48-c-k-c0x00ffffff-no-rj',
         channelName: '차업차득',
@@ -776,7 +754,7 @@ const articles = [
     {
         title: '[2편] 내 차의 숨은 기능 200% 활용하기! 누구도 가르쳐주지 않아 사용 못한 내 차 숨은기능',
         date: '2019-11-06',
-        category: 5,
+        car_Brand: 5,
         id: 38,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu_WszZPwVss4PdFN2MPcUTFrCDy01XRcwwB3o-e=s48-c-k-c0x00ffffff-no-rj',
         channelName: '차업차득',
@@ -801,7 +779,7 @@ const articles = [
     {
         title: '국내 준중형 SUV 끝판왕은?! "토레스 vs 투싼 vs 스포티지 경쟁 모델 싹 다 모았습니다.',
         date: '2022-08-16',
-        category: 5,
+        car_Brand: 5,
         id: 39,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu_WszZPwVss4PdFN2MPcUTFrCDy01XRcwwB3o-e=s48-c-k-c0x00ffffff-no-rj',
         channelName: '우파푸른하늘Woopa TV',
@@ -828,7 +806,7 @@ const articles = [
     {
         title: '토레스 사도 되냐고?',
         date: '2022-08-05',
-        category: 5,
+        car_Brand: 5,
         id: 40,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu_WszZPwVss4PdFN2MPcUTFrCDy01XRcwwB3o-e=s48-c-k-c0x00ffffff-no-rj',
         channelName: '모트라인 MOTline',
@@ -877,5 +855,5 @@ const colors = {
 };
 
 export {
-    categories, articles, brands, colors
+    categories,articles, brands, colors
 };

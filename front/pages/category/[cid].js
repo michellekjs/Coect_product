@@ -28,10 +28,7 @@ export default function CategoryIdPage(props) {
 	const articlesInCategory = articles.filter(
 		(article) => article.category == props.cid
 	);
-	const keywordlist = articlesInCategory.map((article) => article.keywords[0]);
 
-	const uniquekeyword = [...new Set(keywordlist)];
-	// let resultarticle = articlesInCategory
 
 	const [resultarticle, setarticle] = useState(articlesInCategory);
 
