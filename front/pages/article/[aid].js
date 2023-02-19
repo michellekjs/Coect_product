@@ -58,144 +58,145 @@ export default function ArticleIdPage(props) {
 				style={{
 					maxWidth: 1032,
 					marginTop: 72,
-					display: "flex",
-					flexDirection: "column",
-					gap: 112,
+					// display: "flex",
+					// flexDirection: "column",
+					// gap: 112,
 				}}
 			>
-				<div style={{ display: "flex", flexDirection: "column", gap: 60 , margin: isMobile? "10px": "0px"}}>
-					<div style={{ display: "flex", flexDirection: "column", gap: 36 }}>
-						<div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-							<div
-								style={{
-									display: "flex",
-									alignItems: "center",
-									gap: 4,
-									fontSize: 14,
-									color: colors.primary,
-								}}
-							>
-								<span>현대</span>
-								<span style={{ color: "#BDBDBD" }}>&gt;</span>
-								<span>그랜저</span>
-							</div>
-							<div style={{ dipslay: "flex", gap: 6 }}>
-								<div style={{ fontWeight: "500",fontSize: isMobile? 24 : 32 }}>
-									코엑트 전직원에게 그랜저 하이브리드 제공 선언?
-								</div>
-								<div style={{ display: "flex", gap: 6, alignItems: "center" }}>
-									<Author
-										name={article.channelName}
-										image={article.channelImageUrl}
-									/>
-									<span style={{color: "#919191"}}>|</span>
-									<span style={{ fontSize: 16, color: "#919191" }}>
-										{article.date.replaceAll("-", ".") + "."}
-									</span>
-								</div>
-							</div>
-						</div>
+				<div style={{ margin: isMobile? "10px": "0px"}}>
+					<div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
 						<div
 							style={{
 								display: "flex",
-								gap: isMobile? 5: 30,
-								justifyContent: "center",
 								alignItems: "center",
-								width: "100%",
+								gap: 4,
+								fontSize: 14,
+								color: colors.primary,
 							}}
 						>
-							<div
-								style={{
-									position: "relative",
-									overflow: "hidden",
-									width: isMobile? "70%" : "95%",
-									paddingTop: "56.25%",
-									display: "flex",
-								}}
-							>
-								<iframe
-									style={{
-										borderRadius: 8,
-										overflow: "hidden",
-										position: "absolute",
-										top: "0",
-										left: "0",
-										bottom: "0",
-										right: "0",
-										margin: "auto",
-									}}
-									width="100%"
-									height="100%"
-									src={`https://www.youtube.com/embed/${article.videoId}`}
-									title="YouTube video player"
-									frameborder="0"
-									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-									allowfullscreen
-								></iframe>
+							<span>현대</span>
+							<span style={{ color: "#BDBDBD" }}>&gt;</span>
+							<span>그랜저</span>
+						</div>
+						<div style={{ dipslay: "flex", gap: 6 }}>
+							<div style={{ fontWeight: "500",fontSize: isMobile? 24 : 32 }}>
+								코엑트 전직원에게 그랜저 하이브리드 제공 선언?
 							</div>
-							<div
-								style={{
-									// flex: 1,
-									height:"100%",
-									borderRadius: 8,
-									borderWidth: 1,
-									borderColor: "#919191",
-									borderStyle: "solid",
-									paddingTop: 18,
-									paddingLeft: 20,
-									paddingRight: 20,
-									paddingBottom: 18,
-									boxSizing: "border-box",
-								}}
-							>
-								<div
-									style={{
-										display: "flex",
-										flexDirection: "column",
-										gap: 20,
-									}}
-								>
-									<div style={{ fontSize: 16, color: colors.primaryDark }}>
-										목차
-									</div>
-									<div
-										style={{
-											display: "flex",
-											flexDirection: "column",
-											gap: 16,
-										}}
-									>
-										<span style={{ fontSize: isMobile? 14: 18, color: colors.primary }}>
-											1. 가격
-										</span>
-										<span style={{ fontSize: isMobile? 14: 18, color: "#424242" }}>
-											2. 옵션
-										</span>
-										<span style={{ fontSize: isMobile? 14: 18, color: "#424242" }}>
-											3. 승차감
-										</span>
-										<span style={{ fontSize: isMobile? 14: 18, color: "#424242" }}>
-											4. 총평
-										</span>
-									</div>
-								</div>
+							<div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+								<Author
+									name={article.channelName}
+									image={article.channelImageUrl}
+								/>
+								<span style={{color: "#919191"}}>|</span>
+								<span style={{ fontSize: 16, color: "#919191" }}>
+									{article.date.replaceAll("-", ".") + "."}
+								</span>
 							</div>
 						</div>
 					</div>
 					<div
 						style={{
+							position: 'sticky',
+							top: 10,
+							alignSelf: 'flex-start',
 							display: "flex",
-							flexDirection: "row",
-							gap: 20,
+							gap: isMobile? 5: 30,
 							justifyContent: "center",
 							alignItems: "center",
-							// width: "80vw",
+							width: "100%",
+							marginTop: 36,
+							zIndex: 2,
+							background: 'linear-gradient(to top, rgba(255,255,255,0), white 30px)',
+							paddingBottom: 30,
 						}}
 					>
+						<div
+							style={{
+								position: "relative",
+								overflow: "hidden",
+								width: isMobile? "70%" : "95%",
+								paddingTop: "56.25%",
+								display: "flex",
+							}}
+						>
+							<iframe
+								style={{
+									borderRadius: 8,
+									overflow: "hidden",
+									position: "absolute",
+									top: "0",
+									left: "0",
+									bottom: "0",
+									right: "0",
+									margin: "auto",
+								}}
+								width="100%"
+								height="100%"
+								src={`https://www.youtube.com/embed/${article.videoId}`}
+								title="YouTube video player"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen
+							></iframe>
+						</div>
+						<div
+							style={{
+								// flex: 1,
+								height:"100%",
+								borderRadius: 8,
+								borderWidth: 1,
+								borderColor: "#919191",
+								borderStyle: "solid",
+								paddingTop: 18,
+								paddingLeft: 20,
+								paddingRight: 20,
+								paddingBottom: 18,
+								boxSizing: "border-box",
+							}}
+						>
+							<div
+								style={{
+									display: "flex",
+									flexDirection: "column",
+									gap: 20,
+								}}
+							>
+								<div style={{ fontSize: 16, color: colors.primaryDark }}>
+									목차
+								</div>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										gap: 16,
+									}}
+								>
+									<span style={{ fontSize: isMobile? 14: 18, color: colors.primary }}>
+										1. 가격
+									</span>
+									<span style={{ fontSize: isMobile? 14: 18, color: "#424242" }}>
+										2. 옵션
+									</span>
+									<span style={{ fontSize: isMobile? 14: 18, color: "#424242" }}>
+										3. 승차감
+									</span>
+									<span style={{ fontSize: isMobile? 14: 18, color: "#424242" }}>
+										4. 총평
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div style={{ 
+						width: "100%",
+						paddingLeft: isMobile ? 10 : 1,
+						paddingRight: isMobile ? 10 : 1,
+						marginTop: 30,
+						boxSizing: "border-box",
+					}}>
 						<table
 							style={{
 								width: "100%",
-								margin: isMobile ? "10px" : "0px",
 								borderCollapse: "collapse",
 								borderRadius: 8,
 								borderStyle: "hidden",
@@ -239,7 +240,8 @@ export default function ArticleIdPage(props) {
 							))}
 						</table>
 					</div>
-					<div style={{ margin: "10px", display: "flex", flexDirection: "column", gap: 20 }}>
+					
+					<div style={{ margin: "10px", marginTop: 60, display: "flex", flexDirection: "column", gap: 20 }}>
 						{article.summaries.map((summary, i) =>
 							summary.text ? (
 								<TextUnit
@@ -270,7 +272,7 @@ export default function ArticleIdPage(props) {
 						)}
 					</div>
 				</div>
-				<div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
+				<div style={{ display: "flex", flexDirection: "column", gap: 32, marginTop: 112 }}>
 					<div style={{ fontSize: 20, display: "flex" }}>
 						<span style={{ color: colors.primary }}>현대</span>&nbsp;
 						<span style={{ color: colors.primary }}>코나</span>&nbsp;
