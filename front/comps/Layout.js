@@ -7,8 +7,7 @@ import { slide as Menu } from 'react-burger-menu';
 import ReactDOM from 'react-dom';
 import React, { useState, useEffect } from 'react';
 
-
-import { categories, colors, brands } from "../shared";
+import { brands } from "../shared";
 
 export default function Layout({ children }) {
 
@@ -21,46 +20,46 @@ export default function Layout({ children }) {
 	const [opacity,setOpacity] = useState(100);
 
 	const styles = {
-  bmBurgerButton: {
-    position: 'fixed',
-    width: '20px',
-    height: '20px',
-    right: isMobile ? "16px" : '30px',
-    top: ' 20px'
-  },
-  bmBurgerBars: {
-    background: '#373a47'
-  },
-  bmBurgerBarsHover: {
-    background: '#a90000'
-  },
-  bmCrossButton: {
-    height: '24px',
-    width: '24px'
-  },
-  bmCross: {
-    background: '#bdc3c7'
-  },
-  bmMenuWrap: {
-    position: 'fixed',
-		top: "0px",
-    height: '100%'
-  },
-  bmMenu: {
-    background: '#FAFAFA',
-    padding: '2.5em 1.5em 0',
-    fontSize: '1.15em'
-  },
-  bmMorphShape: {
-    fill: '#373a47'
-  },
-  bmItemList: {
-    color: '#b8b7ad',
-    padding: '0.8em'
-  },
-  bmOverlay: {
-    background: 'rgba(0, 0, 0, 0.3)'
-  }
+		bmBurgerButton: {
+		position: 'fixed',
+		width: '20px',
+		height: '20px',
+		right: isMobile ? "16px" : '30px',
+		top: ' 20px'
+		},
+		bmBurgerBars: {
+		background: '#373a47'
+		},
+		bmBurgerBarsHover: {
+		background: '#a90000'
+		},
+		bmCrossButton: {
+		height: '24px',
+		width: '24px'
+		},
+		bmCross: {
+		background: '#bdc3c7'
+		},
+		bmMenuWrap: {
+		position: 'fixed',
+			top: "0px",
+		height: '100%'
+		},
+		bmMenu: {
+		background: '#FAFAFA',
+		padding: '2.5em 1.5em 0',
+		fontSize: '1.15em'
+		},
+		bmMorphShape: {
+		fill: '#373a47'
+		},
+		bmItemList: {
+		color: '#b8b7ad',
+		padding: '0.8em'
+		},
+		bmOverlay: {
+		background: 'rgba(0, 0, 0, 0.3)'
+		}
 }
 	// const styles = {
 	// 	big: {
@@ -85,9 +84,6 @@ export default function Layout({ children }) {
 
 	return (
 		<html style={{ width: '100vw' }}>
-			<head>
-				<title>COECT</title>
-			</head>
 			<body style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', margin:0 ,overflowX:"hidden" }}>
 				<div style={{ display: 'flex', justifyContent: 'space-between', paddingLeft:50, paddingRight: 50, paddingTop: 16, paddingBottom: 16, width: '97%', alignItems:'center', position:"fixed", zIndex:1, backgroundColor:"white", opacity: opacity<350 ? 1 : 0.8 }}>
 					<Link href="/" style={{ display: 'flex', gap: 6, alignItems: 'baseline', textDecoration: 'none' }}>
