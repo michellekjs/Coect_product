@@ -5,6 +5,9 @@ import Layout from "../../comps/Layout";
 import ArticleSummary from "../../comps/ArticleSummary";
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from 'next/router'
+
+import styles from "../../comps/hover.module.css"
 
 import ArticleSummaryToday from "../../comps/ArticleSummaryToday";
 
@@ -31,6 +34,9 @@ export default function CategoryIdPage(props) {
 	const articlesInBrand = articles.filter(
 		(article) => article.brand == brand.name
 	);
+
+	const router = useRouter()
+	const { page } = router.query
 
 	const [resultarticle, setarticle] = useState(articlesInBrand);
 
@@ -75,9 +81,13 @@ export default function CategoryIdPage(props) {
 				</div>
 				<div style={{ maxWidth: 745, marginTop: 64 }}>
 					<div style={{ display: 'flex', flexDirection: 'column', gap: 60 }}>
-						<div style={{ display: 'flex', gap: 12, fontSize: 25 }}>
+						<div style={{ 
+							// display: 'flex', gap: 12,
+							fontSize: 25
+						}}>
 							<span>리뷰 영상</span>
-							<span style={{ color: colors.primary }}>{resultarticle.length}</span>
+							<span style={{ color: colors.primary }}>&nbsp;{resultarticle.length}</span>
+							{ page && page!=1 && <span>개 중 {page}페이지</span> }
 						</div>
 						<div>
 							<div style={{ display: 'flex', flexDirection: 'column', gap: 40 }}>
@@ -92,6 +102,22 @@ export default function CategoryIdPage(props) {
 									)
 								}
 							</div>
+						</div>
+						<div style={{ display: 'flex', gap: 0, width: '100%', justifyContent: 'center' }}>
+						{
+							Array.from({length: 10}, (_, i) => i + 1).map((i) =>
+								<Link
+									href={`/category/${props.cid}?page=${i}`}
+									style={{ 
+										width: 40, height: 40, display: 'flex', justifyContent: 'center', alignItems: 'center', color: i==1 ? colors.primary : colors._300,
+										textDecoration: 'none',
+									}}
+									className={ styles.logo }
+								>
+									{i}
+								</Link>
+							)
+						}
 						</div>
 					</div>
 				</div>
