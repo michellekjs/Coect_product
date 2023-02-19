@@ -1,3 +1,5 @@
+const categories = ['경제', '여행', '전자제품', '패션뷰티', '차량'];
+
 const articles = [
     {   
         title: '신형 그랜저 2.5 시승기...최고의 세단! 심각한 불량도?',
@@ -5,6 +7,7 @@ const articles = [
         car_brand: '현대',
         car_model: '그랜저',
         id:1,
+        category: 1,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu_KptPhlZ024JCVEU_eptEnciU89Hp_MNcGL2Vl=s88-c-k-c0x00ffffff-no-rj',
         channelName: '김한용의 MOCAR',
         channelId: '@mocar_official',
@@ -852,5 +855,5 @@ const colors = {
 };
 
 export {
-    articles, brands, colors
+    categories,articles, brands, colors
 };

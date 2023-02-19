@@ -16,6 +16,12 @@ export function getStaticPaths() {
 		fallback: false,
 	};
 }
+const relatedArticlesByKeywords = article.keywords.map((k) => ({
+	keyword: k,
+	articles: articles.filter(
+		(a) => a.keywords.includes(k) && a.id != article.id
+	),
+}));
 
 export function getStaticProps({ params }) {
 	return { props: { aid: params.aid } };
