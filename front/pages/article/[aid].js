@@ -109,6 +109,7 @@ export default function ArticleIdPage(props) {
 								justifyContent: "center",
 								alignItems: "center",
 								width: "100%",
+								// position: "fixed"
 							}}
 						>
 							<div
@@ -116,7 +117,7 @@ export default function ArticleIdPage(props) {
 									position: "relative",
 									overflow: "hidden",
 									width: isMobile? "70%" : "95%",
-									paddingTop: "56.25%",
+									paddingTop: "42%",
 									display: "flex",
 								}}
 							>
@@ -142,8 +143,10 @@ export default function ArticleIdPage(props) {
 							</div>
 							<div
 								style={{
-									// flex: 1,
-									height:"100%",
+									flexGrow: 1,
+									// height:"100%",
+									// height: "200%",
+									// height : "",
 									borderRadius: 8,
 									borderWidth: 1,
 									borderColor: "#919191",
@@ -152,7 +155,7 @@ export default function ArticleIdPage(props) {
 									paddingLeft: 20,
 									paddingRight: 20,
 									paddingBottom: 18,
-									boxSizing: "border-box",
+									// boxSizing: "inherit",
 								}}
 							>
 								<div
@@ -210,7 +213,7 @@ export default function ArticleIdPage(props) {
 								overflow: "hidden",
 							}}
 						>
-							<tr style={{ textAlign: "center", fontSize: isMobile?14:16 }}>
+							<tr style={{ textAlign: "center", fontSize: isMobile? 16:16, height:"30px" }}>
 								<th colspan="2">SORENTO / 4세대</th>
 							</tr>
 							{[
@@ -277,8 +280,8 @@ export default function ArticleIdPage(props) {
 						)}
 					</div>
 				</div>
-				<div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
-					<div style={{ fontSize: 20, display: "flex" }}>
+				<div style={{ display: "flex", flexDirection: "column", gap: 32}}>
+					<div style={{ fontSize: 20, display: "flex", justifyContent:'center' }}>
 						<span style={{ color: colors.primary }}>현대</span>&nbsp;
 						<span style={{ color: colors.primary }}>코나</span>&nbsp;
 						<span>관련 영상 더보기</span>
