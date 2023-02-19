@@ -105,8 +105,8 @@ export default function ArticleSummaryToday(props) {
 						<div style={styles.title}>{props.article.title}</div>
 					</div>
 					<div style={{ display: 'flex', gap: 6, fontSize: isMobile? 12: 14, color: colors.primary }}>
-						<span>현대</span>
-						<span>코나</span>
+						<span>{props.article.brand}</span>
+						<span>{props.article.model}</span>
 					</div>
 				</div>
 			</div>

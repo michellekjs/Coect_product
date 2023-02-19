@@ -1,3 +1,32 @@
+function seconds2timestamp(seconds) {
+	var hours = Math.floor(seconds / 3600);
+	seconds = seconds % 3600;
+	var minutes = Math.floor(seconds / 60);
+	seconds = seconds % 60;
+	// return hours + ":" + minutes + ":" + seconds;
+
+	return (
+		minutes.toLocaleString("en-US", {
+			minimumIntegerDigits: 2,
+			useGrouping: false,
+		}) +
+		":" +
+		seconds.toLocaleString("en-US", {
+			minimumIntegerDigits: 2,
+			useGrouping: false,
+		})
+	);
+}
+
+function timestamp2seconds(timestamp) {
+    var time = timestamp.split(":");
+    var seconds = 0;
+    seconds += parseInt(time[0]) * 3600;
+    seconds += parseInt(time[1]) * 60;
+    seconds += parseInt(time[2]);
+    return seconds;
+}
+
 let articles = [
     {   
         title: '신형 그랜저 2.5 시승기...최고의 세단! 심각한 불량도?',
@@ -201,9 +230,16 @@ let articles = [
     },
 ];
 
-articles = articles.map((article, index) => { return { ...article, id: index + 1 } });
+articles = articles.map((a, i) => {
+    a.id = i + 1;
+    a.summaries = a.summaries.map(s => {
+        s.start = timestamp2seconds(s.start);
+        return s;
+    });
+    return a;
+});
 
-const brands = [
+let brands = [
     { 
         logo: 'hyundai.svg', name: '현대',
         models: [
@@ -227,6 +263,11 @@ const brands = [
     // { logo: 'volvo.svg', name: '볼보' },
 ];
 
+brands = brands.map((b, i) => {
+    b.id = i + 1;
+    return b;
+});
+
 const colors = {
     primary: '#2B6F7D',
     primaryDark: '#183D44',
@@ -248,5 +289,5 @@ const colors = {
 };
 
 export {
-    articles, brands, colors
+    articles, brands, colors, timestamp2seconds, seconds2timestamp,
 };

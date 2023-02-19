@@ -90,7 +90,7 @@ export default function Layout({ children }) {
 		// </html>
 
 		<div style={{ width: '100%' }}>
-			<div style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box', width: '100%', alignItems:'center', position:"fixed", zIndex:1, backgroundColor:"white", opacity: opacity<350 ? 1 : 0.8 }}>
+			<div style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box', width: '100%', alignItems:'center', position:"sticky", top: 0, zIndex:1, backgroundColor:"white", opacity: opacity<350 ? 1 : 0.8 }}>
 				<Link href="/" style={{ display: 'flex', gap: 6, alignItems: 'baseline', textDecoration: 'none' }}>
 					<img src={require('../public/imgs/logo.svg').default.src} alt="COECT 로고" style={{ height: 26 }}/>
 				</Link>
@@ -110,11 +110,11 @@ export default function Layout({ children }) {
 				{isMobile && 
 				<div>
 					<Menu right styles={styles}>
-						{brands.map((brand, index) => {
+						{brands.map((brand) => {
 						return (
 							<Link
-								key={index + 1}
-								href={`/category/${index + 1}`}
+								key={brand.id}
+								href={`/category/${brand.id}`}
 								style={{ textDecoration: 'none', color: '#424242', fontSize: 15, marginBottom : 10 }}
 							>
 								{brand.name}

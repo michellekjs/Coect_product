@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 import Layout from "../comps/Layout";
 import ArticleSummaryHot from '../comps/ArticleSummaryHot';
 import ArticleSummaryTop from "../comps/ArticleSummaryTop";
@@ -97,7 +97,8 @@ export default function MainPage() {
 								}}
 							>
 								{brands.map((brand) => (
-									<div
+									<Link
+										href={`/category/${brand.id}`}
 										style={{
 											display: "flex",
 											flexDirection: "column",
@@ -108,8 +109,10 @@ export default function MainPage() {
 											alignItems: "center",
 											width:isMobile ? "60px" : "100px",
 											height:isMobile ? "60px" : "100px",
+											textDecoration: "none",
+											color: "black",
 										}}
-										className={ styles.logo}
+										className={ styles.logo }
 									>
 										<img
 											src={
@@ -121,7 +124,7 @@ export default function MainPage() {
 											className={isDesktop ?  styles.logo : styles.normal}
 										/>
 										<span style={{ fontSize: 16 }}>{brand.name}</span>
-									</div>
+									</Link>
 								))}
 							</div>
 						)}

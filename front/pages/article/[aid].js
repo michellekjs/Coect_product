@@ -45,12 +45,10 @@ export default function ArticleIdPage(props) {
 	const article = articles.find((a) => a.id == props.aid);
 
 	const recommendedArticleIdStart = Math.ceil(article.id / 4) * 4 - 3;
-	const recommendedArticles = articles.filter(
-		(a) =>
-			a.id >= recommendedArticleIdStart &&
-			a.id < recommendedArticleIdStart + 4 &&
-			a.id != article.id
-	);
+	const relatedArticles = articles
+		.filter( (a) => a.brand == article.brand && a.model == article.model && a.id != article.id )
+		.sort(() => 0.5 - Math.random())
+		.slice(0, 3); // 랜덤으로 3개 뽑기
 
 	return (
 		<Layout>
@@ -159,6 +157,8 @@ export default function ArticleIdPage(props) {
 									display: "flex",
 									flexDirection: "column",
 									gap: 20,
+									maxHeight: 500,
+									overflow: 'scroll'
 								}}
 							>
 								<div style={{ fontSize: 16, color: colors.primaryDark }}>
@@ -170,19 +170,14 @@ export default function ArticleIdPage(props) {
 										flexDirection: "column",
 										gap: 16,
 									}}
-								>
-									<span style={{ fontSize: isMobile? 14: 18, color: colors.primary }}>
-										1. 가격
-									</span>
-									<span style={{ fontSize: isMobile? 14: 18, color: "#424242" }}>
-										2. 옵션
-									</span>
-									<span style={{ fontSize: isMobile? 14: 18, color: "#424242" }}>
-										3. 승차감
-									</span>
-									<span style={{ fontSize: isMobile? 14: 18, color: "#424242" }}>
-										4. 총평
-									</span>
+								>	
+								{
+									article.summaries.map((s, i) => (
+										<span style={{ fontSize: isMobile? 14: 18, color: i == 0 ? colors.primary : colors._300 }}>
+											{i+1}. {s.subject}
+										</span>
+									))
+								}
 								</div>
 							</div>
 						</div>
@@ -272,29 +267,32 @@ export default function ArticleIdPage(props) {
 						)}
 					</div>
 				</div>
-				<div style={{ display: "flex", flexDirection: "column", gap: 32, marginTop: 112 }}>
-					<div style={{ fontSize: 20, display: "flex" }}>
-						<span style={{ color: colors.primary }}>현대</span>&nbsp;
-						<span style={{ color: colors.primary }}>코나</span>&nbsp;
-						<span>관련 영상 더보기</span>
+				{
+					relatedArticles.length > 0 && 
+					<div style={{ display: "flex", flexDirection: "column", gap: 32, marginTop: 112 }}>
+						<div style={{ fontSize: 20, display: "flex" }}>
+							<span style={{ color: colors.primary }}>{article.brand}</span>&nbsp;
+							<span style={{ color: colors.primary }}>{article.model}</span>&nbsp;
+							<span>관련 영상 더보기</span>
+						</div>
+						<div
+							style={{
+								width: "100%",
+								display: "flex",
+								gap: 36,
+								flexDirection: isDesktop ? "row" : "column",
+								justifyContent: "center",
+								alignItems: "center",
+							}}
+						>
+							{relatedArticles.map((article) => (
+								<div key={article.id} style={{ flex: 1 }}>
+									<ArticleSummaryToday article={article} />
+								</div>
+							))}
+						</div>
 					</div>
-					<div
-						style={{
-							width: "100%",
-							display: "flex",
-							gap: 36,
-							flexDirection: isDesktop ? "row" : "column",
-							justifyContent: "center",
-							alignItems: "center",
-						}}
-					>
-						{recommendedArticles.map((article) => (
-							<div key={article.id} style={{ flex: 1 }}>
-								<ArticleSummaryToday article={article} />
-							</div>
-						))}
-					</div>
-				</div>
+				}
 			</div>
 		</Layout>
 	);

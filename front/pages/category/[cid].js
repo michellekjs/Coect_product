@@ -25,9 +25,11 @@ export default function CategoryIdPage(props) {
 		query: '(min-width: 1045px)'
 	})
 	const isMobile = useMediaQuery({ query: '(max-width: 1045px)' });
+
+	const brand = brands[props.cid - 1];
 	
 	const articlesInBrand = articles.filter(
-		(article) => article.brand == brands[props.cid - 1].name
+		(article) => article.brand == brand.name
 	);
 
 	const [resultarticle, setarticle] = useState(articlesInBrand);
@@ -57,11 +59,9 @@ export default function CategoryIdPage(props) {
 			}}/>
 			
 			<div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-				<div style={{ width: '100%', paddingLeft: 10, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box' }}>
-					<div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-						<img src={require('../../public/imgs/logos/hyundai.svg').default.src} alt="현대자동차 로고" style={{ width: 44, height: 44 }}/>
-						<span style={{ fontSize: 22 }}>현대</span>
-					</div>			
+				<div style={{ width: '100%', paddingLeft: 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box', display: 'flex', alignItems: 'center', gap: 12 }}>
+					<img src={require(`../../public/imgs/logos/${brand.logo}`).default.src} alt={`${brand.name} 로고`} style={{ width: 44, height: 44 }}/>
+					<span style={{ fontSize: 22 }}>{brand.name}</span>		
 				</div>
 				<div style={{ display: 'flex', gap: 20, justifyContent: 'center' }}>
 				{

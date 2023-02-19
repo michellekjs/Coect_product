@@ -88,9 +88,9 @@ export default function ArticleSummary(props) {
 				<div style={styles.left}>
 					<div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
 						<div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 14, color: colors.primary }}>
-							<span>현대</span>
+							<span>{props.article.brand}</span>
 							<span style={{ color: '#BDBDBD' }}>&gt;</span>
-							<span>그랜저</span>
+							<span>{props.article.model}</span>
 						</div>
 						<div style={styles.title}>{props.article.title}</div>
 					</div>
