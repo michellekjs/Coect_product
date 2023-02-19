@@ -74,13 +74,13 @@ export default function ArticleIdPage(props) {
 								color: colors.primary,
 							}}
 						>
-							<span>현대</span>
+							<span>{article.brand}</span>
 							<span style={{ color: "#BDBDBD" }}>&gt;</span>
-							<span>그랜저</span>
+							<span>{article.model}</span>
 						</div>
 						<div style={{ dipslay: "flex", gap: 6 }}>
 							<div style={{ fontWeight: "500",fontSize: isMobile? 24 : 32 }}>
-								코엑트 전직원에게 그랜저 하이브리드 제공 선언?
+								{article.title}
 							</div>
 							<div style={{ display: "flex", gap: 6, alignItems: "center" }}>
 								<Author

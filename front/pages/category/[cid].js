@@ -27,7 +27,7 @@ export default function CategoryIdPage(props) {
 	const isMobile = useMediaQuery({ query: '(max-width: 1045px)' });
 	
 	const articlesInBrand = articles.filter(
-		(article) => article.car_brand == brands[props.cid - 1].name
+		(article) => article.brand == brands[props.cid - 1].name
 	);
 
 	const [resultarticle, setarticle] = useState(articlesInBrand);

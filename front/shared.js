@@ -1,4 +1,4 @@
-const articles = [
+let articles = [
     {   
         title: '신형 그랜저 2.5 시승기...최고의 세단! 심각한 불량도?',
         date: '2022-12-04',
@@ -101,8 +101,7 @@ const articles = [
             { start: '00:17:04', subject: '디자인', text: '제가 이 디자인 이야기를 처음부터 하고 시작하려고 그랬는데 너무 마음 아파서 마지막에 합니다. 마자믹에 거의 안보시거든요. 저는 창피합니다. 근데 지금 이 차를 얘기함에 있어서 창피하다는 말을 하기가 사실 정말 불편합니다. ' },
 
         ]
-    }
-
+    },
     {   
         title: '주행느낌 놀랍네요 "V6 그랜저" 배기량 사륜구동 하나로 이렇게 차이가 난다고.?! 풀옵션 3.5 그랜저 시승해봤습니다',
         date: '2022-11-30',
@@ -128,7 +127,6 @@ const articles = [
 
         ]
     },
-
     {   
         title: '신형 코나 시승기!…소형SUV 싹쓸이할까? 가격만 좀! (Feat.모카 이영빈 작가)',
         date: '2022-12-04',
@@ -154,7 +152,6 @@ const articles = [
             { start: '00:18:34', subject: '총평', text: '디올뉴 코나 이번에 타보니까 정말 잘 만들어진 차로 재탄생 했구나 그런 생각이 듭니다. 그런데 가격이 비싸진… 아 이거 어떡할거야?' },
         ]
     },
-
     {   
         title: '[리뷰] 2023 현대 그랜저 3.5 LPI & 3.5 가솔린 AWD',
         date: '2023-01-08',
@@ -181,7 +178,6 @@ const articles = [
 
         ]
     },
-
     {   
         title: '신형 코나 시승기 // 토션빔, 전륜구동, 1.6터보, 인스퍼레이션, 3420만원',
         date: '2023-01-28',
@@ -203,8 +199,9 @@ const articles = [
             { start: '00:14:15', subject: '제로백', text: '자 여기서부터 해보겠습니다, 7.62초! 셀토스보다 빠르네. 여름이랑 겨울의 차이는 좀 감안하셔서 봐야하는데 7.6초면은 괜찮은데요. ' },
         ]
     },
-
 ];
+
+articles = articles.map((article, index) => { return { ...article, id: index + 1 } });
 
 const brands = [
     { 
@@ -226,8 +223,8 @@ const brands = [
     { logo: 'benz.svg', name: '벤츠' },
     { logo: 'audi.svg', name: '아우디' },
     { logo: 'tesla.svg', name: '테슬라' },
-    { logo: 'volkswagen.svg', name: '폭스바겐' },
-    { logo: 'volvo.svg', name: '볼보' },
+    // { logo: 'volkswagen.svg', name: '폭스바겐' },
+    // { logo: 'volvo.svg', name: '볼보' },
 ];
 
 const colors = {
@@ -251,5 +248,5 @@ const colors = {
 };
 
 export {
-    categories,articles, brands, colors
+    articles, brands, colors
 };
