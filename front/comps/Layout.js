@@ -44,7 +44,8 @@ export default function Layout({ children }) {
   bmMenuWrap: {
     position: 'fixed',
 		top: "0px",
-    height: '100%'
+    height: '100%',
+		width : "30%"
   },
   bmMenu: {
     background: '#FAFAFA',
