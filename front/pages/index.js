@@ -4,6 +4,8 @@ import ArticleSummaryHot from '../comps/ArticleSummaryHot';
 import ArticleSummaryTop from "../comps/ArticleSummaryTop";
 import ArticleSummaryToday from "../comps/ArticleSummaryToday";
 import { useMediaQuery } from "react-responsive";
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import styles from "../comps/hover.module.css"
 
 
@@ -26,31 +28,47 @@ export default function MainPage() {
 					width: "100vw",
 				}}
 			>
-				<div
-					style={{
-						width: "100%",
-						height: isMobile? 180 : 358,
-						background: `linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-						url('${require(`../public/imgs/cover.png`).default.src}')`,
-						display: "flex",
-						backgroundSize: "cover",
-						backgroundPosition:"center center",
-						alignItems: "center",
-						justifyContent: "space-between",
-						flexDirection: "row",
-						textAlign: "center",
-						marginLeft: 0,
-						backgroundRepeat:'no-repeat',
-
-
-					}}
-				>
-					{isDesktop && <img src={require('../public/imgs/arrow_left.svg').default.src} alt={`왼쪽으로 전환`} style={{ height: 16, marginLeft: 60 }}/>}
-					<div style={{ fontSize: isMobile? 16 : 28, color: "white" , display: "flex", textAlign: isMobile ? "start": "center", marginLeft: isMobile ? "20px" : "0px" }}>
-						세단 제왕의 귀환, {isMobile && <br/> } 풀체인지 그랜져 리뷰 영상들 보러 가기
-					</div>
-					{isDesktop && <img src={require('../public/imgs/arrow_right.svg').default.src} alt={`오른쪽으로 전환`} style={{ height: 16, marginRight: 60 }}/>}
+				<div style={{ width: '100%' }}>
+					<Carousel 
+						autoPlay={false} infiniteLoop emulateTouch
+						renderArrowPrev={(clickHandler, hasPrev, label) =>
+							isDesktop && 
+							<a onClick={clickHandler} href='#/' style={{ width: 130, height: '100%', position: 'absolute', zIndex: 1, display: 'flex', justifyContent: 'center', paddingLeft: 60, paddingRight: 60 }}>
+								<img src={require('../public/imgs/arrow_left.svg').default.src} alt={`왼쪽으로 전환`}/>
+							</a>
+						}
+						renderArrowNext={(clickHandler, hasNext, label) =>
+							isDesktop && 
+							<a onClick={clickHandler} href='#/' style={{ width: 130, height: '100%', position: 'absolute', top: 0, right: 0, zIndex: 1, display: 'flex', justifyContent: 'center', paddingLeft: 60, paddingRight: 60 }}>
+								<img src={require('../public/imgs/arrow_right.svg').default.src} alt={`오른쪽으로 전환`}/>
+							</a>
+						}
+					>
+					{
+						Array(3).fill(0).map(_ => (
+							<div
+								style={{
+									flex: 'none',
+									width: "100%",
+									height: isMobile? 180 : 358,
+									background: `linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+									url('${require(`../public/imgs/cover.png`).default.src}')`,
+									display: "flex",
+									backgroundSize: "cover",
+									backgroundPosition:"center center",
+									alignItems: "center",
+									textAlign: "center",
+								}}
+							>
+								<div style={{ fontSize: isMobile? 16 : 28, color: "white", textAlign: isMobile ? "start": "center", marginLeft: isMobile ? "20px" : "0px", width: '100%' }}>
+									세단 제왕의 귀환, {isMobile && <br/> } 풀체인지 그랜져 리뷰 영상들 보러 가기
+								</div>
+							</div>
+						))
+					}
+					</Carousel>
 				</div>
+				
 				<div
 					style={{
 						display: "flex",

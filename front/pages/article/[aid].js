@@ -1,4 +1,4 @@
-import { useState, useRef} from "react";
+import { useState, useRef, useCallback } from "react";
 import { useMediaQuery } from "react-responsive";
 import YouTube from 'react-youtube';
 
@@ -33,12 +33,14 @@ export default function ArticleIdPage(props) {
 	const [player, setPlayer] = useState(null);
 	const [currentTime, setCurrentTime] = useState(0);
 
+	const getCurrentTimeInterval = useRef(null);
+
 	const onPlayerReady = (event) => {
 		setPlayer(event.target);
-		const getCurrentTimeInterval = useRef(setInterval(() => { 
+		clearInterval(getCurrentTimeInterval.current);
+		getCurrentTimeInterval.current = setInterval(() => { 
 			setCurrentTime(event.target.getCurrentTime());
-			// console.log(currentTime.current);
-		}, 1000));
+		}, 1000)
 	}
 
 	const isDesktop = useMediaQuery({
@@ -73,6 +75,7 @@ export default function ArticleIdPage(props) {
 					// gap: 112,
 				}}
 			>
+				{currentTime}
 				<div style={{ margin: isMobile? "10px": "0px"}}>
 					<div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
 						<div
@@ -201,7 +204,7 @@ export default function ArticleIdPage(props) {
 											onClick={() => { player.seekTo(s.start) }} href="#/" 
 											style={{ 
 												fontSize: isMobile? 14: 18, textDecoration: 'none',
-												color: (currentTime >= s.start && (i >= article.summaries.length || currentTime < article.summaries[i+1].start)) ? colors.primary : colors._300, 
+												color: (currentTime >= s.start && (i >= article.summaries.length - 1 || currentTime < article.summaries[i+1].start)) ? colors.primary : colors._300, 
 											}}>
 											{i+1}. {s.subject}
 										</a>
@@ -271,7 +274,7 @@ export default function ArticleIdPage(props) {
 									key={i}
 									subject={summary.subject}
 									start={summary.start}
-									isPlaying={ currentTime >= summary.start && (i >= article.summaries.length || currentTime < article.summaries[i+1].start ) }
+									isPlaying={ currentTime >= summary.start && (i >= article.summaries.length - 1 || currentTime < article.summaries[i+1].start ) }
 									seekTo={() => player.seekTo(summary.start)}
 								>
 									{summary.text}
