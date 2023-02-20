@@ -42,7 +42,7 @@ export default function TextUnit(props) {
 				<span style={{ fontSize: 20, color: '#212121' }}>{props.subject}</span>
 			</div>
 
-			<span style={{ fontSize: isMobile? 12: 16, paddingRight:"10px" }}>
+			<span style={{ fontSize: isMobile? 12: 16, paddingRight:"10px", lineHeight:2 }}>
 				{props.children}
 			</span>
 		</a>

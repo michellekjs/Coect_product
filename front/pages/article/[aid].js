@@ -16,6 +16,12 @@ export function getStaticPaths() {
 		fallback: false,
 	};
 }
+const relatedArticlesByKeywords = article.keywords.map((k) => ({
+	keyword: k,
+	articles: articles.filter(
+		(a) => a.keywords.includes(k) && a.id != article.id
+	),
+}));
 
 export function getStaticProps({ params }) {
 	return { props: { aid: params.aid } };
@@ -130,6 +136,11 @@ export default function ArticleIdPage(props) {
 								width: isMobile? "70%" : "95%",
 								paddingTop: "56.25%",
 								display: "flex",
+                gap: isMobile? 5: 30,
+								justifyContent: "center",
+								alignItems: "center",
+								width: "100%",
+								// position: "fixed"
 							}}
 						>
 							<iframe
@@ -142,6 +153,9 @@ export default function ArticleIdPage(props) {
 									bottom: "0",
 									right: "0",
 									margin: "auto",
+                  width: isMobile? "70%" : "95%",
+									paddingTop: "42%",
+									display: "flex",
 								}}
 								width="100%"
 								height="100%"
@@ -181,11 +195,24 @@ export default function ArticleIdPage(props) {
 						>
 							<div
 								style={{
-									display: "flex",
+                  display: "flex",
 									flexDirection: "column",
 									gap: 20,
 									maxHeight: 500,
 									overflow: 'scroll'
+									flexGrow: 1,
+									// height:"100%",
+									// height: "200%",
+									// height : "",
+									borderRadius: 8,
+									borderWidth: 1,
+									borderColor: "#919191",
+									borderStyle: "solid",
+									paddingTop: 18,
+									paddingLeft: 20,
+									paddingRight: 20,
+									paddingBottom: 18,
+									// boxSizing: "inherit",
 								}}
 							>
 								<div style={{ fontSize: 16, color: colors.primaryDark }}>
@@ -231,7 +258,7 @@ export default function ArticleIdPage(props) {
 								overflow: "hidden",
 							}}
 						>
-							<tr style={{ textAlign: "center", fontSize: isMobile?14:16 }}>
+							<tr style={{ textAlign: "center", fontSize: isMobile? 16:16, height:"30px" }}>
 								<th colspan="2">SORENTO / 4세대</th>
 							</tr>
 							{[

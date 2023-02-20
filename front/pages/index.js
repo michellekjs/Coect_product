@@ -107,7 +107,7 @@ export default function MainPage() {
 							display: "flex",
 							flexDirection: "column",
 							alignItems: "center",
-							gap: 60,
+							gap: isMobile ? 30 : 60,
 						}}
 					>
 						<div style={{ fontSize: 22, fontWeight: 500}}>차량 리뷰 Pick 👍</div>
@@ -124,7 +124,7 @@ export default function MainPage() {
 							display: "flex",
 							flexDirection: "column",
 							alignItems: "center",
-							gap: 60,
+							gap:isMobile ? 30 : 60,
 						}}
 					>
 						<div style={{ fontSize: 22, fontWeight: 500 }}>차량 리뷰 찾아보기 🔎</div>
@@ -248,13 +248,14 @@ export default function MainPage() {
 							</div>
 						)}
 					</div>
-					<div style={{ width: "100%" }}>
+					<div style={{ width: "95%" }}>
 						<div
 							style={{
 								display: "flex",
 								justifyContent: "space-between",
 								alignItems: "center",
 								width: "100%",
+								gap : isMobile ? 30 : 60,
 							}}
 						>
 							<div
@@ -305,7 +306,7 @@ export default function MainPage() {
                             }
                         </div>
 					</div>
-					<div style={{ display: "flex", flexDirection: "column", gap: 60 }}>
+					<div style={{ display: "flex", flexDirection: "column",alignItems: "center", gap: isMobile ? 30 : 60 }}>
 						<div style={{ fontSize: 22, fontWeight: 500 }}>최신 차량 리뷰 콘텐츠</div>
 						{[0, 3].map((i) => (
 							<div
