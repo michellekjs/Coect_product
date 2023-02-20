@@ -3,7 +3,7 @@ import { useMediaQuery } from 'react-responsive';
 
 import Layout from "../../comps/Layout";
 import ArticleSummary from "../../comps/ArticleSummary";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from 'next/router'
 
@@ -14,13 +14,13 @@ import ArticleSummaryToday from "../../comps/ArticleSummaryToday";
 import { brands, articles, colors } from "../../shared";
 export function getStaticPaths() {
 	return {
-		paths: brands.map((_, i) => ({ params: { cid: String(i + 1) } })),
+		paths: brands.map((brand, i) => ({ params: { brandNameEng: brand.nameEng } })),
 		fallback: false,
 	};
 }
 
 export function getStaticProps({ params }) {
-	return { props: { cid: params.cid, key: params.cid } };
+	return { props: { brandNameEng: params.brandNameEng, key: params.brandNameEng } };
 }
 
 export default function CategoryIdPage(props) {
@@ -29,16 +29,18 @@ export default function CategoryIdPage(props) {
 	})
 	const isMobile = useMediaQuery({ query: '(max-width: 1045px)' });
 
-	const brand = brands[props.cid - 1];
-	
-	const articlesInBrand = articles.filter(
-		(article) => article.brand == brand.name
-	);
+	const router = useRouter();
+	const { brandNameEng, page } = router.query;
 
-	const router = useRouter()
-	const { page } = router.query
+	const brand = brands.find((brand) => brand.nameEng == brandNameEng);
 
-	const [resultarticle, setarticle] = useState(articlesInBrand);
+	const pageReal = page ? parseInt(page) : 1;
+
+	const nArticlesInPage = 6;
+
+	const [resultarticle, setarticle] = useState(articles.filter(
+		(article) => (article.brand == brand.name)
+	));
 
 	// const buttonClick = (word) => {
 	// 	if (word == true) {
@@ -79,7 +81,7 @@ export default function CategoryIdPage(props) {
 					)
 				}
 				</div>
-				<div style={{ maxWidth: 745, marginTop: 64 }}>
+				<div style={{ width: isDesktop ? 745 : 'auto', marginTop: 64 }}>
 					<div style={{ display: 'flex', flexDirection: 'column', gap: 60 }}>
 						<div style={{ 
 							// display: 'flex', gap: 12,
@@ -87,17 +89,18 @@ export default function CategoryIdPage(props) {
 						}}>
 							<span>리뷰 영상</span>
 							<span style={{ color: colors.primary }}>&nbsp;{resultarticle.length}</span>
-							{ page && page!=1 && <span>개 중 {page}페이지</span> }
+							<span>개</span>
+							{ resultarticle.length > nArticlesInPage && <span> 중 {pageReal}페이지</span> }
 						</div>
 						<div>
 							<div style={{ display: 'flex', flexDirection: 'column', gap: 40 }}>
 								{isDesktop && 
-									resultarticle.map((a, i) =>
+									resultarticle.slice((pageReal-1)*nArticlesInPage, pageReal*nArticlesInPage).map((a, i) =>
 										<ArticleSummary article={a}/>
 									)
 								}
 								{isMobile && 
-									resultarticle.map((a, i) =>
+									resultarticle.slice((pageReal-1)*nArticlesInPage, pageReal*nArticlesInPage).map((a, i) =>
 										<ArticleSummaryToday article={a}/>
 									)
 								}
@@ -105,11 +108,11 @@ export default function CategoryIdPage(props) {
 						</div>
 						<div style={{ display: 'flex', gap: 0, width: '100%', justifyContent: 'center' }}>
 						{
-							Array.from({length: 10}, (_, i) => i + 1).map((i) =>
+							Array.from({ length: Math.ceil(resultarticle.length / nArticlesInPage) }, (_, i) => i + 1).map((i) =>
 								<Link
-									href={`/category/${props.cid}?page=${i}`}
+									href={`/brand/${props.brandNameEng}?page=${i}`}
 									style={{ 
-										width: 40, height: 40, display: 'flex', justifyContent: 'center', alignItems: 'center', color: i==1 ? colors.primary : colors._300,
+										width: 40, height: 40, display: 'flex', justifyContent: 'center', alignItems: 'center', color: i==pageReal ? colors.primary : colors._300,
 										textDecoration: 'none',
 									}}
 									className={ styles.logo }

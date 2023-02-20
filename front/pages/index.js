@@ -140,7 +140,7 @@ export default function MainPage() {
 							>
 								{brands.map((brand) => (
 									<Link
-										href={`/category/${brand.id}`}
+										href={`/brand/${brand.nameEng}`}
 										style={{
 											display: "flex",
 											flexDirection: "column",
@@ -188,7 +188,7 @@ export default function MainPage() {
 										>
 											{brands.slice(range.start, range.end).map((brand) => (
 												<Link
-													href={`/category/${brand.id}`}
+													href={`/brand/${brand.nameEng}`}
 													style={{
 														display: "flex",
 														flexDirection: "column",

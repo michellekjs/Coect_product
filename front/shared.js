@@ -104,7 +104,7 @@ let articles = [
                 { start: '00:14:26', subject: '오디오', text: '이제 오디오 궁금해하시는 분들이 많았는데 우리 김나영님의 킬링 보이스를 기준으로 그냥 일반적인 유튜브 스트리밍 음원을 블루투스로 들었을 때를 기준으로 지금 이제 보스가 들어가 있거든요. ' },
                 { start: '00:15:30', subject: '네비게이션', text: '그리고 네비게이션 같은 경우는 증강현실 네비게이션이 또 들어가 있죠. 그럼 길 안내를 좀 해볼까요?' },
                 { start: '00:16:52', subject: '엠비언트 라이트', text: '그리고 이 엠비언트 라이트는 지금 몇 번 말씀을 드리기는 했지만, 이 드라이브 모드에 따라서 이 위에 여기 들어오는 불빛이 이제 막 휘향찬란하게 바뀌고 하거든요. ' },
-                { start: '00:17:10', subject: '게기판 디자인', text: '그리고 이제 게기판 디자인 때문에 또 좀 말이 많던데 디자인을 바꿀 수 있거든요. 차량에서 클러스터 테마 선택. ' },
+                { start: '00:17:10', subject: '계기판 디자인', text: '그리고 이제 계기판 디자인 때문에 또 좀 말이 많던데 디자인을 바꿀 수 있거든요. 차량에서 클러스터 테마 선택. ' },
                 { start: '00:18:34', subject: '기어노브', text: '기어노브 너무너무 편하고요. 이건 아이오닉 5 때 이미 칭찬을 좀 많이 했던 그 위치에 들어가 있는 컬럼식 기어노브입니다.' },
 
             ]
@@ -241,7 +241,7 @@ articles = articles.map((a, i) => {
 
 let brands = [
     { 
-        logo: 'hyundai.svg', name: '현대',
+        logo: 'hyundai.svg', name: '현대', nameEng: 'HYUNDAI',
         models: [
             { 
                 name: '쏘렌토',
@@ -252,15 +252,15 @@ let brands = [
             },
         ]
     },
-    { logo: 'kia.svg', name: '기아' },
-    { logo: 'genesis.svg', name: '제네시스' },
-    { logo: 'ssangyong.svg', name: '쌍용' },
-    { logo: 'bmw.svg', name: 'BMW' },
-    { logo: 'benz.svg', name: '벤츠' },
-    { logo: 'audi.svg', name: '아우디' },
-    { logo: 'tesla.svg', name: '테슬라' },
-    // { logo: 'volkswagen.svg', name: '폭스바겐' },
-    // { logo: 'volvo.svg', name: '볼보' },
+    { logo: 'kia.svg', name: '기아', nameEng: 'KIA' },
+    { logo: 'genesis.svg', name: '제네시스', nameEng: 'GENESIS' },
+    { logo: 'ssangyong.svg', name: '쌍용', nameEng: 'SSANGYONG' },
+    { logo: 'bmw.svg', name: 'BMW', nameEng: 'BMW' },
+    { logo: 'benz.svg', name: '벤츠', nameEng: 'BENZ' },
+    { logo: 'audi.svg', name: '아우디', nameEng: 'AUDI' },
+    { logo: 'tesla.svg', name: '테슬라', nameEng: 'TESLA' },
+    // { logo: 'volkswagen.svg', name: '폭스바겐', nameEng: 'VOLKSWAGEN' },
+    // { logo: 'volvo.svg', name: '볼보', nameEng: 'VOLVO' },
 ];
 
 brands = brands.map((b, i) => {
