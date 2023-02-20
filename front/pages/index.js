@@ -7,6 +7,7 @@ import { useMediaQuery } from "react-responsive";
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import styles from "../comps/hover.module.css"
+import { useState, useRef, useCallback } from "react";
 
 
 import { articles, categories, brands, colors } from "../shared";
@@ -16,7 +17,30 @@ export default function MainPage() {
 	});
 	const isMobile = useMediaQuery({ query: "(max-width: 1045px)" });
 
-	const randomArticles = articles.sort(() => Math.random() - 0.5);
+	function getHot(brand, model) {
+		return {
+			brand: brand,
+			model: model,
+			articles: articles.filter(article => article.brand == brand && article.model == model).sort((a, b) => b.date > a.date)
+		}
+	}
+
+	const [hot, setHot] = useState(getHot('현대', '그랜저'));
+
+	function getRandomArbitrary(min, max) {
+		return Math.random() * (max - min) + min;
+	  }
+
+	function refreshHot() {
+		let model = hot.model;
+		while (model == hot.model) {
+			model = ['그랜저', '토레스', '코나'][Math.floor(getRandomArbitrary(0, 3))];
+		}
+		setHot(getHot('현대', model));
+	}
+
+	const articlesRecent = articles.sort((a, b) => b.date > a.date);
+
 	return (
 		<Layout>
 			<div
@@ -88,7 +112,7 @@ export default function MainPage() {
 					>
 						<div style={{ fontSize: 22, fontWeight: 500}}>차량 리뷰 Pick 👍</div>
 							<div style={{ display: "flex", alignItems: "center", flexDirection: isMobile? "column":"row", gap: isMobile? 20: 36, width: isMobile? "80%": "100%" }}>
-								{randomArticles.slice(1, 4).map((article) => (
+								{articlesRecent.slice(1, 4).map((article) => (
 									<div key={article.id} style={{ flex: 1 }}>
 										<ArticleSummaryToday key={article.id} article={article} />
 									</div>
@@ -243,9 +267,10 @@ export default function MainPage() {
 								}}
 							>
 								<span>🔥 요즘 사람들이 주목하는 차량</span>
-								<span style={{ color: colors.primary }}>#그랜저</span>
+								<span style={{ color: colors.primary }}>#{hot.model}</span>
 							</div>
-							<div
+							<button
+								onClick={refreshHot}
 								style={{
 									display: "flex",
 									alignItems: "center",
@@ -258,6 +283,8 @@ export default function MainPage() {
 									borderColor: "#BDBDBD",
 									borderWidth: 1,
 									borderStyle: "solid",
+									background: "white",
+									cursor: "pointer",
 								}}
 							>
 								<img
@@ -266,13 +293,13 @@ export default function MainPage() {
 									style={{ width: 20, height: 20 }}
 								/>
 								{isDesktop && <span style={{ fontSize: 14 }}>주목하는 차량 더보기</span> }
-							</div>
+							</button>
 						</div>
 						 <div style={{ display: 'flex', alignItems: 'flex-start', gap: 24, marginTop: 60, flexDirection: isMobile? "column" : "row", }}>
                             {
-                                Array(2).fill(0).map((_, i) => (
+                                hot.articles.slice(0,2).map((a, i) => (
                                     <div key={i} style={{ flex: 1 }}>
-                                        <ArticleSummaryHot key={i} article={randomArticles[i]} />
+                                        <ArticleSummaryHot key={i} article={a} />
                                     </div>
                                 ))
                             }
@@ -280,12 +307,12 @@ export default function MainPage() {
 					</div>
 					<div style={{ display: "flex", flexDirection: "column", gap: 60 }}>
 						<div style={{ fontSize: 22, fontWeight: 500 }}>최신 차량 리뷰 콘텐츠</div>
-						{[1, 4].map((i) => (
+						{[0, 3].map((i) => (
 							<div
 								key={i}
 								style={{ display: "flex", alignItems: "center", flexDirection: isMobile? "column":"row", gap: 36 }}
 							>
-								{randomArticles.slice(i, i + 3).map((article) => (
+								{articlesRecent.slice(i, i + 3).map((article) => (
 									<div key={article.id} style={{ flex: 1 }}>
 										<ArticleSummaryToday key={article.id} article={article} />
 									</div>
