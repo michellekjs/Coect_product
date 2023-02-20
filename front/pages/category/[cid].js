@@ -83,14 +83,15 @@ export default function CategoryIdPage(props) {
 					<div style={{ display: 'flex', flexDirection: 'column', gap: 60 }}>
 						<div style={{ 
 							// display: 'flex', gap: 12,
-							fontSize: 25
+							fontSize: 25, 
+							marginLeft: "10%"
 						}}>
 							<span>리뷰 영상</span>
 							<span style={{ color: colors.primary }}>&nbsp;{resultarticle.length}</span>
 							{ page && page!=1 && <span>개 중 {page}페이지</span> }
 						</div>
 						<div>
-							<div style={{ display: 'flex', flexDirection: 'column', gap: 40 }}>
+							<div style={{ display: 'flex', flexDirection: 'column', gap: 40, alignItems: "center",justifyContent:"center", }}>
 								{isDesktop && 
 									resultarticle.map((a, i) =>
 										<ArticleSummary article={a}/>

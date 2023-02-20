@@ -44,7 +44,7 @@ export default function Layout({ children }) {
       position: 'fixed',
       top: "0px",
       height: '100%',
-      width : "30%"
+      width : "50%"
     },
     bmMenu: {
       background: '#FAFAFA',
@@ -90,7 +90,7 @@ export default function Layout({ children }) {
 		// 	</body>
 		// </html>
 
-		<div style={{ width: '100%' }}>
+		<div style={{ width: '100%', overflow:"clip" }}>
 			<div style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box', width: '100%', alignItems:'center', position:"sticky", top: 0, zIndex:1, backgroundColor:"white", opacity: opacity<350 ? 1 : 0.8 }}>
 				<Link href="/" style={{ display: 'flex', gap: 6, alignItems: 'baseline', textDecoration: 'none' }}>
 					<img src={require('../public/imgs/logo.svg').default.src} alt="COECT 로고" style={{ height: 26 }}/>
