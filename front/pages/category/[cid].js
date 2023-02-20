@@ -5,13 +5,16 @@ import Layout from "../../comps/Layout";
 import ArticleSummary from "../../comps/ArticleSummary";
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from 'next/router'
+
+import styles from "../../comps/hover.module.css"
 
 import ArticleSummaryToday from "../../comps/ArticleSummaryToday";
 
-import { categories, articles, colors } from "../../shared";
+import { brands, articles, colors } from "../../shared";
 export function getStaticPaths() {
 	return {
-		paths: categories.map((_, i) => ({ params: { cid: String(i + 1) } })),
+		paths: brands.map((_, i) => ({ params: { cid: String(i + 1) } })),
 		fallback: false,
 	};
 }
@@ -22,29 +25,32 @@ export function getStaticProps({ params }) {
 
 export default function CategoryIdPage(props) {
 	const isDesktop = useMediaQuery({
-    query: '(min-width: 1045px)'
-  })
-  const isMobile = useMediaQuery({ query: '(max-width: 1045px)' })
-	const articlesInCategory = articles.filter(
-		(article) => article.category == props.cid
+		query: '(min-width: 1045px)'
+	})
+	const isMobile = useMediaQuery({ query: '(max-width: 1045px)' });
+
+	const brand = brands[props.cid - 1];
+	
+	const articlesInBrand = articles.filter(
+		(article) => article.brand == brand.name
 	);
 
+	const router = useRouter()
+	const { page } = router.query
 
-	const [resultarticle, setarticle] = useState(articlesInCategory);
+	const [resultarticle, setarticle] = useState(articlesInBrand);
 
-	const buttonClick = (word) => {
-		if (word == true) {
-			setarticle(articlesInCategory);
-		} else {
-			console.log(word);
-			setarticle(
-				articlesInCategory.filter((article) => article.keywords.includes(word))
-			);
-			console.log(resultarticle);
-		}
-	};
-
-	const strings = ["네옴시티가 무엇인지 더 알아보고 싶으신가요?", "해외여행 대세, 가까운 방콕은 어떤가요?", "헤드셋, 머리아파서 바꾸고 싶으셨나요?", "나에게 어떤 아이메이크업이 맞을지 도저히 모르겠다면?", "새로 나온 그랜저 , 과연 그 명성을 이어갈 수 있을까?"]
+	// const buttonClick = (word) => {
+	// 	if (word == true) {
+	// 		setarticle(articlesInBrand);
+	// 	} else {
+	// 		console.log(word);
+	// 		setarticle(
+	// 			articlesInBrand.filter((article) => article.keywords.includes(word))
+	// 		);
+	// 		console.log(resultarticle);
+	// 	}
+	// };
 
 	return (
 		<Layout>
@@ -59,11 +65,9 @@ export default function CategoryIdPage(props) {
 			}}/>
 			
 			<div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-				<div style={{ width: '100%', paddingLeft: 10, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box' }}>
-					<div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-						<img src={require('../../public/imgs/logos/hyundai.svg').default.src} alt="현대자동차 로고" style={{ width: 44, height: 44 }}/>
-						<span style={{ fontSize: 22 }}>현대</span>
-					</div>			
+				<div style={{ width: '100%', paddingLeft: 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box', display: 'flex', alignItems: 'center', gap: 12 }}>
+					<img src={require(`../../public/imgs/logos/${brand.logo}`).default.src} alt={`${brand.name} 로고`} style={{ width: 44, height: 44 }}/>
+					<span style={{ fontSize: 22 }}>{brand.name}</span>		
 				</div>
 				<div style={{ display: 'flex', gap: 20, justifyContent: 'center', overflow: "scroll", width: "100%" }}>
 				{
@@ -77,113 +81,47 @@ export default function CategoryIdPage(props) {
 				</div>
 				<div style={{ maxWidth: 745, marginTop: 64 }}>
 					<div style={{ display: 'flex', flexDirection: 'column', gap: 60 }}>
-						<div style={{ display: 'flex', gap: 12, fontSize: 25 }}>
+						<div style={{ 
+							// display: 'flex', gap: 12,
+							fontSize: 25
+						}}>
 							<span>리뷰 영상</span>
-							<span style={{ color: colors.primary }}>23</span>
+							<span style={{ color: colors.primary }}>&nbsp;{resultarticle.length}</span>
+							{ page && page!=1 && <span>개 중 {page}페이지</span> }
 						</div>
 						<div>
 							<div style={{ display: 'flex', flexDirection: 'column', gap: 40 }}>
 								{isDesktop && 
-									articlesInCategory.map((a, i) =>
+									resultarticle.map((a, i) =>
 										<ArticleSummary article={a}/>
 									)
 								}
 								{isMobile && 
-									articlesInCategory.map((a, i) =>
+									resultarticle.map((a, i) =>
 										<ArticleSummaryToday article={a}/>
 									)
 								}
-								
 							</div>
+						</div>
+						<div style={{ display: 'flex', gap: 0, width: '100%', justifyContent: 'center' }}>
+						{
+							Array.from({length: 10}, (_, i) => i + 1).map((i) =>
+								<Link
+									href={`/category/${props.cid}?page=${i}`}
+									style={{ 
+										width: 40, height: 40, display: 'flex', justifyContent: 'center', alignItems: 'center', color: i==1 ? colors.primary : colors._300,
+										textDecoration: 'none',
+									}}
+									className={ styles.logo }
+								>
+									{i}
+								</Link>
+							)
+						}
 						</div>
 					</div>
 				</div>
 			</div>
-			
-			
-
-			{/* <h1 style={{ marginTop: 0 }}>{categories[props.cid - 1]}</h1>
-			<Link
-				href={`/article/${resultarticle[0].id}`}
-				style={{
-					backgroundColor: "black",
-					opacity: "0.8",
-					position: "absolute",
-					width: "69%",
-					height: "230px",
-					color: "white",
-					display:'flex',
-					alignItems: "center",
-					justifyContent: "center",
-					fontSize:"24pt",
-					letterSpacing:"2px",
-					fontWeight:"normal",
-					textDecoration:'none'
-				}}
-			>
-				{" "}
-				{strings[props.cid-1] } {'>'}
-			</Link>
-			<img
-				src={`/imgs/figures/${props.cid}.png`}
-				style={{ width: "100%", height: "230px", objectFit: "cover" }}
-			/>
-			<div
-				style={{
-					display: "flex",
-					justifyContent: "center",
-					alignItems: "center",
-					marginTop: "40px",
-				}}
-			>
-				<button
-					style={{
-						margin: "10px",
-						backgroundColor: "white",
-						borderStyle: "none",
-					}}
-					onClick={() => buttonClick(true)}
-				>
-					{" "}
-					전체{" "}
-				</button>
-				{uniquekeyword.map((word) => (
-					<button
-						key={word}
-						style={{
-							margin: "10px",
-							backgroundColor: "white",
-							borderStyle: "none",
-							
-						}}
-						onClick={() => buttonClick(word)}
-					>
-						{word}
-					</button>
-				))}
-			</div>
-			<div
-				style={{
-					display: "flex",
-					justifyContent: "space-between",
-					marginTop: "20px",
-				}}
-			>
-				<div style={{ display: "flex", flexDirection: "column", width: "48%" }}>
-					{resultarticle
-						.filter((e) => resultarticle.indexOf(e) % 2 === 0)
-						.map((article) => (
-							<ArticleSummary key={article.id} article={article} />
-						))}
-				</div>
-				<div style={{ display: "flex", flexDirection: "column", width: "48%" }}>
-					{resultarticle
-						.filter((e) => resultarticle.indexOf(e) % 2 !== 0)
-						.map((article) => (
-							<ArticleSummary key={article.id} article={article} />
-						))}
-				</div>
-			</div> */}
 		</Layout>
 	);
 }

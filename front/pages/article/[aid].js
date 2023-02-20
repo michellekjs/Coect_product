@@ -1,6 +1,6 @@
-import React from "react";
+import { useState, useRef, useCallback } from "react";
 import { useMediaQuery } from "react-responsive";
-// import YouTube from 'react-youtube';
+import YouTube from 'react-youtube';
 
 import Layout from "../../comps/Layout";
 import Subtitle from "../../comps/Subtitle";
@@ -35,6 +35,20 @@ export function getStaticProps({ params }) {
 //   }
 
 export default function ArticleIdPage(props) {
+
+	const [player, setPlayer] = useState(null);
+	const [currentTime, setCurrentTime] = useState(0);
+
+	const getCurrentTimeInterval = useRef(null);
+
+	const onPlayerReady = (event) => {
+		setPlayer(event.target);
+		clearInterval(getCurrentTimeInterval.current);
+		getCurrentTimeInterval.current = setInterval(() => { 
+			setCurrentTime(event.target.getCurrentTime());
+		}, 1000)
+	}
+
 	const isDesktop = useMediaQuery({
 		query: "(min-width: 1045px)",
 	});
@@ -51,12 +65,10 @@ export default function ArticleIdPage(props) {
 	const article = articles.find((a) => a.id == props.aid);
 
 	const recommendedArticleIdStart = Math.ceil(article.id / 4) * 4 - 3;
-	const recommendedArticles = articles.filter(
-		(a) =>
-			a.id >= recommendedArticleIdStart &&
-			a.id < recommendedArticleIdStart + 4 &&
-			a.id != article.id
-	);
+	const relatedArticles = articles
+		.filter( (a) => a.brand == article.brand && a.model == article.model && a.id != article.id )
+		.sort(() => 0.5 - Math.random())
+		.slice(0, 3); // 랜덤으로 3개 뽑기
 
 	return (
 		<Layout>
@@ -64,84 +76,130 @@ export default function ArticleIdPage(props) {
 				style={{
 					maxWidth: 1032,
 					marginTop: 72,
-					display: "flex",
-					flexDirection: "column",
-					gap: 112,
+					// display: "flex",
+					// flexDirection: "column",
+					// gap: 112,
 				}}
 			>
-				<div style={{ display: "flex", flexDirection: "column", gap: 60 , margin: isMobile? "10px": "0px"}}>
-					<div style={{ display: "flex", flexDirection: "column", gap: 36 }}>
-						<div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-							<div
-								style={{
-									display: "flex",
-									alignItems: "center",
-									gap: 4,
-									fontSize: 14,
-									color: colors.primary,
-								}}
-							>
-								<span>현대</span>
-								<span style={{ color: "#BDBDBD" }}>&gt;</span>
-								<span>그랜저</span>
-							</div>
-							<div style={{ dipslay: "flex", gap: 6 }}>
-								<div style={{ fontWeight: "500",fontSize: isMobile? 24 : 32 }}>
-									코엑트 전직원에게 그랜저 하이브리드 제공 선언?
-								</div>
-								<div style={{ display: "flex", gap: 6, alignItems: "center" }}>
-									<Author
-										name={article.channelName}
-										image={article.channelImageUrl}
-									/>
-									<span style={{color: "#919191"}}>|</span>
-									<span style={{ fontSize: 16, color: "#919191" }}>
-										{article.date.replaceAll("-", ".") + "."}
-									</span>
-								</div>
-							</div>
-						</div>
+				{currentTime}
+				<div style={{ margin: isMobile? "10px": "0px"}}>
+					<div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
 						<div
 							style={{
 								display: "flex",
-								gap: isMobile? 5: 30,
+								alignItems: "center",
+								gap: 4,
+								fontSize: 14,
+								color: colors.primary,
+							}}
+						>
+							<span>{article.brand}</span>
+							<span style={{ color: "#BDBDBD" }}>&gt;</span>
+							<span>{article.model}</span>
+						</div>
+						<div style={{ dipslay: "flex", gap: 6 }}>
+							<div style={{ fontWeight: "500",fontSize: isMobile? 24 : 32 }}>
+								{article.title}
+							</div>
+							<div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+								<Author
+									name={article.channelName}
+									image={article.channelImageUrl}
+								/>
+								<span style={{color: "#919191"}}>|</span>
+								<span style={{ fontSize: 16, color: "#919191" }}>
+									{article.date.replaceAll("-", ".") + "."}
+								</span>
+							</div>
+						</div>
+					</div>
+					<div
+						style={{
+							position: 'sticky',
+							top: 10,
+							alignSelf: 'flex-start',
+							display: "flex",
+							gap: isMobile? 5: 30,
+							justifyContent: "center",
+							alignItems: "center",
+							width: "100%",
+							marginTop: 36,
+							zIndex: 2,
+							background: 'linear-gradient(to top, rgba(255,255,255,0), white 30px)',
+							paddingBottom: 30,
+						}}
+					>
+						{/* <div
+							style={{
+								position: "relative",
+								overflow: "hidden",
+								width: isMobile? "70%" : "95%",
+								paddingTop: "56.25%",
+								display: "flex",
+                gap: isMobile? 5: 30,
 								justifyContent: "center",
 								alignItems: "center",
 								width: "100%",
 								// position: "fixed"
 							}}
 						>
-							<div
+							<iframe
 								style={{
-									position: "relative",
+									borderRadius: 8,
 									overflow: "hidden",
-									width: isMobile? "70%" : "95%",
+									position: "absolute",
+									top: "0",
+									left: "0",
+									bottom: "0",
+									right: "0",
+									margin: "auto",
+                  width: isMobile? "70%" : "95%",
 									paddingTop: "42%",
 									display: "flex",
 								}}
-							>
-								<iframe
-									style={{
-										borderRadius: 8,
-										overflow: "hidden",
-										position: "absolute",
-										top: "0",
-										left: "0",
-										bottom: "0",
-										right: "0",
-										margin: "auto",
-									}}
-									width="100%"
-									height="100%"
-									src={`https://www.youtube.com/embed/${article.videoId}`}
-									title="YouTube video player"
-									frameborder="0"
-									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-									allowfullscreen
-								></iframe>
-							</div>
+								width="100%"
+								height="100%"
+								src={`https://www.youtube.com/embed/${article.videoId}`}
+								title="YouTube video player"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen
+							></iframe>
+						</div> */}
+						<div style={{
+							borderRadius: 8,
+							overflow: "hidden",
+						}}>
+							<YouTube videoId={article.videoId} opts={{
+									width: 808,
+									height: 580,
+								}}
+								onReady={onPlayerReady}
+							/>
+						</div>
+						
+						<div
+							style={{
+								// flex: 1,
+								height:"100%",
+								borderRadius: 8,
+								borderWidth: 1,
+								borderColor: "#919191",
+								borderStyle: "solid",
+								paddingTop: 18,
+								paddingLeft: 20,
+								paddingRight: 20,
+								paddingBottom: 18,
+								boxSizing: "border-box",
+							}}
+						>
 							<div
 								style={{
+                  display: "flex",
+									flexDirection: "column",
+									gap: 20,
+									maxHeight: 500,
+									overflow: 'scroll'
 									flexGrow: 1,
 									// height:"100%",
 									// height: "200%",
@@ -157,54 +215,42 @@ export default function ArticleIdPage(props) {
 									// boxSizing: "inherit",
 								}}
 							>
+								<div style={{ fontSize: 16, color: colors.primaryDark }}>
+									목차
+								</div>
 								<div
 									style={{
 										display: "flex",
 										flexDirection: "column",
-										gap: 20,
+										gap: 16,
 									}}
-								>
-									<div style={{ fontSize: 16, color: colors.primaryDark }}>
-										목차
-									</div>
-									<div
-										style={{
-											display: "flex",
-											flexDirection: "column",
-											gap: 16,
-										}}
-									>
-										<span style={{ fontSize: isMobile? 14: 18, color: colors.primary }}>
-											1. 가격
-										</span>
-										<span style={{ fontSize: isMobile? 14: 18, color: "#424242" }}>
-											2. 옵션
-										</span>
-										<span style={{ fontSize: isMobile? 14: 18, color: "#424242" }}>
-											3. 승차감
-										</span>
-										<span style={{ fontSize: isMobile? 14: 18, color: "#424242" }}>
-											4. 총평
-										</span>
-									</div>
+								>	
+								{
+									article.summaries.map((s, i) => (
+										<a
+											onClick={() => { player.seekTo(s.start) }} href="#/" 
+											style={{ 
+												fontSize: isMobile? 14: 18, textDecoration: 'none',
+												color: (currentTime >= s.start && (i >= article.summaries.length - 1 || currentTime < article.summaries[i+1].start)) ? colors.primary : colors._300, 
+											}}>
+											{i+1}. {s.subject}
+										</a>
+									))
+								}
 								</div>
 							</div>
 						</div>
 					</div>
-					<div
-						style={{
-							display: "flex",
-							flexDirection: "row",
-							gap: 20,
-							justifyContent: "center",
-							alignItems: "center",
-							// width: "80vw",
-						}}
-					>
+					<div style={{ 
+						width: "100%",
+						paddingLeft: isMobile ? 10 : 1,
+						paddingRight: isMobile ? 10 : 1,
+						marginTop: 30,
+						boxSizing: "border-box",
+					}}>
 						<table
 							style={{
 								width: "100%",
-								margin: isMobile ? "10px" : "0px",
 								borderCollapse: "collapse",
 								borderRadius: 8,
 								borderStyle: "hidden",
@@ -248,15 +294,15 @@ export default function ArticleIdPage(props) {
 							))}
 						</table>
 					</div>
-					<div style={{ margin: "10px", display: "flex", flexDirection: "column", gap: 20 }}>
+					<div style={{ margin: "10px", marginTop: 60, display: "flex", flexDirection: "column", gap: 20 }}>
 						{article.summaries.map((summary, i) =>
 							summary.text ? (
 								<TextUnit
 									key={i}
 									subject={summary.subject}
 									start={summary.start}
-									end={summary.end}
-									isPlaying={i == 1}
+									isPlaying={ currentTime >= summary.start && (i >= article.summaries.length - 1 || currentTime < article.summaries[i+1].start ) }
+									seekTo={() => player.seekTo(summary.start)}
 								>
 									{summary.text}
 								</TextUnit>
@@ -279,29 +325,32 @@ export default function ArticleIdPage(props) {
 						)}
 					</div>
 				</div>
-				<div style={{ display: "flex", flexDirection: "column", gap: 32}}>
-					<div style={{ fontSize: 20, display: "flex", justifyContent:'center' }}>
-						<span style={{ color: colors.primary }}>현대</span>&nbsp;
-						<span style={{ color: colors.primary }}>코나</span>&nbsp;
-						<span>관련 영상 더보기</span>
+				{
+					relatedArticles.length > 0 && 
+					<div style={{ display: "flex", flexDirection: "column", gap: 32, marginTop: 112 }}>
+						<div style={{ fontSize: 20, display: "flex" }}>
+							<span style={{ color: colors.primary }}>{article.brand}</span>&nbsp;
+							<span style={{ color: colors.primary }}>{article.model}</span>&nbsp;
+							<span>관련 영상 더보기</span>
+						</div>
+						<div
+							style={{
+								width: "100%",
+								display: "flex",
+								gap: 36,
+								flexDirection: isDesktop ? "row" : "column",
+								justifyContent: "center",
+								alignItems: "center",
+							}}
+						>
+							{relatedArticles.map((article) => (
+								<div key={article.id} style={{ flex: 1 }}>
+									<ArticleSummaryToday article={article} />
+								</div>
+							))}
+						</div>
 					</div>
-					<div
-						style={{
-							width: "100%",
-							display: "flex",
-							gap: 36,
-							flexDirection: isDesktop ? "row" : "column",
-							justifyContent: "center",
-							alignItems: "center",
-						}}
-					>
-						{recommendedArticles.map((article) => (
-							<div key={article.id} style={{ flex: 1 }}>
-								<ArticleSummaryToday article={article} />
-							</div>
-						))}
-					</div>
-				</div>
+				}
 			</div>
 		</Layout>
 	);

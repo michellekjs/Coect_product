@@ -1,10 +1,13 @@
-
+import Link from "next/link";
 import Layout from "../comps/Layout";
 import ArticleSummaryHot from '../comps/ArticleSummaryHot';
 import ArticleSummaryTop from "../comps/ArticleSummaryTop";
 import ArticleSummaryToday from "../comps/ArticleSummaryToday";
 import { useMediaQuery } from "react-responsive";
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import styles from "../comps/hover.module.css"
+import { useState, useRef, useCallback } from "react";
 
 
 import { articles, categories, brands, colors } from "../shared";
@@ -14,7 +17,30 @@ export default function MainPage() {
 	});
 	const isMobile = useMediaQuery({ query: "(max-width: 1045px)" });
 
-	const randomArticles = articles.sort(() => Math.random() - 0.5);
+	function getHot(brand, model) {
+		return {
+			brand: brand,
+			model: model,
+			articles: articles.filter(article => article.brand == brand && article.model == model).sort((a, b) => b.date > a.date)
+		}
+	}
+
+	const [hot, setHot] = useState(getHot('현대', '그랜저'));
+
+	function getRandomArbitrary(min, max) {
+		return Math.random() * (max - min) + min;
+	  }
+
+	function refreshHot() {
+		let model = hot.model;
+		while (model == hot.model) {
+			model = ['그랜저', '토레스', '코나'][Math.floor(getRandomArbitrary(0, 3))];
+		}
+		setHot(getHot('현대', model));
+	}
+
+	const articlesRecent = articles.sort((a, b) => b.date > a.date);
+
 	return (
 		<Layout>
 			<div
@@ -26,31 +52,47 @@ export default function MainPage() {
 					width: "100vw",
 				}}
 			>
-				<div
-					style={{
-						width: "100%",
-						height: isMobile? 180 : 358,
-						background: `linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-						url('${require(`../public/imgs/cover.png`).default.src}')`,
-						display: "flex",
-						backgroundSize: "cover",
-						backgroundPosition:"center center",
-						alignItems: "center",
-						justifyContent: "space-between",
-						flexDirection: "row",
-						textAlign: "center",
-						marginLeft: 0,
-						backgroundRepeat:'no-repeat',
-
-
-					}}
-				>
-					{isDesktop && <img src={require('../public/imgs/arrow_left.svg').default.src} alt={`왼쪽으로 전환`} style={{ height: 16, marginLeft: 60 }}/>}
-					<div style={{ fontSize: isMobile? 16 : 28, color: "white" , display: "flex", textAlign: isMobile ? "start": "center", marginLeft: isMobile ? "20px" : "0px" }}>
-						세단 제왕의 귀환, {isMobile && <br/> } 풀체인지 그랜져 리뷰 영상들 보러 가기
-					</div>
-					{isDesktop && <img src={require('../public/imgs/arrow_right.svg').default.src} alt={`오른쪽으로 전환`} style={{ height: 16, marginRight: 60 }}/>}
+				<div style={{ width: '100%' }}>
+					<Carousel 
+						autoPlay={false} infiniteLoop emulateTouch
+						renderArrowPrev={(clickHandler, hasPrev, label) =>
+							isDesktop && 
+							<a onClick={clickHandler} href='#/' style={{ width: 130, height: '100%', position: 'absolute', zIndex: 1, display: 'flex', justifyContent: 'center', paddingLeft: 60, paddingRight: 60 }}>
+								<img src={require('../public/imgs/arrow_left.svg').default.src} alt={`왼쪽으로 전환`}/>
+							</a>
+						}
+						renderArrowNext={(clickHandler, hasNext, label) =>
+							isDesktop && 
+							<a onClick={clickHandler} href='#/' style={{ width: 130, height: '100%', position: 'absolute', top: 0, right: 0, zIndex: 1, display: 'flex', justifyContent: 'center', paddingLeft: 60, paddingRight: 60 }}>
+								<img src={require('../public/imgs/arrow_right.svg').default.src} alt={`오른쪽으로 전환`}/>
+							</a>
+						}
+					>
+					{
+						Array(3).fill(0).map(_ => (
+							<div
+								style={{
+									flex: 'none',
+									width: "100%",
+									height: isMobile? 180 : 358,
+									background: `linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+									url('${require(`../public/imgs/cover.png`).default.src}')`,
+									display: "flex",
+									backgroundSize: "cover",
+									backgroundPosition:"center center",
+									alignItems: "center",
+									textAlign: "center",
+								}}
+							>
+								<div style={{ fontSize: isMobile? 16 : 28, color: "white", textAlign: isMobile ? "start": "center", marginLeft: isMobile ? "20px" : "0px", width: '100%' }}>
+									세단 제왕의 귀환, {isMobile && <br/> } 풀체인지 그랜져 리뷰 영상들 보러 가기
+								</div>
+							</div>
+						))
+					}
+					</Carousel>
 				</div>
+				
 				<div
 					style={{
 						display: "flex",
@@ -70,7 +112,7 @@ export default function MainPage() {
 					>
 						<div style={{ fontSize: 22, fontWeight: 500}}>차량 리뷰 Pick 👍</div>
 							<div style={{ display: "flex", alignItems: "center", flexDirection: isMobile? "column":"row", gap: isMobile? 20: 36, width: isMobile? "80%": "100%" }}>
-								{randomArticles.slice(1, 4).map((article) => (
+								{articlesRecent.slice(1, 4).map((article) => (
 									<div key={article.id} style={{ flex: 1 }}>
 										<ArticleSummaryToday key={article.id} article={article} />
 									</div>
@@ -97,7 +139,8 @@ export default function MainPage() {
 								}}
 							>
 								{brands.map((brand) => (
-									<div
+									<Link
+										href={`/category/${brand.id}`}
 										style={{
 											display: "flex",
 											flexDirection: "column",
@@ -108,8 +151,10 @@ export default function MainPage() {
 											alignItems: "center",
 											width:isMobile ? "60px" : "100px",
 											height:isMobile ? "60px" : "100px",
+											textDecoration: "none",
+											color: "black",
 										}}
-										className={ styles.logo}
+										className={ styles.logo }
 									>
 										<img
 											src={
@@ -121,7 +166,7 @@ export default function MainPage() {
 											className={isDesktop ?  styles.logo : styles.normal}
 										/>
 										<span style={{ fontSize: 16 }}>{brand.name}</span>
-									</div>
+									</Link>
 								))}
 							</div>
 						)}
@@ -223,9 +268,10 @@ export default function MainPage() {
 								}}
 							>
 								<span>🔥 요즘 사람들이 주목하는 차량</span>
-								<span style={{ color: colors.primary }}>#그랜저</span>
+								<span style={{ color: colors.primary }}>#{hot.model}</span>
 							</div>
-							<div
+							<button
+								onClick={refreshHot}
 								style={{
 									display: "flex",
 									alignItems: "center",
@@ -238,6 +284,8 @@ export default function MainPage() {
 									borderColor: "#BDBDBD",
 									borderWidth: 1,
 									borderStyle: "solid",
+									background: "white",
+									cursor: "pointer",
 								}}
 							>
 								<img
@@ -246,13 +294,13 @@ export default function MainPage() {
 									style={{ width: 20, height: 20 }}
 								/>
 								{isDesktop && <span style={{ fontSize: 14 }}>주목하는 차량 더보기</span> }
-							</div>
+							</button>
 						</div>
 						 <div style={{ display: 'flex', alignItems: 'flex-start', gap: 24, marginTop: 60, flexDirection: isMobile? "column" : "row", }}>
                             {
-                                Array(2).fill(0).map((_, i) => (
+                                hot.articles.slice(0,2).map((a, i) => (
                                     <div key={i} style={{ flex: 1 }}>
-                                        <ArticleSummaryHot key={i} article={randomArticles[i]} />
+                                        <ArticleSummaryHot key={i} article={a} />
                                     </div>
                                 ))
                             }
@@ -260,12 +308,12 @@ export default function MainPage() {
 					</div>
 					<div style={{ display: "flex", flexDirection: "column",alignItems: "center", gap: isMobile ? 30 : 60 }}>
 						<div style={{ fontSize: 22, fontWeight: 500 }}>최신 차량 리뷰 콘텐츠</div>
-						{[1, 4].map((i) => (
+						{[0, 3].map((i) => (
 							<div
 								key={i}
 								style={{ display: "flex", alignItems: "center", flexDirection: isMobile? "column":"row", gap: 36 }}
 							>
-								{randomArticles.slice(i, i + 3).map((article) => (
+								{articlesRecent.slice(i, i + 3).map((article) => (
 									<div key={article.id} style={{ flex: 1 }}>
 										<ArticleSummaryToday key={article.id} article={article} />
 									</div>
