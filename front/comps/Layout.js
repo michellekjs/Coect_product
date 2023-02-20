@@ -100,7 +100,7 @@ export default function Layout({ children }) {
 						return (
 							<Link
 								key={index + 1}
-								href={`/category/${index + 1}`}
+								href={`/brand/${brand.nameEng}`}
 								style={{ textDecoration: 'none', color: '#424242', fontSize: 15 }}
 							>
 								{brand.name}
@@ -115,7 +115,7 @@ export default function Layout({ children }) {
 						return (
 							<Link
 								key={brand.id}
-								href={`/category/${brand.id}`}
+								href={`/brand/${brand.nameEng}`}
 								style={{ textDecoration: 'none', color: '#424242', fontSize: 15, marginBottom : 10 }}
 							>
 								{brand.name}
