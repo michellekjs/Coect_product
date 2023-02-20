@@ -16,12 +16,6 @@ export function getStaticPaths() {
 		fallback: false,
 	};
 }
-const relatedArticlesByKeywords = article.keywords.map((k) => ({
-	keyword: k,
-	articles: articles.filter(
-		(a) => a.keywords.includes(k) && a.id != article.id
-	),
-}));
 
 export function getStaticProps({ params }) {
 	return { props: { aid: params.aid } };
@@ -64,11 +58,12 @@ export default function ArticleIdPage(props) {
 
 	const article = articles.find((a) => a.id == props.aid);
 
-	const recommendedArticleIdStart = Math.ceil(article.id / 4) * 4 - 3;
-	const relatedArticles = articles
-		.filter( (a) => a.brand == article.brand && a.model == article.model && a.id != article.id )
-		.sort(() => 0.5 - Math.random())
-		.slice(0, 3); // 랜덤으로 3개 뽑기
+	const relatedArticles = useRef(
+		articles
+			.filter( (a) => a.brand == article.brand && a.model == article.model && a.id != article.id )
+			.sort(() => 0.5 - Math.random())
+			.slice(0, 3) // 랜덤으로 3개 뽑기
+	);
 
 	return (
 		<Layout>
@@ -81,7 +76,6 @@ export default function ArticleIdPage(props) {
 					// gap: 112,
 				}}
 			>
-				{currentTime}
 				<div style={{ margin: isMobile? "10px": "0px"}}>
 					<div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
 						<div
@@ -180,8 +174,15 @@ export default function ArticleIdPage(props) {
 						
 						<div
 							style={{
-								// flex: 1,
-								height:"100%",
+								display: "flex",
+								flexDirection: "column",
+								gap: 20,
+								maxHeight: 500,
+								overflow: 'scroll',
+								flexGrow: 1,
+								// height:"100%",
+								// height: "200%",
+								// height : "",
 								borderRadius: 8,
 								borderWidth: 1,
 								borderColor: "#919191",
@@ -190,54 +191,31 @@ export default function ArticleIdPage(props) {
 								paddingLeft: 20,
 								paddingRight: 20,
 								paddingBottom: 18,
-								boxSizing: "border-box",
+								// boxSizing: "inherit",
 							}}
 						>
+							<div style={{ fontSize: 16, color: colors.primaryDark }}>
+								목차
+							</div>
 							<div
 								style={{
-                  display: "flex",
+									display: "flex",
 									flexDirection: "column",
-									gap: 20,
-									maxHeight: 500,
-									overflow: 'scroll'
-									flexGrow: 1,
-									// height:"100%",
-									// height: "200%",
-									// height : "",
-									borderRadius: 8,
-									borderWidth: 1,
-									borderColor: "#919191",
-									borderStyle: "solid",
-									paddingTop: 18,
-									paddingLeft: 20,
-									paddingRight: 20,
-									paddingBottom: 18,
-									// boxSizing: "inherit",
+									gap: 16,
 								}}
-							>
-								<div style={{ fontSize: 16, color: colors.primaryDark }}>
-									목차
-								</div>
-								<div
-									style={{
-										display: "flex",
-										flexDirection: "column",
-										gap: 16,
-									}}
-								>	
-								{
-									article.summaries.map((s, i) => (
-										<a
-											onClick={() => { player.seekTo(s.start) }} href="#/" 
-											style={{ 
-												fontSize: isMobile? 14: 18, textDecoration: 'none',
-												color: (currentTime >= s.start && (i >= article.summaries.length - 1 || currentTime < article.summaries[i+1].start)) ? colors.primary : colors._300, 
-											}}>
-											{i+1}. {s.subject}
-										</a>
-									))
-								}
-								</div>
+							>	
+							{
+								article.summaries.map((s, i) => (
+									<a
+										onClick={() => { player.seekTo(s.start) }} href="#/" 
+										style={{ 
+											fontSize: isMobile? 14: 18, textDecoration: 'none',
+											color: (currentTime >= s.start && (i >= article.summaries.length - 1 || currentTime < article.summaries[i+1].start)) ? colors.primary : colors._300, 
+										}}>
+										{i+1}. {s.subject}
+									</a>
+								))
+							}
 							</div>
 						</div>
 					</div>
@@ -299,7 +277,7 @@ export default function ArticleIdPage(props) {
 							summary.text ? (
 								<TextUnit
 									key={i}
-									subject={summary.subject}
+									subject={`${i+1}. ${summary.subject}`}
 									start={summary.start}
 									isPlaying={ currentTime >= summary.start && (i >= article.summaries.length - 1 || currentTime < article.summaries[i+1].start ) }
 									seekTo={() => player.seekTo(summary.start)}
@@ -326,7 +304,7 @@ export default function ArticleIdPage(props) {
 					</div>
 				</div>
 				{
-					relatedArticles.length > 0 && 
+					relatedArticles.current.length > 0 && 
 					<div style={{ display: "flex", flexDirection: "column", gap: 32, marginTop: 112 }}>
 						<div style={{ fontSize: 20, display: "flex" }}>
 							<span style={{ color: colors.primary }}>{article.brand}</span>&nbsp;
@@ -343,7 +321,7 @@ export default function ArticleIdPage(props) {
 								alignItems: "center",
 							}}
 						>
-							{relatedArticles.map((article) => (
+							{relatedArticles.current.map((article) => (
 								<div key={article.id} style={{ flex: 1 }}>
 									<ArticleSummaryToday article={article} />
 								</div>

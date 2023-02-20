@@ -173,78 +173,52 @@ export default function MainPage() {
 						{isMobile && (
 							<div>
 								{" "}
-								<div
-									style={{
-										width: "100%",
-										display: "flex",
-										alignItems: "center",
-										gap: 20,
-										justifyContent: "space-between",
-										
-									}}
-								>
-									{brands.slice(0, 4).map((brand) => (
+
+								{
+									[{ start: 0, end:  4 }, { start: 4, end: 9 }].map(range =>(
 										<div
 											style={{
+												width: "100%",
 												display: "flex",
-												flexDirection: "column",
-												gap: 4,
-												justifyContent: "center",
-												alignContent: "center",
-												textAlign: "center",
 												alignItems: "center",
-												width:"60px",
-												height:"60px",
-												marginBottom : "40px"
-										}}
-										className={isMobile? styles.normal : styles.logo}
+												gap: 20,
+												justifyContent: "space-between",
+												
+											}}
 										>
-											<img
-												src={
-													require(`../public/imgs/logos/${brand.logo}`).default
-														.src
-												}
-												alt={`${brand.name} 로고`}
-												style={{ width: 40, height: 40 }}
-											/>
-											<span style={{ fontSize: 16 }}>{brand.name}</span>
+											{brands.slice(range.start, range.end).map((brand) => (
+												<Link
+													href={`/category/${brand.id}`}
+													style={{
+														display: "flex",
+														flexDirection: "column",
+														gap: 4,
+														justifyContent: "center",
+														alignContent: "center",
+														textAlign: "center",
+														alignItems: "center",
+														width:"60px",
+														height:"60px",
+														marginBottom : "40px",
+														textDecoration: "none",
+														color: "black",
+												}}
+												className={isMobile ? styles.normal : styles.logo}
+												>
+													<img
+														src={
+															require(`../public/imgs/logos/${brand.logo}`).default
+																.src
+														}
+														alt={`${brand.name} 로고`}
+														style={{ width: 40, height: 40 }}
+													/>
+													<span style={{ fontSize: 16 }}>{brand.name}</span>
+												</Link>
+											))}
 										</div>
-									))}
-								</div>
-								<div
-									style={{
-										width: "100%",
-										display: "flex",
-										alignItems: "center",
-										gap: 30,
-										justifyContent: "space-between",
-									}}
-								>
-									{brands.slice(4, 9).map((brand) => (
-										<div
-											style={{
-												display: "flex",
-												flexDirection: "column",
-												gap: 4,
-												justifyContent: "center",
-												alignItems: "center",
-												width:"60px",
-												height:"60px"
-										}}
-										className={isMobile? styles.normal : styles.logo}
-										>
-											<img
-												src={
-													require(`../public/imgs/logos/${brand.logo}`).default
-														.src
-												}
-												alt={`${brand.name} 로고`}
-												style={{ width: 40, height: 40 }}
-											/>
-											<span style={{ fontSize: 16 }}>{brand.name}</span>
-										</div>
-									))}
-								</div>
+									))
+								}
 							</div>
 						)}
 					</div>
