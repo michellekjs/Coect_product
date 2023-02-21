@@ -84,9 +84,8 @@ export default function CategoryIdPage(props) {
 				<div style={{ width: isDesktop ? 745 : 'auto', marginTop: 64 }}>
 					<div style={{ display: 'flex', flexDirection: 'column', gap: 60 }}>
 						<div style={{ 
-							// display: 'flex', gap: 12,
 							fontSize: 25, 
-							marginLeft: "10%"
+							// marginLeft: "10%"
 						}}>
 							<span>리뷰 영상</span>
 							<span style={{ color: colors.primary }}>&nbsp;{resultarticle.length}</span>
@@ -94,7 +93,7 @@ export default function CategoryIdPage(props) {
 							{ resultarticle.length > nArticlesInPage && <span> 중 {pageReal}페이지</span> }
 						</div>
 						<div>
-							<div style={{ display: 'flex', flexDirection: 'column', gap: 40, alignItems: "center",justifyContent:"center", }}>
+							<div style={{ display: 'flex', flexDirection: 'column', gap: 40, justifyContent:"center", }}>
 								{isDesktop && 
 									resultarticle.slice((pageReal-1)*nArticlesInPage, pageReal*nArticlesInPage).map((a, i) =>
 										<ArticleSummary article={a}/>
