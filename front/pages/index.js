@@ -98,7 +98,7 @@ export default function MainPage() {
 						display: "flex",
 						flexDirection: "column",
 						alignItems: "center",
-						gap: 180,
+						gap: 50,
 						maxWidth: 1032,
 					}}
 				>
