@@ -72,11 +72,11 @@ export default function CategoryIdPage(props) {
 					<span style={{ fontSize: 22 }}>{brand.name}</span>		
 				</div>
 				<div style={{display:"flex", width:"100%", justifyContent:'center'}}>
-					<div style={{ display: 'flex', gap: 20, justifyContent: 'flex-start', overflowX: "scroll", width:"wrap-content", paddingLeft:30, paddingRight:30}}>
+					<div style={{ display: 'flex', gap: 20, justifyContent: 'end', overflowX: "scroll", width:"wrap-content", paddingLeft:30, paddingRight:30}}>
 					{
 						Array(6).fill(0).map((_, i) => 
-							<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'end', gap: i==2 ? 0 : 24, textAlign: 'center', fontSize: i==2 ? 16 : 14, color: i==2 ? 'black' : colors._300}}>
-								<img src={require('../../public/imgs/' + (i==2 ? 'car_selected.png' : 'car_deselected.png')).default.src} alt="" style={{ width: i==2 ? 220 : 170 }}/>
+							<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'end', gap: 0, textAlign: 'center', fontSize: i==2 ? 16 : 14, color: i==2 ? 'black' : colors._300}} className={styles.model}>
+								<img src={require('../../public/imgs/' + 'car_selected.png').default.src} alt="" style={{ width: i==2 ? 220 : 170, filter: i==2 ? '' : 'grayscale(1)' }}/>
 								<span>{ i==2 ? '현대 코나' : '현대 아반떼' }</span>
 							</div>
 						)
