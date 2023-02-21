@@ -75,7 +75,7 @@ export default function ArticleIdPage(props) {
 			<div
 				style={{
 					maxWidth: 1032,
-					marginTop: 72,
+					marginTop: isMobile? 40: 72,
 					display: "flex",
 					flexDirection: "column",
 					gap: 112,
@@ -86,7 +86,7 @@ export default function ArticleIdPage(props) {
 						style={{
 							display: "flex",
 							flexDirection: "column",
-							gap: 60,
+							gap: 16,
 							margin: isMobile ? "10px" : "0px",
 						}}
 					>
@@ -122,7 +122,8 @@ export default function ArticleIdPage(props) {
 					<div
 						style={{
 							position: "sticky",
-							top: 10,
+							top: 0,
+							paddingTop:60,
 							alignSelf: "flex-start",
 							display: "flex",
 							gap: isMobile ? 5 : 30,
@@ -141,7 +142,7 @@ export default function ArticleIdPage(props) {
 							style={{
 								borderRadius: 8,
 								overflow: "hidden",
-								top: 20,
+								// top: 20,
 								// width: isMobile ? "70%" : "95%",
 								display: "flex",
 								justifyContent: "center",

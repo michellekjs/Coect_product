@@ -47,7 +47,7 @@ export default function MainPage() {
 				style={{
 					display: "flex",
 					flexDirection: "column",
-					gap: 180,
+					gap: 50,
 					alignItems: "center",
 					width: "100vw",
 				}}
@@ -98,7 +98,7 @@ export default function MainPage() {
 						display: "flex",
 						flexDirection: "column",
 						alignItems: "center",
-						gap: 50,
+						gap: 180,
 						maxWidth: 1032,
 					}}
 				>
