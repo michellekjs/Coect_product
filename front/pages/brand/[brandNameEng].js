@@ -86,7 +86,8 @@ export default function CategoryIdPage(props) {
 				<div style={{ width: isDesktop ? 745 : 'auto', marginTop: 64 }}>
 					<div style={{ display: 'flex', flexDirection: 'column', gap: 60 }}>
 						<div style={{ 
-							fontSize: 25, 
+							fontSize: 22,
+							fontWeight: 500, 
 							// marginLeft: "10%"
 						}}>
 							<span>리뷰 영상</span>
