@@ -46,7 +46,7 @@ export default function ArticleIdPage(props) {
 		query: "(min-width: 1045px)",
 	});
 	const isMobile = useMediaQuery({ query: "(max-width: 1045px)" });
-	const isYoutube = useMediaQuery({ query: "(max-width: 550px)" });
+	const isYoutube = useMediaQuery({ query: "(max-width: 690px)" });
 
 	const styles = {
 		cell: {
@@ -129,7 +129,7 @@ export default function ArticleIdPage(props) {
 							justifyContent: "center",
 							alignItems: "center",
 							width: "100%",
-							height: 350,
+							// height: 350,
 							marginTop: 36,
 							zIndex: 2,
 							background:
@@ -154,8 +154,8 @@ export default function ArticleIdPage(props) {
 						>
 							<YouTube
 								videoId={article.videoId}
-								opts={{width: isYoutube? 300: 500, height: isYoutube? 240: 300 }}
-								style={{width: isYoutube? 300: 500, height: isYoutube? 240: 300}}
+								opts={{width: isYoutube? 356: 654, height: isYoutube? 200: 368 }}
+								style={{width: isYoutube? 356: 654, height: isYoutube? 200: 368}}
 								onReady={onPlayerReady}
 							/>
 						</div>
@@ -177,12 +177,12 @@ export default function ArticleIdPage(props) {
 								paddingRight: 20,
 								paddingBottom: 18,
 								position: 'sticky',
-								top:10
+								top:40
 							}}
 						>
 							
 							<div>
-							<div style={{ fontSize: 16, color: colors.primaryDark }}>
+							<div style={{ fontSize: 18, marginBottom:20, color: colors.primaryDark }}>
 								목차
 							</div>
 							<div
@@ -236,8 +236,9 @@ export default function ArticleIdPage(props) {
 								paddingLeft: 20,
 								paddingRight: 20,
 								paddingBottom: 18,
-								position: 'sticky',
-								top:10
+								boxSizing: 'border-box',
+								// position: 'sticky',
+								// top:10
 							}}
 						>
 							<div style={{ fontSize: 16, color: colors.primaryDark }}>
