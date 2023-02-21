@@ -20,4 +20,11 @@ background-color: 'black'
   border-radius: 10px
 }
 
+.model img {
+  transition: 0.3s;
+}
 
+.model:hover img {
+  width: 220px !important;
+  filter: grayscale(0) !important;
+}
