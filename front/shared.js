@@ -345,21 +345,735 @@ let brands = [
         logo: 'hyundai.svg', name: '현대', nameEng: 'HYUNDAI',
         models: [
             { 
-                name: '쏘렌토',
-                submodel: '4세대',
-                specs: [
-                    { field: '코드네임', description: '진짜 코드 네임' },
-                ]
+                name: '그랜저',
+                generation: 7,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '3,716 ~ 5,065만원' },
+                            { field: '차량형태', description: '4도어 준대형 세단' },
+                            { field: '연료', description: '가솔린, LPG' },
+                            { field: '전장/전폭', description: '5,035mm / 1,880mm' },
+                            { field: '배기량', description: '2497 ~ 3470cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '7.8 ~ 11.7km/l' },
+                        ]
+                    },
+                    {
+                        name: '하이브리드',
+                        specs: [
+                            { field: '가격', description: '4,376 ~ 5,264만원' },
+                            { field: '차량형태', description: '4도어 준대형 세단' },
+                            { field: '연료', description: '하이브리드' },
+                            { field: '전장/전폭', description: '5,035mm / 1,880mm' },
+                            { field: '배기량', description: '1598cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '18.0km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: '코나',
+                generation: 2,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '2,468 ~ 3,302만원' },
+                            { field: '차량형태', description: '5도어 소형 SUV' },
+                            { field: '연료', description: '가솔린' },
+                            { field: '전장/전폭', description: '4,350 ~ 4,385mm / 1,825mm' },
+                            { field: '배기량', description: '1598 ~ 1999cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '13.0 ~ 13.6km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: '싼타페',
+                generation: 4,
+                submodels: [
+                    {
+                        name: 'F/L',
+                        specs: [
+                            { field: '가격', description: '3,252 ~ 4,447만원' },
+                            { field: '차량형태', description: '5도어 중형 SUV' },
+                            { field: '연료', description: '디젤, 가솔린' },
+                            { field: '전장/전폭', description: '4,785 ~ 4,800mm / 1,900 ~ 1,910mm' },
+                            { field: '배기량', description: '2151 ~ 2497cc' },
+                            { field: '승차인원', description: '5 ~ 7명' },
+                            { field: '연비', description: '10.8 ~ 14.1km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: '투싼',
+                generation: 5,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '2,435 ~ 3,776만원' },
+                            { field: '차량형태', description: '5도어 준중형 SUV' },
+                            { field: '연료', description: '가솔린, 디젤' },
+                            { field: '전장/전폭', description: '4,500mm ~ 4,640mm / 1,865mm' },
+                            { field: '배기량', description: '1598 ~ 1998cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '12.0 ~ 14.5km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: '아반떼',
+                generation: 7,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '1,866 ~ 2,806만원혀' },
+                            { field: '차량형태', description: '4도어 준중형 세단' },
+                            { field: '연료', description: '가솔린, LPG' },
+                            { field: '전장/전폭', description: '4,650 ~ 4,675mm / 1,825mm' },
+                            { field: '배기량', description: '1591 ~ 1598cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '10.6 ~ 14.9km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: '소나타',
+                generation: 8,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '2,592 ~ 3,633만원' },
+                            { field: '차량형태', description: '4도어 중형 세단' },
+                            { field: '연료', description: '가솔린, LPG' },
+                            { field: '전장/전폭', description: '4,900mm / 1,860mm' },
+                            { field: '배기량', description: '1598 ~ 2497cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '10.2 ~ 13.8km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: '팰리세이드',
+                generation: 1,
+                submodels: [
+                    {
+                        name: 'F/L',
+                        specs: [
+                            { field: '가격', description: '3,867 ~ 6,028만원' },
+                            { field: '차량형태', description: '5도어 준대형 SUV' },
+                            { field: '연료', description: '디젤, 가솔린' },
+                            { field: '전장/전폭', description: '4,995mm / 1,975mm' },
+                            { field: '배기량', description: '2199 ~ 3778cc' },
+                            { field: '승차인원', description: '7 ~ 8명' },
+                            { field: '연비', description: '9.3 ~ 12.4km/l' },
+                        ]
+                    }
+                ],
             },
         ]
     },
-    { logo: 'kia.svg', name: '기아', nameEng: 'KIA' },
-    { logo: 'genesis.svg', name: '제네시스', nameEng: 'GENESIS' },
-    { logo: 'ssangyong.svg', name: '쌍용', nameEng: 'SSANGYONG' },
-    { logo: 'bmw.svg', name: 'BMW', nameEng: 'BMW' },
-    { logo: 'benz.svg', name: '벤츠', nameEng: 'BENZ' },
-    { logo: 'audi.svg', name: '아우디', nameEng: 'AUDI' },
-    { logo: 'tesla.svg', name: '테슬라', nameEng: 'TESLA' },
+    { 
+        logo: 'kia.svg', name: '기아', nameEng: 'KIA',
+        models: [
+            { 
+                name: '쏘렌토',
+                generation: 4,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '3,002 ~ 4,394만원' },
+                            { field: '차량형태', description: '5도어 중형 SUV' },
+                            { field: '연료', description: '가솔린, 디젤' },
+                            { field: '전장/전폭', description: '4,810mm / 1,900mm' },
+                            { field: '배기량', description: '2151 ~ 2497cc' },
+                            { field: '승차인원', description: '5 ~ 7명' },
+                            { field: '연비', description: '11.0 ~ 14.3km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: '스포티지',
+                generation: 5,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '2,474 ~ 3,809만원' },
+                            { field: '차량형태', description: '5도어 준중형 SUV' },
+                            { field: '연료', description: '디젤, 가솔린, LPG' },
+                            { field: '전장/전폭', description: '4,515mm ~ 4,660mm / 1,865mm' },
+                            { field: '배기량', description: '1598 ~ 1999cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '9.2 ~ 14.5km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: 'K9',
+                generation: 2,
+                submodels: [
+                    {
+                        name: 'F/L',
+                        specs: [
+                            { field: '가격', description: '5,772 ~ 8,487만원' },
+                            { field: '차량형태', description: '4도어 대형 세단' },
+                            { field: '연료', description: '가솔린' },
+                            { field: '전장/전폭', description: '5,120mm / 1,915mm' },
+                            { field: '배기량', description: '3342 ~ 3778cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '8.7 ~ 9.0km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: 'K8',
+                generation: 1,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '3,259 ~ 4,565만원' },
+                            { field: '차량형태', description: '4도어 준대형 세단' },
+                            { field: '연료', description: '가솔린, LPG' },
+                            { field: '전장/전폭', description: '5,015mm / 1,875mm' },
+                            { field: '배기량', description: '2497 ~ 3470cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '8.0 ~ 12.0km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: '니로',
+                generation: 2,
+                submodels: [
+                    {
+                        name: 'EV',
+                        specs: [
+                            { field: '가격', description: '4,855 ~ 5,120만원' },
+                            { field: '차량형태', description: '5도어 소형 SUV' },
+                            { field: '연료', description: '전기' },
+                            { field: '전장/전폭', description: '4,420mm / 1,825mm' },
+                            { field: '주행거리', description: '401km' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '5.3km/kWh' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: 'K3',
+                generation: 2,
+                submodels: [
+                    {
+                        name: '세단 F/L',
+                        specs: [
+                            { field: '가격', description: '1,752 ~ 2,449만원' },
+                            { field: '차량형태', description: '4도어 준중형 세단' },
+                            { field: '연료', description: '가솔린' },
+                            { field: '전장/전폭', description: '4,645mm / 1,800mm' },
+                            { field: '배기량', description: '1598cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '15.2km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: 'K5',
+                generation: 3,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '2,400 ~ 3,284만원' },
+                            { field: '차량형태', description: '4도어 중형 세단' },
+                            { field: '연료', description: '가솔린, LPG' },
+                            { field: '전장/전폭', description: '4,905mm / 1,860mm' },
+                            { field: '배기량', description: '1598 ~ 1999cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '10.0 ~ 13.6km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: '셀토스',
+                generation: 1,
+                submodels: [
+                    {
+                        name: 'F/L',
+                        specs: [
+                            { field: '가격', description: '2,062 ~ 2,865만원' },
+                            { field: '차량형태', description: '5도어 소형 SUV' },
+                            { field: '연료', description: '가솔린' },
+                            { field: '전장/전폭', description: '4,390mm / 1,800mm' },
+                            { field: '배기량', description: '1598 ~ 1999cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '12.8 ~ 12.9km/l' },
+                        ]
+                    }
+                ],
+            },
+        ]
+    },
+    { 
+        logo: 'genesis.svg', name: '제네시스', nameEng: 'GENESIS',
+        models: [
+            { 
+                name: 'GV70',
+                generation: 1,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '4,904 ~ 5,846만원' },
+                            { field: '차량형태', description: '4도어 중형 SUV' },
+                            { field: '연료', description: '가솔린, 디젤' },
+                            { field: '전장/전폭', description: '4,715mm / 1,910mm' },
+                            { field: '배기량', description: '2151 ~ 3470cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '8.5 ~ 13.5km/l' },
+                        ]
+                    },
+                ],
+            },
+            { 
+                name: 'GV80',
+                generation: 1,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '6,430 ~ 7,343만원' },
+                            { field: '차량형태', description: '5도어 준대형 SUV' },
+                            { field: '연료', description: '가솔린, 디젤' },
+                            { field: '전장/전폭', description: '4,945mm / 1,975mm' },
+                            { field: '배기량', description: '2497 ~ 3470cc' },
+                            { field: '승차인원', description: '5 ~ 7명' },
+                            { field: '연비', description: '8.6 ~ 11.7km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: 'G80',
+                generation: 3,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '5,507 ~ 6,457만원' },
+                            { field: '차량형태', description: '4도어 준대형 세단' },
+                            { field: '연료', description: '가솔린' },
+                            { field: '전장/전폭', description: '4,995 ~ 5,005mm / 1,925mm' },
+                            { field: '배기량', description: '2497 ~ 3470cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '9.2 ~ 10.8km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: 'GV60',
+                generation: 1,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '5,990 ~ 6,975만원' },
+                            { field: '차량형태', description: '5도어 중형 SUV' },
+                            { field: '연료', description: '전기' },
+                            { field: '전장/전폭', description: '4,515mm / 1,890mm' },
+                            { field: '주행거리', description: '451km' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '5.1km/kWh' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: 'G90',
+                generation: 4,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '8,957 ~ 9,307만원' },
+                            { field: '차량형태', description: '4도어 대형 세단' },
+                            { field: '연료', description: '가솔린' },
+                            { field: '전장/전폭', description: '5,275mm / 1,930mm' },
+                            { field: '배기량', description: '3470cc' },
+                            { field: '승차인원', description: '4 ~ 5명' },
+                            { field: '연비', description: '9.3km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: 'G70',
+                generation: 1,
+                submodels: [
+                    {
+                        name: 'F/L',
+                        specs: [
+                            { field: '가격', description: '4,035 ~ 4,830만원' },
+                            { field: '차량형태', description: '4도어 중형 스포츠 세단' },
+                            { field: '연료', description: '가솔린, 디젤' },
+                            { field: '전장/전폭', description: '4,685mm / 1,850mm' },
+                            { field: '배기량', description: '1998 ~ 3342cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '9.4 ~ 14.9km/l' },
+                        ]
+                    }
+                ],
+            },
+        ]
+    },
+    { 
+        logo: 'bmw.svg', name: 'BMW', nameEng: 'BMW',
+        models: [
+            { 
+                name: 'X6',
+                generation: 3,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '1억 1,880 ~ 1억 5,200만원' },
+                            { field: '차량형태', description: '5도어 대형 SUV' },
+                            { field: '연료', description: '가솔린, 디젤' },
+                            { field: '전장/전폭', description: '4,935mm / 2,005mm' },
+                            { field: '배기량', description: '2993 ~ 4395cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '7.0 ~ 10.9km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: 'X5',
+                generation: 4,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '1억 1,110 ~ 1억 5,000만원' },
+                            { field: '차량형태', description: '5도어 중형 SUV' },
+                            { field: '연료', description: '가솔린, 디젤' },
+                            { field: '전장/전폭', description: '4,935 mm / 1,970 mm' },
+                            { field: '배기량', description: '2993 ~ 4395cc' },
+                            { field: '승차인원', description: '5 ~7명' },
+                            { field: '연비', description: '6.6 ~ 10.7km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: 'X3',
+                generation: 3,
+                submodels: [
+                    {
+                        name: 'F/L',
+                        specs: [
+                            { field: '가격', description: '6,570 ~ 9,670만원' },
+                            { field: '차량형태', description: '5도어 중형 SUV' },
+                            { field: '연료', description: '가솔린, 디젤' },
+                            { field: '전장/전폭', description: '4,715mm / 1,890mm' },
+                            { field: '배기량', description: '1995 ~ 2998cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '9.2 ~ 12.2km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: '5시리즈',
+                generation: 7,
+                submodels: [
+                    {
+                        name: '세단 F/L',
+                        specs: [
+                            { field: '가격', description: '6,370 ~ 1억 1,600만원' },
+                            { field: '차량형태', description: '4도어 준대형 세단' },
+                            { field: '연료', description: '가솔린, 디젤' },
+                            { field: '전장/전폭', description: '4,935mm / 1,870mm' },
+                            { field: '배기량', description: '1995 ~ 4395cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '7.9 ~ 15.6km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: '3시리즈',
+                generation: 7,
+                submodels: [
+                    {
+                        name: '세단 F/L',
+                        specs: [
+                            { field: '가격', description: '5,530 ~ 8,740만원' },
+                            { field: '차량형태', description: '4도어 중형 세단' },
+                            { field: '연료', description: '가솔린, 디젤' },
+                            { field: '전장/전폭', description: '4,713mm / 1,827mm' },
+                            { field: '배기량', description: '1995 ~ 2998cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '10.4 ~ 15.0km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: '1시리즈',
+                generation: 3,
+                submodels: [
+                    {
+                        name: '해치백',
+                        specs: [
+                            { field: '가격', description: '4,000 ~ 5,830만원' },
+                            { field: '차량형태', description: '5도어 준중형 해치백' },
+                            { field: '연료', description: '가솔린' },
+                            { field: '전장/전폭', description: '4,319mm / 1,799mm' },
+                            { field: '배기량', description: '1998cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '11.0km/l' },
+                        ]
+                    }
+                    // TODO: BMW 1시리즈 세단 있는거야 없는거야
+                ],
+            },
+        ]
+    },
+    { 
+        logo: 'benz.svg', name: '벤츠', nameEng: 'BENZ',
+        models: [
+            { 
+                name: 'EQS',
+                generation: 1,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '1억 8,860만원' },
+                            { field: '차량형태', description: '4도어 대형 세단' },
+                            { field: '연료', description: '전기' },
+                            { field: '전장/전폭', description: '5,216mm / 1,926mm' },
+                            { field: '주행거리', description: '454km' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '3.5km/kWh' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: 'E클래스',
+                generation: 5,
+                submodels: [
+                    {
+                        name: '세단 F/L',
+                        specs: [
+                            { field: '가격', description: '6,960 ~ 1억 1,430만원' },
+                            { field: '차량형태', description: '4도어 대형 세단' },
+                            { field: '연료', description: '가솔린, 디젤' },
+                            { field: '전장/전폭', description: '4,940mm / 1,850mm' },
+                            { field: '배기량', description: '1991 ~ 2999cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '9.7 ~ 13.7km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: 'GLE클래스',
+                generation: 4,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '1억 950 ~ 1억 2,940만원' },
+                            { field: '차량형태', description: '5도어 대형 SUV' },
+                            { field: '연료', description: '가솔린, 디젤' },
+                            { field: '전장/전폭', description: '4,930mm / 2,020mm' },
+                            { field: '배기량', description: '1950 ~ 2999cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '8.3 ~ 10.7km/l' },
+                        ]
+                    }
+                ],
+            },
+        ]
+    },
+    { 
+        logo: 'audi.svg', name: '아우디', nameEng: 'AUDI',
+        models: [
+            { 
+                name: 'A6',
+                generation: 8,
+                submodels: [
+                    {
+                        name: '세단',
+                        specs: [
+                            { field: '가격', description: '6,946 ~ 9,266만원' },
+                            { field: '차량형태', description: '4도어 중형 세단' },
+                            { field: '연료', description: '가솔린, 디젤' },
+                            { field: '전장/전폭', description: '4,940mm / 1,885mm' },
+                            { field: '배기량', description: '1968 ~ 2967cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '11.0 ~ 15.0km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: 'Q5',
+                generation: 2,
+                submodels: [
+                    {
+                        name: 'F/L',
+                        specs: [
+                            { field: '가격', description: '6,888 ~ 7,411만원' },
+                            { field: '차량형태', description: '5도어 중형 SUV' },
+                            { field: '연료', description: '가솔린, 디젤' },
+                            { field: '전장/전폭', description: '4,680mm / 1,895mm' },
+                            { field: '배기량', description: '1968 ~ 1984cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '10.5 ~ 12.8km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: 'A7',
+                generation: 2,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '9,355 ~ 1억 278만원' },
+                            { field: '차량형태', description: '4도어 대형 해치백' },
+                            { field: '연료', description: '가솔린, 디젤' },
+                            { field: '전장/전폭', description: '4,975mm / 1,910mm' },
+                            { field: '배기량', description: '2967 ~ 2995cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '9.5 ~ 13.0km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: 'A4',
+                generation: 5,
+                submodels: [
+                    {
+                        name: '세단 F/L',
+                        specs: [
+                            { field: '가격', description: '5,316 ~ 6,592만원' },
+                            { field: '차량형태', description: '4도어 중형 세단' },
+                            { field: '연료', description: '가솔린, 디젤' },
+                            { field: '전장/전폭', description: '4,770mm / 1,845mm' },
+                            { field: '배기량', description: '1968 ~ 1984cc' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '13.0 ~ 16.9km/l' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: 'Q8',
+                generation: 1,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '1억 2,284만원' },
+                            { field: '차량형태', description: '5도어 대형 SUV' },
+                            { field: '연료', description: '가솔린' },
+                            { field: '전장/전폭', description: '5,005mm / 1,995mm' },
+                            { field: '배기량', description: '2995cc' },
+                            { field: '승차인원', description: '5 ~ 7명' },
+                            { field: '연비', description: '8.5km/l' },
+                        ]
+                    }
+                ],
+            },
+        ]
+    },
+    { 
+        logo: 'tesla.svg', name: '테슬라', nameEng: 'TESLA',
+        models: [
+            { 
+                name: '모델 3',
+                generation: 1,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '7,034 ~ 9,417만원' },
+                            { field: '차량형태', description: '4도어 중형 세단' },
+                            { field: '연료', description: '전기' },
+                            { field: '전장/전폭', description: '4,694mm / 1,849mm' },
+                            { field: '주행거리', description: '383 ~ 528km' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '5.6 ~ 6.1km/kWh' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: '모델 S',
+                generation: 1,
+                submodels: [
+                    {
+                        name: 'F/L',
+                        specs: [
+                            { field: '가격', description: '1억 2,999 ~ 1억 6,999만원' },
+                            { field: '차량형태', description: '4도어 대형 세단' },
+                            { field: '주행거리', description: '652km' },
+                            { field: '전장/전폭', description: '4,979mm / 1,964mm' },
+                            { field: '주행거리', description: '652km' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '4.3km/kWh' },
+                        ]
+                    }
+                ],
+            },
+            { 
+                name: '모델 Y',
+                generation: 0,
+                submodels: [
+                    {
+                        name: '',
+                        specs: [
+                            { field: '가격', description: '9,664 ~ 1억 473만원' },
+                            { field: '차량형태', description: '5도어 중형 SUV' },
+                            { field: '연료', description: '전기' },
+                            { field: '전장/전폭', description: '4,750mm / 1,920mm' },
+                            { field: '주행거리', description: '448km' },
+                            { field: '승차인원', description: '5명' },
+                            { field: '연비', description: '4.8km/kWh' },
+                        ]
+                    }
+                ],
+            },
+        ]
+    },
+    // { logo: 'ssangyong.svg', name: '쌍용', nameEng: 'SSANGYONG' },
     // { logo: 'volkswagen.svg', name: '폭스바겐', nameEng: 'VOLKSWAGEN' },
     // { logo: 'volvo.svg', name: '볼보', nameEng: 'VOLVO' },
 ];
