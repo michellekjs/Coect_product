@@ -64,17 +64,25 @@ export default function ArticleIdPage(props) {
 	const submodel = model.submodels.find((s) => s.name == article.submodel) || model.submodels[0];
 	const fullname = `${brand.name} ${model.name} ${submodel ? submodel.name + ' ' : ''} (${model.generation}세대)`;
 
+
 	const relatedArticles = useRef(
 		articles
 			.filter(
 				(a) =>
 					a.brand == article.brand &&
-					a.model == article.model &&
 					a.id != article.id
 			)
-			.sort(() => 0.5 - Math.random())
+			.sort(function(a,b){ 
+					if( a.model == article.model ) {
+						return -1;
+					}
+					else if (b.model == article.model) {
+						return 1;
+					}
+			})
 			.slice(0, 3) // 랜덤으로 3개 뽑기
 	);
+
 
 	return (
 		<Layout>

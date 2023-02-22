@@ -56,7 +56,7 @@ export default function MainPage() {
 			>
 				<div style={{ width: "100%" }}>
 					<Carousel
-						autoPlay={false}
+						autoPlay={true}
 						infiniteLoop
 						emulateTouch
 						renderArrowPrev={(clickHandler, hasPrev, label) =>
@@ -108,16 +108,13 @@ export default function MainPage() {
 							)
 						}
 					>
-						{Array(3)
-							.fill(0)
-							.map((_) => (
 								<div
 									style={{
 										flex: "none",
 										width: "100%",
 										height: isMobile ? 180 : 358,
 										background: `linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-									url('${require(`../public/imgs/cover.png`).default.src}')`,
+									url('${require(`../public/imgs/grandeurcover.png`).default.src}')`,
 										display: "flex",
 										backgroundSize: "cover",
 										backgroundPosition: "center center",
@@ -138,7 +135,32 @@ export default function MainPage() {
 										영상들 보러 가기
 									</div>
 								</div>
-							))}
+								<div
+									style={{
+										flex: "none",
+										width: "100%",
+										height: isMobile ? 180 : 358,
+										background: `linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+									url('${require(`../public/imgs/konacover.png`).default.src}')`,
+										display: "flex",
+										backgroundSize: "cover",
+										backgroundPosition: "center center",
+										alignItems: "center",
+										textAlign: "center",
+									}}
+								>
+									<div
+										style={{
+											fontSize: isMobile ? 16 : 28,
+											color: "white",
+											textAlign: isMobile ? "start" : "center",
+											marginLeft: isMobile ? "20px" : "0px",
+											width: "100%",
+										}}
+									>
+									5년 만에 완전히 바뀐 {isMobile && <br />} ‘디 올 뉴 코나’ 리뷰 영상 보러가기
+									</div>
+								</div>
 					</Carousel>
 				</div>
 
@@ -291,34 +313,21 @@ export default function MainPage() {
 							style={{
 								display: "flex",
 								alignItems: "center", 
+								justifyContent: "space-between",
+								width: "100%",
 								flexDirection: isMobile ? "column" : "row",
 								gap: isMobile ? 5 : 16,
 								fontSize: 22,
 								fontWeight: 500,
 							}}
 						>
-							<div>🔥 요즘 사람들이 주목하는 차량</div>
-							<div style={{ color: colors.primary, fontSize: 18 }}>
+						<div style={{display:"flex", gap:20, alignItems:'center'}}>
+							<span>🔥 요즘 사람들이 주목하는 차량</span>
+							<span style={{ color: colors.primary, fontSize: 18 }}>
 								#{hot.model}
-							</div>
+							</span>
 						</div>
-						<div
-							style={{
-								display: "flex",
-								alignItems: "flex-start",
-								gap: 24,
-								marginTop: 40,
-								flexDirection: isMobile ? "column" : "row",
-							}}
-						>
-							{hot.articles.slice(0, 2).map((a, i) => (
-								<div key={i} style={{ flex: 1 }}>
-									<ArticleSummaryHot key={i} article={a} />
-								</div>
-							))}
-							{/*  */}{" "}
-						</div>
-						<button
+							{isDesktop && <button
 							onClick={refreshHot}
 							style={{
 								display: "flex",
@@ -345,7 +354,52 @@ export default function MainPage() {
 								style={{ width: 20, height: 20 }}
 							/>
 							<span style={{ fontSize: 14 }}>주목하는 차량 더보기</span>
-						</button>
+						</button>}
+						</div>
+						<div
+							style={{
+								display: "flex",
+								alignItems: "flex-start",
+								gap: 24,
+								marginTop: 40,
+								flexDirection: isMobile ? "column" : "row",
+							}}
+						>
+							{hot.articles.slice(0, 2).map((a, i) => (
+								<div key={i} style={{ flex: 1 }}>
+									<ArticleSummaryHot key={i} article={a} />
+								</div>
+							))}
+							{/*  */}{" "}
+						</div>
+						{isMobile && <button
+							onClick={refreshHot}
+							style={{
+								display: "flex",
+								alignItems: "center",
+								justifyContent:"center",
+								gap: 14,
+								paddingLeft: isMobile ? 10 : 16,
+								paddingRight: isMobile ? 10 : 16,
+								paddingTop: 10,
+								paddingBottom: 10,
+								borderRadius: 9999,
+								borderColor: "#BDBDBD",
+								borderWidth: 1,
+								borderStyle: "solid",
+								background: "white",
+								cursor: "pointer",
+								marginTop: 15,
+								// width:"100%"
+							}}
+						>
+							<img
+								src={require("../public/imgs/refresh.svg").default.src}
+								alt="새로고침 아이콘"
+								style={{ width: 20, height: 20 }}
+							/>
+							<span style={{ fontSize: 14 }}>주목하는 차량 더보기</span>
+						</button>}
 					</div>
 					<div
 						style={{
