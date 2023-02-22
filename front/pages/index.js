@@ -292,34 +292,21 @@ export default function MainPage() {
 							style={{
 								display: "flex",
 								alignItems: "center", 
+								justifyContent: "space-between",
+								width: "100%",
 								flexDirection: isMobile ? "column" : "row",
 								gap: isMobile ? 5 : 16,
 								fontSize: 22,
 								fontWeight: 500,
 							}}
 						>
-							<div>🔥 요즘 사람들이 주목하는 차량</div>
-							<div style={{ color: colors.primary, fontSize: 18 }}>
+						<div style={{display:"flex", gap:20, alignItems:'center'}}>
+							<span>🔥 요즘 사람들이 주목하는 차량</span>
+							<span style={{ color: colors.primary, fontSize: 18 }}>
 								#{hot.model}
-							</div>
+							</span>
 						</div>
-						<div
-							style={{
-								display: "flex",
-								alignItems: "flex-start",
-								gap: 24,
-								marginTop: 40,
-								flexDirection: isMobile ? "column" : "row",
-							}}
-						>
-							{hot.articles.slice(0, 2).map((a, i) => (
-								<div key={i} style={{ flex: 1 }}>
-									<ArticleSummaryHot key={i} article={a} />
-								</div>
-							))}
-							{/*  */}{" "}
-						</div>
-						<button
+							{isDesktop && <button
 							onClick={refreshHot}
 							style={{
 								display: "flex",
@@ -346,7 +333,52 @@ export default function MainPage() {
 								style={{ width: 20, height: 20 }}
 							/>
 							<span style={{ fontSize: 14 }}>주목하는 차량 더보기</span>
-						</button>
+						</button>}
+						</div>
+						<div
+							style={{
+								display: "flex",
+								alignItems: "flex-start",
+								gap: 24,
+								marginTop: 40,
+								flexDirection: isMobile ? "column" : "row",
+							}}
+						>
+							{hot.articles.slice(0, 2).map((a, i) => (
+								<div key={i} style={{ flex: 1 }}>
+									<ArticleSummaryHot key={i} article={a} />
+								</div>
+							))}
+							{/*  */}{" "}
+						</div>
+						{isMobile && <button
+							onClick={refreshHot}
+							style={{
+								display: "flex",
+								alignItems: "center",
+								justifyContent:"center",
+								gap: 14,
+								paddingLeft: isMobile ? 10 : 16,
+								paddingRight: isMobile ? 10 : 16,
+								paddingTop: 10,
+								paddingBottom: 10,
+								borderRadius: 9999,
+								borderColor: "#BDBDBD",
+								borderWidth: 1,
+								borderStyle: "solid",
+								background: "white",
+								cursor: "pointer",
+								marginTop: 15,
+								// width:"100%"
+							}}
+						>
+							<img
+								src={require("../public/imgs/refresh.svg").default.src}
+								alt="새로고침 아이콘"
+								style={{ width: 20, height: 20 }}
+							/>
+							<span style={{ fontSize: 14 }}>주목하는 차량 더보기</span>
+						</button>}
 					</div>
 					<div
 						style={{
