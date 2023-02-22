@@ -129,7 +129,7 @@ export default function ArticleIdPage(props) {
 							gap: isMobile ? 5 : 30,
 							justifyContent: "center",
 							alignItems: "center",
-							width: "100%",
+							// width: "100%",
 							// height: 350,
 							marginTop: 36,
 							zIndex: 2,
