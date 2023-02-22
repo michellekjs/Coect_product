@@ -8,7 +8,7 @@ import ArticleSummaryToday from "../../comps/ArticleSummaryToday";
 import TextUnit from "../../comps/TextUnit";
 import Author from "../../comps/Author.js";
 
-import { articles, categories, colors } from "../../shared";
+import { articles, brands, colors } from "../../shared";
 
 import style from "../../comps/hover.module.css";
 
@@ -59,6 +59,10 @@ export default function ArticleIdPage(props) {
 	};
 
 	const article = articles.find((a) => a.id == props.aid);
+	const brand = brands.find((b) => b.name == article.brand);
+	const model = brand.models.find((m) => m.name == article.model);
+	const submodel = model.submodels.find((s) => s.name == article.submodel) || model.submodels[0];
+	const fullname = `${brand.name} ${model.name} ${submodel ? submodel.name + ' ' : ''} (${model.generation}세대)`;
 
 	const relatedArticles = useRef(
 		articles
@@ -304,19 +308,47 @@ export default function ArticleIdPage(props) {
 										height: "30px",
 									}}
 								>
-									<th colspan="2">SORENTO / 4세대</th>
+									<th colspan={ isDesktop ? 6 : 2 }>{fullname}</th>
 								</tr>
-								{[
-									"코드네임",
-									"차량형태",
-									"승차인원",
-									"전장/전폭",
-									"0~100km/h",
-									"가격",
-									"연비",
-									"연료",
-									"구동방식",
-								].map((_) => (
+								{
+									isDesktop && Array(Math.ceil(submodel.specs.length / 3)).fill(0).map((_, i) => i).map(i => (
+										<tr>
+										{
+											[0, 1, 2].map(j => {
+												const spec = submodel.specs[i * 3 + j]
+												return (
+													spec && <>
+														<td
+															style={{
+																width: 100,
+																paddingTop: 11,
+																paddingBottom: 11,
+																paddingLeft: 15,
+																paddingRight: 15,
+																textAlign: "center",
+																backgroundColor: colors.primaryDark,
+																color: "white",
+																fontSize: 12,
+																...styles.cell,
+															}}
+														>
+															{spec.field}
+														</td>
+														<td style={{ 
+															...styles.cell,
+															textAlign: "center",
+															fontSize: 14
+														}}>
+															{spec.description}
+														</td>
+													</>
+												);
+											})
+										}
+										</tr>
+									))
+								}
+								{ isMobile && submodel.specs.map(spec => (
 									<tr>
 										<td
 											style={{
@@ -332,9 +364,15 @@ export default function ArticleIdPage(props) {
 												...styles.cell,
 											}}
 										>
-											{_}
+											{spec.field}
 										</td>
-										<td style={{ ...styles.cell }}></td>
+										<td style={{ 
+											...styles.cell,
+											textAlign: "center",
+											fontSize: 14
+										}}>
+											{spec.description}
+										</td>
 									</tr>
 								))}
 							</table>

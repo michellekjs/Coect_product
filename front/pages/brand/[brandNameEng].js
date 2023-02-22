@@ -98,7 +98,7 @@ export default function CategoryIdPage(props) {
 							fontWeight: 500, 
 							// marginLeft: "10%"
 						}}>
-							{ model ? model : '전체 모델' }
+							{ model ? model : '전체' }
 							<span> 리뷰 영상</span>
 							<span style={{ color: colors.primary }}>&nbsp;{resultarticle.length}</span>
 							<span>개</span>
