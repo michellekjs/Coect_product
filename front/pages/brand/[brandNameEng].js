@@ -30,7 +30,7 @@ export default function CategoryIdPage(props) {
 	const isMobile = useMediaQuery({ query: '(max-width: 1045px)' });
 
 	const router = useRouter();
-	const { brandNameEng, page } = router.query;
+	const { brandNameEng, page, model } = router.query;
 
 	const brand = brands.find((brand) => brand.nameEng == brandNameEng);
 
@@ -38,9 +38,13 @@ export default function CategoryIdPage(props) {
 
 	const nArticlesInPage = 6;
 
-	const [resultarticle, setarticle] = useState(articles.filter(
-		(article) => (article.brand == brand.name)
-	));
+	const [resultarticle, setarticle] = useState([]);
+
+	useEffect(() => {
+		setarticle(articles.filter(
+			(article) => (article.brand == brand.name) && (!model || article.model == model)
+		));
+	}, [model]);
 
 	// const buttonClick = (word) => {
 	// 	if (word == true) {
@@ -74,11 +78,15 @@ export default function CategoryIdPage(props) {
 				<div style={{display:"flex", width:"100%", justifyContent:'center'}}>
 					<div style={{ display: 'flex', gap: 20, justifyContent: 'end', overflowX: "scroll", width:"wrap-content", paddingLeft:30, paddingRight:30}}>
 					{
-						Array(6).fill(0).map((_, i) => 
-							<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'end', gap: 0, textAlign: 'center', fontSize: i==2 ? 16 : 14, color: i==2 ? 'black' : colors._300}} className={styles.model}>
-								<img src={require('../../public/imgs/' + 'car_selected.png').default.src} alt="" style={{ width: i==2 ? 220 : 170, filter: i==2 ? '' : 'grayscale(1)' }}/>
-								<span>{ i==2 ? '현대 코나' : '현대 아반떼' }</span>
-							</div>
+						brand.models.map((m, i) => 
+							<Link 
+								href={`/brand/${brand.nameEng}` + (model==m.name ? '' : `?model=${m.name}`)}
+								style={{ display: 'flex', flexDirection: 'column', justifyContent: 'end', gap: 15, textAlign: 'center', fontSize: model==m.name ? 16 : 14, color: model==m.name ? 'black' : colors._300, textDecoration: 'none', color: 'black'}}
+								className={styles.model}
+							>
+								<img src={require(`../../public/imgs/models/${brand.name} ${m.name} ${m.submodels[0].name ? m.submodels[0].name + ' ' : ''}(${m.generation}세대).png`).default.src} alt="" style={{ width: model==m.name ? 220 : 170, filter: model==m.name ? '' : 'grayscale(1)' }}/>
+								<span>{`${brand.name} ${m.name}`}</span>
+							</Link>
 						)
 					}
 					</div>
@@ -90,13 +98,14 @@ export default function CategoryIdPage(props) {
 							fontWeight: 500, 
 							// marginLeft: "10%"
 						}}>
-							<span>리뷰 영상</span>
+							{ model ? model : '전체 모델' }
+							<span> 리뷰 영상</span>
 							<span style={{ color: colors.primary }}>&nbsp;{resultarticle.length}</span>
 							<span>개</span>
-							{ resultarticle.length > nArticlesInPage && <span> 중 {pageReal}페이지</span> }
+							{ resultarticle.length > nArticlesInPage && <span> 중 <span style={{ color: colors.primary }}>{pageReal}</span>페이지</span> }
 						</div>
 						<div>
-							<div style={{ display: 'flex', flexDirection: 'column', gap: 40, justifyContent:"center", }}>
+							<div style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? 40 : 20, justifyContent:"center", }}>
 								{isDesktop && 
 									resultarticle.slice((pageReal-1)*nArticlesInPage, pageReal*nArticlesInPage).map((a, i) =>
 										<ArticleSummary article={a}/>

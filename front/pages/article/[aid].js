@@ -10,6 +10,8 @@ import Author from "../../comps/Author.js";
 
 import { articles, categories, colors } from "../../shared";
 
+import style from "../../comps/hover.module.css";
+
 export function getStaticPaths() {
 	return {
 		paths: articles.map((_) => ({ params: { aid: String(_.id) } })),
@@ -129,7 +131,7 @@ export default function ArticleIdPage(props) {
 							gap: isMobile ? 5 : 30,
 							justifyContent: "center",
 							alignItems: "center",
-							// width: "100%",
+							width: "100%",
 							// height: 350,
 							marginTop: 36,
 							zIndex: 2,
@@ -148,8 +150,8 @@ export default function ArticleIdPage(props) {
 								justifyContent: "center",
 								alignItems: "center",
 								alignContents:"center",
-								width:"100%",
-								height:"100%",
+								// width:"100%",
+								// height:"100%",
 								backgroundColor: "white",
 							}}
 						>
@@ -209,6 +211,7 @@ export default function ArticleIdPage(props) {
 													? colors.primary
 													: colors._300,
 										}}
+										className={style.chapter}
 									>
 										{i + 1}. {s.subject}
 									</a>

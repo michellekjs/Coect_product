@@ -331,15 +331,6 @@ let articles = [
     },
 ];
 
-articles = articles.map((a, i) => {
-    a.id = i + 1;
-    a.summaries = a.summaries.map(s => {
-        s.start = timestamp2seconds(s.start);
-        return s;
-    });
-    return a;
-});
-
 let brands = [
     { 
         logo: 'hyundai.svg', name: '현대', nameEng: 'HYUNDAI',
@@ -397,7 +388,7 @@ let brands = [
                 generation: 4,
                 submodels: [
                     {
-                        name: 'F/L',
+                        name: 'FL',
                         specs: [
                             { field: '가격', description: '3,252 ~ 4,447만원' },
                             { field: '차량형태', description: '5도어 중형 SUV' },
@@ -447,7 +438,7 @@ let brands = [
                 ],
             },
             { 
-                name: '소나타',
+                name: '쏘나타',
                 generation: 8,
                 submodels: [
                     {
@@ -469,7 +460,7 @@ let brands = [
                 generation: 1,
                 submodels: [
                     {
-                        name: 'F/L',
+                        name: 'FL',
                         specs: [
                             { field: '가격', description: '3,867 ~ 6,028만원' },
                             { field: '차량형태', description: '5도어 준대형 SUV' },
@@ -528,7 +519,7 @@ let brands = [
                 generation: 2,
                 submodels: [
                     {
-                        name: 'F/L',
+                        name: 'FL',
                         specs: [
                             { field: '가격', description: '5,772 ~ 8,487만원' },
                             { field: '차량형태', description: '4도어 대형 세단' },
@@ -582,7 +573,7 @@ let brands = [
                 generation: 2,
                 submodels: [
                     {
-                        name: '세단 F/L',
+                        name: '세단 FL',
                         specs: [
                             { field: '가격', description: '1,752 ~ 2,449만원' },
                             { field: '차량형태', description: '4도어 준중형 세단' },
@@ -618,7 +609,7 @@ let brands = [
                 generation: 1,
                 submodels: [
                     {
-                        name: 'F/L',
+                        name: 'FL',
                         specs: [
                             { field: '가격', description: '2,062 ~ 2,865만원' },
                             { field: '차량형태', description: '5도어 소형 SUV' },
@@ -731,7 +722,7 @@ let brands = [
                 generation: 1,
                 submodels: [
                     {
-                        name: 'F/L',
+                        name: 'FL',
                         specs: [
                             { field: '가격', description: '4,035 ~ 4,830만원' },
                             { field: '차량형태', description: '4도어 중형 스포츠 세단' },
@@ -790,7 +781,7 @@ let brands = [
                 generation: 3,
                 submodels: [
                     {
-                        name: 'F/L',
+                        name: 'FL',
                         specs: [
                             { field: '가격', description: '6,570 ~ 9,670만원' },
                             { field: '차량형태', description: '5도어 중형 SUV' },
@@ -808,7 +799,7 @@ let brands = [
                 generation: 7,
                 submodels: [
                     {
-                        name: '세단 F/L',
+                        name: '세단 FL',
                         specs: [
                             { field: '가격', description: '6,370 ~ 1억 1,600만원' },
                             { field: '차량형태', description: '4도어 준대형 세단' },
@@ -826,7 +817,7 @@ let brands = [
                 generation: 7,
                 submodels: [
                     {
-                        name: '세단 F/L',
+                        name: '세단 FL',
                         specs: [
                             { field: '가격', description: '5,530 ~ 8,740만원' },
                             { field: '차량형태', description: '4도어 중형 세단' },
@@ -886,7 +877,7 @@ let brands = [
                 generation: 5,
                 submodels: [
                     {
-                        name: '세단 F/L',
+                        name: '세단 FL',
                         specs: [
                             { field: '가격', description: '6,960 ~ 1억 1,430만원' },
                             { field: '차량형태', description: '4도어 대형 세단' },
@@ -945,7 +936,7 @@ let brands = [
                 generation: 2,
                 submodels: [
                     {
-                        name: 'F/L',
+                        name: 'FL',
                         specs: [
                             { field: '가격', description: '6,888 ~ 7,411만원' },
                             { field: '차량형태', description: '5도어 중형 SUV' },
@@ -981,7 +972,7 @@ let brands = [
                 generation: 5,
                 submodels: [
                     {
-                        name: '세단 F/L',
+                        name: '세단 FL',
                         specs: [
                             { field: '가격', description: '5,316 ~ 6,592만원' },
                             { field: '차량형태', description: '4도어 중형 세단' },
@@ -1040,7 +1031,7 @@ let brands = [
                 generation: 1,
                 submodels: [
                     {
-                        name: 'F/L',
+                        name: 'FL',
                         specs: [
                             { field: '가격', description: '1억 2,999 ~ 1억 6,999만원' },
                             { field: '차량형태', description: '4도어 대형 세단' },
@@ -1081,6 +1072,16 @@ let brands = [
 brands = brands.map((b, i) => {
     b.id = i + 1;
     return b;
+});
+
+articles = articles.map((a, i) => {
+    a.id = i + 1;
+    a.summaries = a.summaries.map(s => {
+        s.start = timestamp2seconds(s.start);
+        return s;
+    });
+    a.brandNameEng = brands.find(b => b.name === a.brand).nameEng;
+    return a;
 });
 
 const colors = {
