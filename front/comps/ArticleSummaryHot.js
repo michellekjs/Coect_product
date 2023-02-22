@@ -3,6 +3,8 @@ import Author from "./Author";
 
 import { colors } from "../shared";
 
+import style from './hover.module.css';
+
 export default function ArticleSummary(props) {
 	const styles = {
 		container: {
@@ -17,7 +19,9 @@ export default function ArticleSummary(props) {
 			// backgroundColor: "#FAFAFA",
 			// padding: "30px",
             // boxShadow: '5px 5px 5px 5px #F9F9F9',
-			height: 114
+			height: 114,
+			padding: 10,
+			boxSizing: "content-box",
 		},
 		right: {
 			flex: 1,
@@ -80,7 +84,7 @@ export default function ArticleSummary(props) {
 			href={`/article/${props.article.id}`}
 			style={{ textDecoration: "none" }}
 		>
-			<div style={styles.container}>
+			<div style={styles.container} className={style.logo}>
 				<div style={styles.left}>
 					<img
 						style={styles.thumbnail}

@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import Subtitle from "./Subtitle";
 
+import style from './hover.module.css';
 
 import { colors } from "../shared";
 
@@ -21,7 +22,8 @@ export default function ArticleSummary(props) {
 			// backgroundColor: "#FAFAFA",
 			// padding: "30px",
             // boxShadow: '5px 5px 5px 5px #F9F9F9',
-			height: 124
+			height: 124,
+			padding: 10
 		},
 		left: {
 			flex: 1,
@@ -84,13 +86,13 @@ export default function ArticleSummary(props) {
 			href={`/article/${props.article.id}`}
 			style={{ textDecoration: "none" }}
 		>
-		 <div style={styles.container}>
+		 <div style={styles.container} className={style.logo}>
 				<div style={styles.left}>
 					<div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-						<div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 14, color: colors.primary }}>
-							<span>{props.article.brand}</span>
+						<div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 14 }}>
+							<Link href={`/brand/${props.article.brandNameEng}`} style={{ textDecoration: 'none', color: colors.primary }}>{props.article.brand}</Link>
 							<span style={{ color: '#BDBDBD' }}>&gt;</span>
-							<span>{props.article.model}</span>
+							<Link href={`/brand/${props.article.brandNameEng}?model=${props.article.model}`} style={{ textDecoration: 'none', color: colors.primary }}>{props.article.model}</Link>
 						</div>
 						<div style={styles.title}>{props.article.title}</div>
 					</div>

@@ -20,11 +20,20 @@ background-color: 'black'
   border-radius: 10px
 }
 
-.model img {
+.model img, .model span {
   transition: 0.3s;
 }
 
 .model:hover img {
   width: 220px !important;
   filter: grayscale(0) !important;
+}
+
+.model:hover span {
+  font-size: 16px !important;
+  color: black !important;
+}
+
+.chapter:hover {
+  color: #2B6F7D !important;
 }

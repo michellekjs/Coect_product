@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Layout from "../comps/Layout";
 import ArticleSummaryHot from "../comps/ArticleSummaryHot";
-import ArticleSummaryTop from "../comps/ArticleSummaryTop";
 import ArticleSummaryToday from "../comps/ArticleSummaryToday";
 import { useMediaQuery } from "react-responsive";
 import { Carousel } from "react-responsive-carousel";
