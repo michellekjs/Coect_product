@@ -109,7 +109,7 @@ let articles = [
 
             ]
         },
-
+/*
     {
         title: '토레스 사도 되냐고?',
         date: '2022-08-05',
@@ -131,12 +131,13 @@ let articles = [
 
         ]
     },
+*/
     {   
         title: '주행느낌 놀랍네요 "V6 그랜저" 배기량 사륜구동 하나로 이렇게 차이가 난다고.?! 풀옵션 3.5 그랜저 시승해봤습니다',
         date: '2022-11-30',
         brand: '현대',
         model: '그랜저',
-        article_id: 5,
+        article_id: 4,
         channelImageUrl: 'https://yt3.googleusercontent.com/ytc/AL5GRJXQW6Q9Gp-2jJ2YmcjzX5jJSCNJeEWDCskPJ6hg=s176-c-k-c0x00ffffff-no-rj',
         channelName: '우파푸른하늘Woopa TV',
         channelId: '@Woopa87',
@@ -161,7 +162,7 @@ let articles = [
         date: '2022-12-04',
         brand: '현대',
         model: '코나',
-        article_id: 6,
+        article_id: 5,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AL5GRJXaE02Phk_SsOB8I8fwk5IAu-2NENkG3plXdW042A=s68-c-k-c0x00ffffff-no-rj',
         channelName: '김한용의 MOCAR',
         channelId: '@mocar_official',
@@ -186,7 +187,7 @@ let articles = [
         date: '2023-01-08',
         brand: '현대',
         model: '그랜저',
-        article_id: 7,
+        article_id: 6,
         channelImageUrl: 'https://yt3.googleusercontent.com/JxLCviC3D56QGqysNhKJF3Bi6ei_UrBUlp9-ymMfvd6K9xDgSbNdv_tRitY6lim9BT6eHwiV=s176-c-k-c0x00ffffff-no-rj',
         channelName: '오토뷰(AutoView) - 자동차 구입 참고서',
         channelId: '@autoview2009',
@@ -212,7 +213,7 @@ let articles = [
         date: '2023-01-28',
         brand: '현대',
         model: '코나',
-        article_id: 8,
+        article_id: 7,
         channelImageUrl: 'https://yt3.googleusercontent.com/KXYwqH_dxv5o-gMN66LQKlYJwqa1Fxq69tW1ZiEnlDYi4miWmjoSX9FapnNUFKUY_Ym2dqmt5Q=s176-c-k-c0x00ffffff-no-rj',
         channelName: 'mediaAUTO 미디어오토',
         channelId: '@mediaAUTO',
@@ -234,7 +235,7 @@ let articles = [
         date: '2022-11-26',
         brand: 'BMW',
         model: 'X4',
-        article_id: 9,
+        article_id: 8,
         channelImageUrl: 'https://yt3.googleusercontent.com/JxLCviC3D56QGqysNhKJF3Bi6ei_UrBUlp9-ymMfvd6K9xDgSbNdv_tRitY6lim9BT6eHwiV=s176-c-k-c0x00ffffff-no-rj',
         channelName: '오토뷰(AutoView) - 자동차 구입 참고서',
         channelId: '@autoview2009',
@@ -260,7 +261,7 @@ let articles = [
         date: '2022-02-23',
         brand: '아우디',
         model: 'Q5',
-        article_id: 10,
+        article_id: 9,
         channelImageUrl: 'https://yt3.googleusercontent.com/JxLCviC3D56QGqysNhKJF3Bi6ei_UrBUlp9-ymMfvd6K9xDgSbNdv_tRitY6lim9BT6eHwiV=s176-c-k-c0x00ffffff-no-rj',
         channelName: '오토뷰(AutoView) - 자동차 구입 참고서',
         channelId: '@autoview2009',
@@ -275,7 +276,7 @@ let articles = [
             { start: '00:12:19', subject: '엔진의 반응성', text: '엔진의 반응성도 매우 좋습니다. 출력 자체로 놓고 봤을 때 매우 고성능은 아니지만 그랠도 200마력 중반이 어디가서 꿀리지는 않죠. 다만 수치적으로 봤을 때 37.7kgfm, 타사들이 40kgfm를 전후하는 성능을 내는 만큼 이 토크를 올려주면 더 좋지 않을까 싶습니다. ' },
             { start: '00:13:02', subject: '사운드 시스템', text: '사운드 시스템도 무난한 편이라 뭐 물론 상급 모델과 비교를 한다면 아쉬운 부분도 있겠지만 그래도 나름대로 균형감을 찾으려는 모습을 보여주고 있고요. 다만 인포테인먼트가 조금 불만이긴 하죠.' },
             { start: '00:14:09', subject: '타이어', text: '타이어도 볼까요? 아우디 Q5는 꽤 잘 달리는 SUV 중 하나입니다. 이 성능을 유지하기 위해 미쉐린의 래티튜드 스포츠3를 택했죠. SUV용 고성능 타이어를 쓴다고 보시면 됩니다.' },
-            { start: '00:15:24', subject: '가속성능', text: '그럼 아우디 Q5 발진, 가속 성능도 볼까요? 아우디의 공식 발표sms 6.1초입니다. 그러나 겨울철 낮은 기온 덕분인지 저희 팀이 테스트한 결과 이번 Q5는 6.04초를 보여주었습니다.' },
+            { start: '00:15:24', subject: '가속성능', text: '그럼 아우디 Q5 발진, 가속 성능도 볼까요? 아우디의 공식 발표느느 6.1초입니다. 그러나 겨울철 낮은 기온 덕분인지 저희 팀이 테스트한 결과 이번 Q5는 6.04초를 보여주었습니다.' },
             { start: '00:18:16', subject: '총평', text: '아우디 Q5, 가격적으로 봤을 때도 크게 나쁘지 않죠. 현재 모델 \'45 TFSI 콰트로 프리미엄\' 실내에 대해서 공간이 조금 더 넓다,좁다 이렇게 얘기하시는 분들도 계시지만 이 정도 공간이면 패밀리 SUV로 접근하시는 소비자 상당수를 잡아낼 수 있겠네요. ' },
 
         ]
@@ -286,7 +287,7 @@ let articles = [
         date: '2021-03-06',
         brand: '테슬라',
         model: '모델Y',
-        article_id: 11,
+        article_id: 10,
         channelImageUrl: 'https://yt3.googleusercontent.com/JxLCviC3D56QGqysNhKJF3Bi6ei_UrBUlp9-ymMfvd6K9xDgSbNdv_tRitY6lim9BT6eHwiV=s176-c-k-c0x00ffffff-no-rj',
         channelName: '오토뷰(AutoView) - 자동차 구입 참고서',
         channelId: '@autoview2009',
@@ -309,7 +310,7 @@ let articles = [
         date: '2022-07-28',
         brand: '기아',
         model: '셀토스',
-        article_id: 12,
+        article_id: 11,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AL5GRJXaE02Phk_SsOB8I8fwk5IAu-2NENkG3plXdW042A=s68-c-k-c0x00ffffff-no-rj',
         channelName: '김한용의 MOCAR',
         channelId: '@mocar_official',
@@ -329,6 +330,75 @@ let articles = [
         
         ]
     },
+
+    {
+        title: '3천만원대 깡통 쏘렌토 하이브리드',
+        date: '2021-03-24',
+        brand: '현대',
+        model: '쏘렌토',
+        submodel: '하이브리드',
+        article_id: 12,
+        channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu_WszZPwVss4PdFN2MPcUTFrCDy01XRcwwB3o-e=s48-c-k-c0x00ffffff-no-rj',
+        channelName: '모트라인 MOTline',
+        channelId: '@Motline',
+        videoId: 'QZcl7_yLyRk',
+        summaries: [
+                    { start: '00:03:43', subject: '하이브리드 선택 이유', text: '자 일단 이 차는 쏘렌토중에서도 파워트레인이 하이브리드입니다. 제가 워낙 하이브리드 성애자기이기도 하고 이 ASC로직이 들어간 현대의 하이브리드에 대해서는 제가 워낙 말씀을 많이 드렸기 때문에 최근에 업로드된 K5 하이브리드 리뷰에서 이 ASC로직에 대해서는 굉장히 상세하게 설명을 드렸기 때문에 그 영상을 참조하면 될거 같습니다.' },
+                    { start: '00:04:33', subject: '4륜 옵션을 뺀 이유와 그 결과', text: '제가 4WD를 뺐어요. 쏘렌토 하이브리드 리뷰를 하면서 이 하이브리드 파워트레인에, 차도 SUV라서 무게도 있는데 여기에 4WD까지 넣었을 때 이질감이 없을까? 하고 타봤을 때 아무래도 같은 파워트레인에 세단에 들어가 있는 그냥 전륜구동으로 다니는 그차들 보다는 악셀을 밟았을 때 출력이 바닥까지 전달되는 딜레이도 조금은 느껴집니다.' },
+                    { start: '00:05:51', subject: '스타일 옵션을 넣은 이유', text: '다음으로 스타일 옵션도 들어가 있는데 제가 전에도 말씀드렸지만, 이 스타일 옵션은 기아답지않게 굉장히 혜자스러운 옵션이라고 할 수 있겠다. 기본적으로 턴시그널, 헤드라이트도 LED로 바뀌구요. 거기에 하나 더 휠과 타이어가 업그레이드 되는데 일단 타이어는 컨티넨탈 크로스 컨텍으로 업그레이드가 되고 그리고 휠도 하이브리드 트림에서는 가장 높은 19인치 휠이 들어갑니다. ' },
+                    { start: '00:06:52', subject: '파노라마 썬루프를 넣은 이유', text: '그리고 여기 보시다시피 파노라마 선루프, 이 정도 사이즈에 이 정도 개방감을 가진 파노라마 썬루프라면 이거는 넣을만 하다.' },
+                    { start: '00:07:14', subject: '드라이브 와이즈 옵션과 주행보조장치 성능', text: '거기다가 드라이브 와이즈 옵션 넣으면 주행보조장치 잘 작동해?라고 말씀하시는 분들이 굉장히 많았는데. 지금 꽤 곡률이 큰 코너를 돌고 있습니다. 여기 곡률이 꽤 큽니다.  ' },
+                    { start: '00:08:25', subject: '10인치 UVO 네비게이션이 빠진 이유', text: '그리고 디스플레이 굉장히 궁금해 하실것 같아요. 제가 전에도 말씀드렸지만 10.25인치 UVO 네비게이션을 뺐거든요. 요즘엔 다 안드로이드오토, 애플카플레이 연결해서 다니시거든요.' },
+                    { start: '00:10:02', subject: '8인치 디스플레이', text: '이 8인치 디스플레이 자체가 디자인적으로 굉장히 이상할거라고 생각하시는 분들이 있는데 전혀 그렇지 않아요. 충분히 큰 사이즈의 디스플레이가 들어가 있고 여기에 어짜피 들어가 있을것들은 다 들어가 있어요.' },
+                    { start: '00:10:35', subject: '6인승 시트 옵션', text: '그리고 6인치 시트 옵션이 들어가 있죠. 이거는 쏘렌토...너무 기아를 칭찬해주고 싶은 부분입니다. 현대는 지금 팰리세이드라는 윗급에 2열 독립시트를 만들어서 팔고 있잖아요.' },
+                    { start: '00:13:40', subject: '뒷좌석 편의사양', text: '시트구성은 이렇고 뒷좌석에서 볼 수 있는 편의사양, 2열에 힛팅시트 다 들어가있고요 3열에서도 독립적으로 컨트롤할 수 있는 공조장치 다 들어가 있습니다.' },
+
+        ]
+    },
+
+    {   
+        title: '기아 신형 스포티지 시승기...가격 3871만원! 진짜 싼타페보다 더 크다고?',
+        date: '2021-07-27',
+        brand: '기아',
+        model: '스포티지',
+        article_id: 13,
+        channelImageUrl: 'https://yt3.ggpht.com/ytc/AL5GRJXaE02Phk_SsOB8I8fwk5IAu-2NENkG3plXdW042A=s68-c-k-c0x00ffffff-no-rj',
+        channelName: '김한용의 MOCAR',
+        channelId: '@mocar_official',
+        videoId: 'P53OI8a76IU',
+        summaries: [
+                { start: '00:00:50', subject: '시작', text: '안녕하세요 모카 김한용입니다. 오늘 만나볼 차는 기아 스포티지입니다. 스포티지 그동안 영상 보내드렸는데 이번에 드디어 시승을 할 수 있게 돼서 대단히 기쁘게 생각합니다. 요번에 시승한 차는 스포티지 NQ5 가솔린 그중에서도 시그니처 그래비티 모델입니다.' },
+                { start: '00:01:30', subject: '외관', text: '이거 약간 상어잖아. 그래비티 모델은 살짝 상어 같지 않을 수 있는데 사실 이게 크롬으로 되어 있으면 상어의 꼬리 지느러미 같은 그런 느낌을 자아내기도 하죠. 실제로 이 차는 생태교랸종이라고 할 수 있어요.' },
+                { start: '00:11:17', subject: '트렁크', text: '스포티지 트렁크 어때요 넓죠? 투싼보다 앉기가 편해요. 그래요? 투싼하고 다르다? 투싼보다 조금 더 수월하게 앉아지는 듯한 느낌이 있어요. 지금 보면 스포티지가 굉장히 낮아요. 짐을 넣을 때 굉장히 쉽게 이게 좋은 점이라 할 수 있어요.' },
+                { start: '00:14:30', subject: '뒷좌석', text: '사실 저도 이걸 보고 놀랐어요. 좀 이상하죠. 사실 이런 지퍼 형태가 고장나면 골 때립니다. 포켓이 여기 있고 보통 스마트폰을 넣기 위한 별도의 포켓을 또 주거든요.' },
+                { start: '00:15:26', subject: '파노라마 썬루프', text: '파노라마 썬루프가 개방감이 상당히 좋네요. 혹시 파노라마 썬루프 옵션 넣는거 추천하십니까? 사실 저는 뒷좌석을 위한 옵션이라고 생각해요. 이건 앞좌석에 있는 사람에게 하등 도움될 게 없고 뒤에 타는 사람들이 뒤에서 이거 없으면 좀 답답하거든요.' },
+                { start: '00:17:27', subject: '주행 시승기', text: '지금 4바퀴, 사륜구동 모델인데요. 1.6터보 가솔린 사륜구동 모델 중에는 1호차라고 합니다. 사륜구동 모델 1호차다 보니까 사륜구동을 강조해서 볼 필요가 있겠죠. 사륜구동은 드라이브 모드에 따라서 아주 지능적으로 바뀝니다. 에코모드를 선택했을 때의 사륜구동 어떤 식으로 움직이냐 하면요 가속페달을 밟았을 때 거의 앞바퀴만 끌고 가죠.' },
+                { start: '00:22:55', subject: 'HDA', text: 'HDA 같은 경우는 이렇게 거리를 세팅해 놓고 손을 떼면 안돼요. 여러분들 핸들을 항상 잡고 있어야 됩니다. 그런데 사람이라는게 어쩌다 한번씩 부주의해지는 경우가 있잖아요. 그때 한 번 정도 막아 주는게 HDA의 목표입니다. ' },
+                { start: '00:25:51', subject: '연비', text: '연비는 지금 과격하게도 달려보고 차가 실제로 정차했다가 출발했다 하는 일은 없었어요. 지금까지 계속 아주 짧게 정차하고 막히는 길을 간게 아니어서 정확하게 알 수 없지만 지금 이런 상태에서 주행 연비는 11.8km/L 정도 나오고 있네요. 2.0리터 가솔린 엔진에 비해서 지금 1.6리터 터보가 공인여비상으로나 실제연비에서도 더 우수한걸 볼 수 있네요. ' },
+                { start: '00:26:43', subject: '승차감과 서스펜션', text: '그리고 이제는 한번 서스펜션은 어떤가도 살펴 보도록 할게요. 일단 승차감, 승차감이 어떤 차들은 굉장히 물침대 같은 승차감도 있죠. 그래서 어떤 분들은 물침대 승차감을 좋아하시는 분들도 계신거 같아요. 근데 지금 스포티지는 물침대는 아니고 확실히 단단한 느낌이 드는 그런 승차감이고요.' },
+                { start: '00:32:25', subject: '총평', text: '지금까지 스포티지 NQ5 시승해봤는데요, 정말 뛰어난 자동차 정말 최고의 자동차라는 생각이 들었습니다. 전세계 어디에 내놔도 이런 자동차는 없었던 것 같은데요 그도 그럴만한 것이 이 스포티지라는 자동차의 시작 그러니까 결국에는 소형 도심형 SUV라는 장르를 처음 개척한게 바로 기아차이기 때문인것 같기도 합니다.'},
+        ]
+    },
+
+    
+    {   
+        title: '6인승 싼타페 탔습니다! 쏘렌토 겨냥했는데, 쏘렌토가 더 잘 팔릴 상황? 현대 2022 싼타페 2.5T 시승기',
+        date: '2022-01-07',
+        brand: '현대',
+        model: '싼타페',
+        article_id: 14,
+        channelImageUrl: 'https://yt3.ggpht.com/sVMmInHMnlsTa4d2WgTF5yI1pMeEino4-3BnJaIAQTFJuQ1jAVpeNUNVUgmVtYJMSFrgkpSdvw=s88-c-k-c0x00ffffff-no-rj',
+        channelName: '모터그래프',
+        channelId: '@motorgraph',
+        videoId: 'VqGhohkuNeo',
+        summaries: [
+            { start: '00:00:30', subject: '시작', text: '안녕하세요 모터그래프 김상영입니다. 오늘 소개해드릴 모델은 현대차 2022년형 싼타페입니다. 싼타페는 우리나라에서 SUV 유행을 이끈 모델이기도 하고 현대차의 핵심 차종입니다. SUV지만 세단을 뛰어넘는 판매량을 보여주기도 했었던 첫번째 모델이거든요.' },
+            { start: '00:01:14', subject: '바뀐점', text: '기존 싼타페는 5인승과 7인승만 존재했었는데 2022년형 모델에는 가운데가 비어있는 6인승 모델이 추가됐습니다. 가운데 시트가 없어지면서 이제는 독립적인 팔걸이가 놓이게 됐고요. 기존에는 가운데 좌석에서 암레스트를 펼치면 그 안에 컵홀더가 있었는데 이제는 가운데 부분에 컵홀더가 놓이게 됐어요.' },
+            { start: '00:03:02', subject: '주행 모드', text: '싼타페도 주행모드가 굉장히 다양해요. 컴포트, 에코, 스포트, 스마트 기본적인 드라이브 모드가 있고 오프로드를 염두한 스노우, 머드, 샌드 모드가 있거든요. 사륜구동에도 영향을 주고 바퀴 토크를 제어해서 미끄러짐을 방지해주거나 미끄러지는 상황에서도 접지력을 찾게끔 도와줍니다. 물론 싼타페가 에어서스펜션에 있어서 높낮이를 조절할 수 있는건 아니지만 그래도 산길을 한번 올라가 볼게요.' },
+            { start: '00:06:52', subject: '트림 변경', text: '자동차 구성면에서 트림이 조금 달라졌습니다. 기존에는 소위 깡통이라고 부를 수 있었던 프리미어 트림이 있었고 프리미어 트림에서 몇가지 옵션을 추가한 프리미어 초이스가 있었는데 이제 두가지 트림이 전부 사라졌습니다. 한마디로 가장 저렴한 싼타페도 이제는 풍부한 옵션을 기본적으로는 가지고 있어요. ' },
+            { start: '00:07:20', subject: '시작 가격', text: '그러면서 시작 가격이 조금 높아졌어요. 2021년 형만 하더라도 2000만원대로 싼타페를 맞출 수가 있었거든요. 하지만 이제는 시작 가격이 무조건 3000만원을 높아졌습니다.' },
+            ]
+        },
 ];
 
 articles = articles.map((a, i) => {
