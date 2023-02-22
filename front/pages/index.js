@@ -108,59 +108,43 @@ export default function MainPage() {
 							)
 						}
 					>
+					{
+						[
+							{ cover: "grandeurcover.png", title: ['세단 제왕의 귀환,', '풀체인지 그랜져 리뷰 영상들 보러 가기'], to: '/brand/HYUNDAI?model=그랜저' },
+							{ cover: "konacover.png", title: ['5년 만에 완전히 바뀐', '‘디 올 뉴 코나’ 리뷰 영상 보러가기'], to: '/brand/HYUNDAI?model=코나' },
+						].map(item => (
+							<Link
+								href={item.to}
+								style={{
+									flex: "none",
+									width: "100%",
+									height: isMobile ? 180 : 358,
+									background: `linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+								url('${require(`../public/imgs/${item.cover}`).default.src}')`,
+									display: "flex",
+									backgroundSize: "cover",
+									backgroundPosition: "center center",
+									alignItems: "center",
+									textAlign: "center",
+									textDecoration: "none",
+								}}
+							>
 								<div
 									style={{
-										flex: "none",
+										fontSize: isMobile ? 16 : 28,
+										color: "white",
+										textAlign: isMobile ? "start" : "center",
+										marginLeft: isMobile ? "20px" : "0px",
 										width: "100%",
-										height: isMobile ? 180 : 358,
-										background: `linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-									url('${require(`../public/imgs/grandeurcover.png`).default.src}')`,
-										display: "flex",
-										backgroundSize: "cover",
-										backgroundPosition: "center center",
-										alignItems: "center",
-										textAlign: "center",
 									}}
 								>
-									<div
-										style={{
-											fontSize: isMobile ? 16 : 28,
-											color: "white",
-											textAlign: isMobile ? "start" : "center",
-											marginLeft: isMobile ? "20px" : "0px",
-											width: "100%",
-										}}
-									>
-										세단 제왕의 귀환, {isMobile && <br />} 풀체인지 그랜져 리뷰
-										영상들 보러 가기
-									</div>
+								{
+									item.title.join(isMobile ? '\n' : ' ')
+								}
 								</div>
-								<div
-									style={{
-										flex: "none",
-										width: "100%",
-										height: isMobile ? 180 : 358,
-										background: `linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-									url('${require(`../public/imgs/konacover.png`).default.src}')`,
-										display: "flex",
-										backgroundSize: "cover",
-										backgroundPosition: "center center",
-										alignItems: "center",
-										textAlign: "center",
-									}}
-								>
-									<div
-										style={{
-											fontSize: isMobile ? 16 : 28,
-											color: "white",
-											textAlign: isMobile ? "start" : "center",
-											marginLeft: isMobile ? "20px" : "0px",
-											width: "100%",
-										}}
-									>
-									5년 만에 완전히 바뀐 {isMobile && <br />} ‘디 올 뉴 코나’ 리뷰 영상 보러가기
-									</div>
-								</div>
+							</Link>
+						))
+					}
 					</Carousel>
 				</div>
 
