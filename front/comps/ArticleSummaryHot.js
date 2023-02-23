@@ -41,7 +41,7 @@ export default function ArticleSummary(props) {
 		},
 		title: {
 			fontSize: props.top ? 32 : 16,
-			fontWeight: "bold",
+			fontWeight: "600",
 			display: "-webkit-box",
 			WebkitBoxOrient: "vertical",
 			WebkitLineClamp: 2,

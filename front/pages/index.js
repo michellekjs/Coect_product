@@ -166,7 +166,7 @@ export default function MainPage() {
 							gap: isMobile ? 30 : 60,
 						}}
 					>
-						<div style={{ fontSize: 22, fontWeight: 500 }}>
+						<div style={{ fontSize: 22,fontWeight:500}}>
 							차량 리뷰 Pick 👍
 						</div>
 						<div

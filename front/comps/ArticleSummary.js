@@ -41,7 +41,7 @@ export default function ArticleSummary(props) {
 		},
 		title: {
 			fontSize: props.top ? 32 : 20,
-			fontWeight: "bold",
+			fontWeight: "500",
 			display: "-webkit-box",
 			WebkitBoxOrient: "vertical",
 			WebkitLineClamp: 2,
@@ -103,7 +103,7 @@ export default function ArticleSummary(props) {
 					</div>
                     <div style={{ display: 'flex', gap: 8}}>
 						<span style={{ fontSize: 14, color: colors._400 }}>{props.article.date.replaceAll('-','.')+'.'}</span>
-						<span style={{ fontSize: 14, color: colors._200 }}>{props.article.channelName}</span>
+						<span style={{ fontSize: 14, color: colors._300 }}>{props.article.channelName}</span>
                     </div>
 				</div>
 				<div style={styles.right}>

@@ -74,7 +74,7 @@ export default function CategoryIdPage(props) {
 			<div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 				<div style={{ width: '100%', paddingLeft: 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box', display: 'flex', alignItems: 'center', gap: 12 }}>
 					<Image src={require(`../../public/imgs/logos/${brand.logo}`).default.src} alt={`${brand.name} 로고`} width={44} height={44}/>
-					<span style={{ fontSize: 22 }}>{brand.name}</span>		
+					<span style={{ fontSize: 18, fontWeight:500 }}>{brand.name}</span>		
 				</div>
 				<div style={{display:"flex", width:"100%", justifyContent:'center'}}>
 					<div style={{ display: 'flex', gap: 20, justifyContent: 'flex-start', overflowX: "scroll", width:"wrap-content", paddingLeft:30, paddingRight:30}} className={styles.scroll}>
@@ -96,7 +96,7 @@ export default function CategoryIdPage(props) {
 				<div style={{ width: isDesktop ? 745 : 'auto', marginTop: 64 }}>
 					<div style={{ display: 'flex', flexDirection: 'column', gap: 60 }}>
 						<div style={{ 
-							fontSize: 22,
+							fontSize: isMobile ? 20: 22,
 							fontWeight: 500, 
 							// marginLeft: "10%"
 						}}>

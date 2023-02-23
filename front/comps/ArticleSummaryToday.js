@@ -51,7 +51,7 @@ export default function ArticleSummaryToday(props) {
 			flexDirection: 'column',
 			// gap: 24
 			justifyContent: 'space-between',
-			height: 167
+			height: 150
 		},
 		title: {
 			fontSize: isMobile? 16: 18,
