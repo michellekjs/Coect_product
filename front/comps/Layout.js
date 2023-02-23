@@ -84,12 +84,6 @@ export default function Layout({ children }) {
 
 
 	return (
-		// <html style={{ width: '100vw' }}>
-		// 	<body style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', margin:0 ,overflowX:"hidden" }}>
-				
-		// 	</body>
-		// </html>
-
 		<div style={{ width: '100%', overflow:"clip" }}>
 			{isMobile && 
 				<div>
@@ -108,9 +102,9 @@ export default function Layout({ children }) {
 					</Menu>
 				</div>
 			}
-			<div style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: isMobile? 16 : 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box', width: '100%', alignItems:'center', position:"sticky", top: 0, zIndex:10, backgroundColor:"white", opacity: opacity<1 ? 1 : 0.8 }}>
+			<div style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: isMobile? 16 : 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box', width: '100%', alignItems:'center', position:"sticky", top: 0, zIndex:10, backdropFilter: 'blur(4px)' }}>
 				<Link href="/" style={{ display: 'flex', gap: 6, alignItems: 'baseline', textDecoration: 'none' }}>
-					<img src={require('../public/imgs/logo.svg').default.src} alt="COECT 로고" style={{ height: 26 }}/>
+					<img src={require('../public/imgs/logo.svg').default.src} alt="COECT 로고" style={{ height: 26, opacity: opacity<350 ? 1 : 0.8 }}/>
 				</Link>
 				{isBigScreen && <div style={{display:'flex', flexDirection: 'row', gap: 10 }}>
 					{brands.map((brand, index) => {
@@ -118,7 +112,7 @@ export default function Layout({ children }) {
 							<Link
 								key={index + 1}
 								href={`/brand/${brand.nameEng}`}
-								style={{ textDecoration: 'none', color: '#424242', fontSize: 15 }}
+								style={{ textDecoration: 'none', color: '#424242', fontSize: 15, opacity: opacity<350 ? 1 : 0.8 }}
 							>
 								{brand.name}
 							</Link>

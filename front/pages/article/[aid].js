@@ -1,6 +1,7 @@
 import { useState, useRef, useCallback } from "react";
 import { useMediaQuery } from "react-responsive";
 import YouTube from "react-youtube";
+import Image from "next/image";
 
 import Layout from "../../comps/Layout";
 import Subtitle from "../../comps/Subtitle";
@@ -329,7 +330,7 @@ export default function ArticleIdPage(props) {
 												return (
 													spec && <>
 														<td
-															key={j}
+															key={j*2}
 															style={{
 																width: 100,
 																paddingTop: 11,
@@ -345,12 +346,15 @@ export default function ArticleIdPage(props) {
 														>
 															{spec.field}
 														</td>
-														<td style={{ 
-															...styles.cell,
-															width: 300,
-															textAlign: "center",
-															fontSize: 14
-														}}>
+														<td 
+															key={j*2+1}
+															style={{ 
+																...styles.cell,
+																width: 300,
+																textAlign: "center",
+																fontSize: 14
+															}}
+														>
 															{spec.description}
 														</td>
 													</>
@@ -423,11 +427,11 @@ export default function ArticleIdPage(props) {
 										marginBottom: 20,
 									}}
 								>
-									<img
+									<Image
 										src={`/imgs/figures/${summary.image}`}
-										style={{ width: 400 }}
+										width={400}
 										alt="영상 캡쳐 이미지"
-									></img>
+									/>
 								</div>
 							)
 						)}

@@ -6,6 +6,7 @@ import ArticleSummary from "../../comps/ArticleSummary";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from 'next/router'
+import Image from "next/image";
 
 import styles from "../../comps/hover.module.css"
 
@@ -44,7 +45,7 @@ export default function CategoryIdPage(props) {
 		setarticle(articles.filter(
 			(article) => (article.brand == brand.name) && (!model || article.model == model)
 		));
-	}, [model]);
+	}, [brand, model]);
 
 	// const buttonClick = (word) => {
 	// 	if (word == true) {
@@ -64,15 +65,15 @@ export default function CategoryIdPage(props) {
 				width: "100%",
 				height: 419,
 				// background with linear gradient
-				background: 'linear-gradient(#E9EAF0, rgba(0,0,0,0));',
+				background: 'linear-gradient(#E9EAF0, rgba(0,0,0,0))',
 				position: 'absolute',
 				top: 0,
 				zIndex: -1
 			}}/>
-			
+
 			<div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 				<div style={{ width: '100%', paddingLeft: 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box', display: 'flex', alignItems: 'center', gap: 12 }}>
-					<img src={require(`../../public/imgs/logos/${brand.logo}`).default.src} alt={`${brand.name} 로고`} style={{ width: 44, height: 44 }}/>
+					<Image src={require(`../../public/imgs/logos/${brand.logo}`).default.src} alt={`${brand.name} 로고`} width={44} height={44}/>
 					<span style={{ fontSize: 22 }}>{brand.name}</span>		
 				</div>
 				<div style={{display:"flex", width:"100%", justifyContent:'center'}}>
@@ -85,7 +86,7 @@ export default function CategoryIdPage(props) {
 								style={{ display: 'flex', flexDirection: 'column', justifyContent: 'end', gap: 15, textAlign: 'center', fontSize: model==m.name ? 16 : 14, color: model==m.name ? 'black' : colors._300, textDecoration: 'none', color: 'black'}}
 								className={isDesktop ? styles.model : null}
 							>
-								<img src={require(`../../public/imgs/models/${brand.name} ${m.name} ${m.submodels[0].name ? m.submodels[0].name + ' ' : ''}(${m.generation}세대).png`).default.src} alt="" style={{ width: model==m.name ? 220 : 170, filter: model==m.name ? '' : 'grayscale(1)' }}/>
+								<img src={require(`../../public/imgs/models/${brand.name} ${m.name} ${m.submodels[0].name ? m.submodels[0].name + ' ' : ''}(${m.generation}세대).png`).default.src} alt="" width={model==m.name ? 220 : 170} style={{ filter: model==m.name ? '' : 'grayscale(1)' }}/>
 								<span>{`${brand.name} ${m.name}`}</span>
 							</Link>
 						)
