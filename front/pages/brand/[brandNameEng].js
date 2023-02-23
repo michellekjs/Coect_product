@@ -80,6 +80,7 @@ export default function CategoryIdPage(props) {
 					{
 						brand.models.map((m, i) => 
 							<Link 
+								key={i}
 								href={`/brand/${brand.nameEng}` + (model==m.name ? '' : `?model=${m.name}`)}
 								style={{ display: 'flex', flexDirection: 'column', justifyContent: 'end', gap: 15, textAlign: 'center', fontSize: model==m.name ? 16 : 14, color: model==m.name ? 'black' : colors._300, textDecoration: 'none', color: 'black'}}
 								className={isDesktop ? styles.model : null}
@@ -108,12 +109,12 @@ export default function CategoryIdPage(props) {
 							<div style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? 40 : 20, justifyContent:"center", }}>
 								{isDesktop && 
 									resultarticle.slice((pageReal-1)*nArticlesInPage, pageReal*nArticlesInPage).map((a, i) =>
-										<ArticleSummary article={a}/>
+										<ArticleSummary key={i} article={a}/>
 									)
 								}
 								{isMobile && 
 									resultarticle.slice((pageReal-1)*nArticlesInPage, pageReal*nArticlesInPage).map((a, i) =>
-										<ArticleSummaryToday article={a}/>
+										<ArticleSummaryToday key={i} article={a}/>
 									)
 								}
 							</div>
@@ -122,6 +123,7 @@ export default function CategoryIdPage(props) {
 						{
 							Array.from({ length: Math.ceil(resultarticle.length / nArticlesInPage) }, (_, i) => i + 1).map((i) =>
 								<Link
+									key={i}
 									href={`/brand/${props.brandNameEng}?page=${i}`}
 									style={{ 
 										width: 40, height: 40, display: 'flex', justifyContent: 'center', alignItems: 'center', color: i==pageReal ? colors.primary : colors._300,

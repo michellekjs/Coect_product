@@ -112,8 +112,9 @@ export default function MainPage() {
 						[
 							{ cover: "grandeurcover.png", title: ['세단 제왕의 귀환,', '풀체인지 그랜져 리뷰 영상들 보러 가기'], to: '/brand/HYUNDAI?model=그랜저' },
 							{ cover: "konacover.png", title: ['5년 만에 완전히 바뀐', '‘디 올 뉴 코나’ 리뷰 영상 보러가기'], to: '/brand/HYUNDAI?model=코나' },
-						].map(item => (
+						].map((item,i) => (
 							<Link
+								key={i}
 								href={item.to}
 								style={{
 									flex: "none",
@@ -205,8 +206,9 @@ export default function MainPage() {
 									justifyContent: "space-between",
 								}}
 							>
-								{brands.map((brand) => (
+								{brands.map((brand,i) => (
 									<Link
+										key={i}
 										href={`/brand/${brand.nameEng}`}
 										style={{
 											display: "flex",
@@ -246,8 +248,9 @@ export default function MainPage() {
 								{[
 									{ start: 0, end: 4 },
 									{ start: 4, end: 9 },
-								].map((range) => (
+								].map((range,i) => (
 									<div
+										key={i}
 										style={{
 											width: "100%",
 											display: "flex",
@@ -256,8 +259,9 @@ export default function MainPage() {
 											justifyContent: "space-between",
 										}}
 									>
-										{brands.slice(range.start, range.end).map((brand) => (
+										{brands.slice(range.start, range.end).map((brand,j) => (
 											<Link
+												key={j}
 												href={`/brand/${brand.nameEng}`}
 												style={{
 													display: "flex",
