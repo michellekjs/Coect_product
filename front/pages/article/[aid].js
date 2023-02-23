@@ -361,7 +361,7 @@ export default function ArticleIdPage(props) {
 									<tr>
 										<td
 											style={{
-												width: isMobile ? 100 : 216,
+												width: 50,
 												paddingTop: 11,
 												paddingBottom: 11,
 												paddingLeft: 15,
@@ -439,7 +439,7 @@ export default function ArticleIdPage(props) {
 							marginTop: 112,
 						}}
 					>
-						<div style={{ fontSize: 20, display: "flex" }}>
+						<div style={{ fontSize: 20, display: "flex", marginLeft: isMobile ? 30 : 0 }}>
 							<span style={{ color: colors.primary }}>{article.brand}</span>
 							&nbsp;
 							<span style={{ color: colors.primary }}>{article.model}</span>

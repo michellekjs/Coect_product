@@ -3,9 +3,16 @@ import Author from "./Author";
 
 import { colors } from "../shared";
 
+import { useMediaQuery } from "react-responsive";
+
 import style from './hover.module.css';
 
 export default function ArticleSummary(props) {
+	const isDesktop = useMediaQuery({
+		query: "(min-width: 1045px)",
+	});
+	const isMobile = useMediaQuery({ query: "(max-width: 1045px)" });
+
 	const styles = {
 		container: {
 			display: "flex",
@@ -20,7 +27,7 @@ export default function ArticleSummary(props) {
 			// padding: "30px",
             // boxShadow: '5px 5px 5px 5px #F9F9F9',
 			height: 114,
-			padding: 10,
+			padding: isMobile ? 0 : 10,
 			boxSizing: "content-box",
 		},
 		right: {
@@ -84,7 +91,7 @@ export default function ArticleSummary(props) {
 			href={`/article/${props.article.id}`}
 			style={{ textDecoration: "none" }}
 		>
-			<div style={styles.container} className={style.logo}>
+			<div style={styles.container} className={isMobile ? null : style.logo}>
 				<div style={styles.left}>
 					<img
 						style={styles.thumbnail}

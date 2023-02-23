@@ -34,8 +34,8 @@ export default function MainPage() {
 	function refreshHot() {
 		let model = hot.model;
 		while (model == hot.model) {
-			model = ["그랜저", "토레스", "코나"][
-				Math.floor(getRandomArbitrary(0, 3))
+			model = ["그랜저", "코나"][
+				Math.floor(getRandomArbitrary(0, 2))
 			];
 		}
 		setHot(getHot("현대", model));
@@ -305,12 +305,28 @@ export default function MainPage() {
 								fontWeight: 500,
 							}}
 						>
-						<div style={{display:"flex", gap:20, alignItems:'center'}}>
-							<span>🔥 요즘 사람들이 주목하는 차량</span>
-							<span style={{ color: colors.primary, fontSize: 18 }}>
-								#{hot.model}
-							</span>
-						</div>
+						{
+							isDesktop && <div style={{display:"flex", gap: 10, alignItems:'center'}}>
+								<div style={{display:"flex", gap: 8, alignItems:'center'}}>
+									<span style={{ fontSize: 20 }}>🔥</span>
+									<span style={{ fontSize: 22 }}>요즘 사람들이 주목하는 차량</span>
+								</div>
+								<span style={{ color: colors.primary, fontSize: 22 }}>
+									#{hot.model}
+								</span>
+							</div>
+						}
+						{
+							isMobile && <div style={{display:"flex", gap: 5, alignItems:'center', flexDirection: 'column' }}>
+								<div style={{display:"flex", gap: 8, alignItems:'center'}}>
+									<span style={{ fontSize: 20 }}>🔥</span>
+									<span style={{ fontSize: 22 }}>요즘 사람들이 주목하는 차량</span>
+								</div>
+								<span style={{ color: colors.primary, fontSize: 22 }}>
+									#{hot.model}
+								</span>
+							</div>
+						}
 							{isDesktop && <button
 							onClick={refreshHot}
 							style={{
@@ -374,7 +390,9 @@ export default function MainPage() {
 								background: "white",
 								cursor: "pointer",
 								marginTop: 15,
-								// width:"100%"
+								// width:"100%",
+								textDecoration: "none",
+								color: "black"
 							}}
 						>
 							<img

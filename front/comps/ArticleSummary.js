@@ -7,7 +7,10 @@ import style from './hover.module.css';
 import { colors } from "../shared";
 
 export default function ArticleSummary(props) {
-		
+	const isDesktop = useMediaQuery({
+		query: "(min-width: 1045px)",
+	});
+	const isMobile = useMediaQuery({ query: "(max-width: 1045px)" });
 	
 	const styles = {
 		container: {
@@ -86,7 +89,7 @@ export default function ArticleSummary(props) {
 			href={`/article/${props.article.id}`}
 			style={{ textDecoration: "none" }}
 		>
-		 <div style={styles.container} className={style.logo}>
+		 <div style={styles.container} className={isMobile ? null : style.logo}>
 				<div style={styles.left}>
 					<div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
 						<div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 14 }}>
