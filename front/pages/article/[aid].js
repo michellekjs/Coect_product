@@ -209,6 +209,7 @@ export default function ArticleIdPage(props) {
 							>
 								{article.summaries.map((s, i) => (
 									<a
+										key={i}
 										onClick={() => {
 											player.seekTo(s.start);
 										}}
@@ -269,6 +270,7 @@ export default function ArticleIdPage(props) {
 							>
 								{article.summaries.map((s, i) => (
 									<a
+										key={i}
 										onClick={() => {
 											player.seekTo(s.start);
 										}}
@@ -320,13 +322,14 @@ export default function ArticleIdPage(props) {
 								</tr>
 								{
 									isDesktop && Array(Math.ceil(submodel.specs.length / 3)).fill(0).map((_, i) => i).map(i => (
-										<tr>
+										<tr key={i}>
 										{
 											[0, 1, 2].map(j => {
 												const spec = submodel.specs[i * 3 + j]
 												return (
 													spec && <>
 														<td
+															key={j}
 															style={{
 																width: 100,
 																paddingTop: 11,
@@ -357,8 +360,8 @@ export default function ArticleIdPage(props) {
 										</tr>
 									))
 								}
-								{ isMobile && submodel.specs.map(spec => (
-									<tr>
+								{ isMobile && submodel.specs.map((spec,i) => (
+									<tr key={i}>
 										<td
 											style={{
 												width: 50,
