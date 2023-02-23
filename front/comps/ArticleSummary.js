@@ -2,6 +2,8 @@ import Link from "next/link";
 
 import Subtitle from "./Subtitle";
 
+import { useMediaQuery } from "react-responsive";
+
 import style from './hover.module.css';
 
 import { colors } from "../shared";

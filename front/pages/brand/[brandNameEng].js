@@ -76,13 +76,13 @@ export default function CategoryIdPage(props) {
 					<span style={{ fontSize: 22 }}>{brand.name}</span>		
 				</div>
 				<div style={{display:"flex", width:"100%", justifyContent:'center'}}>
-					<div style={{ display: 'flex', gap: 20, justifyContent: 'end', overflowX: "scroll", width:"wrap-content", paddingLeft:30, paddingRight:30}}>
+					<div style={{ display: 'flex', gap: 20, justifyContent: 'flex-start', overflowX: "scroll", width:"wrap-content", paddingLeft:30, paddingRight:30}}>
 					{
 						brand.models.map((m, i) => 
 							<Link 
 								href={`/brand/${brand.nameEng}` + (model==m.name ? '' : `?model=${m.name}`)}
 								style={{ display: 'flex', flexDirection: 'column', justifyContent: 'end', gap: 15, textAlign: 'center', fontSize: model==m.name ? 16 : 14, color: model==m.name ? 'black' : colors._300, textDecoration: 'none', color: 'black'}}
-								className={styles.model}
+								className={isDesktop ? styles.model : null}
 							>
 								<img src={require(`../../public/imgs/models/${brand.name} ${m.name} ${m.submodels[0].name ? m.submodels[0].name + ' ' : ''}(${m.generation}세대).png`).default.src} alt="" style={{ width: model==m.name ? 220 : 170, filter: model==m.name ? '' : 'grayscale(1)' }}/>
 								<span>{`${brand.name} ${m.name}`}</span>

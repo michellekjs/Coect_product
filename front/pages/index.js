@@ -153,7 +153,7 @@ export default function MainPage() {
 						display: "flex",
 						flexDirection: "column",
 						alignItems: "center",
-						gap: 180,
+						gap: isMobile ? 90 : 180,
 						maxWidth: 1032,
 					}}
 				>
