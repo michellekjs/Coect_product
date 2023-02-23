@@ -100,7 +100,7 @@ export default function ArticleSummaryToday(props) {
 								image={props.article.channelImageUrl}
 							/>
 							<span style={{color:"#BDBDBD"}}>|</span>
-							<span style={{ fontSize: isMobile? 14: 14, color: '#919191' }}>{props.article.date.replaceAll('-','.')+'.'}</span>
+							<span style={{ fontSize: 14, color: '#919191' }}>{props.article.date.replaceAll('-','.')+'.'}</span>
 						</div>
 						<div style={styles.title}>{props.article.title}</div>
 					</div>
