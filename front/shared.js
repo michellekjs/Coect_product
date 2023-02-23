@@ -279,7 +279,7 @@ let articles = [
         title: '[시승기] 2021 테슬라 모델 Y 롱레인지 / 오토뷰 4K',
         date: '2021-03-06',
         brand: '테슬라',
-        model: '모델Y',
+        model: '모델 Y',
         article_id: 10,
         channelImageUrl: 'https://yt3.googleusercontent.com/JxLCviC3D56QGqysNhKJF3Bi6ei_UrBUlp9-ymMfvd6K9xDgSbNdv_tRitY6lim9BT6eHwiV=s176-c-k-c0x00ffffff-no-rj',
         channelName: '오토뷰(AutoView) - 자동차 구입 참고서',
@@ -825,7 +825,7 @@ let articles = [
       {   
         title: '[최초시승] 제네시스 GV70 깡통 부산 장거리 시승기 “과연 살만한가?”',
         date: '2021-01-19',
-        brand: '현대',
+        brand: '제네시스',
         model: 'GV70',
         article_id: 25,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AL5GRJUgFqGEJTEkxkj3FdC5wIZHMkqH2AmHTi-4tfeV=s88-c-k-c0x00ffffff-no-rj',

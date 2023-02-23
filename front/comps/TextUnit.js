@@ -31,10 +31,10 @@ export default function TextUnit(props) {
 					backgroundColor: props.isPlaying? '#2B6F7D' : colors.primaryBG, 
 			 }}>
 					{
-						props.isPlaying ?
+						// props.isPlaying ?
 							<img src={require('../public/imgs/play.svg').default.src} alt="재생 중 아이콘" style={{ height: 12 }}/>
-							:
-							<img src={require('../public/imgs/pause.svg').default.src} alt="일시정지 중 아이콘" style={{ height: 16 }}/>
+							// :
+							// <img src={require('../public/imgs/pause.svg').default.src} alt="일시정지 중 아이콘" style={{ height: 16 }}/>
 					}
 					
 					<span style={{ fontSize: 15, color: props.isPlaying ? 'white' : '#212121' }}>{seconds2timestamp(props.start)}</span>

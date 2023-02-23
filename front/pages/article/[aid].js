@@ -344,6 +344,7 @@ export default function ArticleIdPage(props) {
 														</td>
 														<td style={{ 
 															...styles.cell,
+															width: 300,
 															textAlign: "center",
 															fontSize: 14
 														}}>
