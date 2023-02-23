@@ -728,7 +728,7 @@ let brands = [
                     {
                         name: '',
                         specs: [
-                            { field: '가격', description: '1,866 ~ 2,806만원혀' },
+                            { field: '가격', description: '1,866 ~ 2,806만원' },
                             { field: '차량형태', description: '4도어 준중형 세단' },
                             { field: '연료', description: '가솔린, LPG' },
                             { field: '전장/전폭', description: '4,650 ~ 4,675mm / 1,825mm' },
