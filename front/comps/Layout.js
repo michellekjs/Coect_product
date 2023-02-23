@@ -102,7 +102,7 @@ export default function Layout({ children }) {
 					</Menu>
 				</div>
 			}
-			<div style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: isMobile? 16 : 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box', width: '100%', alignItems:'center', position:"sticky", top: 0, zIndex:10, backdropFilter: 'blur(4px)' }}>
+			<div style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: isMobile? 16 : 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box', width: '100%', alignItems:'center', position:"sticky", top: 0, zIndex:10, backdropFilter: 'blur(4px)', backgroundColor: isMobile ? 'white' : null }}>
 				<Link href="/" style={{ display: 'flex', gap: 6, alignItems: 'baseline', textDecoration: 'none' }}>
 					<img src={require('../public/imgs/logo.svg').default.src} alt="COECT 로고" style={{ height: 26, opacity: opacity<350 ? 1 : 0.8 }}/>
 				</Link>
