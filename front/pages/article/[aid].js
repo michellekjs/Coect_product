@@ -1,6 +1,7 @@
 import { useState, useRef, useCallback } from "react";
 import { useMediaQuery } from "react-responsive";
 import YouTube from "react-youtube";
+import Image from "next/image";
 
 import Layout from "../../comps/Layout";
 import Subtitle from "../../comps/Subtitle";
@@ -209,6 +210,7 @@ export default function ArticleIdPage(props) {
 							>
 								{article.summaries.map((s, i) => (
 									<a
+										key={i}
 										onClick={() => {
 											player.seekTo(s.start);
 										}}
@@ -269,6 +271,7 @@ export default function ArticleIdPage(props) {
 							>
 								{article.summaries.map((s, i) => (
 									<a
+										key={i}
 										onClick={() => {
 											player.seekTo(s.start);
 										}}
@@ -320,13 +323,14 @@ export default function ArticleIdPage(props) {
 								</tr>
 								{
 									isDesktop && Array(Math.ceil(submodel.specs.length / 3)).fill(0).map((_, i) => i).map(i => (
-										<tr>
+										<tr key={i}>
 										{
 											[0, 1, 2].map(j => {
 												const spec = submodel.specs[i * 3 + j]
 												return (
 													spec && <>
 														<td
+															key={j*2}
 															style={{
 																width: 100,
 																paddingTop: 11,
@@ -342,12 +346,15 @@ export default function ArticleIdPage(props) {
 														>
 															{spec.field}
 														</td>
-														<td style={{ 
-															...styles.cell,
-															width: 300,
-															textAlign: "center",
-															fontSize: 14
-														}}>
+														<td 
+															key={j*2+1}
+															style={{ 
+																...styles.cell,
+																width: 300,
+																textAlign: "center",
+																fontSize: 14
+															}}
+														>
 															{spec.description}
 														</td>
 													</>
@@ -357,8 +364,8 @@ export default function ArticleIdPage(props) {
 										</tr>
 									))
 								}
-								{ isMobile && submodel.specs.map(spec => (
-									<tr>
+								{ isMobile && submodel.specs.map((spec,i) => (
+									<tr key={i}>
 										<td
 											style={{
 												width: 50,
@@ -420,11 +427,11 @@ export default function ArticleIdPage(props) {
 										marginBottom: 20,
 									}}
 								>
-									<img
+									<Image
 										src={`/imgs/figures/${summary.image}`}
-										style={{ width: 400 }}
+										width={400}
 										alt="영상 캡쳐 이미지"
-									></img>
+									/>
 								</div>
 							)
 						)}
