@@ -77,7 +77,7 @@ export default function CategoryIdPage(props) {
 					<span style={{ fontSize: 22 }}>{brand.name}</span>		
 				</div>
 				<div style={{display:"flex", width:"100%", justifyContent:'center'}}>
-					<div style={{ display: 'flex', gap: 20, justifyContent: 'flex-start', overflowX: "scroll", width:"wrap-content", paddingLeft:30, paddingRight:30}}>
+					<div style={{ display: 'flex', gap: 20, justifyContent: 'flex-start', overflowX: "scroll", width:"wrap-content", paddingLeft:30, paddingRight:30}} className={styles.scroll}>
 					{
 						brand.models.map((m, i) => 
 							<Link 

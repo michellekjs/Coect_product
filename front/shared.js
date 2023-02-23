@@ -328,7 +328,7 @@ let articles = [
         date: '2021-03-24',
         brand: '기아',
         model: '쏘렌토',
-        submodel: '하이브리드',
+        // submodel: '하이브리드',
         article_id: 12,
         channelImageUrl: 'https://yt3.ggpht.com/ytc/AMLnZu_WszZPwVss4PdFN2MPcUTFrCDy01XRcwwB3o-e=s48-c-k-c0x00ffffff-no-rj',
         channelName: '모트라인 MOTline',
