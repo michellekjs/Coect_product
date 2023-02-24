@@ -2,6 +2,7 @@ import { useState, useRef, useCallback } from "react";
 import { useMediaQuery } from "react-responsive";
 import YouTube from "react-youtube";
 import Image from "next/image";
+import Link from "next/link";
 
 import Layout from "../../comps/Layout";
 import Subtitle from "../../comps/Subtitle";
@@ -114,9 +115,9 @@ export default function ArticleIdPage(props) {
 								color: colors.primary,
 							}}
 						>
-							<span>{article.brand}</span>
+							<Link href={`/brand/${brand.nameEng}`} style={{ textDecoration: 'none', color: colors.primary}}>{article.brand}</Link>
 							<span style={{ color: "#BDBDBD" }}>&gt;</span>
-							<span>{article.model}</span>
+							<Link href={`/brand/${brand.nameEng}?model=${model.name}`} style={{ textDecoration: 'none', color: colors.primary}}>{article.model}</Link>
 						</div>
 						<div style={{ dipslay: "flex", gap: 6 }}>
 							<h1 style={{ fontWeight: "500", fontSize: isMobile ? 24 : 32,
