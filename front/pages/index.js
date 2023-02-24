@@ -44,7 +44,7 @@ export default function MainPage() {
 	const articlesRecent = articles.sort((a, b) => b.date > a.date);
 
 	return (
-		<Layout title='COECT - Fusion of Video & Text'>
+		<Layout title='COECT - Fusion of Video & Text' description = 'COECT는 양질의 영상들을 텍스트로 재가공해 영상 속 필요한 정보를 빠르게 정리할 수 있는 새로운 콘텐츠 경험을 제공합니다.'>
 			<div
 				style={{
 					display: "flex",
