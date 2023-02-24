@@ -119,9 +119,11 @@ export default function ArticleIdPage(props) {
 							<span>{article.model}</span>
 						</div>
 						<div style={{ dipslay: "flex", gap: 6 }}>
-							<div style={{ fontWeight: "500", fontSize: isMobile ? 24 : 32 }}>
+							<h1 style={{ fontWeight: "500", fontSize: isMobile ? 24 : 32,
+							margin: 0
+						}}>
 								{article.title}
-							</div>
+							</h1>
 							<div style={{ display: "flex", gap: 6, alignItems: "center" }}>
 								<Author
 									name={article.channelName}
