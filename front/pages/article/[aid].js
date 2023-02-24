@@ -120,12 +120,12 @@ export default function ArticleIdPage(props) {
 							<Link href={`/brand/${brand.nameEng}?model=${model.name}`} style={{ textDecoration: 'none', color: colors.primary}}>{article.model}</Link>
 						</div>
 						<div style={{ dipslay: "flex", gap: 6 }}>
-							<h1 style={{ fontWeight: "500", fontSize: isMobile ? 24 : 32,
+							<h1 style={{ fontWeight: "500", fontSize: isMobile ? 24 : 30,
 							margin: 0
 						}}>
 								{article.title}
 							</h1>
-							<div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+							<div style={{ display: "flex", gap: 6, alignItems: "center", marginTop: isMobile? "10px" : "20px" }}>
 								<Author
 									name={article.channelName}
 									image={article.channelImageUrl}
