@@ -348,7 +348,7 @@ export default function MainPage() {
 								borderStyle: "solid",
 								background: "white",
 								cursor: "pointer",
-								marginTop: 15,
+								marginTop: isMobile? 15 : 0,
 								// width:"100%"
 							}}
 						>
