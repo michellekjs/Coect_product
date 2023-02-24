@@ -44,7 +44,7 @@ export default function MainPage() {
 	const articlesRecent = articles.sort((a, b) => b.date > a.date);
 
 	return (
-		<Layout>
+		<Layout title='COECT - Fusion of Video & Text'>
 			<div
 				style={{
 					display: "flex",

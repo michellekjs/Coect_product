@@ -86,7 +86,7 @@ export default function ArticleIdPage(props) {
 
 
 	return (
-		<Layout>
+		<Layout title={article.title + ' - COECT'} description={`${article.channelName}에서 ${article.brand} ${article.model}의 ${article.summaries.map(_ => _.subject).slice(0,10).join(', ')} 등에 대해 다룹니다.`}>
 			<div
 				style={{
 					maxWidth: 1032,

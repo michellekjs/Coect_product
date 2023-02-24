@@ -60,7 +60,7 @@ export default function CategoryIdPage(props) {
 	// };
 
 	return (
-		<Layout>
+		<Layout title={brand.name + ' - COECT'} description={`${brand.name} 차종: ${brand.models.map(_ => _.name).join(', ')}`}>
 			<div style={{
 				width: "100%",
 				height: 419,

@@ -1,4 +1,6 @@
-// "use client";
+"use client";
+
+import Head from 'next/head'
 
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -9,7 +11,7 @@ import React, { useState, useEffect } from 'react';
 
 import { brands } from "../shared";
 
-export default function Layout({ children }) {
+export default function Layout({ title, description, children }) {
 
 	const router = useRouter();
 
@@ -84,55 +86,63 @@ export default function Layout({ children }) {
 
 
 	return (
-		<div style={{ width: '100%', overflow:"clip" }}>
-			{isMobile && 
-				<div>
-					<Menu right styles={styles}>
-						{brands.map((brand) => {
-						return (
-							<Link
-								key={brand.id}
-								href={`/brand/${brand.nameEng}`}
-								style={{ textDecoration: 'none', color: '#424242', fontSize: 15, marginBottom : 10 }}
-							>
-								{brand.name}
-							</Link>
-						);
-					})}
-					</Menu>
+		<html>
+			<Head>
+				<title>{title}</title>
+				<meta name="description" content={description} />
+			</Head>
+			<body>
+				<div style={{ width: '100%', overflow:"clip" }}>
+					{isMobile && 
+						<div>
+							<Menu right styles={styles}>
+								{brands.map((brand) => {
+								return (
+									<Link
+										key={brand.id}
+										href={`/brand/${brand.nameEng}`}
+										style={{ textDecoration: 'none', color: '#424242', fontSize: 15, marginBottom : 10 }}
+									>
+										{brand.name}
+									</Link>
+								);
+							})}
+							</Menu>
+						</div>
+					}
+					<div style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: isMobile? 16 : 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box', width: '100%', alignItems:'center', position:'sticky', top: 0, zIndex:10, backdropFilter: 'blur(8px)',backgroundColor: isMobile ? 'white' : 'rgba(255, 255, 255, 0.8)', }}>
+						<Link href="/" style={{ display: 'flex', gap: 6, alignItems: 'baseline', textDecoration: 'none' }}>
+							<img src={require('../public/imgs/logo.svg').default.src} alt="COECT 로고" style={{ height: 26, opacity: opacity<350 ? 1 : 0.8 }}/>
+						</Link>
+						{isBigScreen && <div style={{display:'flex', flexDirection: 'row', gap: 10 }}>
+							{brands.map((brand, index) => {
+								return (
+									<Link
+										key={index + 1}
+										href={`/brand/${brand.nameEng}`}
+										style={{ textDecoration: 'none', color: '#424242', fontSize: 15, opacity: opacity<350 ? 1 : 0.8 }}
+									>
+										{brand.name}
+									</Link>
+								);
+							})}
+						</div>}
+						
+						
+					</div>
+					<div style={{ position: 'relative', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+						{children}
+					</div>
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<div style={{ textAlign: "center", color: "#aaa" }}>© 2023 Coect</div>
+					<br />
+					<br />
 				</div>
-			}
-			<div style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: isMobile? 16 : 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box', width: '100%', alignItems:'center', position:'sticky', top: 0, zIndex:10, backdropFilter: 'blur(8px)',backgroundColor: isMobile ? 'white' : 'rgba(255, 255, 255, 0.8)', }}>
-				<Link href="/" style={{ display: 'flex', gap: 6, alignItems: 'baseline', textDecoration: 'none' }}>
-					<img src={require('../public/imgs/logo.svg').default.src} alt="COECT 로고" style={{ height: 26, opacity: opacity<350 ? 1 : 0.8 }}/>
-				</Link>
-				{isBigScreen && <div style={{display:'flex', flexDirection: 'row', gap: 10 }}>
-					{brands.map((brand, index) => {
-						return (
-							<Link
-								key={index + 1}
-								href={`/brand/${brand.nameEng}`}
-								style={{ textDecoration: 'none', color: '#424242', fontSize: 15, opacity: opacity<350 ? 1 : 0.8 }}
-							>
-								{brand.name}
-							</Link>
-						);
-					})}
-				</div>}
-				
-				
-			</div>
-			<div style={{ position: 'relative', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-				{children}
-			</div>
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<div style={{ textAlign: "center", color: "#aaa" }}>© 2023 Coect</div>
-			<br />
-			<br />
-		</div>
+			</body>
+		</html>
 	);
 }
