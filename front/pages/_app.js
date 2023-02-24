@@ -29,8 +29,6 @@ export default function App({ Component, pageProps }) {
     return (
         <>
             <Head>
-                <title>COECT</title>
-                {/* <meta name="description" content="Your description" /> */}
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Component {...pageProps} />
