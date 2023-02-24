@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "next-sitemap",
     "build": "next build && next export",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint"
   },
