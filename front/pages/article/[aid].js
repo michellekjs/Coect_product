@@ -149,7 +149,7 @@ export default function ArticleIdPage(props) {
 							alignItems: "center",
 							width: "100%",
 							// height: 350,
-							marginTop: 36,
+							// marginTop: 36,
 							zIndex: 2,
 							background:
 								"linear-gradient(to top, rgba(255,255,255,0), white 30px)",

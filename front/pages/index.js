@@ -256,7 +256,7 @@ export default function MainPage() {
 											display: "flex",
 											alignItems: "center",
 											gap: 20,
-											justifyContent: "space-between",
+											justifyContent: "flex-start",
 										}}
 									>
 										{brands.slice(range.start, range.end).map((brand,j) => (
@@ -393,7 +393,7 @@ export default function MainPage() {
 								borderStyle: "solid",
 								background: "white",
 								cursor: "pointer",
-								marginTop: 15,
+								marginTop: 30,
 								// width:"100%",
 								textDecoration: "none",
 								color: "black"
