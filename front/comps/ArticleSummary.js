@@ -116,8 +116,8 @@ export default function ArticleSummary(props) {
 						style={styles.thumbnail}
 						loader= {myLoader}
 						src={props.article.videoId}
-						width={500}
-						height={500}
+						width={220}
+						height={124}
 						alt = "https://via.placeholder.com/360x218"
 					/>
 				</div>
