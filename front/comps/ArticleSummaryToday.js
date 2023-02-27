@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
 
 import Author from "./Author";
@@ -8,10 +9,15 @@ import style from './hover.module.css';
 
 
 export default function ArticleSummaryToday(props) {
-		const isDesktop = useMediaQuery({
+	const isDesktop = useMediaQuery({
 		query: "(min-width: 1045px)",
 	});
 	const isMobile = useMediaQuery({ query: "(max-width: 1045px)" });
+
+	const myLoader = ({ src }) => {
+		return `https://i.ytimg.com/vi/${src}/hqdefault.jpg`
+	}
+
 	const styles = {
 		container: {
 			border: '1px solid #dbdbdb',
@@ -83,12 +89,13 @@ export default function ArticleSummaryToday(props) {
 		>
 			<div style={styles.container} className={isMobile? style.normal : style.article}>
 				<div style={styles.top}>
-					<img
+					<Image
 						style={styles.thumbnail}
-						src={
-							`https://i.ytimg.com/vi/${props.article.videoId}/hqdefault.jpg` ||
-							"https://via.placeholder.com/360x218"
-						}
+						loader= {myLoader}
+						src={props.article.videoId}
+						width={360}
+						height={218}
+						alt = "https://via.placeholder.com/360x218"
 					/>
 				</div>
 				<div style={styles.bottom}>

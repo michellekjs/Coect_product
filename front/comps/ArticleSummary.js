@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import Subtitle from "./Subtitle";
 
@@ -13,7 +14,11 @@ export default function ArticleSummary(props) {
 		query: "(min-width: 1045px)",
 	});
 	const isMobile = useMediaQuery({ query: "(max-width: 1045px)" });
-	
+
+	const myLoader = ({ src }) => {
+		return `https://i.ytimg.com/vi/${src}/hqdefault.jpg`
+	}
+
 	const styles = {
 		container: {
 			display: "flex",
@@ -107,16 +112,16 @@ export default function ArticleSummary(props) {
                     </div>
 				</div>
 				<div style={styles.right}>
-					<img
+					<Image
 						style={styles.thumbnail}
-						src={
-							`https://i.ytimg.com/vi/${props.article.videoId}/hqdefault.jpg` ||
-							"https://via.placeholder.com/360x218"
-						}
+						loader= {myLoader}
+						src={props.article.videoId}
+						width={220}
+						height={124}
+						alt = "https://via.placeholder.com/360x218"
 					/>
 				</div>
 			</div>
-			
             
 		</Link>
 	);

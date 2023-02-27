@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Author from "./Author";
 
 import { colors } from "../shared";
@@ -12,6 +13,10 @@ export default function ArticleSummary(props) {
 		query: "(min-width: 1045px)",
 	});
 	const isMobile = useMediaQuery({ query: "(max-width: 1045px)" });
+	const myLoader = ({ src }) => {
+		return `https://i.ytimg.com/vi/${src}/hqdefault.jpg`
+	}
+
 
 	const styles = {
 		container: {
@@ -93,12 +98,13 @@ export default function ArticleSummary(props) {
 		>
 			<div style={styles.container} className={isMobile ? null : style.logo}>
 				<div style={styles.left}>
-					<img
+					<Image
 						style={styles.thumbnail}
-						src={
-							`https://i.ytimg.com/vi/${props.article.videoId}/hqdefault.jpg` ||
-							"https://via.placeholder.com/360x218"
-						}
+						loader= {myLoader}
+						src={props.article.videoId}
+						width={203}
+						height={114}
+						alt = "https://via.placeholder.com/360x218"
 					/>
 				</div>
 				<div style={styles.right}>
