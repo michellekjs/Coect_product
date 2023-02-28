@@ -18,7 +18,7 @@ export default function Author(props) {
 			height: props.verySmall ? 17 : props.small ? 20 : 30,
 		},
 		authorName: {
-			fontWeight: "normal",
+			fontWeight: "400",
 			display: "-webkit-box",
 			WebkitBoxOrient: "vertical",
 			WebkitLineClamp: 1,

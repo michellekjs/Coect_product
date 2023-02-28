@@ -46,7 +46,7 @@ export default function ArticleSummary(props) {
 		},
 		title: {
 			fontSize: props.top ? 32 : 20,
-			fontWeight: "500",
+			w: 500,
 			display: "-webkit-box",
 			WebkitBoxOrient: "vertical",
 			WebkitLineClamp: 2,
@@ -71,7 +71,7 @@ export default function ArticleSummary(props) {
 			textOverflow: "ellipsis",
 			marginTop: 5,
 			marginBottom: 0,
-            fontWeight: 'lighter',
+            fontWeight: '100',
 		},
 		right: {
 			// width: props.top ? 360 : 240,

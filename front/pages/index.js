@@ -166,7 +166,7 @@ export default function MainPage() {
 							gap: isMobile ? 30 : 60,
 						}}
 					>
-						<div style={{ fontSize: 22,fontWeight:500}}>
+						<div style={{ fontSize: 22,fontWeight:"500"}}>
 							차량 리뷰 Pick 👍
 						</div>
 						<div
@@ -193,7 +193,8 @@ export default function MainPage() {
 							gap: isMobile ? 30 : 60,
 						}}
 					>
-						<div style={{ fontSize: 22, fontWeight: 500 }}>
+						<div style={{ fontSize: 22, fontWeight: 
+						"500" }}>
 							차량 리뷰 찾아보기 🔎
 						</div>
 						{isDesktop && (
@@ -306,7 +307,7 @@ export default function MainPage() {
 								flexDirection: isMobile ? "column" : "row",
 								gap: isMobile ? 5 : 16,
 								fontSize: 22,
-								fontWeight: 500,
+								fontWeight: "500",
 							}}
 						>
 						{
@@ -415,7 +416,7 @@ export default function MainPage() {
 							gap: isMobile ? 30 : 60,
 						}}
 					>
-						<div style={{ fontSize: 22, fontWeight: 500 }}>
+						<div style={{ fontSize: 22, fontWeight: "500" }}>
 							최신 차량 리뷰 콘텐츠
 						</div>
 						{[0, 3].map((i) => (

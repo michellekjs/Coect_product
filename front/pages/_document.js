@@ -12,6 +12,7 @@ class MyDocument extends Document {
        <Head>
           {/* <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css' /> */}
           {/* GTM code snippet */}
+          <link href="/fonts/style.css" rel="stylesheet"/>
           <script
             dangerouslySetInnerHTML={{
               __html: `
