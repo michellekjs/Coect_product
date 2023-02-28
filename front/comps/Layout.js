@@ -1,6 +1,7 @@
 "use client";
 
 import Head from 'next/head'
+import Image from "next/image";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -8,6 +9,7 @@ import { useMediaQuery } from 'react-responsive';
 import { slide as Menu } from 'react-burger-menu';
 import ReactDOM from 'react-dom';
 import React, { useState, useEffect } from 'react';
+import Logo from "../public/imgs/logo.svg";
 
 import { brands } from "../shared";
 
@@ -20,6 +22,9 @@ export default function Layout({ title, description, children }) {
   })
   const isMobile = useMediaQuery({ query: '(max-width: 1045px)' })
 	const [opacity,setOpacity] = useState(100);
+	// const myLoader = ({ src }) => {
+	// 	// return `require('../public/imgs/logo.svg').default.src`
+	// }
 
 	const styles = {
     bmBurgerButton: {
@@ -117,7 +122,13 @@ export default function Layout({ title, description, children }) {
 					}
 					<div style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: isMobile? 16 : 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box', width: '100%', alignItems:'center', position:'sticky', top: 0, zIndex:10, backdropFilter: 'blur(8px)',backgroundColor: isMobile ? 'white' : 'rgba(255, 255, 255, 0.8)', }}>
 						<Link href="/" style={{ display: 'flex', gap: 6, alignItems: 'baseline', textDecoration: 'none' }}>
-							<img src={require('../public/imgs/logo.svg').default.src} alt="COECT 로고" style={{ height: 26, opacity: opacity<350 ? 1 : 0.8 }}/>
+							<Image 
+								src={logo}
+								alt="COECT 로고"
+								style={{ opacity: opacity<350 ? 1 : 0.8 }}
+								width = {100}
+								height = {26}
+							/>
 						</Link>
 						{isBigScreen && <div style={{display:'flex', flexDirection: 'row', gap: 10 }}>
 							{brands.map((brand, index) => {

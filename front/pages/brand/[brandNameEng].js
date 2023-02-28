@@ -72,11 +72,11 @@ export default function CategoryIdPage(props) {
 			}}/>
 
 			<div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-				<div style={{ width: '100%', paddingLeft: 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box', display: 'flex', alignItems: 'center', gap: 12 }}>
+				<div style={{ width: '100%', paddingLeft: 30, paddingRight: 30, paddingTop: 16, boxSizing: 'border-box', display: 'flex', alignItems: 'center', gap: 12 }}>
 					<img src={require(`../../public/imgs/logos/${brand.logo}`).default.src} alt={`${brand.name} 로고`} width={44} height={44}/>
 					<h1 style={{ fontSize: 18, fontWeight:500, margin: 0 }}>{brand.name}</h1>		
 				</div>
-				<div style={{display:"flex", width:"100%", height:150, justifyContent:'center'}}>
+				<div style={{display:"flex", width:"100%", height:170, justifyContent:'center'}}>
 					<div style={{ display: 'flex', gap: 20, justifyContent: 'flex-start', overflowX: "scroll", width:"wrap-content", paddingLeft:30, paddingRight:30}} className={styles.scroll}>
 					{
 						brand.models.map((m, i) => 
@@ -86,7 +86,7 @@ export default function CategoryIdPage(props) {
 								style={{ display: 'flex', flexDirection: 'column', justifyContent: 'end', gap: 15, textAlign: 'center', fontSize: model==m.name ? 16 : 14, color: model==m.name ? 'black' : colors._300, textDecoration: 'none', color: 'black'}}
 								className={isDesktop ? styles.model : null}
 							>
-								<img src={require(`../../public/imgs/models/${brand.name} ${m.name} ${m.submodels[0].name ? m.submodels[0].name + ' ' : ''}(${m.generation}세대).png`).default.src} alt="" width={model==m.name ? 220 : 170} style={{ filter: model==m.name ? '' : 'grayscale(1)' }}/>
+								<img src={require(`../../public/imgs/models/${brand.name} ${m.name} ${m.submodels[0].name ? m.submodels[0].name + ' ' : ''}(${m.generation}세대).png`).default.src} alt="" width={model==m.name ? 210 : 170} style={{filter: model==m.name ? '' : 'grayscale(1)' }}/>
 								<span>{`${brand.name} ${m.name}`}</span>
 							</Link>
 						)
@@ -104,7 +104,7 @@ export default function CategoryIdPage(props) {
 							<span> 리뷰 영상</span>
 							<span style={{ color: colors.primary }}>&nbsp;{resultarticle.length}</span>
 							<span>개</span>
-							{ resultarticle.length > nArticlesInPage && <span> 중 <span style={{ color: colors.primary }}>{pageReal}</span>페이지</span> }
+							{/* { resultarticle.length > nArticlesInPage && <span> 중 <span style={{ color: colors.primary }}>{pageReal}</span>페이지</span> } */}
 						</div>
 						<div>
 							<div style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? 40 : 20, justifyContent:"center", }}>
