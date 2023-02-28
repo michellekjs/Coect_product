@@ -76,7 +76,7 @@ export default function CategoryIdPage(props) {
 					<img src={require(`../../public/imgs/logos/${brand.logo}`).default.src} alt={`${brand.name} 로고`} width={44} height={44}/>
 					<h1 style={{ fontSize: 18, fontWeight:500, margin: 0 }}>{brand.name}</h1>		
 				</div>
-				<div style={{display:"flex", width:"100%", justifyContent:'center'}}>
+				<div style={{display:"flex", width:"100%", height:150, justifyContent:'center'}}>
 					<div style={{ display: 'flex', gap: 20, justifyContent: 'flex-start', overflowX: "scroll", width:"wrap-content", paddingLeft:30, paddingRight:30}} className={styles.scroll}>
 					{
 						brand.models.map((m, i) => 

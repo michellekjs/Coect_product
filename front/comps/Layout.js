@@ -24,8 +24,8 @@ export default function Layout({ title, description, children }) {
 	const styles = {
     bmBurgerButton: {
       position: 'fixed',
-      width: '20px',
-      height: '20px',
+      width: '15px',
+      height: '15px',
       right: isMobile ? "16px" : '30px',
       top: ' 20px'
     },

@@ -56,7 +56,7 @@ export default function ArticleSummary(props) {
 		description: {
 			marginTop: 5,
 			flex: 1,
-            fontSize: props.top ? 32 : 14,
+      fontSize: props.top ? 32 : 14,
 			// display: '-webkit-box',
 			// WebkitBoxOrient: 'vertical',
 			// WebkitLineClamp: 3,
@@ -76,7 +76,7 @@ export default function ArticleSummary(props) {
 		right: {
 			// width: props.top ? 360 : 240,
 			width: 220,
-			height: 124, // 16:9?
+			height: 123.75, // 16:9?
 			display: "flex",
 			justifyContent: "center",
 			alignItems: "center",
@@ -117,7 +117,7 @@ export default function ArticleSummary(props) {
 						loader= {myLoader}
 						src={props.article.videoId}
 						width={220}
-						height={124}
+						height={123.75}
 						alt = "https://via.placeholder.com/360x218"
 					/>
 				</div>

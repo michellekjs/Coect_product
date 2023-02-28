@@ -31,7 +31,7 @@ export default function ArticleSummary(props) {
 			// backgroundColor: "#FAFAFA",
 			// padding: "30px",
             // boxShadow: '5px 5px 5px 5px #F9F9F9',
-			height: 114,
+			height: isMobile? 84.38 : 114,
 			padding: isMobile ? 0 : 10,
 			boxSizing: "content-box",
 		},
@@ -75,8 +75,8 @@ export default function ArticleSummary(props) {
 		},
 		left: {
 			// width: props.top ? 360 : 240,
-			width: 203,
-			height: 114, // 16:9?
+			width: isMobile ? 150 : 203,
+			height: isMobile ? 84.38 : 114.2, // 16:9?
 			display: "flex",
 			justifyContent: "center",
 			alignItems: "center",
@@ -102,8 +102,8 @@ export default function ArticleSummary(props) {
 						style={styles.thumbnail}
 						loader= {myLoader}
 						src={props.article.videoId}
-						width={203}
-						height={114}
+						width={isMobile ? 150 : 203}
+						height={isMobile ? 90 : 114}
 						alt = "https://via.placeholder.com/360x218"
 					/>
 				</div>
@@ -115,7 +115,7 @@ export default function ArticleSummary(props) {
 						image={props.article.channelImageUrl}
 					/>
 					<div style={styles.title}>{props.article.title}</div>
-					<span style={{ fontSize: 13, color: colors._400 }}>{props.article.date.replaceAll('-','.')+'.'}</span>
+					{!isMobile && <span style={{ fontSize: 13, color: colors._400 }}>{props.article.date.replaceAll('-','.')+'.'}</span> }
 				</div>
 				
 			</div>

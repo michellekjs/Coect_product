@@ -33,8 +33,8 @@ export default function ArticleSummaryToday(props) {
 			width: "320px"
 		},
 		top: {
-			// marginTop: 10,
-			paddingTop: "56.25%", // 16:9
+			width: 320,
+			height: 160,
 			// background: 'red',
 			position: "relative",
 			display: "flex",
@@ -61,7 +61,7 @@ export default function ArticleSummaryToday(props) {
 		},
 		title: {
 			fontSize: isMobile? 16: 18,
-			fontWeight: 500,
+			fontWeight: "medium",
 			display: "-webkit-box",
 			WebkitBoxOrient: "vertical",
 			WebkitLineClamp: 2,
