@@ -6,6 +6,7 @@
   url('../fonts/SpoqaHanSansNeo-Bold.woff2')format("woff2");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 } 
 @font-face {
   font-family: 'Spoqa Han Sans Neo';
@@ -15,6 +16,7 @@
   url('../fonts/SpoqaHanSansNeo-Light.woff2') format("woff2");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Spoqa Han Sans Neo';
@@ -24,6 +26,7 @@
   url('../fonts/SpoqaHanSansNeo-Medium.woff2') format("woff2");
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Spoqa Han Sans Neo';
@@ -33,6 +36,7 @@
   url('../fonts/SpoqaHanSansNeo-Regular.woff2') format("woff2");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Spoqa Han Sans Neo';
@@ -42,4 +46,5 @@
   url('../fonts/SpoqaHanSansNeo-Thin.woff2') format("woff2");
   font-weight: 100;
   font-style: normal;
+  font-display: swap;
 }

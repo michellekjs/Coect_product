@@ -94,8 +94,8 @@ export default function ArticleSummaryToday(props) {
 						loader= {myLoader}
 						src={props.article.videoId}
 						width={360}
-						height={218}
-						alt = "https://via.placeholder.com/360x218"
+						height={180}
+						alt = "https://via.placeholder.com/360x180"
 					/>
 				</div>
 				<div style={styles.bottom}>

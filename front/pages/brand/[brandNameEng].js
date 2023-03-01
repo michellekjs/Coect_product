@@ -65,11 +65,7 @@ export default function CategoryIdPage(props) {
 	// 		console.log(resultarticle);
 	// 	}
 	// };
-	// const myLoader = ({src}) => {
-	// 	return `../../public/imgs/models/${brand.name} ${m.name} ${
-	// 		m.submodels[0].name ? m.submodels[0].name + " " : ""
-	// 	}(${m.generation}세대).png`;
-	// };
+	// const myLoader = ({})=> `../../public/imgs/models/${brand.name} ${m.name} ${m.submodels[0].name ? m.submodels[0].name + ' ' : ''}(${m.generation}세대).png`
 
 	return (
 		<Layout
@@ -116,8 +112,6 @@ export default function CategoryIdPage(props) {
 						width={44}
 						height={44}
 					/>
-
-					
 					<h1 style={{ fontSize: 18, fontWeight: 500, margin: 0 }}>
 						{brand.name}
 					</h1>

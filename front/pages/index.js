@@ -65,6 +65,16 @@ export default function MainPage() {
 								<a
 									onClick={clickHandler}
 									href="#/"
+									style={{
+										width: 130,
+										height: "100%",
+										position: "absolute",
+										zIndex: 1,
+										display: "flex",
+										justifyContent: "center",
+										paddingLeft: 60,
+										paddingRight: 60,
+									}}
 								>
 									<Image
 										src={require("../public/imgs/arrow_left.svg")}
@@ -90,7 +100,18 @@ export default function MainPage() {
 								<a
 									onClick={clickHandler}
 									href="#/"
-									
+									style={{
+										width: 130,
+										height: "100%",
+										position: "absolute",
+										top: 0,
+										right: 0,
+										zIndex: 1,
+										display: "flex",
+										justifyContent: "center",
+										paddingLeft: 60,
+										paddingRight: 60,
+									}}
 								>
 									<Image
 										src={require("../public/imgs/arrow_right.svg").default.src}
@@ -116,8 +137,8 @@ export default function MainPage() {
 					>
 					{
 						[
-							{ cover: "grandeurcover.png", title: ["그랜저 7세대", "세단 제왕의 귀환,", "풀체인지 그랜져 리뷰 영상들 보러 가기"], to: '/brand/HYUNDAI?model=그랜저' },
-							{ cover: "konacover.png", title: ["코나 2세대", "5년 만에 완전히 바뀐", "‘디 올 뉴 코나’ 리뷰 영상 보러가기"], to: '/brand/HYUNDAI?model=코나' },
+							{ cover: "grandeurcover.webp", title: ["그랜저 7세대", "세단 제왕의 귀환,", "풀체인지 그랜져 리뷰 영상들 보러 가기"], to: '/brand/HYUNDAI?model=그랜저' },
+							{ cover: "konacover.webp", title: ["코나 2세대", "5년 만에 완전히 바뀐", "‘디 올 뉴 코나’ 리뷰 영상 보러가기"], to: '/brand/HYUNDAI?model=코나' },
 						].map((item,i) => (
 							<Link
 								key={i}
@@ -420,6 +441,7 @@ export default function MainPage() {
 								color: "black"
 							}}
 						>
+
 							<Image
 								src={require("../public/imgs/refresh.svg").default.src}
 								alt="새로고침 아이콘"
