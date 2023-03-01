@@ -16,7 +16,7 @@ export default function ArticleSummary(props) {
 	const isMobile = useMediaQuery({ query: "(max-width: 1045px)" });
 
 	const myLoader = ({ src }) => {
-		return `https://i.ytimg.com/vi/${src}/hqdefault.jpg`
+		return `https://i.ytimg.com/vi_webp/${src}/0.webp`
 	}
 
 	const styles = {

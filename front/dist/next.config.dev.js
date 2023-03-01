@@ -3,17 +3,20 @@
 /** @type {import('next').NextConfig} */
 var nextConfig = {
   reactStrictMode: true,
-  // experimental: {
-  //   appDir: true,
-  // },
   images: {
     loader: 'akamai',
-    path: '/'
+    path: '/',
+    formats: ['image/avif', 'image/webp'],
+    domains: ['https://i.ytimg.com'],
+    remotePatterns: [{
+      protocol: 'https',
+      hostname: 'i.ytimg.com'
+    }]
   },
   trailingSlash: true,
   headers: [{
     key: 'Cache-Control',
-    value: 'public, max-age=31536000, stale-while-revalidate'
+    value: 'no-cache, max-age=31536000, stale-while-revalidate'
   }]
 };
 module.exports = nextConfig;

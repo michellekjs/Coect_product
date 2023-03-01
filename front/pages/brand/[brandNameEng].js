@@ -167,7 +167,6 @@ export default function CategoryIdPage(props) {
 									src={require(`../../public/imgs/models/${brand.name} ${m.name} ${
 										m.submodels[0].name ? m.submodels[0].name + " " : ""
 									}(${m.generation}세대).png`).default.src}
-									alt=""
 									width={model == m.name ? 210 : 170}
 									// height={100}
 									alt="자동차 이미지"
