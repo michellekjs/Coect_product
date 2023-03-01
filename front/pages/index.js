@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Layout from "../comps/Layout";
 import ArticleSummaryHot from "../comps/ArticleSummaryHot";
 import ArticleSummaryToday from "../comps/ArticleSummaryToday";
@@ -64,7 +65,13 @@ export default function MainPage() {
 								<a
 									onClick={clickHandler}
 									href="#/"
-									style={{
+								>
+									<Image
+										src={require("../public/imgs/arrow_left.svg")}
+										alt={`왼쪽으로 전환`}
+										height= {40}
+										width= {40}
+										style={{
 										width: 130,
 										height: "100%",
 										position: "absolute",
@@ -74,10 +81,6 @@ export default function MainPage() {
 										paddingLeft: 60,
 										paddingRight: 60,
 									}}
-								>
-									<img
-										src={require("../public/imgs/arrow_left.svg").default.src}
-										alt={`왼쪽으로 전환`}
 									/>
 								</a>
 							)
@@ -87,7 +90,14 @@ export default function MainPage() {
 								<a
 									onClick={clickHandler}
 									href="#/"
-									style={{
+									
+								>
+									<Image
+										src={require("../public/imgs/arrow_right.svg").default.src}
+										alt={`오른쪽으로 전환`}
+										width={15}
+										height={15}
+										style={{
 										width: 130,
 										height: "100%",
 										position: "absolute",
@@ -99,10 +109,6 @@ export default function MainPage() {
 										paddingLeft: 60,
 										paddingRight: 60,
 									}}
-								>
-									<img
-										src={require("../public/imgs/arrow_right.svg").default.src}
-										alt={`오른쪽으로 전환`}
 									/>
 								</a>
 							)
@@ -110,8 +116,8 @@ export default function MainPage() {
 					>
 					{
 						[
-							{ cover: "grandeurcover.png", title: ['세단 제왕의 귀환,', '풀체인지 그랜져 리뷰 영상들 보러 가기'], to: '/brand/HYUNDAI?model=그랜저' },
-							{ cover: "konacover.png", title: ['5년 만에 완전히 바뀐', '‘디 올 뉴 코나’ 리뷰 영상 보러가기'], to: '/brand/HYUNDAI?model=코나' },
+							{ cover: "grandeurcover.png", title: ["그랜저 7세대", "세단 제왕의 귀환,", "풀체인지 그랜져 리뷰 영상들 보러 가기"], to: '/brand/HYUNDAI?model=그랜저' },
+							{ cover: "konacover.png", title: ["코나 2세대", "5년 만에 완전히 바뀐", "‘디 올 뉴 코나’ 리뷰 영상 보러가기"], to: '/brand/HYUNDAI?model=코나' },
 						].map((item,i) => (
 							<Link
 								key={i}
@@ -130,23 +136,37 @@ export default function MainPage() {
 									textDecoration: "none",
 								}}
 							>
-								<div
+								<div style={{display:"flex", flexDirection:"column", width: "100%", alignItems:"center"}}>
+									<div 
 									style={{
-										fontSize: isMobile ? 16 : 28,
-										color: "white",
-										textAlign: isMobile ? "start" : "center",
-										marginLeft: isMobile ? "20px" : "0px",
-										width: "100%",
-									}}
-								>
-								{
-									item.title.join(isMobile ? '\n' : ' ')
-								}
+											fontSize: isMobile ? 12:15,
+											color: "white",
+											textAlign: isMobile ? "start" : "center",
+											marginLeft: isMobile ? "20px" : "0px",
+											width: "100%",
+											marginBottom: 15
+										}}>
+										{item.title[0]}
+									</div>
+									<div
+										style={{
+											fontSize: isMobile ? 16 : 28,
+											color: "white",
+											textAlign: isMobile ? "start" : "center",
+											marginLeft: isMobile ? "20px" : "0px",
+											width: "100%",
+											whiteSpace : "pre-line"
+										}}
+									>
+									{
+										item.title.slice(1,3).join(isMobile ? '\r\n' : ' ')
+									}
+									</div>
 								</div>
 							</Link>
 						))
 					}
-					</Carousel>
+			</Carousel>
 				</div>
 
 				<div
@@ -226,16 +246,14 @@ export default function MainPage() {
 										}}
 										className={styles.logo}
 									>
-										<img
+										<Image
 											src={
 												require(`../public/imgs/logos/${brand.logo}`).default
 													.src
 											}
 											alt={`${brand.name} 로고`}
-											style={{
-												width: isDesktop ? 60 : 40,
-												height: isDesktop ? 60 : 40,
-											}}
+											width={ isDesktop ? 60 : 40}
+											height= { isDesktop ? 60 : 40}
 											className={isDesktop ? styles.logo : styles.normal}
 										/>
 										<span style={{ fontSize: 16 }}>{brand.name}</span>
@@ -280,13 +298,14 @@ export default function MainPage() {
 												}}
 												className={isMobile ? styles.normal : styles.logo}
 											>
-												<img
+												<Image
 													src={
 														require(`../public/imgs/logos/${brand.logo}`)
 															.default.src
 													}
 													alt={`${brand.name} 로고`}
-													style={{ width: 40, height: 40 }}
+													width= {40}
+													height= {40}
 												/>
 												<span style={{ fontSize: 16 }}>{brand.name}</span>
 											</Link>
@@ -338,7 +357,7 @@ export default function MainPage() {
 								display: "flex",
 								alignItems: "center",
 								justifyContent:"center",
-								gap: 14,
+								gap: 4,
 								paddingLeft: isMobile ? 10 : 16,
 								paddingRight: isMobile ? 10 : 16,
 								paddingTop: 10,
@@ -353,10 +372,11 @@ export default function MainPage() {
 								// width:"100%"
 							}}
 						>
-							<img
+							<Image
 								src={require("../public/imgs/refresh.svg").default.src}
 								alt="새로고침 아이콘"
-								style={{ width: 20, height: 20 }}
+								width= {20}
+								height={20}
 							/>
 							<span style={{ fontSize: 14 }}>주목하는 차량 더보기</span>
 						</button>}
@@ -400,10 +420,11 @@ export default function MainPage() {
 								color: "black"
 							}}
 						>
-							<img
+							<Image
 								src={require("../public/imgs/refresh.svg").default.src}
 								alt="새로고침 아이콘"
-								style={{ width: 20, height: 20 }}
+								width= {20}
+								height={20}
 							/>
 							<span style={{ fontSize: 14 }}>주목하는 차량 더보기</span>
 						</button>}

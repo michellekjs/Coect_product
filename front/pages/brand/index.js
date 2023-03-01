@@ -54,15 +54,11 @@ export default function ArticlePage(props) {
                   }}
                   className={styles.logo}
                 >
-                  <img
-                    src={
-                      require(`../../public/imgs/logos/${brand.logo}`).default
-                        .src
-                    }
+                  <Image
+                    src={`../../public/imgs/logos/${brand.logo}`}
                     alt={`${brand.name} 로고`}
-                    style={{
-                      width: isDesktop ? 60 : 40,
-                      height: isDesktop ? 60 : 40,
+                    width = { isDesktop ? 60 : 40}
+                    height = { isDesktop ? 60 : 40 } 
                     }}
                     className={isDesktop ? styles.logo : styles.normal}
                   />
@@ -108,13 +104,14 @@ export default function ArticlePage(props) {
                       }}
                       className={isMobile ? styles.normal : styles.logo}
                     >
-                      <img
+                      <Image
                         src={
                           require(`../../public/imgs/logos/${brand.logo}`)
                             .default.src
                         }
                         alt={`${brand.name} 로고`}
-                        style={{ width: 40, height: 40 }}
+                        width={ 40}
+                        height= {40 }
                       />
                       <span style={{ fontSize: 16 }}>{brand.name}</span>
                     </Link>

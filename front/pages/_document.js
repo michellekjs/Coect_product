@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -13,7 +14,7 @@ class MyDocument extends Document {
           {/* <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css' /> */}
           {/* GTM code snippet */}
           <link href="/fonts/style.css" rel="stylesheet"/>
-          <script
+          {/* <script
             dangerouslySetInnerHTML={{
               __html: `
                 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -23,7 +24,7 @@ class MyDocument extends Document {
                 })(window,document,'script','dataLayer','GTM-P92NZ3R');
               `,
             }}
-          />
+          /> */}
           {/* End GTM code snippet */}
         </Head>
         <body>

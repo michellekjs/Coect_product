@@ -1,5 +1,6 @@
 import { colors } from "../shared";
 import {useMediaQuery} from "react-responsive"
+import Image from "next/image"
 
 import { seconds2timestamp } from "../shared";
 
@@ -32,7 +33,7 @@ export default function TextUnit(props) {
 			 }}>
 					{
 						// props.isPlaying ?
-							<img src={require('../public/imgs/play.svg').default.src} alt="재생 중 아이콘" style={{ height: 12 }}/>
+							<Image src={require('../public/imgs/play.svg').default.src} alt="재생 중 아이콘" height={12} width={12}/>
 							// :
 							// <img src={require('../public/imgs/pause.svg').default.src} alt="일시정지 중 아이콘" style={{ height: 16 }}/>
 					}
