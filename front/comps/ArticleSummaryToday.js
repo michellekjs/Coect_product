@@ -61,7 +61,7 @@ export default function ArticleSummaryToday(props) {
 		},
 		title: {
 			fontSize: isMobile? 16: 18,
-			fontWeight: "medium",
+			fontWeight: 500,
 			display: "-webkit-box",
 			WebkitBoxOrient: "vertical",
 			WebkitLineClamp: 2,

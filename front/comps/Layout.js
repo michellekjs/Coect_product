@@ -123,10 +123,10 @@ export default function Layout({ title, description, children }) {
 					<div style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: isMobile? 16 : 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box', width: '100%', alignItems:'center', position:'sticky', top: 0, zIndex:10, backdropFilter: 'blur(8px)',backgroundColor: isMobile ? 'white' : 'rgba(255, 255, 255, 0.8)', }}>
 						<Link href="/" style={{ display: 'flex', gap: 6, alignItems: 'baseline', textDecoration: 'none' }}>
 							<Image 
-								src={logo}
+								src={Logo}
 								alt="COECT 로고"
 								style={{ opacity: opacity<350 ? 1 : 0.8 }}
-								width = {100}
+								width = {195}
 								height = {26}
 							/>
 						</Link>
