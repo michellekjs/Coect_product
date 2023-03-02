@@ -35,9 +35,7 @@ export default function MainPage() {
 	function refreshHot() {
 		let model = hot.model;
 		while (model == hot.model) {
-			model = ["그랜저", "코나"][
-				Math.floor(getRandomArbitrary(0, 2))
-			];
+			model = ["그랜저", "코나"][Math.floor(getRandomArbitrary(0, 2))];
 		}
 		setHot(getHot("현대", model));
 	}
@@ -45,7 +43,10 @@ export default function MainPage() {
 	const articlesRecent = articles.sort((a, b) => b.date > a.date);
 
 	return (
-		<Layout title='COECT - Fusion of Video & Text' description = 'COECT는 양질의 영상들을 텍스트로 재가공해 영상 속 필요한 정보를 빠르게 정리할 수 있는 새로운 콘텐츠 경험을 제공합니다.'>
+		<Layout
+			title="COECT - Fusion of Video & Text"
+			description="COECT는 양질의 영상들을 텍스트로 재가공해 영상 속 필요한 정보를 빠르게 정리할 수 있는 새로운 콘텐츠 경험을 제공합니다."
+		>
 			<div
 				style={{
 					display: "flex",
@@ -60,6 +61,31 @@ export default function MainPage() {
 						autoPlay={true}
 						infiniteLoop
 						emulateTouch
+						renderIndicator={(onClickHandler, isSelected, index, label) => {
+							const defStyle = {
+								marginLeft: 20,
+								backgroundColor: "black",
+								cursor: "pointer",
+								borderRadius: "50%"
+							};
+							const style = isSelected
+								? { ...defStyle, backgroundColor: "lightgray" }
+								: { ...defStyle };
+							return (
+								<span
+									// style={style}
+									onClick={onClickHandler}
+									onKeyDown={onClickHandler}
+									value={index}
+									key={index}
+									role="button"
+									tabIndex={0}
+									aria-label={`${label} ${index + 1}`}
+								>
+									<span className={isDesktop ? styles.dot : styles.dotmobile} style={style}></span>
+								</span>
+							);
+						}}
 						renderArrowPrev={(clickHandler, hasPrev, label) =>
 							isDesktop && (
 								<a
@@ -79,18 +105,18 @@ export default function MainPage() {
 									<Image
 										src={require("../public/imgs/arrow_left.svg")}
 										alt={`왼쪽으로 전환`}
-										height= {40}
-										width= {40}
+										height={40}
+										width={40}
 										style={{
-										width: 130,
-										height: "100%",
-										position: "absolute",
-										zIndex: 1,
-										display: "flex",
-										justifyContent: "center",
-										paddingLeft: 60,
-										paddingRight: 60,
-									}}
+											width: 130,
+											height: "100%",
+											position: "absolute",
+											zIndex: 1,
+											display: "flex",
+											justifyContent: "center",
+											paddingLeft: 60,
+											paddingRight: 60,
+										}}
 									/>
 								</a>
 							)
@@ -119,27 +145,42 @@ export default function MainPage() {
 										width={15}
 										height={15}
 										style={{
-										width: 130,
-										height: "100%",
-										position: "absolute",
-										top: 0,
-										right: 0,
-										zIndex: 1,
-										display: "flex",
-										justifyContent: "center",
-										paddingLeft: 60,
-										paddingRight: 60,
-									}}
+											width: 130,
+											height: "100%",
+											position: "absolute",
+											top: 0,
+											right: 0,
+											zIndex: 1,
+											display: "flex",
+											justifyContent: "center",
+											paddingLeft: 60,
+											paddingRight: 60,
+										}}
 									/>
 								</a>
 							)
 						}
 					>
-					{
-						[
-							{ cover: "grandeurcover.webp", title: ["그랜저 7세대", "세단 제왕의 귀환,", "풀체인지 그랜져 리뷰 영상들 보러 가기"], to: '/brand/HYUNDAI?model=그랜저' },
-							{ cover: "konacover.webp", title: ["코나 2세대", "5년 만에 완전히 바뀐", "‘디 올 뉴 코나’ 리뷰 영상 보러가기"], to: '/brand/HYUNDAI?model=코나' },
-						].map((item,i) => (
+						{[
+							{
+								cover: "grandeurcover.webp",
+								title: [
+									"그랜저 7세대",
+									"세단 제왕의 귀환,",
+									"풀체인지 그랜져 리뷰 영상들 보러 가기",
+								],
+								to: "/brand/HYUNDAI?model=그랜저",
+							},
+							{
+								cover: "konacover.webp",
+								title: [
+									"코나 2세대",
+									"5년 만에 완전히 바뀐",
+									"‘디 올 뉴 코나’ 리뷰 영상 보러가기",
+								],
+								to: "/brand/HYUNDAI?model=코나",
+							},
+						].map((item, i) => (
 							<Link
 								key={i}
 								href={item.to}
@@ -157,16 +198,24 @@ export default function MainPage() {
 									textDecoration: "none",
 								}}
 							>
-								<div style={{display:"flex", flexDirection:"column", width: "100%", alignItems:"center"}}>
-									<div 
+								<div
 									style={{
-											fontSize: isMobile ? 12:15,
+										display: "flex",
+										flexDirection: "column",
+										width: "100%",
+										alignItems: "center",
+									}}
+								>
+									<div
+										style={{
+											fontSize: isMobile ? 12 : 15,
 											color: "white",
 											textAlign: isMobile ? "start" : "center",
 											marginLeft: isMobile ? "20px" : "0px",
 											width: "100%",
-											marginBottom: 15
-										}}>
+											marginBottom: 15,
+										}}
+									>
 										{item.title[0]}
 									</div>
 									<div
@@ -176,18 +225,15 @@ export default function MainPage() {
 											textAlign: isMobile ? "start" : "center",
 											marginLeft: isMobile ? "20px" : "0px",
 											width: "100%",
-											whiteSpace : "pre-line"
+											whiteSpace: "pre-line",
 										}}
 									>
-									{
-										item.title.slice(1,3).join(isMobile ? '\r\n' : ' ')
-									}
+										{item.title.slice(1, 3).join(isMobile ? "\r\n" : " ")}
 									</div>
 								</div>
 							</Link>
-						))
-					}
-			</Carousel>
+						))}
+					</Carousel>
 				</div>
 
 				<div
@@ -195,7 +241,7 @@ export default function MainPage() {
 						display: "flex",
 						flexDirection: "column",
 						alignItems: "center",
-						gap: isMobile ? 90 : 140,
+						gap: isMobile ? 90 : 180,
 						maxWidth: 1032,
 					}}
 				>
@@ -207,7 +253,7 @@ export default function MainPage() {
 							gap: isMobile ? 30 : 60,
 						}}
 					>
-						<div style={{ fontSize: 22,fontWeight:"500"}}>
+						<div style={{ fontSize: 22, fontWeight: "500" }}>
 							차량 리뷰 Pick 👍
 						</div>
 						<div
@@ -247,7 +293,7 @@ export default function MainPage() {
 									justifyContent: "space-between",
 								}}
 							>
-								{brands.map((brand,i) => (
+								{brands.map((brand, i) => (
 									<Link
 										key={i}
 										href={`/brand/${brand.nameEng}`}
@@ -272,8 +318,8 @@ export default function MainPage() {
 													.src
 											}
 											alt={`${brand.name} 로고`}
-											width={ isDesktop ? 60 : 40}
-											height= { isDesktop ? 60 : 40}
+											width={isDesktop ? 60 : 40}
+											height={isDesktop ? 60 : 40}
 											className={isDesktop ? styles.logo : styles.normal}
 										/>
 										<span style={{ fontSize: 16 }}>{brand.name}</span>
@@ -287,7 +333,7 @@ export default function MainPage() {
 								{[
 									{ start: 0, end: 4 },
 									{ start: 4, end: 9 },
-								].map((range,i) => (
+								].map((range, i) => (
 									<div
 										key={i}
 										style={{
@@ -298,7 +344,7 @@ export default function MainPage() {
 											justifyContent: "flex-start",
 										}}
 									>
-										{brands.slice(range.start, range.end).map((brand,j) => (
+										{brands.slice(range.start, range.end).map((brand, j) => (
 											<Link
 												key={j}
 												href={`/brand/${brand.nameEng}`}
@@ -324,8 +370,8 @@ export default function MainPage() {
 															.default.src
 													}
 													alt={`${brand.name} 로고`}
-													width= {40}
-													height= {40}
+													width={40}
+													height={40}
 												/>
 												<span style={{ fontSize: 16 }}>{brand.name}</span>
 											</Link>
@@ -335,12 +381,18 @@ export default function MainPage() {
 							</div>
 						)}
 					</div>
-					<div style={{ width: "95%",display: "flex",
-								alignItems: "center", flexDirection:'column' }}>
+					<div
+						style={{
+							width: "95%",
+							display: "flex",
+							alignItems: "center",
+							flexDirection: "column",
+						}}
+					>
 						<div
 							style={{
 								display: "flex",
-								alignItems: "center", 
+								alignItems: "center",
 								justifyContent: "space-between",
 								width: "100%",
 								flexDirection: isMobile ? "column" : "row",
@@ -349,57 +401,70 @@ export default function MainPage() {
 								fontWeight: "500",
 							}}
 						>
-						{
-							isDesktop && <div style={{display:"flex", gap: 10, alignItems:'center'}}>
-								<div style={{display:"flex", gap: 8, alignItems:'center'}}>
-									<span style={{ fontSize: 20 }}>🔥</span>
-									<span style={{ fontSize: 22 }}>사람들이 주목하는 차량</span>
+							{isDesktop && (
+								<div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+									<div
+										style={{ display: "flex", gap: 8, alignItems: "center" }}
+									>
+										<span style={{ fontSize: 20 }}>🔥</span>
+										<span style={{ fontSize: 22 }}>사람들이 주목하는 차량</span>
+									</div>
+									<span style={{ color: colors.primary, fontSize: 22 }}>
+										#{hot.model}
+									</span>
 								</div>
-								<span style={{ color: colors.primary, fontSize: 22 }}>
-									#{hot.model}
-								</span>
-							</div>
-						}
-						{
-							isMobile && <div style={{display:"flex", gap: 5, alignItems:'center', flexDirection: 'column' }}>
-								<div style={{display:"flex", gap: 8, alignItems:'center'}}>
-									<span style={{ fontSize: 18 }}>🔥</span>
-									<span style={{ fontSize: 20 }}>사람들이 주목하는 차량</span>
+							)}
+							{isMobile && (
+								<div
+									style={{
+										display: "flex",
+										gap: 5,
+										alignItems: "center",
+										flexDirection: "column",
+									}}
+								>
+									<div
+										style={{ display: "flex", gap: 8, alignItems: "center" }}
+									>
+										<span style={{ fontSize: 18 }}>🔥</span>
+										<span style={{ fontSize: 20 }}>사람들이 주목하는 차량</span>
+									</div>
+									<span style={{ color: colors.primary, fontSize: 20 }}>
+										#{hot.model}
+									</span>
 								</div>
-								<span style={{ color: colors.primary, fontSize: 20 }}>
-									#{hot.model}
-								</span>
-							</div>
-						}
-							{isDesktop && <button
-							onClick={refreshHot}
-							style={{
-								display: "flex",
-								alignItems: "center",
-								justifyContent:"center",
-								gap: 4,
-								paddingLeft: isMobile ? 10 : 16,
-								paddingRight: isMobile ? 10 : 16,
-								paddingTop: 10,
-								paddingBottom: 10,
-								borderRadius: 9999,
-								borderColor: "#BDBDBD",
-								borderWidth: 1,
-								borderStyle: "solid",
-								background: "white",
-								cursor: "pointer",
-								marginTop: isMobile? 15 : 0,
-								// width:"100%"
-							}}
-						>
-							<Image
-								src={require("../public/imgs/refresh.svg").default.src}
-								alt="새로고침 아이콘"
-								width= {20}
-								height={20}
-							/>
-							<span style={{ fontSize: 14 }}>주목하는 차량 더보기</span>
-						</button>}
+							)}
+							{isDesktop && (
+								<button
+									onClick={refreshHot}
+									style={{
+										display: "flex",
+										alignItems: "center",
+										justifyContent: "center",
+										gap: 4,
+										paddingLeft: isMobile ? 10 : 16,
+										paddingRight: isMobile ? 10 : 16,
+										paddingTop: 10,
+										paddingBottom: 10,
+										borderRadius: 9999,
+										borderColor: "#BDBDBD",
+										borderWidth: 1,
+										borderStyle: "solid",
+										background: "white",
+										cursor: "pointer",
+										marginTop: isMobile ? 15 : 0,
+										// width:"100%"
+									}}
+								>
+									<Image
+										src={require("../public/imgs/refresh.svg").default.src}
+										alt="새로고침 아이콘"
+										width={20}
+										height={20}
+									/>
+									<span style={{ fontSize: 14 }}>주목하는 차량 더보기</span>
+								</button>
+							)}
 						</div>
 						<div
 							style={{
@@ -417,38 +482,39 @@ export default function MainPage() {
 							))}
 							{/*  */}{" "}
 						</div>
-						{isMobile && <button
-							onClick={refreshHot}
-							style={{
-								display: "flex",
-								alignItems: "center",
-								justifyContent:"center",
-								gap: 6,
-								paddingLeft: isMobile ? 10 : 16,
-								paddingRight: isMobile ? 10 : 16,
-								paddingTop: 10,
-								paddingBottom: 10,
-								borderRadius: 9999,
-								borderColor: "#BDBDBD",
-								borderWidth: 1,
-								borderStyle: "solid",
-								background: "white",
-								cursor: "pointer",
-								marginTop: 30,
-								// width:"100%",
-								textDecoration: "none",
-								color: "black"
-							}}
-						>
-
-							<Image
-								src={require("../public/imgs/refresh.svg").default.src}
-								alt="새로고침 아이콘"
-								width= {20}
-								height={20}
-							/>
-							<span style={{ fontSize: 14 }}>주목하는 차량 더보기</span>
-						</button>}
+						{isMobile && (
+							<button
+								onClick={refreshHot}
+								style={{
+									display: "flex",
+									alignItems: "center",
+									justifyContent: "center",
+									gap: 6,
+									paddingLeft: isMobile ? 10 : 16,
+									paddingRight: isMobile ? 10 : 16,
+									paddingTop: 10,
+									paddingBottom: 10,
+									borderRadius: 9999,
+									borderColor: "#BDBDBD",
+									borderWidth: 1,
+									borderStyle: "solid",
+									background: "white",
+									cursor: "pointer",
+									marginTop: 30,
+									// width:"100%",
+									textDecoration: "none",
+									color: "black",
+								}}
+							>
+								<Image
+									src={require("../public/imgs/refresh.svg").default.src}
+									alt="새로고침 아이콘"
+									width={20}
+									height={20}
+								/>
+								<span style={{ fontSize: 14 }}>주목하는 차량 더보기</span>
+							</button>
+						)}
 					</div>
 					<div
 						style={{

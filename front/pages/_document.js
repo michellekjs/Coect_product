@@ -12,30 +12,30 @@ class MyDocument extends Document {
       <Html>
        <Head lang='ko'>
 
-          <link rel="preload" href="../../public/fonts/Pacifico-Bold.woff2" as="font" type="font/woff2" crossorigin/> 
-          <link rel="preload" href="../../public/fonts/Pacifico-Bold.eot" as="font" type="font/eot" crossorigin/>  
-          <link rel="preload" href="../../public/fonts/Pacifico-Bold.otf" as="font" type="font/otf" crossorigin/>  
-          <link rel="preload" href="../../public/fonts/Pacifico-Bold.woff" as="font" type="font/woff" crossorigin/>  
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Bold.woff2" as="font" type="font/woff2" crossorigin/> 
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Bold.eot" as="font" type="font/eot" crossorigin/>  
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Bold.otf" as="font" type="font/otf" crossorigin/>  
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Bold.woff" as="font" type="font/woff" crossorigin/>  
 
-          <link rel="preload" href="../../public/fonts/Pacifico-Light.woff2" as="font" type="font/woff2" crossorigin /> 
-          <link rel="preload" href="../../public/fonts/Pacifico-Light.eot" as="font" type="font/eot" crossorigin /> 
-          <link rel="preload" href="../../public/fonts/Pacifico-Light.otf" as="font" type="font/otf" crossorigin /> 
-          <link rel="preload" href="../../public/fonts/Pacifico-Light.woff" as="font" type="font/woff" crossorigin/>  
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Light.woff2" as="font" type="font/woff2" crossorigin /> 
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Light.eot" as="font" type="font/eot" crossorigin /> 
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Light.otf" as="font" type="font/otf" crossorigin /> 
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Light.woff" as="font" type="font/woff" crossorigin/>  
 
-          <link rel="preload" href="../../public/fonts/Pacifico-Medium.woff2" as="font" type="font/woff2" crossorigin /> 
-          <link rel="preload" href="../../public/fonts/Pacifico-Medium.eot" as="font" type="font/eot" crossorigin/>
-          <link rel="preload" href="../../public/fonts/Pacifico-Medium.otf" as="font" type="font/otf" crossorigin />
-          <link rel="preload" href="../../public/fonts/Pacifico-Medium.woff" as="font" type="font/woff" crossorigin/> 
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Medium.woff2" as="font" type="font/woff2" crossorigin /> 
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Medium.eot" as="font" type="font/eot" crossorigin/>
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Medium.otf" as="font" type="font/otf" crossorigin />
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Medium.woff" as="font" type="font/woff" crossorigin/> 
 
-          <link rel="preload" href="../../public/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin/> 
-          <link rel="preload" href="../../public/fonts/Pacifico-Regular.eot" as="font" type="font/eot" crossorigin/>
-          <link rel="preload" href="../../public/fonts/Pacifico-Regular.otf" as="font" type="font/otf" crossorigin/>
-          <link rel="preload" href="../../public/fonts/Pacifico-Regular.woff" as="font" type="font/woff" crossorigin/>
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Regular.woff2" as="font" type="font/woff2" crossorigin/> 
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Regular.eot" as="font" type="font/eot" crossorigin/>
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Regular.otf" as="font" type="font/otf" crossorigin/>
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Regular.woff" as="font" type="font/woff" crossorigin/>
 
-          <link rel="preload" href="../../public/fonts/Pacifico-Thin.woff2" as="font" type="font/woff2" crossorigin/> 
-          <link rel="preload" href="../../public/fonts/Pacifico-Thin.eot" as="font" type="font/eot" crossorigin/> 
-          <link rel="preload" href="../../public/fonts/Pacifico-Thin.otf" as="font" type="font/otf" crossorigin/> 
-          <link rel="preload" href="../../public/fonts/Pacifico-Thin.woff" as="font" type="font/woff" crossorigin/> 
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Thin.woff2" as="font" type="font/woff2" crossorigin/> 
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Thin.eot" as="font" type="font/eot" crossorigin/> 
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Thin.otf" as="font" type="font/otf" crossorigin/> 
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Thin.woff" as="font" type="font/woff" crossorigin/> 
           
           
           {/* End GTM code snippet */}

@@ -42,3 +42,43 @@ background-color: 'black'
   width: 0px;
   background: transparent; /* make scrollbar transparent */
 }
+
+.dot {
+  /* height: 10px; */
+  width: 15px;
+  height: 15px;
+  /* background-color: ; */
+  /* border-radius: 50%; */
+  display: inline-block;
+}
+
+.dotmobile {
+  /* height: 10px; */
+  width: 10px;
+  height: 10px;
+  /* background-color: ; */
+  /* border-radius: 50%; */
+  display: inline-block;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #2B6F7D;
+  color :#2B6F7D;
+  background-color: white;
+  border-radius: 10px;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 140px;
+  height: 40px;
+  cursor: pointer;
+
+}
+
+.btn:hover {
+  background-color: #2B6F7D;
+  color: white;
+}

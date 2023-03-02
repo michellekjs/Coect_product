@@ -3,6 +3,7 @@ import { useMediaQuery } from "react-responsive";
 
 import Layout from "../../comps/Layout";
 import ArticleSummary from "../../comps/ArticleSummary";
+import KeywordQuote from "../../comps/KeywordQuote";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -170,6 +171,15 @@ export default function CategoryIdPage(props) {
 							</Link>
 						))}
 					</div>
+				</div>
+				<div>
+					<div style={{ fontSize: 22, fontWeight: "500" , marginTop:150}}>
+								한눈에 보는 그랜저 콘텐츠 속 정보  👍
+						</div>
+					<div style={{marginTop:20}}>
+						<button className={styles.btn}> 디자인 </button> 
+					</div>
+					<KeywordQuote />
 				</div>
 				<div style={{ width: isDesktop ? 745 : "auto", marginTop: 64 }}>
 					<div style={{ display: "flex", flexDirection: "column", gap: 60 }}>
