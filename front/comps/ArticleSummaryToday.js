@@ -34,7 +34,7 @@ export default function ArticleSummaryToday(props) {
 		},
 		top: {
 			width: 320,
-			height: 160,
+			height: 180,
 			// background: 'red',
 			position: "relative",
 			display: "flex",
@@ -93,8 +93,8 @@ export default function ArticleSummaryToday(props) {
 						style={styles.thumbnail}
 						loader= {myLoader}
 						src={props.article.videoId}
-						width={360}
-						height={180}
+						width={320}
+						height={240}
 						alt = "https://via.placeholder.com/360x180"
 					/>
 				</div>
