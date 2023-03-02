@@ -11,20 +11,33 @@ class MyDocument extends Document {
     return (
       <Html>
        <Head lang='ko'>
-          {/* <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css' /> */}
-          {/* GTM code snippet */}
-          <link href="/fonts/style.css" rel="stylesheet"/>
-          {/* <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                })(window,document,'script','dataLayer','GTM-P92NZ3R');
-              `,
-            }}
-          /> */}
+
+          <link rel="preload" href="../../public/fonts/Pacifico-Bold.woff2" as="font" type="font/woff2" crossorigin/> 
+          <link rel="preload" href="../../public/fonts/Pacifico-Bold.eot" as="font" type="font/eot" crossorigin/>  
+          <link rel="preload" href="../../public/fonts/Pacifico-Bold.otf" as="font" type="font/otf" crossorigin/>  
+          <link rel="preload" href="../../public/fonts/Pacifico-Bold.woff" as="font" type="font/woff" crossorigin/>  
+
+          <link rel="preload" href="../../public/fonts/Pacifico-Light.woff2" as="font" type="font/woff2" crossorigin /> 
+          <link rel="preload" href="../../public/fonts/Pacifico-Light.eot" as="font" type="font/eot" crossorigin /> 
+          <link rel="preload" href="../../public/fonts/Pacifico-Light.otf" as="font" type="font/otf" crossorigin /> 
+          <link rel="preload" href="../../public/fonts/Pacifico-Light.woff" as="font" type="font/woff" crossorigin/>  
+
+          <link rel="preload" href="../../public/fonts/Pacifico-Medium.woff2" as="font" type="font/woff2" crossorigin /> 
+          <link rel="preload" href="../../public/fonts/Pacifico-Medium.eot" as="font" type="font/eot" crossorigin/>
+          <link rel="preload" href="../../public/fonts/Pacifico-Medium.otf" as="font" type="font/otf" crossorigin />
+          <link rel="preload" href="../../public/fonts/Pacifico-Medium.woff" as="font" type="font/woff" crossorigin/> 
+
+          <link rel="preload" href="../../public/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin/> 
+          <link rel="preload" href="../../public/fonts/Pacifico-Regular.eot" as="font" type="font/eot" crossorigin/>
+          <link rel="preload" href="../../public/fonts/Pacifico-Regular.otf" as="font" type="font/otf" crossorigin/>
+          <link rel="preload" href="../../public/fonts/Pacifico-Regular.woff" as="font" type="font/woff" crossorigin/>
+
+          <link rel="preload" href="../../public/fonts/Pacifico-Thin.woff2" as="font" type="font/woff2" crossorigin/> 
+          <link rel="preload" href="../../public/fonts/Pacifico-Thin.eot" as="font" type="font/eot" crossorigin/> 
+          <link rel="preload" href="../../public/fonts/Pacifico-Thin.otf" as="font" type="font/otf" crossorigin/> 
+          <link rel="preload" href="../../public/fonts/Pacifico-Thin.woff" as="font" type="font/woff" crossorigin/> 
+          
+          
           {/* End GTM code snippet */}
         </Head>
         <body>
