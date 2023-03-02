@@ -8,6 +8,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styles from "../comps/hover.module.css";
 import { useState, useRef, useCallback } from "react";
+// import { GetServerSideProps, InferGetServe drSidePropsType } from "next";
 
 import { articles, categories, brands, colors } from "../shared";
 export default function MainPage() {
@@ -61,31 +62,31 @@ export default function MainPage() {
 						autoPlay={true}
 						infiniteLoop
 						emulateTouch
-						renderIndicator={(onClickHandler, isSelected, index, label) => {
-							const defStyle = {
-								marginLeft: 20,
-								backgroundColor: "black",
-								cursor: "pointer",
-								borderRadius: "50%"
-							};
-							const style = isSelected
-								? { ...defStyle, backgroundColor: "lightgray" }
-								: { ...defStyle };
-							return (
-								<span
-									// style={style}
-									onClick={onClickHandler}
-									onKeyDown={onClickHandler}
-									value={index}
-									key={index}
-									role="button"
-									tabIndex={0}
-									aria-label={`${label} ${index + 1}`}
-								>
-									<span className={isDesktop ? styles.dot : styles.dotmobile} style={style}></span>
-								</span>
-							);
-						}}
+						// renderIndicator={(onClickHandler, isSelected, index, label) => {
+						// 	const defStyle = {
+						// 		marginLeft: 20,
+						// 		backgroundColor: "black",
+						// 		cursor: "pointer",
+						// 		borderRadius: "50%"
+						// 	};
+						// 	const style = isSelected
+						// 		? { ...defStyle, backgroundColor: "lightgray" }
+						// 		: { ...defStyle };
+						// 	return (
+						// 		<span
+						// 			// style={style}
+						// 			onClick={onClickHandler}
+						// 			onKeyDown={onClickHandler}
+						// 			value={index}
+						// 			key={index}
+						// 			role="button"
+						// 			tabIndex={0}
+						// 			aria-label={`${label} ${index + 1}`}
+						// 		>
+						// 			<span className={isDesktop ? styles.dot : styles.dotmobile} style={style}></span>
+						// 		</span>
+						// 	);
+						// }}
 						renderArrowPrev={(clickHandler, hasPrev, label) =>
 							isDesktop && (
 								<a
@@ -550,3 +551,17 @@ export default function MainPage() {
 		</Layout>
 	);
 }
+
+
+// export async function getStaticProps({ req, res }) {
+//   res.setHeader(
+//     'Cache-Control',
+//     'public, s-maxage=10, stale-while-revalidate=59'
+//   );
+
+//   return {
+//     // props: {
+//     //   time: new Date().toISOString(),
+//     // },
+//   };
+// }

@@ -16,7 +16,7 @@ var nextConfig = {
   trailingSlash: true,
   headers: [{
     key: 'Cache-Control',
-    value: 'no-cache, max-age=31536000, stale-while-revalidate'
+    value: 'public, max-age=3153600, immutable'
   }]
 };
 module.exports = nextConfig;

@@ -172,14 +172,22 @@ export default function CategoryIdPage(props) {
 						))}
 					</div>
 				</div>
-				<div>
+				<div style={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column', marginBottom: 150}}>
 					<div style={{ fontSize: 22, fontWeight: "500" , marginTop:150}}>
 								한눈에 보는 그랜저 콘텐츠 속 정보  👍
 						</div>
-					<div style={{marginTop:20}}>
+					<div style={{marginTop:40, marginBottom:100 , display:'flex', flexDirection:"row", gap:30}}>
 						<button className={styles.btn}> 디자인 </button> 
+						<button className={styles.btn}> 디자인 </button> 
+						<button className={styles.btn}> 디자인 </button> 
+						<button className={styles.btn}> 디자인 </button> 
+						<button className={styles.btn}> 디자인 </button>
 					</div>
+					<div style={{display:"flex", flexDirection:'row', gap:70}}>
 					<KeywordQuote />
+					<KeywordQuote />
+					<KeywordQuote />
+					</div>
 				</div>
 				<div style={{ width: isDesktop ? 745 : "auto", marginTop: 64 }}>
 					<div style={{ display: "flex", flexDirection: "column", gap: 60 }}>
