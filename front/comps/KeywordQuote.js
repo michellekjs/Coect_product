@@ -35,7 +35,7 @@ export default function KeywordQuote() {
 							"https://yt3.ggpht.com/ytc/AL5GRJWahWOoAeQEIJ25Seu0NJrPEJ-x8JDoNxZdZq6jHg=s88-c-k-c0x00ffffff-no-rj"
 						}
 					/>
-					<Link href={`/article/26/`} style={{fontSize:14,textDecoration:'none', color: '#2B6F7D'}}> 시청하기 </Link>
+					<Link href={`/article/26/`} className={style.link}> 시청하기 </Link>
 				</div>
 			</div>
 	);

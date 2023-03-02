@@ -88,12 +88,12 @@ background-color: 'black'
   text-decoration: none;
   box-sizing: content-box;
   flex-direction:column; 
-  justify-content:'space-between';
+  justify-content:space-between;
   border-left: solid;
   padding-left: 30px;
   border-width: 6px;
   width: 300px;
-  height:100px;
+  height:150px;
   border-left-color: #919191;
 }
 
@@ -108,5 +108,20 @@ background-color: 'black'
   border-left-color:#2B6F7D;
   border-width: 6px;
   width: 300px;
-  height:100px;
+  height:150px;
+}
+
+
+.vl .link {
+  font-size:14px;
+  text-decoration:none; 
+  color: #919191;
+  font-weight:700;
+}
+
+.vl:hover .link {
+  font-size:14px;
+  text-decoration:none; 
+  color: #2B6F7D;
+  font-weight:700;
 }
