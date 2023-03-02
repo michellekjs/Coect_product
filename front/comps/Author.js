@@ -14,8 +14,8 @@ export default function Author(props) {
 		},
 		authorImage: {
 			borderRadius: "50%",
-			width: props.verySmall ? 17 : props.small ? 20 : 30,
-			height: props.verySmall ? 17 : props.small ? 20 : 30,
+			width: props.verySmall ? 17 : props.small ? 20 : 23,
+			height: props.verySmall ? 17 : props.small ? 20 : 23,
 		},
 		authorName: {
 			fontWeight: "400",

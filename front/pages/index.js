@@ -50,7 +50,7 @@ export default function MainPage() {
 				style={{
 					display: "flex",
 					flexDirection: "column",
-					gap: 50,
+					gap: 70,
 					alignItems: "center",
 					width: "100vw",
 				}}
@@ -195,7 +195,7 @@ export default function MainPage() {
 						display: "flex",
 						flexDirection: "column",
 						alignItems: "center",
-						gap: isMobile ? 90 : 180,
+						gap: isMobile ? 90 : 140,
 						maxWidth: 1032,
 					}}
 				>
@@ -234,9 +234,8 @@ export default function MainPage() {
 							gap: isMobile ? 30 : 60,
 						}}
 					>
-						<div style={{ fontSize: 22, fontWeight: 
-						"500" }}>
-							차량 리뷰 찾아보기 🔎
+						<div style={{ fontSize: isMobile ? 20 : 22, fontWeight: "500" }}>
+							제조사별 리뷰영상 찾기 🔎
 						</div>
 						{isDesktop && (
 							<div
@@ -345,7 +344,7 @@ export default function MainPage() {
 								justifyContent: "space-between",
 								width: "100%",
 								flexDirection: isMobile ? "column" : "row",
-								gap: isMobile ? 5 : 16,
+								gap: isMobile ? 5 : 20,
 								fontSize: 22,
 								fontWeight: "500",
 							}}
@@ -354,7 +353,7 @@ export default function MainPage() {
 							isDesktop && <div style={{display:"flex", gap: 10, alignItems:'center'}}>
 								<div style={{display:"flex", gap: 8, alignItems:'center'}}>
 									<span style={{ fontSize: 20 }}>🔥</span>
-									<span style={{ fontSize: 22 }}>요즘 사람들이 주목하는 차량</span>
+									<span style={{ fontSize: 22 }}>사람들이 주목하는 차량</span>
 								</div>
 								<span style={{ color: colors.primary, fontSize: 22 }}>
 									#{hot.model}
@@ -364,10 +363,10 @@ export default function MainPage() {
 						{
 							isMobile && <div style={{display:"flex", gap: 5, alignItems:'center', flexDirection: 'column' }}>
 								<div style={{display:"flex", gap: 8, alignItems:'center'}}>
-									<span style={{ fontSize: 20 }}>🔥</span>
-									<span style={{ fontSize: 22 }}>요즘 사람들이 주목하는 차량</span>
+									<span style={{ fontSize: 18 }}>🔥</span>
+									<span style={{ fontSize: 20 }}>사람들이 주목하는 차량</span>
 								</div>
-								<span style={{ color: colors.primary, fontSize: 22 }}>
+								<span style={{ color: colors.primary, fontSize: 20 }}>
 									#{hot.model}
 								</span>
 							</div>
@@ -424,7 +423,7 @@ export default function MainPage() {
 								display: "flex",
 								alignItems: "center",
 								justifyContent:"center",
-								gap: 14,
+								gap: 6,
 								paddingLeft: isMobile ? 10 : 16,
 								paddingRight: isMobile ? 10 : 16,
 								paddingTop: 10,
@@ -459,7 +458,7 @@ export default function MainPage() {
 							gap: isMobile ? 30 : 60,
 						}}
 					>
-						<div style={{ fontSize: 22, fontWeight: "500" }}>
+						<div style={{ fontSize: isMobile ? 20 : 22, fontWeight: "500" }}>
 							최신 차량 리뷰 콘텐츠
 						</div>
 						{[0, 3].map((i) => (

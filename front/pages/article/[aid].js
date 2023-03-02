@@ -91,10 +91,10 @@ export default function ArticleIdPage(props) {
 			<div
 				style={{
 					maxWidth: 1032,
-					marginTop: isMobile? 40: 72,
+					marginTop: isMobile? 10: 60,
 					display: "flex",
 					flexDirection: "column",
-					gap: 112,
+					gap: 80,
 				}}
 			>
 				<div style={{ margin: isMobile ? "10px" : "0px" }}>
@@ -120,18 +120,15 @@ export default function ArticleIdPage(props) {
 							<Link href={`/brand/${brand.nameEng}?model=${model.name}`} style={{ textDecoration: 'none', color: colors.primary}}>{article.model}</Link>
 						</div>
 						<div style={{ dipslay: "flex", gap: 6 }}>
-							<h1 style={{ fontWeight: 500, fontSize: isMobile ? 24 : 30,
-							margin: 0
-						}}>
-								{article.title}
+							<h1 style={{ fontWeight: 500, fontSize: isMobile ? 20 :28,margin: 0}}>{article.title}
 							</h1>
-							<div style={{ display: "flex", gap: 6, alignItems: "center", marginTop: isMobile? "10px" : "20px" }}>
+							<div style={{ display: "flex", gap: 6, alignItems: "center", marginTop: isMobile? "8px" : "10px" }}>
 								<Author
 									name={article.channelName}
 									image={article.channelImageUrl}
 								/>
-								<span style={{ color: "#919191" }}>|</span>
-								<span style={{ fontSize: 16, color: "#919191" }}>
+								<span style={{color: "#919191" }}>|</span>
+								<span style={{ fontSize: 15, color: "#919191" }}>
 									{article.date.replaceAll("-", ".") + "."}
 								</span>
 							</div>
@@ -219,7 +216,7 @@ export default function ArticleIdPage(props) {
 										}}
 										href="#/"
 										style={{
-											fontSize: isMobile ? 14 : 18,
+											fontSize: isMobile ? 14 : 16,
 											textDecoration: "none",
 											color:
 												currentTime >= s.start &&
@@ -280,7 +277,7 @@ export default function ArticleIdPage(props) {
 										}}
 										href="#/"
 										style={{
-											fontSize: isMobile ? 14 : 18,
+											fontSize: isMobile ? 14 : 16,
 											textDecoration: "none",
 											color:
 												currentTime >= s.start &&
@@ -318,7 +315,7 @@ export default function ArticleIdPage(props) {
 								<tr
 									style={{
 										textAlign: "center",
-										fontSize: isMobile ? 16 : 16,
+										fontSize: isMobile ? 14 : 16,
 										height: "30px",
 									}}
 								>
@@ -450,7 +447,7 @@ export default function ArticleIdPage(props) {
 							marginTop: 112,
 						}}
 					>
-						<div style={{ fontSize: 20, display: "flex", marginLeft: isMobile ? 30 : 0 }}>
+						<div style={{ fontSize: isMobile ? 18: 22, display: "flex", marginLeft: isMobile ? 30 : 0 }}>
 							<span style={{ color: colors.primary }}>{article.brand}</span>
 							&nbsp;
 							<span style={{ color: colors.primary }}>{article.model}</span>
