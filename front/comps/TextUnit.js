@@ -20,7 +20,7 @@ export default function TextUnit(props) {
 			onClick={() => { props.seekTo() }} href="#/"
 			style={{ 
 				display: 'flex', flexDirection: 'column', gap: 12, paddingTop: 16, paddingBottom: 16, paddingLeft: 24, paddignRight: 24, borderRadius: 8,
-				borderColor: '#DBDBDB', borderWidth: 1, 
+				borderColor: '#DBDBDB', borderWidth: 1.2, 
 				borderStyle: props.isPlaying ? 'hidden' : 'solid',
 				background: props.isPlaying ? colors.primaryBG : 'white', 
 				textDecoration: "none", color: "black"
@@ -33,17 +33,17 @@ export default function TextUnit(props) {
 			 }}>
 					{
 						// props.isPlaying ?
-							<Image src={require('../public/imgs/play.svg').default.src} alt="재생 중 아이콘" height={12} width={12}/>
+							<Image src={require('../public/imgs/play.svg').default.src} alt="재생 중 아이콘" height={10} width={10}/>
 							// :
 							// <img src={require('../public/imgs/pause.svg').default.src} alt="일시정지 중 아이콘" style={{ height: 16 }}/>
 					}
 					
-					<span style={{ fontSize: 15, color: props.isPlaying ? 'white' : '#212121' }}>{seconds2timestamp(props.start)}</span>
+					<span style={{ fontSize: isMobile? 12: 14, color: props.isPlaying ? 'white' : '#212121' }}>{seconds2timestamp(props.start)}</span>
 				</div>
-				<span style={{ fontSize: 20, color: '#212121' }}>{props.subject}</span>
+				<span style={{ fontSize: isMobile? 18: 20, color: '#212121' }}>{props.subject}</span>
 			</div>
 
-			<span style={{ fontSize: isMobile? 15: 16, paddingRight:"10px", lineHeight:2 }}>
+			<span style={{ fontSize: isMobile? 14: 16, paddingRight:"10px", lineHeight:2 }}>
 				{props.children}
 			</span>
 		</a>
