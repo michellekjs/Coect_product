@@ -82,3 +82,31 @@ background-color: 'black'
   background-color: #2B6F7D;
   color: white;
 }
+
+.vl {
+  display: flex;
+  text-decoration: none;
+  box-sizing: content-box;
+  flex-direction:column; 
+  justify-content:'space-between';
+  border-left: solid;
+  padding-left: 30px;
+  border-width: 6px;
+  width: 300px;
+  height:100px;
+  border-left-color: #919191;
+}
+
+.vl:hover {
+  display: flex;
+  text-decoration: none;
+  box-sizing: content-box;
+  flex-direction:column; 
+  justify-content:space-between;
+  border-left: solid;
+  padding-left: 30px;
+  border-left-color:#2B6F7D;
+  border-width: 6px;
+  width: 300px;
+  height:100px;
+}

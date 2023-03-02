@@ -8,20 +8,7 @@ import style from "./hover.module.css";
 
 export default function KeywordQuote() {
 	return (
-		<div style={{display:'flex', flexDirection:'row'}}>
-		<div style={{borderLeft: '6px solid #2B6F7D', height:150, left:"50%", marginRight:20 }} />
-			<div
-				style={{
-					display: "flex",
-					width: 250,
-					textDecoration: "none",
-					color: "black",
-					boxSizing: "content-box",
-					flexDirection:'column', 
-					height: 150,
-					justifyContent:'space-between'
-				}}
-			>
+			<div className={style.vl}>
 				<div
 					style={{
 						fontSize: 14,
@@ -51,6 +38,5 @@ export default function KeywordQuote() {
 					<Link href={`/article/26/`} style={{fontSize:14,textDecoration:'none', color: '#2B6F7D'}}> 시청하기 </Link>
 				</div>
 			</div>
-		</div>
 	);
 }

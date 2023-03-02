@@ -172,7 +172,7 @@ export default function CategoryIdPage(props) {
 						))}
 					</div>
 				</div>
-				<div style={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column', marginBottom: 150}}>
+				<div style={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column', marginBottom: 150}} >
 					<div style={{ fontSize: 22, fontWeight: "500" , marginTop:150}}>
 								한눈에 보는 그랜저 콘텐츠 속 정보  👍
 						</div>
