@@ -40,7 +40,7 @@ export default function TextUnit(props) {
 					
 					<span style={{ fontSize: isMobile? 12: 14, color: props.isPlaying ? 'white' : '#212121' }}>{seconds2timestamp(props.start)}</span>
 				</div>
-				<span style={{ fontSize: isMobile? 18: 20, color: '#212121' }}>{props.subject}</span>
+				<span style={{ fontSize: isMobile? 18: 20, color: '#212121' }}>{props.topic}</span>
 			</div>
 
 			<span style={{ fontSize: isMobile? 14: 16, paddingRight:"10px", lineHeight:2 }}>
@@ -48,8 +48,8 @@ export default function TextUnit(props) {
 			</span>
 		</a>
 		// <p style={{ lineHeight: 2 }}>
-		// 	{props.subject && (
-		// 		<b style={{ fontWeight: "bold" }}>{props.subject} </b>
+		// 	{props.topic && (
+		// 		<b style={{ fontWeight: "bold" }}>{props.topic} </b>
 		// 	)}
 		// 	(<a href="#" style={styles.timestamp}>
 		// 		{seconds2timestamp(props.start)}
