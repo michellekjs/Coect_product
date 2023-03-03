@@ -87,7 +87,7 @@ export default function ArticleIdPage(props) {
 
 
 	return (
-		<Layout title={article.title + ' - COECT'} description={`${article.channelName}에서 ${article.brand} ${article.model}의 ${article.summaries.map(_ => _.subject).slice(0,10).join(', ')} 등에 대해 다룹니다.`}>
+		<Layout title={article.title + ' - COECT'} description={`${article.channelName}에서 ${article.brand} ${article.model}의 ${article.summaries.map(_ => _.topic).slice(0,10).join(', ')} 등에 대해 다룹니다.`}>
 			<div
 				style={{
 					maxWidth: 1032,
@@ -227,7 +227,7 @@ export default function ArticleIdPage(props) {
 										}}
 										className={style.chapter}
 									>
-										{i + 1}. {s.subject}
+										{i + 1}. {s.topic}
 									</a>
 								))}
 							</div>
@@ -287,7 +287,7 @@ export default function ArticleIdPage(props) {
 													: colors._300,
 										}}
 									>
-										{i + 1}. {s.subject}
+										{i + 1}. {s.topic}
 									</a>
 								))}
 							</div>
@@ -407,7 +407,7 @@ export default function ArticleIdPage(props) {
 							summary.text ? (
 								<TextUnit
 									key={i}
-									subject={`${i + 1}. ${summary.subject}`}
+									topic={`${i + 1}. ${summary.topic}`}
 									start={summary.start}
 									isPlaying={
 										currentTime >= summary.start &&
