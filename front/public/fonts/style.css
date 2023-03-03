@@ -3,7 +3,8 @@
   src: url('../fonts/SpoqaHanSansNeo-Bold.otf') format("opentype"),
   url('../fonts/SpoqaHanSansNeo-Bold.eot') format("embedded-opentype"),
   url('../fonts/SpoqaHanSansNeo-Bold.woff') format("woff"),
-  url('../fonts/SpoqaHanSansNeo-Bold.woff2')format("woff2");
+  url('../fonts/SpoqaHanSansNeo-Bold.woff2')format("woff2"),
+  url('../fonts/SpoqaHanSansNeo-Bold.ttf')format("ttf");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -13,7 +14,8 @@
   src: url('../fonts/SpoqaHanSansNeo-Light.otf') format("opentype"),
   url('../fonts/SpoqaHanSansNeo-Light.eot') format("embedded-opentype"),
   url('../fonts/SpoqaHanSansNeo-Light.woff') format("woff"),
-  url('../fonts/SpoqaHanSansNeo-Light.woff2') format("woff2");
+  url('../fonts/SpoqaHanSansNeo-Light.woff2') format("woff2"),
+  url('../fonts/SpoqaHanSansNeo-Light.ttf')format("ttf");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -23,7 +25,8 @@
   src: url('../fonts/SpoqaHanSansNeo-Medium.otf') format("opentype"),
   url('../fonts/SpoqaHanSansNeo-Medium.eot') format("embedded-opentype"),
   url('../fonts/SpoqaHanSansNeo-Medium.woff') format("woff"),
-  url('../fonts/SpoqaHanSansNeo-Medium.woff2') format("woff2");
+  url('../fonts/SpoqaHanSansNeo-Medium.woff2') format("woff2"),
+  url('../fonts/SpoqaHanSansNeo-Medium.ttf') format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -33,7 +36,8 @@
   src: url('../fonts/SpoqaHanSansNeo-Regular.otf') format("opentype"),
   url('../fonts/SpoqaHanSansNeo-Regular.eot') format("embedded-opentype"),
   url('../fonts/SpoqaHanSansNeo-Regular.woff') format("woff"),
-  url('../fonts/SpoqaHanSansNeo-Regular.woff2') format("woff2");
+  url('../fonts/SpoqaHanSansNeo-Regular.woff2') format("woff2"),
+  url('../fonts/SpoqaHanSansNeo-Regular.ttf') format("ttf");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -43,7 +47,8 @@
   src: url('../fonts/SpoqaHanSansNeo-Thin.otf') format("opentype"),
   url('../fonts/SpoqaHanSansNeo-Thin.eot') format("embedded-opentype") ,
   url('../fonts/SpoqaHanSansNeo-Thin.woff') format("woff"),
-  url('../fonts/SpoqaHanSansNeo-Thin.woff2') format("woff2");
+  url('../fonts/SpoqaHanSansNeo-Thin.woff2') format("woff2"),
+  url('../fonts/SpoqaHanSansNeo-Thin.ttf') format("ttf");
   font-weight: 100;
   font-style: normal;
   font-display: swap;

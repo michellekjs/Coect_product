@@ -16,26 +16,32 @@ class MyDocument extends Document {
           <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Bold.eot" as="font" type="font/eot" crossorigin/>  
           <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Bold.otf" as="font" type="font/otf" crossorigin/>  
           <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Bold.woff" as="font" type="font/woff" crossorigin/>  
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Bold.ttf" as="font" type="font/ttf" crossorigin/>  
 
           <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Light.woff2" as="font" type="font/woff2" crossorigin /> 
           <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Light.eot" as="font" type="font/eot" crossorigin /> 
           <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Light.otf" as="font" type="font/otf" crossorigin /> 
           <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Light.woff" as="font" type="font/woff" crossorigin/>  
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Light.ttff" as="font" type="font/ttf" crossorigin/>  
 
           <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Medium.woff2" as="font" type="font/woff2" crossorigin /> 
           <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Medium.eot" as="font" type="font/eot" crossorigin/>
           <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Medium.otf" as="font" type="font/otf" crossorigin />
           <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Medium.woff" as="font" type="font/woff" crossorigin/> 
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Medium.ttff" as="font" type="font/ttf" crossorigin/> 
 
           <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Regular.woff2" as="font" type="font/woff2" crossorigin/> 
           <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Regular.eot" as="font" type="font/eot" crossorigin/>
           <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Regular.otf" as="font" type="font/otf" crossorigin/>
           <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Regular.woff" as="font" type="font/woff" crossorigin/>
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Regular.tt" as="font" type="font/ttf" crossorigin/>
+
 
           <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Thin.woff2" as="font" type="font/woff2" crossorigin/> 
           <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Thin.eot" as="font" type="font/eot" crossorigin/> 
           <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Thin.otf" as="font" type="font/otf" crossorigin/> 
           <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Thin.woff" as="font" type="font/woff" crossorigin/> 
+          <link rel="preload" href="../../public/fonts/SpoqaHanSansNeo-Thin.ttf" as="font" type="font/ttf" crossorigin/> 
           
           
           {/* End GTM code snippet */}

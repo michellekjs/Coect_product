@@ -173,7 +173,7 @@ export default function CategoryIdPage(props) {
 						))}
 					</div>
 				</div>
-				{(model == "그랜저" ) &&
+				{/* {(model == "그랜저" ) &&
 				<div style={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column', marginBottom: 150}} >
 					<div style={{ fontSize: 22, fontWeight: "500" , marginTop:150}}>
 								한눈에 보는 그랜저 콘텐츠 속 정보  👍
@@ -191,7 +191,7 @@ export default function CategoryIdPage(props) {
 					<KeywordQuote />
 					</div>
 				</div>
-			}
+			} */}
 				<div style={{ width: isDesktop ? 745 : "auto", marginTop: 64 }}>
 					<div style={{ display: "flex", flexDirection: "column", gap: 60 }}>
 						<div
