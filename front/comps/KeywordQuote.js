@@ -6,7 +6,7 @@ import { colors } from "../shared";
 
 import style from "./hover.module.css";
 
-export default function KeywordQuote() {
+export default function KeywordQuote(props) {
 	return (
 			<div className={style.vl}>
 				<div
@@ -23,9 +23,11 @@ export default function KeywordQuote() {
 						lineHeight:1.5
 					}}
 				>
-					{
-						"내관: IRA 법안에 관해서는 상용차 위주로 보조금을 생각했었는데,  몇가지 조건만 만족시키면 개인들이 구매하는 경우에도 보조금을 주겠다고 말하면서 혜택은 더 받을 수 있을 것으로 보입니다..."
-					}
+					{/* { props.article.summaries.map ((s)=>
+					if (s.subject == props.keyword) {
+						s.text
+					})} */}
+						{props.article.summaries[0].text}
 				</div>
 				<div style={{ display: "flex", flexDirection: "row", justifyContent:"space-between",  }}>
 					<Author

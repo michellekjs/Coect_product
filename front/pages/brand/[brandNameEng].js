@@ -30,9 +30,6 @@ export function getStaticProps({ params }) {
 	};
 }
 
-export function buttonColor(){
-	document.getElementById("button").style.backgroundColor="#2B6F7D"
-}
 
 export default function CategoryIdPage(props) {
 	const isDesktop = useMediaQuery({
@@ -45,6 +42,7 @@ export default function CategoryIdPage(props) {
 	const pageReal = page ? parseInt(page) : 1;
 	const nArticlesInPage = 6;
 	const [resultarticle, setarticle] = useState([]);
+	const [keywordarticle, setkeywordarticle] = useState([]);
 	const [keyword, setkeyword] = useState("공간")
 
 	useEffect(() => {
@@ -54,6 +52,12 @@ export default function CategoryIdPage(props) {
 					article.brand == brand.name && (!model || article.model == model)
 			)
 		);
+		setkeywordarticle(
+			resultarticle.filter((article)=>
+			article.summary.map( (c) => {
+				c.subject == keyword
+			}))
+		)
 	}, [brand, model]);
 
 
@@ -167,17 +171,16 @@ export default function CategoryIdPage(props) {
 								한눈에 보는 그랜저 콘텐츠 속 정보  👍
 						</div>
 					<div style={{marginTop:40, marginBottom:80 , display:'flex', flexDirection:"row", gap:30}}>
-						<button className={styles.btn} id = "button" onClick={setkeyword("공간");buttonColor()}> 공간 </button> 
+						<button className={styles.btn} onClick={()=> {setkeyword("공간")}}> 공간 </button> 
 						<button className={styles.btn} onClick={()=> setkeyword("가격")}> 가격 </button> 
 						<button className={styles.btn} onClick={()=> setkeyword("디자인")}> 디자인 </button> 
 						<button className={styles.btn} onClick={()=> setkeyword("성능")}> 성능 </button> 
 						<button className={styles.btn} onClick={()=> setkeyword("기능")}> 기능 </button>
 					</div>
 					<div style={{display:"flex", flexDirection:'row', gap:70}}>
-					{/* {relatedArticles.current.map((article) => (
+					{resultarticle.map((article) => (
 						<KeywordQuote article={article} keyword={keyword}/>
-
-					))} */}
+					))}
 					</div>
 				</div>
 			}
