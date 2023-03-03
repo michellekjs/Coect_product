@@ -30,22 +30,22 @@ export function getStaticProps({ params }) {
 	};
 }
 
+export function buttonColor(){
+	document.getElementById("button").style.backgroundColor="#2B6F7D"
+}
+
 export default function CategoryIdPage(props) {
 	const isDesktop = useMediaQuery({
 		query: "(min-width: 1045px)",
 	});
 	const isMobile = useMediaQuery({ query: "(max-width: 1045px)" });
-
 	const router = useRouter();
 	const { brandNameEng, page, model } = router.query;
-
 	const brand = brands.find((brand) => brand.nameEng == brandNameEng);
-
 	const pageReal = page ? parseInt(page) : 1;
-
 	const nArticlesInPage = 6;
-
 	const [resultarticle, setarticle] = useState([]);
+	const [keyword, setkeyword] = useState("공간")
 
 	useEffect(() => {
 		setarticle(
@@ -56,18 +56,6 @@ export default function CategoryIdPage(props) {
 		);
 	}, [brand, model]);
 
-	// const buttonClick = (word) => {
-	// 	if (word == true) {
-	// 		setarticle(articlesInBrand);
-	// 	} else {
-	// 		console.log(word);
-	// 		setarticle(
-	// 			articlesInBrand.filter((article) => article.keywords.includes(word))
-	// 		);
-	// 		console.log(resultarticle);
-	// 	}
-	// };
-	// const myLoader = ({})=> `../../public/imgs/models/${brand.name} ${m.name} ${m.submodels[0].name ? m.submodels[0].name + ' ' : ''}(${m.generation}세대).png`
 
 	return (
 		<Layout
@@ -173,25 +161,26 @@ export default function CategoryIdPage(props) {
 						))}
 					</div>
 				</div>
-				{/* {(model == "그랜저" ) &&
+				{(model == "그랜저" ) &&
 				<div style={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column', marginBottom: 150}} >
 					<div style={{ fontSize: 22, fontWeight: "500" , marginTop:150}}>
 								한눈에 보는 그랜저 콘텐츠 속 정보  👍
 						</div>
 					<div style={{marginTop:40, marginBottom:80 , display:'flex', flexDirection:"row", gap:30}}>
-						<button className={styles.btn}> 공간 </button> 
-						<button className={styles.btn}> 가격 </button> 
-						<button className={styles.btn}> 디자인 </button> 
-						<button className={styles.btn}> 성능 </button> 
-						<button className={styles.btn}> 기능 </button>
+						<button className={styles.btn} id = "button" onClick={setkeyword("공간");buttonColor()}> 공간 </button> 
+						<button className={styles.btn} onClick={()=> setkeyword("가격")}> 가격 </button> 
+						<button className={styles.btn} onClick={()=> setkeyword("디자인")}> 디자인 </button> 
+						<button className={styles.btn} onClick={()=> setkeyword("성능")}> 성능 </button> 
+						<button className={styles.btn} onClick={()=> setkeyword("기능")}> 기능 </button>
 					</div>
 					<div style={{display:"flex", flexDirection:'row', gap:70}}>
-					<KeywordQuote />
-					<KeywordQuote />
-					<KeywordQuote />
+					{/* {relatedArticles.current.map((article) => (
+						<KeywordQuote article={article} keyword={keyword}/>
+
+					))} */}
 					</div>
 				</div>
-			} */}
+			}
 				<div style={{ width: isDesktop ? 745 : "auto", marginTop: 64 }}>
 					<div style={{ display: "flex", flexDirection: "column", gap: 60 }}>
 						<div
