@@ -62,6 +62,7 @@ export default function MainPage() {
 						autoPlay={true}
 						infiniteLoop
 						emulateTouch
+						showThumbs={false}
 						// renderIndicator={(onClickHandler, isSelected, index, label) => {
 						// 	const defStyle = {
 						// 		marginLeft: 20,
