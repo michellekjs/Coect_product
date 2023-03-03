@@ -14,6 +14,7 @@ import styles from "../../comps/hover.module.css";
 import ArticleSummaryToday from "../../comps/ArticleSummaryToday";
 
 import { brands, articles, colors } from "../../shared";
+
 export function getStaticPaths() {
 	return {
 		paths: brands.map((brand, i) => ({
@@ -172,16 +173,17 @@ export default function CategoryIdPage(props) {
 						))}
 					</div>
 				</div>
+				{(model == "그랜저" ) &&
 				<div style={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column', marginBottom: 150}} >
 					<div style={{ fontSize: 22, fontWeight: "500" , marginTop:150}}>
 								한눈에 보는 그랜저 콘텐츠 속 정보  👍
 						</div>
-					<div style={{marginTop:40, marginBottom:100 , display:'flex', flexDirection:"row", gap:30}}>
+					<div style={{marginTop:40, marginBottom:80 , display:'flex', flexDirection:"row", gap:30}}>
+						<button className={styles.btn}> 공간 </button> 
+						<button className={styles.btn}> 가격 </button> 
 						<button className={styles.btn}> 디자인 </button> 
-						<button className={styles.btn}> 디자인 </button> 
-						<button className={styles.btn}> 디자인 </button> 
-						<button className={styles.btn}> 디자인 </button> 
-						<button className={styles.btn}> 디자인 </button>
+						<button className={styles.btn}> 성능 </button> 
+						<button className={styles.btn}> 기능 </button>
 					</div>
 					<div style={{display:"flex", flexDirection:'row', gap:70}}>
 					<KeywordQuote />
@@ -189,6 +191,7 @@ export default function CategoryIdPage(props) {
 					<KeywordQuote />
 					</div>
 				</div>
+			}
 				<div style={{ width: isDesktop ? 745 : "auto", marginTop: 64 }}>
 					<div style={{ display: "flex", flexDirection: "column", gap: 60 }}>
 						<div
