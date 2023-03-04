@@ -2,11 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 import Author from "./Author";
 import { useMediaQuery } from "react-responsive";
+import React, { useState } from "react";
 import { colors } from "../shared";
 
 import style from "./hover.module.css";
 
 export default function KeywordQuote(props) {
+	const [selected, setSelected] = useState({summaries:[], channelImageUrl:"", channelId:"", videoId:""})
+
+	// console.log(props.article)
 	return (
 			<div className={style.vl}>
 				<div
@@ -23,19 +27,16 @@ export default function KeywordQuote(props) {
 						lineHeight:1.5
 					}}
 				>
-					{/* { props.article.summaries.map ((s)=>
-					if (s.subject == props.keyword) {
-						s.text
-					})} */}
-						{props.article.summaries[0].text}
+					{ props.article.summaries.filter (
+						(s)=> (s.subject === props.keyword))[0].text
+					}
+						{/* {props.article.summaries[0].text} */}
 				</div>
-				<div style={{ display: "flex", flexDirection: "row", justifyContent:"space-between",  }}>
+				<div style={{ display: "flex", flexDirection: "row", justifyContent:"space-between" }}>
 					<Author
 						verySmall
-						name={"모트라인 MOTLine"}
-						image={
-							"https://yt3.ggpht.com/ytc/AL5GRJWahWOoAeQEIJ25Seu0NJrPEJ-x8JDoNxZdZq6jHg=s88-c-k-c0x00ffffff-no-rj"
-						}
+						name={props.article.channelName}
+						image={props.article.channelImageUrl}
 					/>
 					<Link href={`/article/26/`} className={style.link}> 시청하기 </Link>
 				</div>
