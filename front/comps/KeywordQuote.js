@@ -7,12 +7,17 @@ import { colors } from "../shared";
 
 import style from "./hover.module.css";
 
+
 export default function KeywordQuote(props) {
 	const [selected, setSelected] = useState({summaries:[], channelImageUrl:"", channelId:"", videoId:""})
 
-	// console.log(props.article)
+	const isDesktop = useMediaQuery({
+		query: "(min-width: 1045px)",
+	});
+	const isMobile = useMediaQuery({ query: "(max-width: 1045px)" });
+
 	return (
-			<div className={style.vl}>
+			<div className={style.vl} style={{  width:  isMobile ? 200:280, height: isMobile ? 100 :150, paddingLeft: isMobile ? 10 : 30}}>
 				<div
 					style={{
 						fontSize: 14,
@@ -20,7 +25,7 @@ export default function KeywordQuote(props) {
 						whiteSpace:'normal',
 						display: "-webkit-box",
 						WebkitBoxOrient: "vertical",
-						WebkitLineClamp: 5,
+						WebkitLineClamp: isMobile ? 3  : 5,
 						overflow: "hidden",
 						textOverflow: "ellipsis",
 						wordBreak:"break-all",
@@ -38,7 +43,7 @@ export default function KeywordQuote(props) {
 						name={props.article.channelName}
 						image={props.article.channelImageUrl}
 					/>
-					<Link href={`/article/26/`} className={style.link}> 시청하기 </Link>
+					<Link href={`/article/${props.article.article_id}/`} className={style.link}> 시청하기 </Link>
 				</div>
 			</div>
 	);

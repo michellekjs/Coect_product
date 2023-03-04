@@ -13,7 +13,7 @@ import styles from "../../comps/hover.module.css";
 
 import ArticleSummaryToday from "../../comps/ArticleSummaryToday";
 
-import { brands, articles, colors } from "../../shared";
+import { brands, articles, colors, subjects } from "../../shared";
 
 export function getStaticPaths() {
 	return {
@@ -175,23 +175,26 @@ export default function CategoryIdPage(props) {
 							justifyContent: "center",
 							alignItems: "center",
 							flexDirection: "column",
-							marginBottom: 150,
+							marginBottom: isMobile ? 80 :150,
 						}}
 					>
-						<div style={{ fontSize: 22, fontWeight: "500", marginTop: 150 }}>
+						<div style={{ fontSize: isMobile ? 18 : 22, fontWeight: "500", marginTop: isMobile ? 80 :150 }}>
 							한눈에 보는 그랜저 콘텐츠 속 정보 👍
 						</div>
+						<div style={{display: 'flex', flexDirection: isMobile ? "row" : "column",display: "flex",justifyContent: "space-between",alignItems: "center", gap:20 }}>
 						<div
 							style={{
 								marginTop: 40,
 								marginBottom: 80,
-								display: "flex",
-								flexDirection: "row",
-								gap: 30,
+								display: "flex",justifyContent: "center",
+								alignItems: "center",
+								flexDirection: isMobile ? "column" : "row",
+								gap: isMobile ? 10 :30,
 							}}
 						>
 							<button
 								className={styles.btn}
+								style={{ width : isMobile ? 110 : 120 }}
 								onClick={() => {
 									setkeyword("공간");
 								}}
@@ -199,35 +202,35 @@ export default function CategoryIdPage(props) {
 								{" "}
 								공간{" "}
 							</button>
-							<button className={styles.btn} onClick={() => setkeyword("가격")}>
-								{" "}
+							<button className={styles.btn}  style={{ width : isMobile ? 110 : 120 }}onClick={() => setkeyword("가격")}>
+								{""}
 								가격{" "}
 							</button>
 							<button
-								className={styles.btn}
+								className={styles.btn}style={{ width : isMobile ? 110 : 120 }}
 								onClick={() => setkeyword("디자인")}
 							>
 								{" "}
 								디자인{" "}
 							</button>
-							<button className={styles.btn} onClick={() => setkeyword("성능")}>
+							<button className={styles.btn} style={{ width : isMobile ? 110 : 120 }}onClick={() => setkeyword("성능")}>
 								{" "}
 								성능{" "}
 							</button>
-							<button className={styles.btn} onClick={() => setkeyword("기능")}>
+							<button className={styles.btn}style={{ width : isMobile ? 110 : 120 }} onClick={() => setkeyword("기능")}>
 								{" "}
 								기능{" "}
 							</button>
 						</div>
-						<div style={{ display: "flex", flexDirection: "row", gap: 70 }}>
+						<div style={{ display: "flex", flexDirection: isMobile ? "column":"row", gap: isMobile ? 30 :70 }}>
 							{resultarticle.filter(
 								(r)=> ((r.summaries.filter(
 									(a)=>(a.subject === keyword))).length>0)).map((article)=> (
 									<KeywordQuote article={article} keyword={keyword} />
 								))
-							
-								.slice(0, 3)}
+								.slice(0, isMobile? 2 : 3 )}
 						</div>
+					</div>
 					</div>
 				)}
 				<div style={{ width: isDesktop ? 745 : "auto", marginTop: 64 }}>
