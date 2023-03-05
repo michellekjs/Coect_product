@@ -51,6 +51,7 @@ export default function KeywordQuote(props) {
 				height: 150,
 				paddingLeft: 10 ,
 				
+				
 			}}
 		>
 		<div style={{display:"flex", flexDirection:"row"}}>

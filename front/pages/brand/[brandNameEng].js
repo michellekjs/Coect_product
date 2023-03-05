@@ -43,7 +43,7 @@ export default function CategoryIdPage(props) {
 	const nArticlesInPage = 6;
 	const [resultarticle, setarticle] = useState([]);
 	const [keywordarticle, setkeywordarticle] = useState([]);
-	const [keyword, setkeyword] = useState("공간");
+	const [keyword, setkeyword] = useState("");
 
 	useEffect(() => {
 		setarticle(
@@ -54,7 +54,7 @@ export default function CategoryIdPage(props) {
 		);
 
 		setkeywordarticle(
-			articles.filter(
+			(model == "" || keyword=="") ? "" : articles.filter(
 				(article) =>
 					article.brand == brand.name &&
 					(!model || article.model == model) &&
@@ -139,6 +139,8 @@ export default function CategoryIdPage(props) {
 									`/brand/${brand.nameEng}` +
 									(model == m.name ? "" : `?model=${m.name}`)
 								}
+								onClick={()=>setkeyword("")}
+								// onClick={() => setarticle("")}
 								style={{
 									display: "flex",
 									flexDirection: "column",
@@ -169,13 +171,14 @@ export default function CategoryIdPage(props) {
 						))}
 					</div>
 				</div>
+				{ model && 
 				<div
 					style={{
 						display: "flex",
 						justifyContent: "center",
 						alignItems: "center",
 						flexDirection: "column",
-						marginBottom: isMobile ? 80 : 150,
+						marginBottom: 40,
 					}}
 				>
 					<div
@@ -185,7 +188,7 @@ export default function CategoryIdPage(props) {
 							marginTop: isMobile ? 80 : 120,
 						}}
 					>
-						한눈에 보는 그랜저 콘텐츠 속 정보 👍
+						한눈에 보는 {model} 콘텐츠 속 정보 👍
 					</div>
 					<div
 						style={{
@@ -305,12 +308,14 @@ export default function CategoryIdPage(props) {
 					</div>
 					</div>
 				</div>
+}
 				<div style={{ width: isDesktop ? 745 : "auto"}}>
 					<div style={{ display: "flex", flexDirection: "column", gap: 60 }}>
 						<div
 							style={{
 								fontSize: isMobile ? 20 : 22,
 								fontWeight: 500,
+							marginTop:80,
 								// marginLeft: "10%"
 							}}
 						>
