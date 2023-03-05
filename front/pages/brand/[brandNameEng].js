@@ -35,6 +35,7 @@ export default function CategoryIdPage(props) {
 		query: "(min-width: 1045px)",
 	});
 	const isMobile = useMediaQuery({ query: "(max-width: 1045px)" });
+	const keywords = ["공간", "가격", "디자인", "성능", "기능"];
 	const router = useRouter();
 	const { brandNameEng, page, model } = router.query;
 	const brand = brands.find((brand) => brand.nameEng == brandNameEng);
@@ -53,14 +54,14 @@ export default function CategoryIdPage(props) {
 		);
 
 		setkeywordarticle(
-			articles
-				.filter(
-					(article) =>
-						article.brand == brand.name && (!model || article.model == model) && (article.summaries.filter((s) => s.subject == keyword).length > 0	)	
-				)
+			articles.filter(
+				(article) =>
+					article.brand == brand.name &&
+					(!model || article.model == model) &&
+					article.summaries.filter((s) => s.subject == keyword).length > 0
+			)
 		);
 	}, [brand, model]);
-
 
 	return (
 		<Layout
@@ -168,71 +169,141 @@ export default function CategoryIdPage(props) {
 						))}
 					</div>
 				</div>
-				{model == "그랜저" && (
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						flexDirection: "column",
+						marginBottom: isMobile ? 80 : 150,
+					}}
+				>
+					<div
+						style={{
+							fontSize: isMobile ? 18 : 22,
+							fontWeight: "500",
+							marginTop: isMobile ? 80 : 150,
+						}}
+					>
+						한눈에 보는 그랜저 콘텐츠 속 정보 👍
+					</div>
 					<div
 						style={{
 							display: "flex",
-							justifyContent: "center",
-							alignItems: "center",
 							flexDirection: "column",
-							marginBottom: isMobile ? 80 :150,
+							display: "flex",
+							justifyContent: "space-between",
+							alignItems: "center",
+							gap: 20,
 						}}
 					>
-						<div style={{ fontSize: isMobile ? 18 : 22, fontWeight: "500", marginTop: isMobile ? 80 :150 }}>
-							한눈에 보는 그랜저 콘텐츠 속 정보 👍
-						</div>
-						<div style={{display: 'flex', flexDirection: isMobile ? "row" : "column",display: "flex",justifyContent: "space-between",alignItems: "center", gap:20 }}>
+						{" "}
 						<div
 							style={{
 								marginTop: 40,
-								marginBottom: 80,
-								display: "flex",justifyContent: "center",
+								marginBottom: 40,
+								display: "flex",
+								justifyContent: "center",
 								alignItems: "center",
-								flexDirection: isMobile ? "column" : "row",
-								gap: isMobile ? 10 :30,
+								flexDirection: "row",
+								gap: isMobile ? 10 : 30,
 							}}
 						>
-							<button
-								className={styles.btn}
-								style={{ width : isMobile ? 110 : 120 }}
-								onClick={() => {
-									setkeyword("공간");
-								}}
-							>
-								{" "}
-								공간{" "}
-							</button>
-							<button className={styles.btn}  style={{ width : isMobile ? 110 : 120 }}onClick={() => setkeyword("가격")}>
-								{""}
-								가격{" "}
-							</button>
-							<button
-								className={styles.btn}style={{ width : isMobile ? 110 : 120 }}
-								onClick={() => setkeyword("디자인")}
-							>
-								{" "}
-								디자인{" "}
-							</button>
-							<button className={styles.btn} style={{ width : isMobile ? 110 : 120 }}onClick={() => setkeyword("성능")}>
-								{" "}
-								성능{" "}
-							</button>
-							<button className={styles.btn}style={{ width : isMobile ? 110 : 120 }} onClick={() => setkeyword("기능")}>
-								{" "}
-								기능{" "}
-							</button>
-						</div>
-						<div style={{ display: "flex", flexDirection: isMobile ? "column":"row", gap: isMobile ? 30 :70 }}>
-							{resultarticle.filter(
-								(r)=> ((r.summaries.filter(
-									(a)=>(a.subject === keyword))).length>0)).map((article)=> (
-									<KeywordQuote article={article} keyword={keyword} />
+							{isDesktop &&
+								keywords.map((word) => (
+									<button
+										className={styles.btn}
+										style={{ width: 120 }}
+										onClick={() => {
+											setkeyword(word);
+										}}
+									>
+										{word}
+									</button>
 								))
-								.slice(0, isMobile? 2 : 3 )}
+							}
+
+							{isMobile && (
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										alignItems: "center",
+										gap: 10,
+									}}
+								>
+									<div
+										style={{ display: "flex", flexDirection: "row", gap: 10 }}
+									>
+										{keywords.slice(0, 2).map((word) => (
+											<button
+												className={styles.btn}
+												style={{ width: 100, fontSize: 14 }}
+												onClick={() => {
+													setkeyword(word);
+												}}
+											>
+												{word}
+											</button>
+										))
+										}
+									</div>
+									<div
+										style={{ display: "flex", flexDirection: "row", gap: 10 }}
+									>
+										{keywords.slice(2, 5).map((word) => (
+											<button
+												className={styles.btn}
+												style={{ width: 100, fontSize: 14 }}
+												onClick={() => {
+													setkeyword(word);
+												}}
+											>
+												{word}
+											</button>
+										))}
+									</div>
+								</div>
+							)
+						}
 						</div>
+						<div
+							style={{
+								display: "flex",
+								width: 1000,
+								// height: 200,
+								justifyContent:"center",
+							}}
+						>
+						<div style={{display:"flex", width:"100%", justifyContent:"center",}}>
+							<div
+								style={{
+									display: "flex",
+									flexDirection: "row",
+									gap: 80,
+									justifyContent: "flex-start",
+									overflowX: "scroll",
+									width: "wrap-content",
+									paddingLeft: 30,
+									paddingRight: 30,
+								}}
+								className={styles.scroll}
+							>
+								{resultarticle
+									.filter(
+										(r) =>
+											r.summaries.filter((a) => a.subject === keyword).length >
+											0
+									)
+									.map((article) => (
+										<KeywordQuote article={article} keyword={keyword}/>
+									))
+									.slice(0, 3)}
+							</div>
+						</div >
 					</div>
 					</div>
-				)}
+				</div>
 				<div style={{ width: isDesktop ? 745 : "auto", marginTop: 64 }}>
 					<div style={{ display: "flex", flexDirection: "column", gap: 60 }}>
 						<div

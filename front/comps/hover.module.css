@@ -68,7 +68,7 @@ background-color: 'black'
   border: 2px solid #2B6F7D;
   color :#2B6F7D;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 30px;
   padding: 14px 28px;
   font-size: 16px;
   cursor: pointer;
@@ -122,3 +122,12 @@ background-color: 'black'
   color: #2B6F7D;
   font-weight:700;
 }
+
+.vl .quote {
+
+}
+
+.vl:hover .quote {
+  filter: invert(32%) sepia(74%) saturate(384%) hue-rotate(143deg) brightness(98%) contrast(87%);
+}
+
