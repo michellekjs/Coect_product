@@ -83,14 +83,15 @@ background-color: 'black'
 }
 
 .vl {
+  width: 260px;
   display: flex;
   text-decoration: none;
-  box-sizing: content-box;
+  box-sizing: border-box;
   flex-direction:column; 
   justify-content:space-between;
   border-left: solid;
-  padding-left: 30px;
-  border-width: 6px;
+  padding-left: 10px;
+  border-width: 4px;
   border-left-color: #919191;
 }
 
