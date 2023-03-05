@@ -46,6 +46,7 @@ export default function KeywordQuote(props) {
 				width: 260,
 				height: 200,
 				paddingLeft: isMobile ? 10 : 30,
+				
 			}}
 		>
 			<Image
@@ -68,6 +69,7 @@ export default function KeywordQuote(props) {
 					textOverflow: "ellipsis",
 					wordBreak: "break-all",
 					lineHeight: 1.5,
+					fontWeight: '400'
 				}}
 			>
 			<span style={{color: "#2B6F7D", fontWeight:"700"}}> {props.keyword == "any" ? "" : props.keyword +"  |"} </span>
