@@ -147,7 +147,7 @@ export default function Layout({ title, description, children }) {
 						</div>
 					}
 					<div style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: isMobile? 16 : 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box', width: '100%', alignItems:'center', position:'sticky', top: 0, zIndex:10, backdropFilter: 'blur(8px)',backgroundColor: isMobile ? 'white' : 'rgba(255, 255, 255, 0.8)', }}>
-						<div style={{ display: 'flex', flexDirection: 'row', gap: 32 }}>
+						<div style={{ display: 'flex', flexDirection: 'row', gap: 32, alignItems: 'center' }}>
 							<Link href="/" style={{ display: 'flex', gap: 6, alignItems: 'baseline', textDecoration: 'none' }}>
 								<Image 
 									src={Logo}
@@ -157,10 +157,11 @@ export default function Layout({ title, description, children }) {
 									height = {44}
 								/>
 							</Link>
-							<div>
+						{
+							isBigScreen && <div>
 								<div style={{ 
 									width: 300,
-									height: 32,
+									// height: 32,
 									display: "flex",
 									// justifyContent: "space-between",
 									alignItems: "center",
@@ -168,6 +169,8 @@ export default function Layout({ title, description, children }) {
 									borderRadius: 5,
 									position: 'relative',
 									backgroundColor: 'white',
+									paddingTop: 8,
+									paddingBottom: 8,
 								}}>
 									<Image src={require('../public/imgs/search.svg')} width={20} height={20} style={{ marginLeft: 12, marginRight: 8}}/>
 									<input
@@ -251,6 +254,7 @@ export default function Layout({ title, description, children }) {
 								)}
 								</div>
 							</div>
+						}
 						</div>
 						{isBigScreen && <div style={{display:'flex', flexDirection: 'row', gap: 10 }}>
 							{brands.map((brand, index) => {
