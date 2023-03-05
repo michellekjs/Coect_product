@@ -490,7 +490,7 @@ export default function MainPage() {
 							{/*  */}{" "}
 						</div>
 						<div style={{display:"flex", width:"100%", justifyContent:"center",boxSizing: "content-box",alignItems:"center"}}>
-						<div style={{display:"flex", flexDirection:"row", width: isMobile? "100vw" : "100%", justifyContent: isMobile? "flex-start" : "space-between", marginTop:60, overflowX:"scroll", boxSizing:"border-box", gap:isMobile? 50: 0}}>
+						<div style={{display:"flex", flexDirection:"row", width: isMobile? "100vw" : "100%", justifyContent: isMobile? "flex-start" : "space-between", marginTop:60, overflowX:"scroll", boxSizing:"border-box", gap:isMobile? 50: 0}}className={styles.scroll}>
 
 						{randarr.map((n) => <KeywordQuote keyword={"any"} article={hot.articles[Math.floor(Math.random()*hot.articles.length)]}/>)}
 						
