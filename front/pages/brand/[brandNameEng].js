@@ -13,7 +13,7 @@ import styles from "../../comps/hover.module.css";
 
 import ArticleSummaryToday from "../../comps/ArticleSummaryToday";
 
-import { brands, articles, colors } from "../../shared";
+import { brands, articles, colors, subjects } from "../../shared";
 
 export function getStaticPaths() {
 	return {
@@ -35,17 +35,14 @@ export default function CategoryIdPage(props) {
 		query: "(min-width: 1045px)",
 	});
 	const isMobile = useMediaQuery({ query: "(max-width: 1045px)" });
-
 	const router = useRouter();
 	const { brandNameEng, page, model } = router.query;
-
 	const brand = brands.find((brand) => brand.nameEng == brandNameEng);
-
 	const pageReal = page ? parseInt(page) : 1;
-
 	const nArticlesInPage = 6;
-
 	const [resultarticle, setarticle] = useState([]);
+	const [keywordarticle, setkeywordarticle] = useState([]);
+	const [keyword, setkeyword] = useState("공간");
 
 	useEffect(() => {
 		setarticle(
@@ -54,20 +51,16 @@ export default function CategoryIdPage(props) {
 					article.brand == brand.name && (!model || article.model == model)
 			)
 		);
+
+		setkeywordarticle(
+			articles
+				.filter(
+					(article) =>
+						article.brand == brand.name && (!model || article.model == model) && (article.summaries.filter((s) => s.subject == keyword).length > 0	)	
+				)
+		);
 	}, [brand, model]);
 
-	// const buttonClick = (word) => {
-	// 	if (word == true) {
-	// 		setarticle(articlesInBrand);
-	// 	} else {
-	// 		console.log(word);
-	// 		setarticle(
-	// 			articlesInBrand.filter((article) => article.keywords.includes(word))
-	// 		);
-	// 		console.log(resultarticle);
-	// 	}
-	// };
-	// const myLoader = ({})=> `../../public/imgs/models/${brand.name} ${m.name} ${m.submodels[0].name ? m.submodels[0].name + ' ' : ''}(${m.generation}세대).png`
 
 	return (
 		<Layout
@@ -160,9 +153,11 @@ export default function CategoryIdPage(props) {
 							>
 								<img
 									// loader={myLoader}
-									src={require(`../../public/imgs/models/${brand.name} ${m.name} ${
-										m.submodels[0].name ? m.submodels[0].name + " " : ""
-									}(${m.generation}세대).png`).default.src}
+									src={
+										require(`../../public/imgs/models/${brand.name} ${m.name} ${
+											m.submodels[0].name ? m.submodels[0].name + " " : ""
+										}(${m.generation}세대).png`).default.src
+									}
 									width={model == m.name ? 210 : 170}
 									// height={100}
 									alt="자동차 이미지"
@@ -173,25 +168,71 @@ export default function CategoryIdPage(props) {
 						))}
 					</div>
 				</div>
-				{/* {(model == "그랜저" ) &&
-				<div style={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column', marginBottom: 150}} >
-					<div style={{ fontSize: 22, fontWeight: "500" , marginTop:150}}>
-								한눈에 보는 그랜저 콘텐츠 속 정보  👍
+				{model == "그랜저" && (
+					<div
+						style={{
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center",
+							flexDirection: "column",
+							marginBottom: isMobile ? 80 :150,
+						}}
+					>
+						<div style={{ fontSize: isMobile ? 18 : 22, fontWeight: "500", marginTop: isMobile ? 80 :150 }}>
+							한눈에 보는 그랜저 콘텐츠 속 정보 👍
 						</div>
-					<div style={{marginTop:40, marginBottom:80 , display:'flex', flexDirection:"row", gap:30}}>
-						<button className={styles.btn}> 공간 </button> 
-						<button className={styles.btn}> 가격 </button> 
-						<button className={styles.btn}> 디자인 </button> 
-						<button className={styles.btn}> 성능 </button> 
-						<button className={styles.btn}> 기능 </button>
+						<div style={{display: 'flex', flexDirection: isMobile ? "row" : "column",display: "flex",justifyContent: "space-between",alignItems: "center", gap:20 }}>
+						<div
+							style={{
+								marginTop: 40,
+								marginBottom: 80,
+								display: "flex",justifyContent: "center",
+								alignItems: "center",
+								flexDirection: isMobile ? "column" : "row",
+								gap: isMobile ? 10 :30,
+							}}
+						>
+							<button
+								className={styles.btn}
+								style={{ width : isMobile ? 110 : 120 }}
+								onClick={() => {
+									setkeyword("공간");
+								}}
+							>
+								{" "}
+								공간{" "}
+							</button>
+							<button className={styles.btn}  style={{ width : isMobile ? 110 : 120 }}onClick={() => setkeyword("가격")}>
+								{""}
+								가격{" "}
+							</button>
+							<button
+								className={styles.btn}style={{ width : isMobile ? 110 : 120 }}
+								onClick={() => setkeyword("디자인")}
+							>
+								{" "}
+								디자인{" "}
+							</button>
+							<button className={styles.btn} style={{ width : isMobile ? 110 : 120 }}onClick={() => setkeyword("성능")}>
+								{" "}
+								성능{" "}
+							</button>
+							<button className={styles.btn}style={{ width : isMobile ? 110 : 120 }} onClick={() => setkeyword("기능")}>
+								{" "}
+								기능{" "}
+							</button>
+						</div>
+						<div style={{ display: "flex", flexDirection: isMobile ? "column":"row", gap: isMobile ? 30 :70 }}>
+							{resultarticle.filter(
+								(r)=> ((r.summaries.filter(
+									(a)=>(a.subject === keyword))).length>0)).map((article)=> (
+									<KeywordQuote article={article} keyword={keyword} />
+								))
+								.slice(0, isMobile? 2 : 3 )}
+						</div>
 					</div>
-					<div style={{display:"flex", flexDirection:'row', gap:70}}>
-					<KeywordQuote />
-					<KeywordQuote />
-					<KeywordQuote />
 					</div>
-				</div>
-			} */}
+				)}
 				<div style={{ width: isDesktop ? 745 : "auto", marginTop: 64 }}>
 					<div style={{ display: "flex", flexDirection: "column", gap: 60 }}>
 						<div

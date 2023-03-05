@@ -72,10 +72,9 @@ background-color: 'black'
   padding: 14px 28px;
   font-size: 16px;
   cursor: pointer;
-  width: 140px;
-  height: 40px;
-  cursor: pointer;
-
+  width: 120px;
+  height: 30px;
+  cursor: pointer; 
 }
 
 .btn:hover {
@@ -92,8 +91,6 @@ background-color: 'black'
   border-left: solid;
   padding-left: 30px;
   border-width: 6px;
-  width: 300px;
-  height:150px;
   border-left-color: #919191;
 }
 
