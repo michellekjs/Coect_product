@@ -305,7 +305,7 @@ export default function CategoryIdPage(props) {
 					</div>
 					</div>
 				</div>
-				<div style={{ width: isDesktop ? 745 : "auto", marginTop: 64 }}>
+				<div style={{ width: isDesktop ? 745 : "auto"}}>
 					<div style={{ display: "flex", flexDirection: "column", gap: 60 }}>
 						<div
 							style={{

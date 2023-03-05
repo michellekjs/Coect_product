@@ -11,6 +11,7 @@ export default function Author(props) {
 			display: "flex",
 			alignItems: "center",
 			gap: props.verySmall ? 6 : props.small ? 4 : 6,
+			width: props.verySmall ? 150 : ""
 		},
 		authorImage: {
 			borderRadius: "50%",

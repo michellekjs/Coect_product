@@ -45,17 +45,19 @@ export default function KeywordQuote(props) {
 			style={{
 				boxSizing: "content-box",
 				width: 260,
-				height: 200,
-				paddingLeft: isMobile ? 10 : 30,
+				height: 150,
+				paddingLeft: 10 ,
 				
 			}}
 		>
+		<div style={{display:"flex", flexDirection:"row"}}>
 			<Image
 				src={require("../public/imgs/start-quote.svg")}
-				width={20}
-				height={20}
+				width={10}
+				height={10}
 				alt="quote"
 				className={style.quote}
+				style={{marginRight:10}}
 			/>
 			<div
 				style={{
@@ -77,16 +79,7 @@ export default function KeywordQuote(props) {
 			<span>{quote} </span>
 			
 			</div>
-			<div
-				style={{ display: "flex", justifyContent: "flex-end", width: "100%" }}
-			>
-				<Image
-					src={require("../public/imgs/close-quote.svg")}
-					width={20}
-					height={20}
-					alt="quote"
-					className={style.quote}
-				/>
+
 			</div>
 			<div
 				style={{
