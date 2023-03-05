@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Author from "./Author";
 import { useMediaQuery } from "react-responsive";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { colors } from "../shared";
 
 import style from "./hover.module.css";
@@ -17,16 +17,33 @@ export default function KeywordQuote(props) {
 		videoId: "",
 	});
 
+	const [quote, setquote] = useState("");
+
+
+
+	useEffect(() => {
+		if (props.keyword === "any") {
+		setquote(props.article.summaries[Math.floor(Math.random()*props.article.summaries.length)].text)
+	} else {
+		setquote(
+			props.article.summaries.filter((s) => s.subject === props.keyword)[0].text
+		);
+	}
+
+	}, []);
+
 	const isDesktop = useMediaQuery({
 		query: "(min-width: 1045px)",
 	});
 	const isMobile = useMediaQuery({ query: "(max-width: 1045px)" });
-	console.log(props.article)
+	const keywords = ["공간", "가격", "디자인", "성능", "기능"];
+	// console.log(props.article)
 	return (
 		<div
 			className={style.vl}
 			style={{
-				width: 280,
+				boxSizing: "content-box",
+				width: 260,
 				height: 200,
 				paddingLeft: isMobile ? 10 : 30,
 			}}
@@ -40,7 +57,7 @@ export default function KeywordQuote(props) {
 			/>
 			<div
 				style={{
-					boxSizing: "border-box",
+					width: isMobile ? 200 : 260,
 					fontSize: 14,
 					fontWeight: 200,
 					whiteSpace: "normal",
@@ -53,27 +70,27 @@ export default function KeywordQuote(props) {
 					lineHeight: 1.5,
 				}}
 			>
-				{
-					props.article.summaries.filter((s) => s.subject === props.keyword)[0]
-						.text
-				}
-				{/* {props.article.summaries[0].text} */}
+			<span style={{color: "#2B6F7D", fontWeight:"700"}}> {props.keyword == "any" ? "" : props.keyword +"  |"} </span>
+			<span>{quote} </span>
+			
 			</div>
-			<div style={{display:'flex', justifyContent:'flex-end', width:"100%"}} >
-			<Image 
-				src={require("../public/imgs/close-quote.svg")}
-				width={20}
-				height={20}
-				alt="quote"
-				className={style.quote}
-			/>
+			<div
+				style={{ display: "flex", justifyContent: "flex-end", width: "100%" }}
+			>
+				<Image
+					src={require("../public/imgs/close-quote.svg")}
+					width={20}
+					height={20}
+					alt="quote"
+					className={style.quote}
+				/>
 			</div>
 			<div
 				style={{
 					display: "flex",
 					flexDirection: "row",
 					justifyContent: "space-between",
-					marginTop:20
+					marginTop: 20,
 				}}
 			>
 				<Author
@@ -84,7 +101,6 @@ export default function KeywordQuote(props) {
 				<Link
 					href={`/article/${props.article.article_id}/`}
 					className={style.link}
-
 				>
 					{" "}
 					시청하기{" "}

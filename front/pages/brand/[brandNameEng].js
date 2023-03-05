@@ -270,12 +270,12 @@ export default function CategoryIdPage(props) {
 						<div
 							style={{
 								display: "flex",
-								width: 1000,
+								width: "100%",
 								// height: 200,
 								justifyContent:"center",
 							}}
 						>
-						<div style={{display:"flex", width:"100%", justifyContent:"center",}}>
+						<div style={{display:"flex", width:"100vw", justifyContent:"center",boxSizing: "content-box",}}>
 							<div
 								style={{
 									display: "flex",
@@ -286,6 +286,7 @@ export default function CategoryIdPage(props) {
 									width: "wrap-content",
 									paddingLeft: 30,
 									paddingRight: 30,
+									
 								}}
 								className={styles.scroll}
 							>
