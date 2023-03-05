@@ -12,12 +12,11 @@ background-color: 'black'
 
 
 .logo {
-
+  border-radius: 10px
 }
 
 .logo:hover {
   background-color: #eeeeee;
-  border-radius: 10px
 }
 
 .model img, .model span {
@@ -132,3 +131,6 @@ background-color: 'black'
   filter: invert(32%) sepia(74%) saturate(384%) hue-rotate(143deg) brightness(98%) contrast(87%);
 }
 
+.autocompleteItem:hover {
+  background-color: #eeeeee !important;
+}
