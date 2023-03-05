@@ -182,7 +182,7 @@ export default function CategoryIdPage(props) {
 						style={{
 							fontSize: isMobile ? 18 : 22,
 							fontWeight: "500",
-							marginTop: isMobile ? 80 : 150,
+							marginTop: isMobile ? 80 : 120,
 						}}
 					>
 						한눈에 보는 그랜저 콘텐츠 속 정보 👍

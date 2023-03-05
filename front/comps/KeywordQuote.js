@@ -18,19 +18,20 @@ export default function KeywordQuote(props) {
 	});
 
 	const [quote, setquote] = useState("");
-
+	// const [keyword, setKeyword] = useState()
 
 
 	useEffect(() => {
 		if (props.keyword === "any") {
 		setquote(props.article.summaries[Math.floor(Math.random()*props.article.summaries.length)].text)
 	} else {
+		
 		setquote(
 			props.article.summaries.filter((s) => s.subject === props.keyword)[0].text
 		);
 	}
 
-	}, []);
+	}, [props.keyword]);
 
 	const isDesktop = useMediaQuery({
 		query: "(min-width: 1045px)",
