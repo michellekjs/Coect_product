@@ -18,6 +18,7 @@ export default function KeywordQuote(props) {
 	});
 
 	const [quote, setquote] = useState("");
+	const [topic, settopic] = useState("");
 	// const [keyword, setKeyword] = useState()
 
 
@@ -29,6 +30,8 @@ export default function KeywordQuote(props) {
 		setquote(
 			props.article.summaries.filter((s) => s.subject === props.keyword)[0].text
 		);
+
+		settopic(props.article.summaries.filter((s) => s.subject === props.keyword)[0].topic)
 	}
 
 	}, [props.keyword]);
@@ -75,7 +78,7 @@ export default function KeywordQuote(props) {
 					fontWeight: '400'
 				}}
 			>
-			<span style={{color: "#2B6F7D", fontWeight:"700"}}> {props.keyword == "any" ? "" : props.keyword +"  |"} </span>
+			<span style={{color: "#2B6F7D", fontWeight:"700"}}> {props.keyword == "any" ? "" : topic +"  |"} </span>
 			<span>{quote} </span>
 			
 			</div>
