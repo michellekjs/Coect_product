@@ -12,12 +12,11 @@ background-color: 'black'
 
 
 .logo {
-
+  border-radius: 10px
 }
 
 .logo:hover {
   background-color: #eeeeee;
-  border-radius: 10px
 }
 
 .model img, .model span {
@@ -121,4 +120,8 @@ background-color: 'black'
   text-decoration:none; 
   color: #2B6F7D;
   font-weight:700;
+}
+
+.autocompleteItem:hover {
+  background-color: #eeeeee !important;
 }

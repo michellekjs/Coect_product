@@ -138,7 +138,8 @@ export default function ArticleIdPage(props) {
 						style={{
 							position: "sticky",
 							top: 0,
-							paddingTop:60,
+							paddingTop: 36,
+							top: 40,
 							alignSelf: "flex-start",
 							display: "flex",
 							gap: isMobile ? 5 : 30,
