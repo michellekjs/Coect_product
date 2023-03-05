@@ -9,6 +9,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styles from "../comps/hover.module.css";
 import { useState, useRef, useCallback } from "react";
 // import { GetServerSideProps, InferGetServe drSidePropsType } from "next";
+import KeywordQuote from "../comps/KeywordQuote.js";
 
 import { articles, categories, brands, colors } from "../shared";
 export default function MainPage() {
@@ -28,6 +29,7 @@ export default function MainPage() {
 	}
 
 	const [hot, setHot] = useState(getHot("현대", "그랜저"));
+	const keywords = ["공간", "가격", "디자인", "성능", "기능"];
 
 	function getRandomArbitrary(min, max) {
 		return Math.random() * (max - min) + min;
@@ -436,6 +438,7 @@ export default function MainPage() {
 									</span>
 								</div>
 							)}
+
 							{isDesktop && (
 								<button
 									onClick={refreshHot}
@@ -484,6 +487,7 @@ export default function MainPage() {
 							))}
 							{/*  */}{" "}
 						</div>
+
 						{isMobile && (
 							<button
 								onClick={refreshHot}
@@ -552,7 +556,6 @@ export default function MainPage() {
 		</Layout>
 	);
 }
-
 
 // export async function getStaticProps({ req, res }) {
 //   res.setHeader(
