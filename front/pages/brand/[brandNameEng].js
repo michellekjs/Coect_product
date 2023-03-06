@@ -1,4 +1,3 @@
-// TODO: 윗부분 색상 그라디언트
 import { useMediaQuery } from "react-responsive";
 
 import Layout from "../../comps/Layout";
@@ -216,7 +215,11 @@ export default function CategoryIdPage(props) {
 								keywords.map((word) => (
 									<button
 										className={styles.btn}
-										style={{ width: 120 }}
+										style={{ 
+											width: 120, 
+											backgroundColor: word==keyword && '#2B6F7D',
+  											color: word==keyword && 'white',
+										}}
 										onClick={() => {
 											setkeyword(word);
 										}}
@@ -241,7 +244,11 @@ export default function CategoryIdPage(props) {
 										{keywords.slice(0, 2).map((word) => (
 											<button
 												className={styles.btn}
-												style={{ width: 100, fontSize: 14 }}
+												style={{ 
+													width: 100, fontSize: 14,
+													backgroundColor: word==keyword && '#2B6F7D',
+  													color: word==keyword && 'white',
+												}}
 												onClick={() => {
 													setkeyword(word);
 												}}
@@ -257,7 +264,11 @@ export default function CategoryIdPage(props) {
 										{keywords.slice(2, 5).map((word) => (
 											<button
 												className={styles.btn}
-												style={{ width: 100, fontSize: 14 }}
+												style={{ 
+													width: 100, fontSize: 14,
+													backgroundColor: word==keyword && '#2B6F7D',
+  													color: word==keyword && 'white',
+												}}
 												onClick={() => {
 													setkeyword(word);
 												}}

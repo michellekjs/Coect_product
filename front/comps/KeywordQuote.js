@@ -34,7 +34,7 @@ export default function KeywordQuote(props) {
 		settopic(props.article.summaries.filter((s) => s.subject === props.keyword)[0].topic)
 	}
 
-	}, [props.keyword]);
+	}, [props.article, props.keyword]);
 
 	const isDesktop = useMediaQuery({
 		query: "(min-width: 1045px)",
