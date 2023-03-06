@@ -42,7 +42,7 @@ export default function CategoryIdPage(props) {
 	const nArticlesInPage = 6;
 	const [resultarticle, setarticle] = useState([]);
 	const [keywordarticle, setkeywordarticle] = useState([]);
-	const [keyword, setkeyword] = useState("");
+	const [keyword, setkeyword] = useState(keywords[0]);
 
 	useEffect(() => {
 		setarticle(
@@ -138,7 +138,7 @@ export default function CategoryIdPage(props) {
 									`/brand/${brand.nameEng}` +
 									(model == m.name ? "" : `?model=${m.name}`)
 								}
-								onClick={()=>setkeyword("")}
+								onClick={()=>setkeyword("공간")}
 								// onClick={() => setarticle("")}
 								style={{
 									display: "flex",
