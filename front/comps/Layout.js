@@ -57,8 +57,8 @@ export default function Layout({ title, description, children }) {
       position: 'fixed',
       width: '15px',
       height: '15px',
-      right: isMobile ? "16px" : '30px',
-      top: ' 20px'
+      right: isMobile ? "25px" : '35px',
+      top: ' 25px'
     },
     bmBurgerBars: {
       background: '#373a47'
@@ -146,7 +146,7 @@ export default function Layout({ title, description, children }) {
 							</Menu>
 						</div>
 					}
-					<div style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: isMobile? 16 : 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box', width: '100%', alignItems:'center', position:'sticky', top: 0, zIndex:10, backdropFilter: 'blur(8px)',backgroundColor: isMobile ? 'white' : 'rgba(255, 255, 255, 0.8)', }}>
+					<div style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: isMobile? 16 : 30, paddingRight: 30, paddingTop: 16, paddingBottom: 16, boxSizing: 'border-box', width: '100%', alignItems:'center', position:'sticky', top: 0, zIndex:10, backdropFilter: 'blur(8px)',backgroundColor: isMobile ? 'white' : 'rgba(255, 255, 255, 0.8)', height: isMobile ? 60 : 80 }}>
 						<div style={{ display: 'flex', flexDirection: 'row', gap: 32, alignItems: 'center' }}>
 							<Link href="/" style={{ display: 'flex', gap: 6, alignItems: 'baseline', textDecoration: 'none' }}>
 								<Image 
