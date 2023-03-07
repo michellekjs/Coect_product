@@ -212,8 +212,9 @@ export default function CategoryIdPage(props) {
 							}}
 						>
 							{isDesktop &&
-								keywords.map((word) => (
+								keywords.map((word, k) => (
 									<button
+									key = {k}
 										className={styles.btn}
 										style={{ 
 											width: 120, 
@@ -241,8 +242,9 @@ export default function CategoryIdPage(props) {
 									<div
 										style={{ display: "flex", flexDirection: "row", gap: 10 }}
 									>
-										{keywords.slice(0, 2).map((word) => (
+										{keywords.slice(0, 2).map((word, k) => (
 											<button
+											key = {k}
 												className={styles.btn}
 												style={{ 
 													width: 100, fontSize: 14,
@@ -261,8 +263,9 @@ export default function CategoryIdPage(props) {
 									<div
 										style={{ display: "flex", flexDirection: "row", gap: 10 }}
 									>
-										{keywords.slice(2, 5).map((word) => (
+										{keywords.slice(2, 5).map((word, k) => (
 											<button
+											key = {k}
 												className={styles.btn}
 												style={{ 
 													width: 100, fontSize: 14,
@@ -310,8 +313,8 @@ export default function CategoryIdPage(props) {
 											r.summaries.filter((a) => a.subject === keyword).length >
 											0
 									)
-									.map((article) => (
-										<KeywordQuote article={article} keyword={keyword}/>
+									.map((article, k) => (
+										<KeywordQuote article={article} keyword={keyword} key={k}/>
 									))
 									.slice(0, 3)}
 							</div>

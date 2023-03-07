@@ -494,8 +494,8 @@ export default function MainPage() {
 						
 						{
 							hot.articles.slice(0,3).map(
-								a =>
-								<KeywordQuote keyword={"any"} article={a}/>	
+								(a,k) =>
+								<KeywordQuote keyword={"any"} key={k} article={a}/>	
 							)
 						}
 
