@@ -57,8 +57,8 @@ export default function Layout({ title, description, children }) {
       position: 'fixed',
       width: '15px',
       height: '15px',
-      right: isMobile ? "25px" : '35px',
-      top: ' 25px'
+      right: isMobile ? "20px" : '40px',
+      top: ' 23px'
     },
     bmBurgerBars: {
       background: '#373a47'

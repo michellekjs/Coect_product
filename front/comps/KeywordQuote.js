@@ -71,7 +71,7 @@ export default function KeywordQuote(props) {
 					whiteSpace: "normal",
 					display: "-webkit-box",
 					WebkitBoxOrient: "vertical",
-					WebkitLineClamp: isMobile ? 3 : 5,
+					WebkitLineClamp: isMobile ? 4 : 5,
 					overflow: "hidden",
 					textOverflow: "ellipsis",
 					wordBreak: "break-all",
