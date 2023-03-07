@@ -45,7 +45,8 @@ export default function MainPage() {
 		setHot(getHot("현대", model));
 	}
 
-	const articlesRecent = articles.sort((a, b) => b.date > a.date);
+
+	const articlesRecent = [...articles].sort((a, b) => new Date(b.date) - new Date(a.date));
 
 	return (
 		<Layout
@@ -271,7 +272,7 @@ export default function MainPage() {
 								width: isMobile ? "80%" : "100%",
 							}}
 						>
-							{articlesRecent.slice(1, 4).map((article) => (
+							{articles.slice(1, 4).map((article) => (
 								<div key={article.id} style={{ flex: 1 }}>
 									<ArticleSummaryToday key={article.id} article={article} />
 								</div>
@@ -554,9 +555,9 @@ export default function MainPage() {
 						<div style={{ fontSize: isMobile ? 20 : 22, fontWeight: "500" }}>
 							최신 차량 리뷰 콘텐츠
 						</div>
-						{/* {[0, 3].map((i) => ( */}
+						{[0, 3].map((i) => (
 							<div
-								// key=
+								key={i}
 								style={{
 									display: "flex",
 									alignItems: "center",
@@ -564,13 +565,13 @@ export default function MainPage() {
 									gap: 36,
 								}}
 							>
-								{articlesRecent.slice(0,3).map((article) => (
+								{articlesRecent.slice(i, i + 3).map((article) => (
 									<div key={article.id} style={{ flex: 1 }}>
 										<ArticleSummaryToday key={article.id} article={article} />
 									</div>
 								))}
 							</div>
-						{/* ))} */}
+						))}
 					</div>
 				</div>
 			</div>
