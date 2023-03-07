@@ -554,9 +554,9 @@ export default function MainPage() {
 						<div style={{ fontSize: isMobile ? 20 : 22, fontWeight: "500" }}>
 							최신 차량 리뷰 콘텐츠
 						</div>
-						{[0, 3].map((i) => (
+						{/* {[0, 3].map((i) => ( */}
 							<div
-								key={i}
+								// key=
 								style={{
 									display: "flex",
 									alignItems: "center",
@@ -564,13 +564,13 @@ export default function MainPage() {
 									gap: 36,
 								}}
 							>
-								{articlesRecent.slice(i, i + 3).map((article) => (
+								{articlesRecent.slice(0,3).map((article) => (
 									<div key={article.id} style={{ flex: 1 }}>
 										<ArticleSummaryToday key={article.id} article={article} />
 									</div>
 								))}
 							</div>
-						))}
+						{/* ))} */}
 					</div>
 				</div>
 			</div>
