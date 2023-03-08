@@ -151,7 +151,7 @@ export default function Layout({ title, description, children }) {
 							<Link href="/" style={{ display: 'flex', gap: 6, alignItems: 'baseline', textDecoration: 'none' }}>
 								<Image 
 									src={Logo}
-									alt="COECT 로고"
+									alt="COECT"
 									style={{ opacity: opacity<350 ? 1 : 0.8 }}
 									width = {105}
 									height = {44}
