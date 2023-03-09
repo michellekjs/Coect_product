@@ -56,7 +56,7 @@ export default function ArticlePage(props) {
                 className={styles.logo}
               >
                 <Image
-                  src={`../../public/imgs/logos/${brand.logo}`}
+                  src={require(`../../public/imgs/logos/${brand.logo}`)}
                   alt={`${brand.name} 로고`}
                   width = { isDesktop ? 60 : 40}
                   height = { isDesktop ? 60 : 40 } 
@@ -106,7 +106,6 @@ export default function ArticlePage(props) {
                     <Image
                       src={
                         require(`../../public/imgs/logos/${brand.logo}`)
-                          .default.src
                       }
                       alt={`${brand.name} 로고`}
                       width={ 40}

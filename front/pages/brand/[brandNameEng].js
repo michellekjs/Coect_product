@@ -102,7 +102,7 @@ export default function CategoryIdPage(props) {
 					}}
 				>
 					<Image
-						src={require(`../../public/imgs/logos/${brand.logo}`).default.src}
+						src={require(`../../public/imgs/logos/${brand.logo}`)}
 						alt={`${brand.name} 로고`}
 						width={44}
 						height={44}
