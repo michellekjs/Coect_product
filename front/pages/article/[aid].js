@@ -136,7 +136,7 @@ export default function ArticleIdPage(props) {
 					</div>
 					<div
 						style={{
-							position: "sticky",
+							position: isMobile ? "sticky" : "",
 							top: 0,
 							paddingTop: 36,
 							top: 40,
@@ -391,10 +391,11 @@ export default function ArticleIdPage(props) {
 										{i + 1}. {s.topic}
 									</a>
 								))}
-							</div>
+							</div> 
 						</div>
 					}
 					</div>
+					
 					<div
 						style={{
 							margin: "10px",
@@ -404,6 +405,7 @@ export default function ArticleIdPage(props) {
 							gap: 20,
 						}}
 					>
+						<div style={{fontWeight:"500"}}> 콘텐츠 핵심 내용 보기</div>
 						{article.summaries.map((summary, i) =>
 							summary.text ? (
 								<TextUnit
