@@ -418,7 +418,7 @@ export default function ArticleIdPage(props) {
 							gap: 20,
 						}}
 					>
-						<div style={{fontWeight:"500"}}> 콘텐츠 핵심 내용 보기</div>
+						<div style={{fontWeight:"500", fontSize: 18}}> 콘텐츠 핵심 내용 보기</div>
 						{article.summaries.map((summary, i) =>
 							summary.text ? (
 								<TextUnit

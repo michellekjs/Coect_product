@@ -185,12 +185,12 @@ export default function CategoryIdPage(props) {
 				>
 					<div
 						style={{
-							fontSize: isMobile ? 18 : 22,
+							fontSize: isMobile ? 18 : 20,
 							fontWeight: "500",
 							marginTop: isMobile ? 80 : 120,
 						}}
 					>
-						한눈에 보는 {model} 콘텐츠 속 정보 👍
+						{model} 영상 속 정보 바로보기 🔎
 					</div>
 					<div
 						style={{
@@ -211,7 +211,7 @@ export default function CategoryIdPage(props) {
 								justifyContent: "center",
 								alignItems: "center",
 								flexDirection: "row",
-								gap: isMobile ? 10 : 30,
+								gap: isMobile ? 10 : 20,
 							}}
 						>
 							{isDesktop &&
