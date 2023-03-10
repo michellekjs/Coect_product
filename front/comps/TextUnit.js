@@ -17,7 +17,7 @@ export default function TextUnit(props) {
 	};
 	return (
 		<a
-			onClick={() => { props.seekTo() }} href="#/"
+			onClick={() => { props.seekTo(); }} href="#/"
 			style={{ 
 				display: 'flex', flexDirection: 'column', gap: 12, paddingTop: 16, paddingBottom: 16, paddingLeft: 24, paddignRight: 24, borderRadius: 8,
 				borderColor: '#DBDBDB', borderWidth: 1.2, 

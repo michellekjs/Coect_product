@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import YouTube from "react-youtube";
 import Image from "next/image";
@@ -34,6 +34,7 @@ export function getStaticProps({ params }) {
 
 export default function ArticleIdPage(props) {
 	const [player, setPlayer] = useState(null);
+	const [playing, setPlaying] = useState(false);
 	const [currentTime, setCurrentTime] = useState(0);
 
 	const getCurrentTimeInterval = useRef(null);
@@ -84,6 +85,8 @@ export default function ArticleIdPage(props) {
 			})
 			.slice(0, 3) // 랜덤으로 3개 뽑기
 	);
+
+		console.log(playing)
 
 
 	return (
@@ -136,7 +139,8 @@ export default function ArticleIdPage(props) {
 					</div>
 					<div
 						style={{
-							position: isMobile ? "sticky" : "",
+							position: isMobile ? "sticky" : playing? "sticky" : "",
+							// position: isMobile ? "sticky" : "",
 							top: 0,
 							paddingTop: 36,
 							top: 40,
@@ -167,13 +171,23 @@ export default function ArticleIdPage(props) {
 								// width:"100%",
 								// height:"100%",
 								backgroundColor: "white",
+								
 							}}
+							class="youtube"
 						>
 							<YouTube
 								videoId={article.videoId}
-								opts={{width: isYoutube? 356: 654, height: isYoutube? 200: 368 }}
+								opts={{
+									width: isYoutube? 356: 654, 
+									height: isYoutube? 200: 368 ,
+					
+								}}
 								style={{width: isYoutube? 356: 654, height: isYoutube? 200: 368}}
 								onReady={onPlayerReady}
+								onPlay={()=> setPlaying(true)}
+								onPause={()=> setPlaying(false)}
+								// onStateChange={()=> setPlaying(!playing)}
+								// onEnd={()=> setPlaying(false)}
 							/>
 						</div>
 						{isDesktop &&
@@ -220,9 +234,8 @@ export default function ArticleIdPage(props) {
 											fontSize: isMobile ? 14 : 16,
 											textDecoration: "none",
 											color:
-												currentTime >= s.start &&
 												(i >= article.summaries.length - 1 ||
-													currentTime < article.summaries[i + 1].start)
+													currentTime == article.summaries[i + 1].start)
 													? colors.primary
 													: colors._300,
 										}}
@@ -373,7 +386,7 @@ export default function ArticleIdPage(props) {
 								{article.summaries.map((s, i) => (
 									<a
 										key={i}
-										onClick={() => {
+										onClick={() => {2
 											player.seekTo(s.start);
 										}}
 										href="#/"
@@ -417,7 +430,13 @@ export default function ArticleIdPage(props) {
 										(i >= article.summaries.length - 1 ||
 											currentTime < article.summaries[i + 1].start)
 									}
-									seekTo={() => player.seekTo(summary.start)}
+									seekTo={() => {
+											player.seekTo(summary.start);
+											setPlaying(true);
+											player.playVideo();
+											}}
+									
+									
 								>
 									{summary.text}
 								</TextUnit>

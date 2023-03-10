@@ -107,9 +107,12 @@ export default function CategoryIdPage(props) {
 						width={44}
 						height={44}
 					/>
-					<h1 style={{ fontSize: 18, fontWeight: 500, margin: 0 }}>
+					<div style={{ fontSize: 18, fontWeight: 500, margin: 0 }}>
 						{brand.name}
-					</h1>
+					</div>
+					<div style={{ fontSize: 18, fontWeight: 500, marginLeft:-6 }}>
+						{model}
+					</div>
 				</div>
 				<div
 					style={{
