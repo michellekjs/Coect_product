@@ -147,7 +147,7 @@ export default function MainPage() {
 									}}
 								>
 									<Image
-										src={require("../public/imgs/arrow_right.svg").default.src}
+										src={require("../public/imgs/arrow_right.svg")}
 										alt={`오른쪽으로 전환`}
 										width={15}
 										height={15}
@@ -374,7 +374,6 @@ export default function MainPage() {
 												<Image
 													src={
 														require(`../public/imgs/logos/${brand.logo}`)
-															.default.src
 													}
 													alt={`${brand.name} 로고`}
 													width={40}
@@ -465,7 +464,7 @@ export default function MainPage() {
 									}}
 								>
 									<Image
-										src={require("../public/imgs/refresh.svg").default.src}
+										src={require("../public/imgs/refresh.svg")}
 										alt="새로고침 아이콘"
 										width={20}
 										height={20}
@@ -535,7 +534,7 @@ export default function MainPage() {
 								}}
 							>
 								<Image
-									src={require("../public/imgs/refresh.svg").default.src}
+									src={require("../public/imgs/refresh.svg")}
 									alt="새로고침 아이콘"
 									width={20}
 									height={20}

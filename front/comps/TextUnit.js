@@ -33,9 +33,9 @@ export default function TextUnit(props) {
 			 }}>
 					{
 						// props.isPlaying ?
-							<Image src={require('../public/imgs/play.svg').default.src} alt="재생 중 아이콘" height={10} width={10}/>
+							<Image src={require('../public/imgs/play.svg')} alt="재생 중 아이콘" height={10} width={10}/>
 							// :
-							// <img src={require('../public/imgs/pause.svg').default.src} alt="일시정지 중 아이콘" style={{ height: 16 }}/>
+							// <img src={require('../public/imgs/pause.svg')} alt="일시정지 중 아이콘" style={{ height: 16 }}/>
 					}
 					
 					<span style={{ fontSize: isMobile? 12: 14, color: props.isPlaying ? 'white' : '#212121' }}>{seconds2timestamp(props.start)}</span>

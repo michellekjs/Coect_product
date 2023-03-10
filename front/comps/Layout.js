@@ -49,7 +49,7 @@ export default function Layout({ title, description, children }) {
 
 
 	// const myLoader = ({ src }) => {
-	// 	// return `require('../public/imgs/logo.svg').default.src`
+	// 	// return `require('../public/imgs/logo.svg')`
 	// }
 
 	const styles = {
