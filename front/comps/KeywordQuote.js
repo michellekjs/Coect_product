@@ -99,7 +99,7 @@ export default function KeywordQuote(props) {
 					image={props.article.channelImageUrl}
 				/>
 				<Link
-					href={`/article/${props.article.article_id}/`}
+					href={`/article/${props.article.id}/`}
 					className={style.link}
 				>
 					{" "}
