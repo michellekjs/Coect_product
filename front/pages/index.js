@@ -58,6 +58,8 @@ export default function MainPage() {
 				alignItems: "center",
 				justifyContent: "center",
 				flexDirection: "column",
+				minHeight: "100vh",
+				gap: 30,
 			}}
 		>
 			<Link
@@ -71,124 +73,181 @@ export default function MainPage() {
 			>
 				<Image src={Logo} alt="COECT" width={160} height={80} />
 			</Link>
-			<div> 영상 속 필요한 정보만 찾아 빠르게 읽으세요 </div>
-			<div>
-				<div
+			<div style={{ fontSize: 18, color: "#6F6F6F"}}>
+				{" "}
+				영상 속 <span style={{ color: "#2B6F7D" }}> 필요한 </span> 정보만 찾아{" "}
+				<span style={{ color: "#2B6F7D" }}>빠르게</span> 읽으세요{" "}
+			</div>
+			<div
+				style={{
+					width: 500,
+					marginTop: 30,
+					height: 30,
+					display: "flex",
+					// justifyContent: "space-between",
+					alignItems: "center",
+					border: `1.5px solid ${colors._700}`,
+					borderRadius: 5,
+					position: "relative",
+					backgroundColor: "white",
+					paddingTop: 8,
+					paddingBottom: 8,
+				}}
+			>
+				<Image
+					src={require("../public/imgs/search.svg")}
+					width={20}
+					height={20}
+					style={{ marginLeft: 12, marginRight: 8 }}
+				/>
+				<input
 					style={{
-						width: 300,
-						// height: 32,
+						flex: 1,
+						// paddingLeft: 12,
+						paddingRight: 12,
+						border: "none",
+						outline: "none",
+						fontSize: 12,
+					}}
+					type="text"
+					placeholder="원하는 차종을 검색해보세요."
+					onChange={(e) => autocomplete(e.target.value)}
+					onKeyDown={(e) => {
+						if (e.key === "Enter" && resultIndex >= 0) {
+							setResultIndex(-1);
+							setResults([]);
+							const r = results[resultIndex];
+							router.push(`/car/brand/${r.brandNameEng}?model=${r.modelName}`);
+						}
+
+						let newResultIndex = resultIndex;
+						if (e.key === "ArrowDown") newResultIndex += 1;
+						else if (e.key === "ArrowUp") newResultIndex -= 1;
+
+						if (newResultIndex < -1) newResultIndex = results.length - 1;
+						else if (newResultIndex >= results.length) newResultIndex = -1;
+
+						setResultIndex(newResultIndex);
+					}}
+				/>
+			</div>
+			<div style={{ position: "relative", width: "100%", height: 0 }}>
+				{results.length > 0 && (
+					<div
+						style={{
+							position: "absolute",
+							top: -5,
+							paddingTop: 5,
+							left: 2,
+							width: "98%",
+							display: "flex",
+							flexDirection: "column",
+							// right: 0,
+							backgroundColor: "white",
+							border: `1.5px solid ${colors._700}`,
+							borderBottomLeftRadius: 5,
+							borderBottomRightRadius: 5,
+							zIndex: -1,
+							paddingBottom: 4,
+						}}
+					>
+						{results.map((model, index) => {
+							return (
+								<Link
+									key={index}
+									href={`/car/brand/${model.brandNameEng}?model=${model.modelName}`}
+									style={{
+										paddingTop: 4,
+										paddingBottom: 4,
+										paddingLeft: 12,
+										textDecoration: "none",
+										color: "black",
+										// borderBottom: `1px solid ${colors._700}`,
+										fontSize: 14,
+										display: "flex",
+										alignItems: "center",
+										backgroundColor:
+											resultIndex === index ? colors._700 : "white",
+									}}
+									className={style.autocompleteItem}
+									onClick={() => {
+										setResultIndex(-1);
+										setResults([]);
+									}}
+								>
+									<Image
+										src={require("../public/imgs/search.svg")}
+										width={20}
+										height={20}
+										style={{ marginRight: 8 }}
+									/>
+									{model.brandName} {model.modelName}
+								</Link>
+							);
+						})}
+					</div>
+				)}
+			</div>
+			<div
+				style={{
+					display: "flex",
+					flexDirection: "row",
+					alignItems: "center",
+					justifyContent: "center",
+					gap: 100,
+					fontSize: 14,
+				}}
+			>
+				<Link
+					href="/car"
+					style={{
 						display: "flex",
-						// justifyContent: "space-between",
+						justifyContent: "center",
 						alignItems: "center",
-						border: `1.5px solid ${colors._700}`,
-						borderRadius: 5,
-						position: "relative",
-						backgroundColor: "white",
-						paddingTop: 8,
-						paddingBottom: 8,
+						flexDirection: "column",
+						gap: 8,
 					}}
 				>
-					<Image
-						src={require("../public/imgs/search.svg")}
-						width={20}
-						height={20}
-						style={{ marginLeft: 12, marginRight: 8 }}
-					/>
-					<input
-						style={{
-							flex: 1,
-							// paddingLeft: 12,
-							paddingRight: 12,
-							border: "none",
-							outline: "none",
-							// fontSize: 12,
-						}}
-						type="text"
-						placeholder="원하는 차종을 검색해보세요."
-						onChange={(e) => autocomplete(e.target.value)}
-						onKeyDown={(e) => {
-							if (e.key === "Enter" && resultIndex >= 0) {
-								setResultIndex(-1);
-								setResults([]);
-								const r = results[resultIndex];
-								router.push(
-									`/car/brand/${r.brandNameEng}?model=${r.modelName}`
-								);
-							}
-
-							let newResultIndex = resultIndex;
-							if (e.key === "ArrowDown") newResultIndex += 1;
-							else if (e.key === "ArrowUp") newResultIndex -= 1;
-
-							if (newResultIndex < -1) newResultIndex = results.length - 1;
-							else if (newResultIndex >= results.length) newResultIndex = -1;
-
-							setResultIndex(newResultIndex);
-						}}
-					/>
+					<Image src={Car} width={60} height={60} />
+					<div style={{color:'black', textDecoration:"none"}}> 차량 </div>
+				</Link>
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						flexDirection: "column",
+						gap: 8,
+					}}
+				>
+					<Image src={Electric} width={60} height={60} />
+					<div> 전자기기 </div>
 				</div>
-				<div style={{ position: "relative", width: "100%", height: 0 }}>
-					{results.length > 0 && (
-						<div
-							style={{
-								position: "absolute",
-								top: -5,
-								paddingTop: 5,
-								left: 2,
-								width: "98%",
-								display: "flex",
-								flexDirection: "column",
-								// right: 0,
-								backgroundColor: "white",
-								border: `1.5px solid ${colors._700}`,
-								borderBottomLeftRadius: 5,
-								borderBottomRightRadius: 5,
-								zIndex: -1,
-								paddingBottom: 4,
-							}}
-						>
-							{results.map((model, index) => {
-								return (
-									<Link
-										key={index}
-										href={`/car/brand/${model.brandNameEng}?model=${model.modelName}`}
-										style={{
-											paddingTop: 4,
-											paddingBottom: 4,
-											paddingLeft: 12,
-											textDecoration: "none",
-											color: "black",
-											// borderBottom: `1px solid ${colors._700}`,
-											fontSize: 14,
-											display: "flex",
-											alignItems: "center",
-											backgroundColor:
-												resultIndex === index ? colors._700 : "white",
-										}}
-										className={style.autocompleteItem}
-										onClick={() => {
-											setResultIndex(-1);
-											setResults([]);
-										}}
-									>
-										<Image
-											src={require("../public/imgs/search.svg")}
-											width={20}
-											height={20}
-											style={{ marginRight: 8 }}
-										/>
-										{model.brandName} {model.modelName}
-									</Link>
-								);
-							})}
-						</div>
-					)}
+
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						flexDirection: "column",
+						gap: 8,
+					}}
+				>
+					<Image src={Fashion} width={60} height={60} />
+					<div> 패션 </div>
 				</div>
-				<div style={{display:"flex", flexDirection:"row", alignItems:"center", justifyContent:"center"}}>
-				<Image src={Car} width={60} height={60} />
-				<Image src={Electric} width={60} height={60} />
-				<Image src={Fashion} width={60} height={60} />
+
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						flexDirection: "column",
+						gap: 8,
+					}}
+				>
 					<Image src={Trip} width={60} height={60} />
+					<div> 여행 </div>
 				</div>
 			</div>
 		</div>
