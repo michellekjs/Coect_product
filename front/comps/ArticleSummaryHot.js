@@ -93,7 +93,7 @@ export default function ArticleSummary(props) {
 
 	return (
 		<Link
-			href={`/article/${props.article.id}`}
+			href={`/car/article/${props.article.id}`}
 			style={{ textDecoration: "none" }}
 		>
 			<div style={styles.container} className={isMobile ? null : style.logo}>

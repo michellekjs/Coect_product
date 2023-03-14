@@ -136,7 +136,7 @@ export default function Layout({ title, description, children }) {
 								return (
 									<Link
 										key={brand.id}
-										href={`/brand/${brand.nameEng}`}
+										href={`/car/brand/${brand.nameEng}`}
 										style={{ textDecoration: 'none', color: '#424242', fontSize: 15, marginBottom : 10 }}
 									>
 										{brand.name}
@@ -190,7 +190,7 @@ export default function Layout({ title, description, children }) {
 												setResultIndex(-1);
 												setResults([]);
 												const r = results[resultIndex];
-												router.push(`/brand/${r.brandNameEng}?model=${r.modelName}`);
+												router.push(`/car/brand/${r.brandNameEng}?model=${r.modelName}`);
 											}
 
 											let newResultIndex = resultIndex;
@@ -226,7 +226,7 @@ export default function Layout({ title, description, children }) {
 											return (
 												<Link
 													key={index}
-													href={`/brand/${model.brandNameEng}?model=${model.modelName}`}
+													href={`/car/brand/${model.brandNameEng}?model=${model.modelName}`}
 													style={{
 														paddingTop: 4,
 														paddingBottom: 4,
@@ -261,7 +261,7 @@ export default function Layout({ title, description, children }) {
 								return (
 									<Link
 										key={index + 1}
-										href={`/brand/${brand.nameEng}`}
+										href={`/car/brand/${brand.nameEng}`}
 										style={{ textDecoration: 'none', color: '#424242', fontSize: 15, opacity: opacity<350 ? 1 : 0.8 }}
 									>
 										{brand.name}

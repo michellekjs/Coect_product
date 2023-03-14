@@ -1,18 +1,18 @@
 import { useMediaQuery } from "react-responsive";
 
-import Layout from "../../comps/Layout";
-import ArticleSummary from "../../comps/ArticleSummary";
-import KeywordQuote from "../../comps/KeywordQuote";
+import Layout from "../../../comps/Layout";
+import ArticleSummary from "../../../comps/ArticleSummary";
+import KeywordQuote from "../../../comps/KeywordQuote";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
-import styles from "../../comps/hover.module.css";
+import styles from "../../../comps/hover.module.css";
 
-import ArticleSummaryToday from "../../comps/ArticleSummaryToday";
+import ArticleSummaryToday from "../../../comps/ArticleSummaryToday";
 
-import { brands, articles, colors, subjects } from "../../shared";
+import { brands, articles, colors, subjects } from "../../../shared";
 
 export function getStaticPaths() {
 	return {
@@ -102,7 +102,7 @@ export default function CategoryIdPage(props) {
 					}}
 				>
 					<Image
-						src={require(`../../public/imgs/logos/${brand.logo}`)}
+						src={require(`../../../public/imgs/logos/${brand.logo}`)}
 						alt={`${brand.name} 로고`}
 						width={44}
 						height={44}
@@ -138,7 +138,7 @@ export default function CategoryIdPage(props) {
 							<Link
 								key={i}
 								href={
-									`/brand/${brand.nameEng}` +
+									`/car/brand/${brand.nameEng}` +
 									(model == m.name ? "" : `?model=${m.name}`)
 								}
 								onClick={()=>setkeyword("공간")}
@@ -159,7 +159,7 @@ export default function CategoryIdPage(props) {
 								<img
 									// loader={myLoader}
 									src={
-										require(`../../public/imgs/models/${brand.name} ${m.name} ${
+										require(`../../../public/imgs/models/${brand.name} ${m.name} ${
 											m.submodels[0].name ? m.submodels[0].name + " " : ""
 										}(${m.generation}세대).png`).default.src
 									}
@@ -383,7 +383,7 @@ export default function CategoryIdPage(props) {
 							).map((i) => (
 								<Link
 									key={i}
-									href={`/brand/${props.brandNameEng}?page=${i}`}
+									href={`/car/brand/${props.brandNameEng}?page=${i}`}
 									style={{
 										width: 40,
 										height: 40,

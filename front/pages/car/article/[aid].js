@@ -4,15 +4,15 @@ import YouTube from "react-youtube";
 import Image from "next/image";
 import Link from "next/link";
 
-import Layout from "../../comps/Layout";
-import Subtitle from "../../comps/Subtitle";
-import ArticleSummaryToday from "../../comps/ArticleSummaryToday";
-import TextUnit from "../../comps/TextUnit";
-import Author from "../../comps/Author.js";
+import Layout from "../../../comps/Layout.js";
+import Subtitle from "../../../comps/Subtitle";
+import ArticleSummaryToday from "../../../comps/ArticleSummaryToday";
+import TextUnit from "../../../comps/TextUnit";
+import Author from "../../../comps/Author.js";
 
-import { articles, brands, colors } from "../../shared";
+import { articles, brands, colors } from "../../../shared";
 
-import style from "../../comps/hover.module.css";
+import style from "../../../comps/hover.module.css";
 
 export function getStaticPaths() {
 	return {
@@ -118,9 +118,9 @@ export default function ArticleIdPage(props) {
 								color: colors.primary,
 							}}
 						>
-							<Link href={`/brand/${brand.nameEng}`} style={{ textDecoration: 'none', color: colors.primary}}>{article.brand}</Link>
+							<Link href={`/car/brand/${brand.nameEng}`} style={{ textDecoration: 'none', color: colors.primary}}>{article.brand}</Link>
 							<span style={{ color: "#BDBDBD" }}>&gt;</span>
-							<Link href={`/brand/${brand.nameEng}?model=${model.name}`} style={{ textDecoration: 'none', color: colors.primary}}>{article.model}</Link>
+							<Link href={`/car/brand/${brand.nameEng}?model=${model.name}`} style={{ textDecoration: 'none', color: colors.primary}}>{article.model}</Link>
 						</div>
 						<div style={{ dipslay: "flex", gap: 6 }}>
 							<h1 style={{ fontWeight: 500, fontSize: isMobile ? 20 :28,margin: 0}}>{article.title}

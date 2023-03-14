@@ -39,7 +39,7 @@ export default function ArticlePage(props) {
             {brands.map((brand,i) => (
               <Link
                 key={i}
-                href={`/brand/${brand.nameEng}`}
+                href={`/car/brand/${brand.nameEng}`}
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -86,7 +86,7 @@ export default function ArticlePage(props) {
                 {brands.slice(range.start, range.end).map((brand,j) => (
                   <Link
                     key={j}
-                    href={`/brand/${brand.nameEng}`}
+                    href={`/car/brand/${brand.nameEng}`}
                     style={{
                       display: "flex",
                       flexDirection: "column",

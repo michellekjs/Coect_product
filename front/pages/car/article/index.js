@@ -62,7 +62,7 @@ export default function CategoryIdPage(props) {
 							Array.from({ length: Math.ceil(resultarticle.length / nArticlesInPage) }, (_, i) => i + 1).map((i) =>
 								<Link
 									key={i}
-									href={`/article?page=${i}`}
+									href={`/car/article?page=${i}`}
 									style={{ 
 										width: 40, height: 40, display: 'flex', justifyContent: 'center', alignItems: 'center', color: i==pageReal ? colors.primary : colors._300,
 										textDecoration: 'none',

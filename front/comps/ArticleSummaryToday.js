@@ -84,7 +84,7 @@ export default function ArticleSummaryToday(props) {
 
 	return (
 		<Link
-			href={`/article/${props.article.id}`}
+			href={`/car/article/${props.article.id}`}
 			style={{ textDecoration: "none" }}
 		>
 			<div style={styles.container} className={isMobile? style.normal : style.article}>
@@ -112,9 +112,9 @@ export default function ArticleSummaryToday(props) {
 						<div style={styles.title}>{props.article.title}</div>
 					</div>
 					<div style={{ display: 'flex', gap: 6, fontSize: isMobile? 12: 14, color: colors.primary }}>
-						<Link href={`/brand/${props.article.brandNameEng}`} style={{ textDecoration: 'none', color: colors.primary }}>{props.article.brand}</Link>
+						<Link href={`/car/brand/${props.article.brandNameEng}`} style={{ textDecoration: 'none', color: colors.primary }}>{props.article.brand}</Link>
 						{/* <span style={{ color: '#BDBDBD' }}>&gt;</span> */}
-						<Link href={`/brand/${props.article.brandNameEng}?model=${props.article.model}`} style={{ textDecoration: 'none', color: colors.primary }}>{props.article.model}</Link>
+						<Link href={`/car/brand/${props.article.brandNameEng}?model=${props.article.model}`} style={{ textDecoration: 'none', color: colors.primary }}>{props.article.model}</Link>
 					</div>
 				</div>
 			</div>
